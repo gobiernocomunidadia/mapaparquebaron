@@ -367,32 +367,62 @@
                 zIndex: 6
             });
 
-            // Capas de Demografía y Zonificación
-            poblacionLayer = new google.maps.Data(); poblacionLayer.loadGeoJson('./poblacion_cgm_Parque Baron.geojson');
-            poblacionLayer.setStyle({
-                fillColor: '#3B82F6', // Azul brillante
-                fillOpacity: 0.4,
-                strokeColor: '#2563EB',
-                strokeWeight: 1,
-                zIndex: 4
+            // Capas de Demografía y Zonificación con Estilos Coropléticos
+            poblacionLayer = new google.maps.Data(); 
+            poblacionLayer.loadGeoJson('./poblacion_cgm_Parque Baron.geojson');
+            poblacionLayer.setStyle(function(feature) {
+                let pob = parseInt(feature.getProperty('Habitantes') || feature.getProperty('RADIOS_POB')) || 0;
+                let color = pob >= 1200 ? '#084A6F' : // Azul Más Oscuro
+                            pob >= 900  ? '#0B5F8D' : 
+                            pob >= 600  ? '#2A7FA8' : 
+                            pob >= 300  ? '#6BA1C7' : 
+                                          '#D1E1F0';  // Azul Muy Claro
+                return {
+                    fillColor: color,
+                    fillOpacity: 0.65,
+                    strokeColor: '#FFFFFF',
+                    strokeWeight: 1,
+                    zIndex: 4
+                };
             });
 
-            pobrezaLayer = new google.maps.Data(); pobrezaLayer.loadGeoJson('./pobreza_cronica_cgm_Parque Baron.geojson');
-            pobrezaLayer.setStyle({
-                fillColor: '#EF4444', // Rojo
-                fillOpacity: 0.4,
-                strokeColor: '#DC2626',
-                strokeWeight: 1,
-                zIndex: 4
+            pobrezaLayer = new google.maps.Data(); 
+            pobrezaLayer.loadGeoJson('./pobreza_cronica_cgm_Parque Baron.geojson');
+            pobrezaLayer.setStyle(function(feature) {
+                let pct = parseFloat(feature.getProperty('P_PC_PER')) || 0;
+                let color = pct >= 30 ? '#7F1D1D' : // Rojo Muy Oscuro
+                            pct >= 20 ? '#B91C1C' : // Rojo
+                            pct >= 10 ? '#EA580C' : // Naranja Fuerte
+                            pct >= 5  ? '#F97316' : // Naranja Claro
+                                        '#FDBA74';  // Melocotón (Muy claro)
+                return {
+                    fillColor: color,
+                    fillOpacity: 0.65,
+                    strokeColor: '#FFFFFF',
+                    strokeWeight: 1,
+                    zIndex: 4
+                };
             });
 
-            inundablesLayer = new google.maps.Data(); inundablesLayer.loadGeoJson('./zonas_inundables_cgm_Parque Baron.geojson');
-            inundablesLayer.setStyle({
-                fillColor: '#06B6D4', // Cyan
-                fillOpacity: 0.4,
-                strokeColor: '#0891B2',
-                strokeWeight: 1,
-                zIndex: 4
+            inundablesLayer = new google.maps.Data(); 
+            inundablesLayer.loadGeoJson('./zonas_inundables_cgm_Parque Baron.geojson');
+            inundablesLayer.setStyle(function(feature) {
+                let pct = parseFloat(feature.getProperty('PORCENTAJE')) || 0;
+                let color;
+                if (pct >= 100) color = '#DC2626';      // Rojo Intenso
+                else if (pct >= 80) color = '#C026D3';  // Fucsia / Rojo-Azulado
+                else if (pct >= 60) color = '#7C3AED';  // Violeta
+                else if (pct >= 40) color = '#4F46E5';  // Indigo
+                else if (pct >= 20) color = '#2563EB';  // Azul
+                else color = '#38BDF8';                 // Azul Claro
+                
+                return {
+                    fillColor: color,
+                    fillOpacity: 0.65,
+                    strokeColor: '#FFFFFF',
+                    strokeWeight: 1,
+                    zIndex: 4
+                };
             });
 
             semaforosLayer = new google.maps.Data(); semaforosLayer.loadGeoJson('./Semaforos Activos.geojson');
