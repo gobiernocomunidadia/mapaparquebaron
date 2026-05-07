@@ -106,6 +106,27 @@
                     </div>
                 </div>
 
+                <!-- DEMOGRAFÍA Y ZONIFICACIÓN -->
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="pie-chart" class="h-4 w-4"></i> Demografía y Zonificación
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-poblacion" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Población (Radios Censales)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-pobreza" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Pobreza Crónica</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-inundables" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Zonas Inundables</span>
+                        </label>
+                    </div>
+                </div>
+
                 <!-- INSTITUCIONES -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
@@ -238,6 +259,9 @@
         let limiteElements = []; 
         let limiteCgmLayer, barriosPopularesLayer;
         let camarasLayer, alarmasLayer, comisariasLayer;
+        
+        // Variables de Capas Demografía y Zonificación
+        let poblacionLayer, pobrezaLayer, inundablesLayer;
 
         // Variables de Capas Instituciones
         let asocCivilesLayer, jubiladosLayer, culturalesLayer, clubesLayer, comedoresLayer, 
@@ -341,6 +365,34 @@
                 strokeColor: '#D34872',
                 strokeWeight: 2,
                 zIndex: 6
+            });
+
+            // Capas de Demografía y Zonificación
+            poblacionLayer = new google.maps.Data(); poblacionLayer.loadGeoJson('./poblacion_cgm_Parque Baron.geojson');
+            poblacionLayer.setStyle({
+                fillColor: '#3B82F6', // Azul brillante
+                fillOpacity: 0.4,
+                strokeColor: '#2563EB',
+                strokeWeight: 1,
+                zIndex: 4
+            });
+
+            pobrezaLayer = new google.maps.Data(); pobrezaLayer.loadGeoJson('./pobreza_cronica_cgm_Parque Baron.geojson');
+            pobrezaLayer.setStyle({
+                fillColor: '#EF4444', // Rojo
+                fillOpacity: 0.4,
+                strokeColor: '#DC2626',
+                strokeWeight: 1,
+                zIndex: 4
+            });
+
+            inundablesLayer = new google.maps.Data(); inundablesLayer.loadGeoJson('./zonas_inundables_cgm_Parque Baron.geojson');
+            inundablesLayer.setStyle({
+                fillColor: '#06B6D4', // Cyan
+                fillOpacity: 0.4,
+                strokeColor: '#0891B2',
+                strokeWeight: 1,
+                zIndex: 4
             });
 
             semaforosLayer = new google.maps.Data(); semaforosLayer.loadGeoJson('./Semaforos Activos.geojson');
@@ -519,6 +571,49 @@
             bindPopup(saludLayer, '#10B981', 'Centro de Salud', false);
             bindPopup(fomentoLayer, '#06B6D4', 'Sociedad de Fomento', false);
 
+            // Popups de Demografía
+            poblacionLayer.addListener('click', function(event) {
+                let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 200px; position: relative;">`;
+                content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
+                content += `<h3 style="font-weight: 800; font-size: 14px; color: #3B82F6; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">Radio Censal: ${event.feature.getProperty('REDCODE')}</h3>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Población:</b> ${event.feature.getProperty('Habitantes') || event.feature.getProperty('RADIOS_POB')}</p>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Hogares:</b> ${event.feature.getProperty('RADIOS_HOG')}</p>`;
+                content += `</div>`;
+                infoWindow.setContent(content);
+                infoWindow.setPosition(event.latLng); 
+                infoWindow.open(map);
+                startInfoWindowTimer(); 
+            });
+
+            pobrezaLayer.addListener('click', function(event) {
+                let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 200px; position: relative;">`;
+                content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
+                content += `<h3 style="font-weight: 800; font-size: 14px; color: #EF4444; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">Pobreza Crónica - Radio: ${event.feature.getProperty('LINK_RADIO')}</h3>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Población:</b> ${event.feature.getProperty('POBLACION')}</p>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Hogares:</b> ${event.feature.getProperty('N_HOGARES')}</p>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Personas en Pobreza Crónica:</b> ${event.feature.getProperty('PC_PER')}</p>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>% Pobreza Crónica:</b> ${event.feature.getProperty('P_PC_PER')}%</p>`;
+                content += `</div>`;
+                infoWindow.setContent(content);
+                infoWindow.setPosition(event.latLng); 
+                infoWindow.open(map);
+                startInfoWindowTimer(); 
+            });
+
+            inundablesLayer.addListener('click', function(event) {
+                let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 200px; position: relative;">`;
+                content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
+                content += `<h3 style="font-weight: 800; font-size: 14px; color: #06B6D4; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">Zonas Inundables - Radio: ${event.feature.getProperty('CODIGO_DE_')}</h3>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Población Afectada:</b> ${event.feature.getProperty('POBLACION')}</p>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Porcentaje de Afectación:</b> ${event.feature.getProperty('PORCENTAJE')}%</p>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Incidencia:</b> Nivel ${event.feature.getProperty('INCIDENCIA')}</p>`;
+                content += `</div>`;
+                infoWindow.setContent(content);
+                infoWindow.setPosition(event.latLng); 
+                infoWindow.open(map);
+                startInfoWindowTimer(); 
+            });
+
             barriosPopularesLayer.addListener('click', function(event) {
                 const nombre = event.feature.getProperty('NOMBRE_BAR') || 'Barrio Popular';
                 const familias = event.feature.getProperty('FAMILIAS') || '-';
@@ -559,6 +654,11 @@
                     e.target.checked ? layerInstance.setMap(map) : layerInstance.setMap(null);
                 });
             };
+
+            // Demografía
+            toggleLayer('cb-poblacion', poblacionLayer);
+            toggleLayer('cb-pobreza', pobrezaLayer);
+            toggleLayer('cb-inundables', inundablesLayer);
 
             // Infraestructura
             toggleLayer('cb-semaforos', semaforosLayer);
