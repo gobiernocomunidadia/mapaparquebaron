@@ -505,6 +505,21 @@
             
             updatePointStyles();
 
+            // FUNCIÓN PARA ENCUADRAR LOS LÍMITES DEL CGM PARQUE BARON
+            function zoomToCgmBounds() {
+                const bounds = new google.maps.LatLngBounds();
+                let hasBounds = false;
+                limiteCgmLayer.forEach((feature) => {
+                    feature.getGeometry().forEachLatLng((latlng) => {
+                        bounds.extend(latlng);
+                        hasBounds = true;
+                    });
+                });
+                if (hasBounds) {
+                    map.fitBounds(bounds);
+                }
+            }
+
             function bindPopup(layer, colorTitle, defaultTitle, isPolygon) {
                 layer.addListener('click', function(event) {
                     // Flexibilidad en el nombre según cómo venga en el GeoJSON
@@ -545,6 +560,7 @@
 
                     infoWindow.open(map);
                     startInfoWindowTimer(); 
+                    zoomToCgmBounds(); // Zoom a límites de CGM
                 });
             }
 
@@ -583,6 +599,7 @@
                 infoWindow.setPosition(event.latLng); 
                 infoWindow.open(map);
                 startInfoWindowTimer(); 
+                zoomToCgmBounds(); // Zoom a límites de CGM
             });
 
             pobrezaLayer.addListener('click', function(event) {
@@ -598,6 +615,7 @@
                 infoWindow.setPosition(event.latLng); 
                 infoWindow.open(map);
                 startInfoWindowTimer(); 
+                zoomToCgmBounds(); // Zoom a límites de CGM
             });
 
             inundablesLayer.addListener('click', function(event) {
@@ -612,6 +630,7 @@
                 infoWindow.setPosition(event.latLng); 
                 infoWindow.open(map);
                 startInfoWindowTimer(); 
+                zoomToCgmBounds(); // Zoom a límites de CGM
             });
 
             barriosPopularesLayer.addListener('click', function(event) {
@@ -639,6 +658,7 @@
                 infoWindow.setPosition(event.latLng); 
                 infoWindow.open(map);
                 startInfoWindowTimer(); 
+                zoomToCgmBounds(); // Zoom a límites de CGM
             });
 
             trafficLayer = new google.maps.TrafficLayer();
