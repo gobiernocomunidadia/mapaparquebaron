@@ -107,6 +107,46 @@
 
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="cone" class="h-4 w-4"></i> Infraestructura Vial
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-semaforos" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Semáforos Activos</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-reductores" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Reductores de Velocidad</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-solicitudes" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Solicitudes Semáforos 2026</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="shield-alert" class="h-4 w-4"></i> Seguridad
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-camaras" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Cámaras de Seguridad</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-alarmas" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Alarmas Comunitarias</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-comisarias" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Comisarías</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
                         <i class="fa-solid fa-street-view text-[#19567C] h-4 w-4"></i> Street View
                     </h4>
                     <label class="flex items-center gap-3 cursor-pointer">
@@ -142,6 +182,7 @@
         let semaforosLayer, reductoresLayer, solicitudesLayer;
         let limiteElements = []; 
         let limiteCgmLayer, barriosPopularesLayer;
+        let camarasLayer, alarmasLayer, comisariasLayer;
 
         // --- FUNCIÓN PARA EL TEMPORIZADOR DE INFOWINDOW ---
         function startInfoWindowTimer() {
@@ -247,9 +288,19 @@
             reductoresLayer = new google.maps.Data(); reductoresLayer.loadGeoJson('./Reductores de Velocidad.geojson');
             solicitudesLayer = new google.maps.Data(); solicitudesLayer.loadGeoJson('./Solicitudes Semaforos 2026.geojson');
 
+            // Capas de Seguridad
+            camarasLayer = new google.maps.Data(); camarasLayer.loadGeoJson('./Camaras_Parque Baron.geojson');
+            alarmasLayer = new google.maps.Data(); alarmasLayer.loadGeoJson('./alarmas_Parque Baron.geojson');
+            comisariasLayer = new google.maps.Data(); comisariasLayer.loadGeoJson('./seguridad_Parque Baron.geojson');
+
             const pathSemaforo = '<rect x="7" y="2" width="10" height="20" rx="3"/><circle cx="12" cy="7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="17" r="1.5"/>';
             const pathReductor = '<path d="m20.9 18.55-8-15.98a1 1 0 0 0-1.8 0l-8 15.98"/><path d="M4.34 10a11.24 11.24 0 0 1 15.32 0"/><path d="M8.64 14.5a5.42 5.42 0 0 1 6.72 0"/><path d="M2 22h20"/>';
             const pathSolicitud = '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/>';
+            
+            // Iconos SVG para Seguridad
+            const pathCamara = '<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.934a.5.5 0 0 0-.777-.416L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/>';
+            const pathAlarma = '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>';
+            const pathComisaria = '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>';
 
             function getSvgIcon(color, iconPath, size) {
                 const svg = `
@@ -293,9 +344,15 @@
                     });
                 };
 
+                // Infraestructura Vial
                 applyStyleWithFilter(semaforosLayer, '#19567C', pathSemaforo);
                 applyStyleWithFilter(reductoresLayer, '#D34872', pathReductor);
                 applyStyleWithFilter(solicitudesLayer, '#4AB5E0', pathSolicitud);
+
+                // Seguridad
+                applyStyleWithFilter(camarasLayer, '#8B5CF6', pathCamara); // Púrpura
+                applyStyleWithFilter(alarmasLayer, '#F59E0B', pathAlarma); // Naranja/Ambar
+                applyStyleWithFilter(comisariasLayer, '#10B981', pathComisaria); // Verde
             }
 
             map.addListener('zoom_changed', updatePointStyles);
@@ -304,7 +361,7 @@
 
             function bindPopup(layer, colorTitle, defaultTitle, isPolygon) {
                 layer.addListener('click', function(event) {
-                    const name = event.feature.getProperty('Name') || defaultTitle;
+                    const name = event.feature.getProperty('Name') || event.feature.getProperty('NAME') || defaultTitle;
                     let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 180px; position: relative;">`;
                     content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
                     
@@ -315,7 +372,10 @@
                         content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Viviendas:</b> ${event.feature.getProperty('Viviendas') || '-'}</p>`;
                     } else {
                         content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">${name}</h3>`;
+                        
                         if (event.feature.getProperty('description')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Detalle:</b> ${event.feature.getProperty('description')}</p>`;
+                        if (event.feature.getProperty('Tipo')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Tipo:</b> ${event.feature.getProperty('Tipo')}</p>`;
+                        if (event.feature.getProperty('Ubicacion')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Ubicación:</b> ${event.feature.getProperty('Ubicacion')}</p>`;
                         if (event.feature.getProperty('CGM')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>CGM:</b> ${event.feature.getProperty('CGM')}</p>`;
                     }
                     content += `</div>`;
@@ -333,11 +393,17 @@
                 });
             }
 
+            // Popups de Infraestructura
             bindPopup(semaforosLayer, '#19567C', 'Semáforo Activo', false);
             bindPopup(reductoresLayer, '#D34872', 'Reductor de Velocidad', false);
             bindPopup(solicitudesLayer, '#4AB5E0', 'Solicitud 2026', false);
             bindPopup(limiteCgmLayer, '#19567C', 'Límite CGM', true);
             
+            // Popups de Seguridad
+            bindPopup(camarasLayer, '#8B5CF6', 'Cámara de Seguridad', false);
+            bindPopup(alarmasLayer, '#F59E0B', 'Alarma Comunitaria', false);
+            bindPopup(comisariasLayer, '#10B981', 'Comisaría', false);
+
             barriosPopularesLayer.addListener('click', function(event) {
                 const nombre = event.feature.getProperty('NOMBRE_BAR') || 'Barrio Popular';
                 const familias = event.feature.getProperty('FAMILIAS') || '-';
@@ -384,6 +450,10 @@
             toggleLayer('cb-solicitudes', solicitudesLayer);
             toggleLayer('cb-limite-cgm', limiteCgmLayer);
             toggleLayer('cb-barrios-populares', barriosPopularesLayer);
+
+            toggleLayer('cb-camaras', camarasLayer);
+            toggleLayer('cb-alarmas', alarmasLayer);
+            toggleLayer('cb-comisarias', comisariasLayer);
             
             toggleLayer('cb-trafico', trafficLayer);
             
