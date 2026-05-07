@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -385,19 +384,18 @@
                 zIndex: 6
             });
 
-            // Capas de Demografía y Zonificación con Estilos Coropléticos
+            // Capas de Demografía y Zonificación con Estilos Coropléticos en 3 Estados
             poblacionLayer = new google.maps.Data(); 
             poblacionLayer.loadGeoJson('./poblacion_cgm_Parque Baron.geojson');
             poblacionLayer.setStyle(function(feature) {
                 let pob = parseInt(feature.getProperty('Habitantes') || feature.getProperty('RADIOS_POB')) || 0;
-                let color = pob >= 1200 ? '#084A6F' : // Azul Más Oscuro
-                            pob >= 900  ? '#0B5F8D' : 
-                            pob >= 600  ? '#2A7FA8' : 
-                            pob >= 300  ? '#6BA1C7' : 
-                                          '#D1E1F0';  // Azul Muy Claro
+                // 3 Estados (Mayor a Menor)
+                let color = pob >= 800 ? '#084A6F' : // Estado 1: Alta (Más oscuro)
+                            pob >= 400 ? '#2A7FA8' : // Estado 2: Media
+                                         '#D1E1F0';  // Estado 3: Baja (Más claro)
                 return {
                     fillColor: color,
-                    fillOpacity: 0.65,
+                    fillOpacity: 0.7,
                     strokeColor: '#FFFFFF',
                     strokeWeight: 1,
                     zIndex: 4
@@ -408,14 +406,13 @@
             pobrezaLayer.loadGeoJson('./pobreza_cronica_cgm_Parque Baron.geojson');
             pobrezaLayer.setStyle(function(feature) {
                 let pct = parseFloat(feature.getProperty('P_PC_PER')) || 0;
-                let color = pct >= 30 ? '#7F1D1D' : // Rojo Muy Oscuro
-                            pct >= 20 ? '#B91C1C' : // Rojo
-                            pct >= 10 ? '#EA580C' : // Naranja Fuerte
-                            pct >= 5  ? '#F97316' : // Naranja Claro
-                                        '#FDBA74';  // Melocotón (Muy claro)
+                // 3 Estados (Mayor a Menor)
+                let color = pct >= 15 ? '#991B1B' : // Estado 1: Alta (Más oscuro)
+                            pct >= 5  ? '#EA580C' : // Estado 2: Media
+                                        '#FDE68A';  // Estado 3: Baja (Más claro)
                 return {
                     fillColor: color,
-                    fillOpacity: 0.65,
+                    fillOpacity: 0.7,
                     strokeColor: '#FFFFFF',
                     strokeWeight: 1,
                     zIndex: 4
@@ -426,17 +423,13 @@
             inundablesLayer.loadGeoJson('./zonas_inundables_cgm_Parque Baron.geojson');
             inundablesLayer.setStyle(function(feature) {
                 let pct = parseFloat(feature.getProperty('PORCENTAJE')) || 0;
-                let color;
-                if (pct >= 100) color = '#DC2626';      // Rojo Intenso
-                else if (pct >= 80) color = '#C026D3';  // Fucsia / Rojo-Azulado
-                else if (pct >= 60) color = '#7C3AED';  // Violeta
-                else if (pct >= 40) color = '#4F46E5';  // Indigo
-                else if (pct >= 20) color = '#2563EB';  // Azul
-                else color = '#38BDF8';                 // Azul Claro
-                
+                // 3 Estados (Rojo Intenso a Azul)
+                let color = pct >= 70 ? '#DC2626' : // Estado 1: Rojo intenso (Alto porcentaje)
+                            pct >= 30 ? '#9333EA' : // Estado 2: Virando a violeta/azul (Medio)
+                                        '#3B82F6';  // Estado 3: Azul (Bajo porcentaje)
                 return {
                     fillColor: color,
-                    fillOpacity: 0.65,
+                    fillOpacity: 0.7,
                     strokeColor: '#FFFFFF',
                     strokeWeight: 1,
                     zIndex: 4
