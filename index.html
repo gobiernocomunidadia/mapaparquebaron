@@ -127,6 +127,19 @@
                     </div>
                 </div>
 
+                <!-- ESPACIOS PÚBLICOS -->
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="tree-pine" class="h-4 w-4"></i> Espacios Públicos
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-plazas" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Plazas</span>
+                        </label>
+                    </div>
+                </div>
+
                 <!-- INSTITUCIONES -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
@@ -182,6 +195,10 @@
                         <i data-lucide="cone" class="h-4 w-4"></i> Infraestructura Vial
                     </h4>
                     <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-callejero" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Callejero</span>
+                        </label>
                         <label class="flex items-center gap-3 cursor-pointer">
                             <input type="checkbox" id="cb-semaforos" class="w-4 h-4 accent-[#19567C]">
                             <span class="text-sm text-[#0F172A] font-bold">Semáforos Activos</span>
@@ -255,7 +272,7 @@
         let map, trafficLayer, infoWindow;
         let infoWindowTimer; 
         
-        let semaforosLayer, reductoresLayer, solicitudesLayer;
+        let semaforosLayer, reductoresLayer, solicitudesLayer, callejeroLayer;
         let limiteElements = []; 
         let limiteCgmLayer, barriosPopularesLayer;
         let camarasLayer, alarmasLayer, comisariasLayer;
@@ -263,9 +280,9 @@
         // Variables de Capas Demografía y Zonificación
         let poblacionLayer, pobrezaLayer, inundablesLayer;
 
-        // Variables de Capas Instituciones
+        // Variables de Capas Instituciones y Espacios Públicos
         let asocCivilesLayer, jubiladosLayer, culturalesLayer, clubesLayer, comedoresLayer, 
-            educacionLayer, fundacionesLayer, iglesiasLayer, saludLayer, fomentoLayer;
+            educacionLayer, fundacionesLayer, iglesiasLayer, saludLayer, fomentoLayer, plazasLayer;
 
         // --- FUNCIÓN PARA EL TEMPORIZADOR DE INFOWINDOW ---
         function startInfoWindowTimer() {
@@ -405,15 +422,18 @@
                 });
                 pobrezaLayer.addGeoJson(data);
                 pobrezaLayer.setStyle(function(feature) {
-                    let val = parseFloat(feature.getProperty('P_PC_PER')) || 0;
-                    let color = '#FDE68A';
-                    if(maxVal > 0) {
-                        if (val > maxVal * 0.8) color = '#7F1D1D';
-                        else if (val > maxVal * 0.6) color = '#991B1B';
-                        else if (val > maxVal * 0.4) color = '#B91C1C';
-                        else if (val > maxVal * 0.2) color = '#EA580C';
-                    }
-                    return { fillColor: color, fillOpacity: 0.85, strokeColor: '#FFFFFF', strokeWeight: 2, zIndex: 4 };
+                    let pct = parseFloat(feature.getProperty('P_PC_PER')) || 0;
+                    // 3 Estados (Mayor a Menor) en azules institucionales
+                    let color = pct >= 15 ? '#084A6F' : // Estado 1: Alta (Azul oscuro)
+                                pct >= 5  ? '#2A7FA8' : // Estado 2: Media (Azul intermedio)
+                                            '#D1E1F0';  // Estado 3: Baja (Azul claro)
+                    return {
+                        fillColor: color,
+                        fillOpacity: 0.85,
+                        strokeColor: '#FFFFFF',
+                        strokeWeight: 2,
+                        zIndex: 4
+                    };
                 });
             }).catch(e => console.log('Error loading pobreza:', e));
 
@@ -442,11 +462,17 @@
             semaforosLayer = new google.maps.Data(); semaforosLayer.loadGeoJson('./Semaforos Activos.geojson');
             reductoresLayer = new google.maps.Data(); reductoresLayer.loadGeoJson('./Reductores de Velocidad.geojson');
             solicitudesLayer = new google.maps.Data(); solicitudesLayer.loadGeoJson('./Solicitudes Semaforos 2026.geojson');
+            
+            // Callejero (Infraestructura Vial)
+            callejeroLayer = new google.maps.Data(); callejeroLayer.loadGeoJson('./callejero_lomas_ok.geojson');
 
             // Capas de Seguridad
             camarasLayer = new google.maps.Data(); camarasLayer.loadGeoJson('./Camaras_Parque Baron.geojson');
             alarmasLayer = new google.maps.Data(); alarmasLayer.loadGeoJson('./alarmas_Parque Baron.geojson');
             comisariasLayer = new google.maps.Data(); comisariasLayer.loadGeoJson('./seguridad_Parque Baron.geojson');
+
+            // Espacios Públicos
+            plazasLayer = new google.maps.Data(); plazasLayer.loadGeoJson('./Plazas.geojson');
 
             // Capas Instituciones
             asocCivilesLayer = new google.maps.Data(); asocCivilesLayer.loadGeoJson('./asociaciones_civiles_Parque Baron.geojson');
@@ -479,6 +505,7 @@
             const pathIglesias = '<path d="M12 2v20"/><path d="M8 7h8"/>';
             const pathSalud = '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>';
             const pathFomento = '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>';
+            const pathPlaza = '<path d="M12 22v-7l-3-3"/><path d="M15 12l-3 3"/><path d="M12 2a4 4 0 0 0-4 4c0 1.5 1 2.5 1 4s-1 2.5-1 4a4 4 0 0 0 8 0c0-1.5-1-2.5-1-4s1-2.5 1-4a4 4 0 0 0-4-4Z"/>';
 
             function getSvgIcon(color, iconPath, size) {
                 const svg = `
@@ -536,11 +563,29 @@
                 applyStyleWithFilter(semaforosLayer, '#19567C', pathSemaforo);
                 applyStyleWithFilter(reductoresLayer, '#D34872', pathReductor);
                 applyStyleWithFilter(solicitudesLayer, '#4AB5E0', pathSolicitud);
+                
+                // Estilo especial para Callejero (Líneas)
+                callejeroLayer.setStyle((feature) => {
+                    const featCgm = feature.getProperty('CGM');
+                    let isVisible = false;
+                    if (featCgm && featCgm.toUpperCase() === targetCgm) {
+                        isVisible = true;
+                    }
+                    return {
+                        strokeColor: '#94A3B8',
+                        strokeWeight: 2,
+                        visible: isVisible,
+                        zIndex: 2
+                    };
+                });
 
                 // Seguridad
                 applyStyleWithFilter(camarasLayer, '#8B5CF6', pathCamara); // Púrpura
                 applyStyleWithFilter(alarmasLayer, '#F59E0B', pathAlarma); // Naranja/Ambar
                 applyStyleWithFilter(comisariasLayer, '#10B981', pathComisaria); // Verde
+
+                // Espacios Públicos
+                applyStyleWithFilter(plazasLayer, '#10B981', pathPlaza); // Verde Fuerte
 
                 // Instituciones
                 applyStyleWithFilter(asocCivilesLayer, '#3B82F6', pathAsoc);
@@ -625,10 +670,10 @@
                 let content = `
                     <div class="font-sans min-w-[200px] relative">
                         <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
-                        <h4 class="font-bold text-[#EF4444] border-b border-[#E6EDF3] pb-1 mb-2">Pobreza Crónica - Radio: ${radioStr}</h4>
-                        <div class="bg-[#FEF2F2] p-2 rounded-md mb-2 border border-[#FECACA]">
-                            <p class="text-xs font-bold text-[#DC2626] uppercase">% Pobreza Crónica</p>
-                            <p class="text-xl font-extrabold text-[#B91C1C]">${pct}%</p>
+                        <h4 class="font-bold text-[#19567C] border-b border-[#E6EDF3] pb-1 mb-2">Pobreza Crónica - Radio: ${radioStr}</h4>
+                        <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
+                            <p class="text-xs font-bold text-[#0B5F8D] uppercase">% Pobreza Crónica</p>
+                            <p class="text-xl font-extrabold text-[#19567C]">${pct}%</p>
                         </div>
                         <ul class="text-xs text-[#64748B] space-y-1 mt-1">
                             <li><b class="capitalize text-[#0F172A]">Población:</b> ${Number(poblacion).toLocaleString('es-AR')}</li>
@@ -724,12 +769,16 @@
             bindPopup(semaforosLayer, '#19567C', 'Semáforo Activo', false);
             bindPopup(reductoresLayer, '#D34872', 'Reductor de Velocidad', false);
             bindPopup(solicitudesLayer, '#4AB5E0', 'Solicitud 2026', false);
+            bindPopup(callejeroLayer, '#64748B', 'Calle', false);
             bindPopup(limiteCgmLayer, '#19567C', 'Límite CGM', true);
             
             // Popups de Seguridad
             bindPopup(camarasLayer, '#8B5CF6', 'Cámara de Seguridad', false);
             bindPopup(alarmasLayer, '#F59E0B', 'Alarma Comunitaria', false);
             bindPopup(comisariasLayer, '#10B981', 'Comisaría', false);
+
+            // Popups Espacios Públicos
+            bindPopup(plazasLayer, '#10B981', 'Espacio Público', false);
 
             // Popups Instituciones
             bindPopup(asocCivilesLayer, '#3B82F6', 'Asociación Civil', false);
@@ -790,7 +839,11 @@
             toggleLayer('cb-pobreza', pobrezaLayer);
             toggleLayer('cb-inundables', inundablesLayer);
 
+            // Espacios Públicos
+            toggleLayer('cb-plazas', plazasLayer);
+
             // Infraestructura
+            toggleLayer('cb-callejero', callejeroLayer);
             toggleLayer('cb-semaforos', semaforosLayer);
             toggleLayer('cb-reductores', reductoresLayer);
             toggleLayer('cb-solicitudes', solicitudesLayer);
