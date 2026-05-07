@@ -330,7 +330,7 @@
             });
             
             // -----------------------------------------------------
-            // CARGA DE CAPAS
+            // CARGA DE CAPAS GEOGRÁFICAS BÁSICAS
             // -----------------------------------------------------
             
             fetch('./municipios_Lomas de Zamora.geojson').then(r => r.json()).then(geoJson => {
@@ -371,58 +371,74 @@
                 zIndex: 6
             });
 
-            // Capas de Demografía y Zonificación con Estilos Coropléticos en 3 Estados
+            // -----------------------------------------------------
+            // CAPAS DEMOGRÁFICAS Y DE ZONIFICACIÓN (Con Fetch y Estilos Dinámicos)
+            // -----------------------------------------------------
+            
             poblacionLayer = new google.maps.Data(); 
-            poblacionLayer.loadGeoJson('./poblacion_cgm_Parque Baron.geojson');
-            poblacionLayer.setStyle(function(feature) {
-                let pob = parseInt(feature.getProperty('Habitantes') || feature.getProperty('RADIOS_POB')) || 0;
-                // 3 Estados (Mayor a Menor)
-                let color = pob >= 800 ? '#084A6F' : // Estado 1: Alta (Más oscuro)
-                            pob >= 400 ? '#2A7FA8' : // Estado 2: Media
-                                         '#D1E1F0';  // Estado 3: Baja (Más claro)
-                return {
-                    fillColor: color,
-                    fillOpacity: 0.7,
-                    strokeColor: '#FFFFFF',
-                    strokeWeight: 1,
-                    zIndex: 4
-                };
-            });
+            fetch('./poblacion_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
+                let maxVal = 0;
+                data.features.forEach(f => {
+                    let val = parseInt(f.properties['Habitantes'] || f.properties['RADIOS_POB']) || 0;
+                    if (val > maxVal) maxVal = val;
+                });
+                poblacionLayer.addGeoJson(data);
+                poblacionLayer.setStyle(function(feature) {
+                    let val = parseInt(feature.getProperty('Habitantes') || feature.getProperty('RADIOS_POB')) || 0;
+                    let color = '#D1E1F0';
+                    if (maxVal > 0) {
+                        if (val > maxVal * 0.8) color = '#084A6F';
+                        else if (val > maxVal * 0.6) color = '#0B5F8D';
+                        else if (val > maxVal * 0.4) color = '#2A7FA8';
+                        else if (val > maxVal * 0.2) color = '#6BA1C7';
+                    }
+                    return { fillColor: color, fillOpacity: 0.85, strokeColor: '#FFFFFF', strokeWeight: 2, zIndex: 4 };
+                });
+            }).catch(e => console.log('Error loading poblacion:', e));
 
             pobrezaLayer = new google.maps.Data(); 
-            pobrezaLayer.loadGeoJson('./pobreza_cronica_cgm_Parque Baron.geojson');
-            pobrezaLayer.setStyle(function(feature) {
-                let pct = parseFloat(feature.getProperty('P_PC_PER')) || 0;
-                // 3 Estados (Mayor a Menor)
-                let color = pct >= 15 ? '#991B1B' : // Estado 1: Alta (Más oscuro)
-                            pct >= 5  ? '#EA580C' : // Estado 2: Media
-                                        '#FDE68A';  // Estado 3: Baja (Más claro)
-                return {
-                    fillColor: color,
-                    fillOpacity: 0.7,
-                    strokeColor: '#FFFFFF',
-                    strokeWeight: 1,
-                    zIndex: 4
-                };
-            });
+            fetch('./pobreza_cronica_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
+                let maxVal = 0;
+                data.features.forEach(f => {
+                    let val = parseFloat(f.properties['P_PC_PER']) || 0;
+                    if (val > maxVal) maxVal = val;
+                });
+                pobrezaLayer.addGeoJson(data);
+                pobrezaLayer.setStyle(function(feature) {
+                    let val = parseFloat(feature.getProperty('P_PC_PER')) || 0;
+                    let color = '#FDE68A';
+                    if(maxVal > 0) {
+                        if (val > maxVal * 0.8) color = '#7F1D1D';
+                        else if (val > maxVal * 0.6) color = '#991B1B';
+                        else if (val > maxVal * 0.4) color = '#B91C1C';
+                        else if (val > maxVal * 0.2) color = '#EA580C';
+                    }
+                    return { fillColor: color, fillOpacity: 0.85, strokeColor: '#FFFFFF', strokeWeight: 2, zIndex: 4 };
+                });
+            }).catch(e => console.log('Error loading pobreza:', e));
 
             inundablesLayer = new google.maps.Data(); 
-            inundablesLayer.loadGeoJson('./zonas_inundables_cgm_Parque Baron.geojson');
-            inundablesLayer.setStyle(function(feature) {
-                let pct = parseFloat(feature.getProperty('PORCENTAJE')) || 0;
-                // 3 Estados (Rojo Intenso a Azul)
-                let color = pct >= 70 ? '#DC2626' : // Estado 1: Rojo intenso (Alto porcentaje)
-                            pct >= 30 ? '#9333EA' : // Estado 2: Virando a violeta/azul (Medio)
-                                        '#3B82F6';  // Estado 3: Azul (Bajo porcentaje)
-                return {
-                    fillColor: color,
-                    fillOpacity: 0.7,
-                    strokeColor: '#FFFFFF',
-                    strokeWeight: 1,
-                    zIndex: 4
-                };
-            });
+            fetch('./zonas_inundables_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
+                let maxVal = 0;
+                data.features.forEach(f => {
+                    let val = parseFloat(f.properties['PORCENTAJE']) || 0;
+                    if (val > maxVal) maxVal = val;
+                });
+                inundablesLayer.addGeoJson(data);
+                inundablesLayer.setStyle(function(feature) {
+                    let val = parseFloat(feature.getProperty('PORCENTAJE')) || 0;
+                    let color = '#38BDF8';
+                    if(maxVal > 0) {
+                        if (val > maxVal * 0.8) color = '#DC2626';
+                        else if (val > maxVal * 0.6) color = '#C026D3';
+                        else if (val > maxVal * 0.4) color = '#7C3AED';
+                        else if (val > maxVal * 0.2) color = '#4F46E5';
+                    }
+                    return { fillColor: color, fillOpacity: 0.85, strokeColor: '#FFFFFF', strokeWeight: 2, zIndex: 4 };
+                });
+            }).catch(e => console.log('Error loading inundables:', e));
 
+            // Capas Puntos Varias
             semaforosLayer = new google.maps.Data(); semaforosLayer.loadGeoJson('./Semaforos Activos.geojson');
             reductoresLayer = new google.maps.Data(); reductoresLayer.loadGeoJson('./Reductores de Velocidad.geojson');
             solicitudesLayer = new google.maps.Data(); solicitudesLayer.loadGeoJson('./Solicitudes Semaforos 2026.geojson');
@@ -569,6 +585,92 @@
                 }
             }
 
+            // Popups de Demografía usando el HTML template especificado
+            poblacionLayer.addListener('click', function(event) {
+                let radioStr = event.feature.getProperty('REDCODE') || event.feature.getProperty('RADIO') || event.feature.getProperty('LINK_RADIO') || event.feature.getProperty('NOMBRE') || "Radio Censal";
+                let valHabitantes = event.feature.getProperty('Habitantes') || event.feature.getProperty('RADIOS_POB') || 0;
+                let valHogares = event.feature.getProperty('RADIOS_HOG') || event.feature.getProperty('HOGARES');
+
+                let content = `
+                    <div class="font-sans min-w-[200px] relative">
+                        <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
+                        <h4 class="font-bold text-[#0B5F8D] border-b border-[#E6EDF3] pb-1 mb-2">Sector / Radio: ${radioStr}</h4>
+                        <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
+                            <p class="text-xs font-bold text-[#0B5F8D] uppercase">Total Habitantes</p>
+                            <p class="text-xl font-extrabold text-[#0B5F8D]">${Number(valHabitantes).toLocaleString('es-AR')}</p>
+                        </div>`;
+                
+                if (valHogares !== undefined && valHogares !== null) {
+                    content += `
+                        <ul class="text-xs text-[#64748B] space-y-1 mt-1">
+                            <li><b class="capitalize text-[#0F172A]">Cantidad de Hogares:</b> ${Number(valHogares).toLocaleString('es-AR')}</li>
+                        </ul>`;
+                }
+                content += `</div>`;
+
+                infoWindow.setContent(content);
+                infoWindow.setPosition(event.latLng); 
+                infoWindow.open(map);
+                startInfoWindowTimer(); 
+                zoomToCgmBounds();
+            });
+
+            pobrezaLayer.addListener('click', function(event) {
+                let radioStr = event.feature.getProperty('LINK_RADIO') || "Radio Censal";
+                let pct = event.feature.getProperty('P_PC_PER') || 0;
+                let poblacion = event.feature.getProperty('POBLACION') || 0;
+                let hogares = event.feature.getProperty('N_HOGARES') || 0;
+                let personas = event.feature.getProperty('PC_PER') || 0;
+
+                let content = `
+                    <div class="font-sans min-w-[200px] relative">
+                        <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
+                        <h4 class="font-bold text-[#EF4444] border-b border-[#E6EDF3] pb-1 mb-2">Pobreza Crónica - Radio: ${radioStr}</h4>
+                        <div class="bg-[#FEF2F2] p-2 rounded-md mb-2 border border-[#FECACA]">
+                            <p class="text-xs font-bold text-[#DC2626] uppercase">% Pobreza Crónica</p>
+                            <p class="text-xl font-extrabold text-[#B91C1C]">${pct}%</p>
+                        </div>
+                        <ul class="text-xs text-[#64748B] space-y-1 mt-1">
+                            <li><b class="capitalize text-[#0F172A]">Población:</b> ${Number(poblacion).toLocaleString('es-AR')}</li>
+                            <li><b class="capitalize text-[#0F172A]">Hogares:</b> ${Number(hogares).toLocaleString('es-AR')}</li>
+                            <li><b class="capitalize text-[#0F172A]">Personas afectadas:</b> ${Number(personas).toLocaleString('es-AR')}</li>
+                        </ul>
+                    </div>`;
+
+                infoWindow.setContent(content);
+                infoWindow.setPosition(event.latLng); 
+                infoWindow.open(map);
+                startInfoWindowTimer(); 
+                zoomToCgmBounds();
+            });
+
+            inundablesLayer.addListener('click', function(event) {
+                let radioStr = event.feature.getProperty('CODIGO_DE_') || "Radio Censal";
+                let pct = event.feature.getProperty('PORCENTAJE') || 0;
+                let poblacion = event.feature.getProperty('POBLACION') || 0;
+                let incidencia = event.feature.getProperty('INCIDENCIA') || 'N/D';
+
+                let content = `
+                    <div class="font-sans min-w-[200px] relative">
+                        <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
+                        <h4 class="font-bold text-[#06B6D4] border-b border-[#E6EDF3] pb-1 mb-2">Zonas Inundables - Radio: ${radioStr}</h4>
+                        <div class="bg-[#ECFEFF] p-2 rounded-md mb-2 border border-[#A5F3FC]">
+                            <p class="text-xs font-bold text-[#0891B2] uppercase">Afectación</p>
+                            <p class="text-xl font-extrabold text-[#0891B2]">${pct}%</p>
+                        </div>
+                        <ul class="text-xs text-[#64748B] space-y-1 mt-1">
+                            <li><b class="capitalize text-[#0F172A]">Población Afectada:</b> ${Number(poblacion).toLocaleString('es-AR')}</li>
+                            <li><b class="capitalize text-[#0F172A]">Incidencia:</b> Nivel ${incidencia}</li>
+                        </ul>
+                    </div>`;
+
+                infoWindow.setContent(content);
+                infoWindow.setPosition(event.latLng); 
+                infoWindow.open(map);
+                startInfoWindowTimer(); 
+                zoomToCgmBounds();
+            });
+
             function bindPopup(layer, colorTitle, defaultTitle, isPolygon) {
                 layer.addListener('click', function(event) {
                     // Flexibilidad en el nombre según cómo venga en el GeoJSON
@@ -590,7 +692,7 @@
                         if (event.feature.getProperty('TIPO')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Categoría:</b> ${event.feature.getProperty('TIPO')}</p>`;
                         if (event.feature.getProperty('Tipo Pavimento')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Pavimento:</b> ${event.feature.getProperty('Tipo Pavimento')}</p>`;
                         
-                        // Campos Específicos para Educación
+                        // Campos Específicos para Educación y Espacios
                         if (event.feature.getProperty('UBICACION')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Ubicación:</b> ${event.feature.getProperty('UBICACION')}</p>`;
                         if (event.feature.getProperty('nivel')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Nivel:</b> ${event.feature.getProperty('nivel')}</p>`;
                         if (event.feature.getProperty('modalidad')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Modalidad:</b> ${event.feature.getProperty('modalidad')}</p>`;
@@ -640,52 +742,6 @@
             bindPopup(iglesiasLayer, '#8B5CF6', 'Iglesia', false);
             bindPopup(saludLayer, '#10B981', 'Centro de Salud', false);
             bindPopup(fomentoLayer, '#06B6D4', 'Sociedad de Fomento', false);
-
-            // Popups de Demografía
-            poblacionLayer.addListener('click', function(event) {
-                let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 200px; position: relative;">`;
-                content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
-                content += `<h3 style="font-weight: 800; font-size: 14px; color: #3B82F6; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">Radio Censal: ${event.feature.getProperty('REDCODE')}</h3>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Población:</b> ${event.feature.getProperty('Habitantes') || event.feature.getProperty('RADIOS_POB')}</p>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Hogares:</b> ${event.feature.getProperty('RADIOS_HOG')}</p>`;
-                content += `</div>`;
-                infoWindow.setContent(content);
-                infoWindow.setPosition(event.latLng); 
-                infoWindow.open(map);
-                startInfoWindowTimer(); 
-                zoomToCgmBounds(); // Zoom a límites de CGM
-            });
-
-            pobrezaLayer.addListener('click', function(event) {
-                let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 200px; position: relative;">`;
-                content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
-                content += `<h3 style="font-weight: 800; font-size: 14px; color: #EF4444; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">Pobreza Crónica - Radio: ${event.feature.getProperty('LINK_RADIO')}</h3>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Población:</b> ${event.feature.getProperty('POBLACION')}</p>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Hogares:</b> ${event.feature.getProperty('N_HOGARES')}</p>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Personas en Pobreza Crónica:</b> ${event.feature.getProperty('PC_PER')}</p>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>% Pobreza Crónica:</b> ${event.feature.getProperty('P_PC_PER')}%</p>`;
-                content += `</div>`;
-                infoWindow.setContent(content);
-                infoWindow.setPosition(event.latLng); 
-                infoWindow.open(map);
-                startInfoWindowTimer(); 
-                zoomToCgmBounds(); // Zoom a límites de CGM
-            });
-
-            inundablesLayer.addListener('click', function(event) {
-                let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 200px; position: relative;">`;
-                content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
-                content += `<h3 style="font-weight: 800; font-size: 14px; color: #06B6D4; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">Zonas Inundables - Radio: ${event.feature.getProperty('CODIGO_DE_')}</h3>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Población Afectada:</b> ${event.feature.getProperty('POBLACION')}</p>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Porcentaje de Afectación:</b> ${event.feature.getProperty('PORCENTAJE')}%</p>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Incidencia:</b> Nivel ${event.feature.getProperty('INCIDENCIA')}</p>`;
-                content += `</div>`;
-                infoWindow.setContent(content);
-                infoWindow.setPosition(event.latLng); 
-                infoWindow.open(map);
-                startInfoWindowTimer(); 
-                zoomToCgmBounds(); // Zoom a límites de CGM
-            });
 
             barriosPopularesLayer.addListener('click', function(event) {
                 const nombre = event.feature.getProperty('NOMBRE_BAR') || 'Barrio Popular';
