@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo CGM Parque Baron</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-main: #19567C;
+            --blanco: #FFFFFF;
+            --acento: #4AB5E0;
+            --magenta: #D34872;
+            --azul-inst: #19567C;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-main); color: var(--blanco); margin: 0; min-height: 100vh; }
+        
+        #map { height: 100%; width: 100%; border-radius: 8px; background-color: #f8fafc; z-index: 10; }
+        
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #F3F6F9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E6EDF3; border-radius: 4px; }
+
+        /* Ajustes para la ventana de Info de Google Maps */
+        .gm-style-iw.gm-style-iw-c {
+            border-radius: 8px !important;
+            padding: 12px !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+        }
+        .gm-style-iw-d { overflow: hidden !important; }
+        button.gm-ui-hover-effect { display: none !important; } /* Ocultamos el botón nativo de Google */
+
+        /* Estilos del Botón de Cierre Personalizado */
+        .custom-close-btn {
+            position: absolute;
+            right: -4px;
+            top: -6px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: #94A3B8;
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1;
+            padding: 2px 6px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            z-index: 50;
+        }
+        .custom-close-btn:hover {
+            background-color: #F1F5F9;
+            color: var(--bg-main);
+        }
+    </style>
+</head>
+<body class="flex flex-col">
+
+    <header class="bg-[var(--bg-main)] shadow-lg border-b-4 border-[var(--acento)] z-20 py-6 px-4 shrink-0">
+        <div class="max-w-[1600px] mx-auto flex items-center justify-center gap-4">
+            <div class="bg-white text-[var(--bg-main)] rounded-full h-14 w-14 flex items-center justify-center shadow-md">
+                <i class="fa-solid fa-car text-2xl"></i>
+            </div>
+            <div class="flex flex-col">
+                <h1 class="text-3xl font-extrabold tracking-tight uppercase leading-none">Mapa Interactivo CGM Parque Baron</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full max-w-[1600px] mx-auto py-8 px-4 flex-1 flex flex-col lg:flex-row gap-6">
+        
+        <aside class="w-full lg:w-80 bg-white rounded-xl shadow-md border border-[#E6EDF3] flex flex-col max-h-[calc(100vh-200px)] overflow-hidden shrink-0 z-20">
+            <div class="p-4 border-b bg-[#F3F6F9] flex items-center gap-2">
+                <i data-lucide="filter" class="text-[#0B5F8D] h-5 w-5"></i>
+                <h3 class="font-bold text-[#0F172A] uppercase text-sm">Filtros Operativos</h3>
+            </div>
+            
+            <div class="p-5 overflow-y-auto custom-scrollbar flex-1 space-y-6">
+
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="map" class="h-4 w-4"></i> División Territorial
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-limite" checked class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Límite Lomas de Zamora</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-limite-cgm" checked class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Límites CGM</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-barrios-populares" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Barrios Populares</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-street-view text-[#19567C] h-4 w-4"></i> Street View
+                    </h4>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" id="cb-streetview" class="w-4 h-4 accent-[#19567C]">
+                        <span class="text-sm text-[#0F172A] font-bold">Habilitar "Pegman"</span>
+                    </label>
+                </div>
+
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="activity" class="h-4 w-4"></i> Tráfico
+                    </h4>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" id="cb-trafico" class="w-4 h-4 accent-[#19567C]">
+                        <span class="text-sm text-[#0F172A] font-bold">Ver Tráfico Real</span>
+                    </label>
+                </div>
+
+            </div>
+        </aside>
+
+        <div class="flex-1 bg-white p-2 rounded-xl shadow-lg border border-[#E6EDF3] flex flex-col min-h-[500px] relative z-10">
+            <div id="map"></div>
+        </div>
+
+    </main>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2MHti5Cy4IDKPc3Iu0ypNQg_BgsjcMoQ&callback=initMap" defer></script>
+
+    <script>
+        let map, trafficLayer, infoWindow;
+        let infoWindowTimer; 
+        let semaforosLayer, reductoresLayer, solicitudesLayer;
+        let limiteElements = []; 
+        let limiteCgmLayer, barriosPopularesLayer;
+
+        // --- FUNCIÓN PARA EL TEMPORIZADOR DE INFOWINDOW ---
+        function startInfoWindowTimer() {
+            if (infoWindowTimer) clearTimeout(infoWindowTimer);
+            infoWindowTimer = setTimeout(() => {
+                if (infoWindow) infoWindow.close();
+            }, 10000); 
+        }
+
+        // --- FUNCIÓN GLOBAL PARA EL BOTÓN MANUAL DE CIERRE ---
+        window.closeInfoWindow = function() {
+            if (infoWindow) {
+                infoWindow.close();
+            }
+            if (infoWindowTimer) {
+                clearTimeout(infoWindowTimer);
+            }
+        };
+
+        function initMap() {
+            lucide.createIcons();
+            infoWindow = new google.maps.InfoWindow();
+            
+            // --- EVENTOS PARA PAUSAR EL TEMPORIZADOR POR INACTIVIDAD ---
+            google.maps.event.addListener(infoWindow, 'domready', () => {
+                const iwContainer = document.querySelector('.gm-style-iw-c');
+                if (iwContainer) {
+                    iwContainer.addEventListener('mouseenter', () => {
+                        if (infoWindowTimer) clearTimeout(infoWindowTimer);
+                    });
+                    iwContainer.addEventListener('mouseleave', () => {
+                        startInfoWindowTimer();
+                    });
+                }
+            });
+
+            // Estilo claro minimalista
+            const mapStyle = [
+                { featureType: "poi", stylers: [{ visibility: "off" }] },
+                { featureType: "transit", stylers: [{ visibility: "off" }] },
+                { elementType: "geometry", stylers: [{ color: "#f5f5f5" }] },
+                { elementType: "labels.icon", stylers: [{ visibility: "off" }] },
+                { elementType: "labels.text.fill", stylers: [{ color: "#616161" }] },
+                { elementType: "labels.text.stroke", stylers: [{ color: "#f5f5f5" }] },
+                { featureType: "water", elementType: "geometry", stylers: [{ color: "#c9e8f5" }] },
+                { featureType: "water", elementType: "labels.text.fill", stylers: [{ color: "#9e9e9e" }] }
+            ];
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: -34.7573, lng: -58.4035 },
+                zoom: 13,
+                styles: mapStyle,
+                mapTypeControl: false,
+                streetViewControl: false, // Inicia desactivado
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.RIGHT_BOTTOM // Posición cómoda
+                }
+            });
+            
+            // -----------------------------------------------------
+            // CARGA DE CAPAS
+            // -----------------------------------------------------
+            
+            fetch('./municipios_Lomas de Zamora.geojson').then(r => r.json()).then(geoJson => {
+                geoJson.features.forEach(feature => {
+                    if (feature.geometry.type === 'MultiPolygon' || feature.geometry.type === 'Polygon') {
+                        const polys = feature.geometry.type === 'Polygon' ? [feature.geometry.coordinates] : feature.geometry.coordinates;
+                        polys.forEach(poly => {
+                            poly.forEach(ring => {
+                                const path = ring.map(coord => ({ lat: coord[1], lng: coord[0] }));
+                                const p = new google.maps.Polygon({ paths: path, strokeOpacity: 0, fillColor: '#19567C', fillOpacity: 0.03, map: map, zIndex: 2 });
+                                const lineSymbol = { path: 'M 0,-1 0,1', strokeOpacity: 1, scale: 3 };
+                                const l = new google.maps.Polyline({ path: path, strokeOpacity: 0, icons: [{ icon: lineSymbol, offset: '0', repeat: '15px' }], strokeColor: '#19567C', strokeWeight: 3, map: map, zIndex: 3 });
+                                limiteElements.push(p, l);
+                            });
+                        });
+                    }
+                });
+            }).catch(e => console.log('Error cargando límite:', e));
+
+            limiteCgmLayer = new google.maps.Data();
+            limiteCgmLayer.loadGeoJson('./cgm_Parque Baron.geojson');
+            limiteCgmLayer.setStyle({
+                fillColor: '#4AB5E0',
+                fillOpacity: 0.15,
+                strokeColor: '#19567C',
+                strokeWeight: 2,
+                zIndex: 5
+            });
+            limiteCgmLayer.setMap(map);
+
+            barriosPopularesLayer = new google.maps.Data();
+            barriosPopularesLayer.loadGeoJson('./barrios_cgm_Parque Baron.geojson');
+            barriosPopularesLayer.setStyle({
+                fillColor: '#D34872',
+                fillOpacity: 0.4,
+                strokeColor: '#D34872',
+                strokeWeight: 2,
+                zIndex: 6
+            });
+
+            semaforosLayer = new google.maps.Data(); semaforosLayer.loadGeoJson('./Semaforos Activos.geojson');
+            reductoresLayer = new google.maps.Data(); reductoresLayer.loadGeoJson('./Reductores de Velocidad.geojson');
+            solicitudesLayer = new google.maps.Data(); solicitudesLayer.loadGeoJson('./Solicitudes Semaforos 2026.geojson');
+
+            const pathSemaforo = '<rect x="7" y="2" width="10" height="20" rx="3"/><circle cx="12" cy="7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="17" r="1.5"/>';
+            const pathReductor = '<path d="m20.9 18.55-8-15.98a1 1 0 0 0-1.8 0l-8 15.98"/><path d="M4.34 10a11.24 11.24 0 0 1 15.32 0"/><path d="M8.64 14.5a5.42 5.42 0 0 1 6.72 0"/><path d="M2 22h20"/>';
+            const pathSolicitud = '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/>';
+
+            function getSvgIcon(color, iconPath, size) {
+                const svg = `
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="${size}" height="${size}">
+                        <circle cx="16" cy="16" r="15" fill="${color}" stroke="#FFFFFF" stroke-width="2"/>
+                        <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(6, 6) scale(0.83)">
+                            ${iconPath}
+                        </g>
+                    </svg>
+                `;
+                return {
+                    url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg),
+                    scaledSize: new google.maps.Size(size, size),
+                    anchor: new google.maps.Point(size/2, size/2)
+                };
+            }
+
+            function updatePointStyles() {
+                const zoom = map.getZoom();
+                let size = 10;   
+                if (zoom >= 15) { size = 20; }       
+                else if (zoom >= 13) { size = 14; } 
+
+                const targetCgm = "PARQUE BARON";
+
+                const applyStyleWithFilter = (layer, color, path) => {
+                    layer.setStyle((feature) => {
+                        const featCgm = feature.getProperty('CGM');
+                        let isVisible = false;
+                        
+                        // Solo mostramos los puntos que pertenezcan a CGM Parque Baron
+                        if (featCgm && featCgm.toUpperCase() === targetCgm) {
+                            isVisible = true;
+                        }
+                        
+                        return {
+                            icon: getSvgIcon(color, path, size),
+                            zIndex: 10,
+                            visible: isVisible
+                        };
+                    });
+                };
+
+                applyStyleWithFilter(semaforosLayer, '#19567C', pathSemaforo);
+                applyStyleWithFilter(reductoresLayer, '#D34872', pathReductor);
+                applyStyleWithFilter(solicitudesLayer, '#4AB5E0', pathSolicitud);
+            }
+
+            map.addListener('zoom_changed', updatePointStyles);
+            
+            updatePointStyles();
+
+            function bindPopup(layer, colorTitle, defaultTitle, isPolygon) {
+                layer.addListener('click', function(event) {
+                    const name = event.feature.getProperty('Name') || defaultTitle;
+                    let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 180px; position: relative;">`;
+                    content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
+                    
+                    if (isPolygon) {
+                        content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">CGM: ${event.feature.getProperty('CGM')}</h3>`;
+                        content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Manzanas:</b> ${event.feature.getProperty('Manzanas') || '-'}</p>`;
+                        content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Cuadras:</b> ${event.feature.getProperty('Cuadras') || '-'}</p>`;
+                        content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Viviendas:</b> ${event.feature.getProperty('Viviendas') || '-'}</p>`;
+                    } else {
+                        content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">${name}</h3>`;
+                        if (event.feature.getProperty('description')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Detalle:</b> ${event.feature.getProperty('description')}</p>`;
+                        if (event.feature.getProperty('CGM')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>CGM:</b> ${event.feature.getProperty('CGM')}</p>`;
+                    }
+                    content += `</div>`;
+                    infoWindow.setContent(content);
+                    
+                    const geomType = event.feature.getGeometry().getType();
+                    if (geomType === 'Point') {
+                        infoWindow.setPosition(event.feature.getGeometry().get());
+                    } else {
+                        infoWindow.setPosition(event.latLng); 
+                    }
+
+                    infoWindow.open(map);
+                    startInfoWindowTimer(); 
+                });
+            }
+
+            bindPopup(semaforosLayer, '#19567C', 'Semáforo Activo', false);
+            bindPopup(reductoresLayer, '#D34872', 'Reductor de Velocidad', false);
+            bindPopup(solicitudesLayer, '#4AB5E0', 'Solicitud 2026', false);
+            bindPopup(limiteCgmLayer, '#19567C', 'Límite CGM', true);
+            
+            barriosPopularesLayer.addListener('click', function(event) {
+                const nombre = event.feature.getProperty('NOMBRE_BAR') || 'Barrio Popular';
+                const familias = event.feature.getProperty('FAMILIAS') || '-';
+                const clasificacion = event.feature.getProperty('CLASIFICAC') || '-';
+                const decada = event.feature.getProperty('DECADA_CRE') || '-';
+                const idRenabap = event.feature.getProperty('ID_RENABAP') || '-';
+
+                let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 220px; position: relative;">`;
+                content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
+                content += `<h3 style="font-weight: 800; font-size: 14px; color: #D34872; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">${nombre}</h3>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><span style="background:#F3F6F9; padding:2px 6px; border-radius:4px; font-weight:bold; color:#19567C; font-size:10px;">ID RENABAP: ${idRenabap}</span></p>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Clasificación:</b> ${clasificacion}</p>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Familias:</b> ${familias}</p>`;
+                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Creación:</b> ${decada}</p>`;
+                
+                content += `<div style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed #E6EDF3;">`;
+                content += `<p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Agua:</b> ${event.feature.getProperty('AGUA') || 'S/D'}</p>`;
+                content += `<p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Cloacas:</b> ${event.feature.getProperty('CLOACAS') || 'S/D'}</p>`;
+                content += `<p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Luz:</b> ${event.feature.getProperty('ELECTRICID') || 'S/D'}</p>`;
+                content += `</div></div>`;
+
+                infoWindow.setContent(content);
+                infoWindow.setPosition(event.latLng); 
+                infoWindow.open(map);
+                startInfoWindowTimer(); 
+            });
+
+            trafficLayer = new google.maps.TrafficLayer();
+
+            // --- CHECKBOXES TOGGLES ---
+            document.getElementById('cb-limite').addEventListener('change', (e) => {
+                const m = e.target.checked ? map : null;
+                limiteElements.forEach(el => el.setMap(m));
+            });
+
+            const toggleLayer = (id, layerInstance) => {
+                document.getElementById(id).addEventListener('change', (e) => {
+                    e.target.checked ? layerInstance.setMap(map) : layerInstance.setMap(null);
+                });
+            };
+
+            toggleLayer('cb-semaforos', semaforosLayer);
+            toggleLayer('cb-reductores', reductoresLayer);
+            toggleLayer('cb-solicitudes', solicitudesLayer);
+            toggleLayer('cb-limite-cgm', limiteCgmLayer);
+            toggleLayer('cb-barrios-populares', barriosPopularesLayer);
+            
+            toggleLayer('cb-trafico', trafficLayer);
+            
+            // LOGICA PARA HABILITAR PEGMAN
+            document.getElementById('cb-streetview').addEventListener('change', (e) => {
+                map.setOptions({ streetViewControl: e.target.checked });
+            });
+        }
+    </script>
+</body>
+</html>
