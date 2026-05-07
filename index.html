@@ -85,6 +85,7 @@
             
             <div class="p-5 overflow-y-auto custom-scrollbar flex-1 space-y-6">
 
+                <!-- DIVISIÓN TERRITORIAL -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
                         <i data-lucide="map" class="h-4 w-4"></i> División Territorial
@@ -105,6 +106,56 @@
                     </div>
                 </div>
 
+                <!-- INSTITUCIONES -->
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="building-2" class="h-4 w-4"></i> Instituciones
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-asoc-civiles" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Asociaciones Civiles</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-jubilados" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Centros de Jubilados</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-culturales" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Centros Culturales</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-clubes" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Clubes Deportivos</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-comedores" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Comedores</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-educacion" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Establecimientos Educativos</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-fundaciones" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Fundaciones</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-iglesias" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Iglesias</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-salud" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Salud / C.A.P.S.</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-fomento" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Sociedades de Fomento</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- INFRAESTRUCTURA VIAL -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
                         <i data-lucide="cone" class="h-4 w-4"></i> Infraestructura Vial
@@ -125,6 +176,7 @@
                     </div>
                 </div>
 
+                <!-- SEGURIDAD -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
                         <i data-lucide="shield-alert" class="h-4 w-4"></i> Seguridad
@@ -145,6 +197,7 @@
                     </div>
                 </div>
 
+                <!-- STREET VIEW -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
                         <i class="fa-solid fa-street-view text-[#19567C] h-4 w-4"></i> Street View
@@ -155,6 +208,7 @@
                     </label>
                 </div>
 
+                <!-- TRÁFICO -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
                         <i data-lucide="activity" class="h-4 w-4"></i> Tráfico
@@ -179,10 +233,15 @@
     <script>
         let map, trafficLayer, infoWindow;
         let infoWindowTimer; 
+        
         let semaforosLayer, reductoresLayer, solicitudesLayer;
         let limiteElements = []; 
         let limiteCgmLayer, barriosPopularesLayer;
         let camarasLayer, alarmasLayer, comisariasLayer;
+
+        // Variables de Capas Instituciones
+        let asocCivilesLayer, jubiladosLayer, culturalesLayer, clubesLayer, comedoresLayer, 
+            educacionLayer, fundacionesLayer, iglesiasLayer, saludLayer, fomentoLayer;
 
         // --- FUNCIÓN PARA EL TEMPORIZADOR DE INFOWINDOW ---
         function startInfoWindowTimer() {
@@ -293,20 +352,43 @@
             alarmasLayer = new google.maps.Data(); alarmasLayer.loadGeoJson('./alarmas_Parque Baron.geojson');
             comisariasLayer = new google.maps.Data(); comisariasLayer.loadGeoJson('./seguridad_Parque Baron.geojson');
 
+            // Capas Instituciones
+            asocCivilesLayer = new google.maps.Data(); asocCivilesLayer.loadGeoJson('./asociaciones_civiles_Parque Baron.geojson');
+            jubiladosLayer = new google.maps.Data(); jubiladosLayer.loadGeoJson('./centro_de_jubilados_Parque Baron.geojson');
+            culturalesLayer = new google.maps.Data(); culturalesLayer.loadGeoJson('./Centros_culturales_Parque Baron.geojson');
+            clubesLayer = new google.maps.Data(); clubesLayer.loadGeoJson('./Clubes_deportivos_Parque Baron.geojson');
+            comedoresLayer = new google.maps.Data(); comedoresLayer.loadGeoJson('./Comedores_Parque Baron.geojson');
+            educacionLayer = new google.maps.Data(); educacionLayer.loadGeoJson('./establecimientos_educativos_Parque Baron.geojson');
+            fundacionesLayer = new google.maps.Data(); fundacionesLayer.loadGeoJson('./fundaciones_Parque Baron.geojson');
+            iglesiasLayer = new google.maps.Data(); iglesiasLayer.loadGeoJson('./iglesias_Parque Baron.geojson');
+            saludLayer = new google.maps.Data(); saludLayer.loadGeoJson('./Centros_de_atencion_sanitaria_Parque Baron.geojson');
+            fomentoLayer = new google.maps.Data(); fomentoLayer.loadGeoJson('./sociedades_de_fomento_Parque Baron.geojson');
+
+            // --- RUTAS SVG PARA ICONOS ---
             const pathSemaforo = '<rect x="7" y="2" width="10" height="20" rx="3"/><circle cx="12" cy="7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="17" r="1.5"/>';
             const pathReductor = '<path d="m20.9 18.55-8-15.98a1 1 0 0 0-1.8 0l-8 15.98"/><path d="M4.34 10a11.24 11.24 0 0 1 15.32 0"/><path d="M8.64 14.5a5.42 5.42 0 0 1 6.72 0"/><path d="M2 22h20"/>';
             const pathSolicitud = '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/>';
             
-            // Iconos SVG para Seguridad
             const pathCamara = '<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.934a.5.5 0 0 0-.777-.416L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/>';
             const pathAlarma = '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>';
             const pathComisaria = '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>';
+
+            const pathAsoc = '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>';
+            const pathJubilados = '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>';
+            const pathCulturales = '<path d="M12 2C6.5 2 2 6.5 2 12s5 10 10 10c1.7 0 3-.8 4-2 .4-.5.1-1.2-.5-1.2-1.3 0-2.3-1.4-1.8-2.6.4-1.2 1.8-1.9 3.2-1.9h.4c2.8 0 4.7-2.7 4.7-5.3C22 6.5 17.5 2 12 2Z"/>';
+            const pathClubes = '<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 1.1-.9 2-2 2H4"/><path d="M14 14.66V17c0 1.1.9 2 2 2h4"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>';
+            const pathComedores = '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>';
+            const pathEducacion = '<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>';
+            const pathFundaciones = '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>';
+            const pathIglesias = '<path d="M12 2v20"/><path d="M8 7h8"/>';
+            const pathSalud = '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>';
+            const pathFomento = '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>';
 
             function getSvgIcon(color, iconPath, size) {
                 const svg = `
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="${size}" height="${size}">
                         <circle cx="16" cy="16" r="15" fill="${color}" stroke="#FFFFFF" stroke-width="2"/>
-                        <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(6, 6) scale(0.83)">
+                        <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(4, 4) scale(0.95)">
                             ${iconPath}
                         </g>
                     </svg>
@@ -353,6 +435,18 @@
                 applyStyleWithFilter(camarasLayer, '#8B5CF6', pathCamara); // Púrpura
                 applyStyleWithFilter(alarmasLayer, '#F59E0B', pathAlarma); // Naranja/Ambar
                 applyStyleWithFilter(comisariasLayer, '#10B981', pathComisaria); // Verde
+
+                // Instituciones
+                applyStyleWithFilter(asocCivilesLayer, '#3B82F6', pathAsoc);
+                applyStyleWithFilter(jubiladosLayer, '#14B8A6', pathJubilados);
+                applyStyleWithFilter(culturalesLayer, '#F43F5E', pathCulturales);
+                applyStyleWithFilter(clubesLayer, '#0EA5E9', pathClubes);
+                applyStyleWithFilter(comedoresLayer, '#EAB308', pathComedores);
+                applyStyleWithFilter(educacionLayer, '#2563EB', pathEducacion);
+                applyStyleWithFilter(fundacionesLayer, '#D946EF', pathFundaciones);
+                applyStyleWithFilter(iglesiasLayer, '#8B5CF6', pathIglesias);
+                applyStyleWithFilter(saludLayer, '#10B981', pathSalud);
+                applyStyleWithFilter(fomentoLayer, '#06B6D4', pathFomento);
             }
 
             map.addListener('zoom_changed', updatePointStyles);
@@ -361,7 +455,9 @@
 
             function bindPopup(layer, colorTitle, defaultTitle, isPolygon) {
                 layer.addListener('click', function(event) {
-                    const name = event.feature.getProperty('Name') || event.feature.getProperty('NAME') || defaultTitle;
+                    // Flexibilidad en el nombre según cómo venga en el GeoJSON
+                    const name = event.feature.getProperty('NOMBRE') || event.feature.getProperty('nombre') || event.feature.getProperty('Nombre Ins') || event.feature.getProperty('Name') || event.feature.getProperty('NAME') || defaultTitle;
+                    
                     let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 180px; position: relative;">`;
                     content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
                     
@@ -375,6 +471,13 @@
                         
                         if (event.feature.getProperty('description')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Detalle:</b> ${event.feature.getProperty('description')}</p>`;
                         if (event.feature.getProperty('Tipo')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Tipo:</b> ${event.feature.getProperty('Tipo')}</p>`;
+                        if (event.feature.getProperty('TIPO')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Categoría:</b> ${event.feature.getProperty('TIPO')}</p>`;
+                        
+                        // Campos Específicos para Educación
+                        if (event.feature.getProperty('nivel')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Nivel:</b> ${event.feature.getProperty('nivel')}</p>`;
+                        if (event.feature.getProperty('modalidad')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Modalidad:</b> ${event.feature.getProperty('modalidad')}</p>`;
+                        if (event.feature.getProperty('calle')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Dirección:</b> ${event.feature.getProperty('calle')} ${event.feature.getProperty('nro') || ''}</p>`;
+                        
                         if (event.feature.getProperty('Ubicacion')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Ubicación:</b> ${event.feature.getProperty('Ubicacion')}</p>`;
                         if (event.feature.getProperty('CGM')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>CGM:</b> ${event.feature.getProperty('CGM')}</p>`;
                     }
@@ -403,6 +506,18 @@
             bindPopup(camarasLayer, '#8B5CF6', 'Cámara de Seguridad', false);
             bindPopup(alarmasLayer, '#F59E0B', 'Alarma Comunitaria', false);
             bindPopup(comisariasLayer, '#10B981', 'Comisaría', false);
+
+            // Popups Instituciones
+            bindPopup(asocCivilesLayer, '#3B82F6', 'Asociación Civil', false);
+            bindPopup(jubiladosLayer, '#14B8A6', 'Centro de Jubilados', false);
+            bindPopup(culturalesLayer, '#F43F5E', 'Centro Cultural', false);
+            bindPopup(clubesLayer, '#0EA5E9', 'Club Deportivo', false);
+            bindPopup(comedoresLayer, '#EAB308', 'Comedor', false);
+            bindPopup(educacionLayer, '#2563EB', 'Establecimiento Educativo', false);
+            bindPopup(fundacionesLayer, '#D946EF', 'Fundación', false);
+            bindPopup(iglesiasLayer, '#8B5CF6', 'Iglesia', false);
+            bindPopup(saludLayer, '#10B981', 'Centro de Salud', false);
+            bindPopup(fomentoLayer, '#06B6D4', 'Sociedad de Fomento', false);
 
             barriosPopularesLayer.addListener('click', function(event) {
                 const nombre = event.feature.getProperty('NOMBRE_BAR') || 'Barrio Popular';
@@ -445,15 +560,29 @@
                 });
             };
 
+            // Infraestructura
             toggleLayer('cb-semaforos', semaforosLayer);
             toggleLayer('cb-reductores', reductoresLayer);
             toggleLayer('cb-solicitudes', solicitudesLayer);
             toggleLayer('cb-limite-cgm', limiteCgmLayer);
             toggleLayer('cb-barrios-populares', barriosPopularesLayer);
 
+            // Seguridad
             toggleLayer('cb-camaras', camarasLayer);
             toggleLayer('cb-alarmas', alarmasLayer);
             toggleLayer('cb-comisarias', comisariasLayer);
+            
+            // Instituciones
+            toggleLayer('cb-asoc-civiles', asocCivilesLayer);
+            toggleLayer('cb-jubilados', jubiladosLayer);
+            toggleLayer('cb-culturales', culturalesLayer);
+            toggleLayer('cb-clubes', clubesLayer);
+            toggleLayer('cb-comedores', comedoresLayer);
+            toggleLayer('cb-educacion', educacionLayer);
+            toggleLayer('cb-fundaciones', fundacionesLayer);
+            toggleLayer('cb-iglesias', iglesiasLayer);
+            toggleLayer('cb-salud', saludLayer);
+            toggleLayer('cb-fomento', fomentoLayer);
             
             toggleLayer('cb-trafico', trafficLayer);
             

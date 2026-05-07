@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "sociedades_de_fomento_Parque Baron",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Parque Baron", "NOMBRE": "Sociedad De Fomento Lucha Y Progreso", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.781157, "LONGITUD": -58.428722 }, "geometry": { "type": "Point", "coordinates": [ -58.428722, -34.781157 ] } },
+{ "type": "Feature", "properties": { "CGM": "Parque Baron", "NOMBRE": "Sociedad De Fomento Libertador General San Martin", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.765318, "LONGITUD": -58.43219 }, "geometry": { "type": "Point", "coordinates": [ -58.43219, -34.765318 ] } },
+{ "type": "Feature", "properties": { "CGM": "Parque Baron", "NOMBRE": "Sociedad De Fomento Villa Independencia", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.761431, "LONGITUD": -58.446707 }, "geometry": { "type": "Point", "coordinates": [ -58.446707, -34.761431 ] } },
+{ "type": "Feature", "properties": { "CGM": "Parque Baron", "NOMBRE": "Sociedad De Fomento Domingo Faustino Sarmiento Este", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.761182, "LONGITUD": -58.430248 }, "geometry": { "type": "Point", "coordinates": [ -58.430248, -34.761182 ] } },
+{ "type": "Feature", "properties": { "CGM": "Parque Baron", "NOMBRE": "Sociedad De Fomento 10 De Junio De Parque Baron.", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.75918589, "LONGITUD": -58.43408125 }, "geometry": { "type": "Point", "coordinates": [ -58.43408125, -34.75918589 ] } }
+]
+}
