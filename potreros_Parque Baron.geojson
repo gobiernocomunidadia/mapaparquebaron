@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "potreros_Parque Baron",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Parque Baron", "Potrero": "Parque Eva Perón", "Dimensiones": "", "Direccion": "Molina Arrotea y Las Lilas, Parque Baron", "Lat_Long": "-34.76673853508218, -58.43054944158914", "Tipo_de_Intervenci__n": "Construcción de cero.", "Presupuesto__SP_": "$21.204.208", "Informaci__n_Adicional": "N/A" }, "geometry": { "type": "Point", "coordinates": [ -58.4305494415891, -34.766738535082197, 0.0 ] } }
+]
+}

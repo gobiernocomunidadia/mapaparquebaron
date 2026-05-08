@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "parques_municipales_Parque Baron",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "NOMBRE": "Parque de Lomas", "DIRECCION": "Calle Molina Arrotea & Francisco Siritto", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.43341, -34.7677 ] } },
+{ "type": "Feature", "properties": { "NOMBRE": "Parque Isabel la Católica", "DIRECCION": "Ortega y Gasset & Isabel la Católica", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.43499, -34.75463 ] } }
+]
+}
