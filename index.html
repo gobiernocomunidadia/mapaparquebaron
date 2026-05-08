@@ -192,6 +192,9 @@
                             <input type="checkbox" id="cb-barrenderos" class="w-4 h-4 accent-[#19567C]">
                             <span class="text-sm text-[#0F172A] font-bold">Barrenderos</span>
                         </label>
+                        <select id="select-barrendero" class="w-full mt-2 text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none hidden">
+                            <option value="ALL">Todos los Barrenderos</option>
+                        </select>
                     </div>
                 </div>
 
@@ -240,7 +243,12 @@
         let camarasLayer, alarmasLayer, comisariasLayer;
         let asocCivilesLayer, jubiladosLayer, culturalesLayer, clubesLayer, comedoresLayer, 
             educacionLayer, fundacionesLayer, iglesiasLayer, saludLayer, fomentoLayer;
+        
+        // Variables para Barrenderos
         let barrenderosLayer;
+        let barrenderosData = null;
+        let barrenderosColorMap = {};
+        const paletaAzules = ['#084A6F', '#0B5F8D', '#2A7FA8', '#6BA1C7', '#19567C', '#4AB5E0', '#003B5C', '#1E3A8A', '#3B82F6', '#60A5FA'];
 
         function initMap() {
             lucide.createIcons();
@@ -571,18 +579,33 @@
             cargarCapaPuntos('./Reductores de Velocidad.geojson', reductoresLayer, '#D34872', pathReductor, '#D34872', 'Reductor de Velocidad');
             cargarCapaPuntos('./Solicitudes Semaforos 2026.geojson', solicitudesLayer, '#4AB5E0', pathSolicitud, '#4AB5E0', 'Solicitud 2026');
 
-            // Gestión Territorial (Barrenderos)
-            fetch('./barrenderos_parquebaron.geojson').then(r => r.json()).then(data => {
-                L.geoJSON(data, {
-                    style: { color: '#F59E0B', weight: 4, opacity: 0.8 },
+            // Gestión Territorial (Barrenderos con colores y filtro)
+            const renderBarrenderos = (filtroVal) => {
+                barrenderosLayer.clearLayers();
+                if(!barrenderosData) return;
+
+                L.geoJSON(barrenderosData, {
+                    filter: function(feature) {
+                        if (filtroVal === 'ALL') return true;
+                        const b = feature.properties.BARRENDERO || 'Sin asignar';
+                        return b === filtroVal;
+                    },
+                    style: function(feature) {
+                        const b = feature.properties.BARRENDERO || 'Sin asignar';
+                        const colorHex = barrenderosColorMap[b] || '#19567C';
+                        return { color: colorHex, weight: 4, opacity: 0.9 };
+                    },
                     onEachFeature: function(feature, layer) {
                         const props = feature.properties;
+                        const b = props.BARRENDERO || 'Sin asignar';
+                        const colorHex = barrenderosColorMap[b] || '#19567C';
+
                         let content = `
                             <div class="font-sans min-w-[200px]">
-                                <h4 class="font-bold text-[#F59E0B] border-b border-[#E6EDF3] pb-1 mb-2">Zona de Barrido</h4>
-                                <div class="bg-[#FEF3C7] p-2 rounded-md mb-2 border border-[#FDE68A]">
-                                    <p class="text-xs font-bold text-[#D97706] uppercase">Barrendero</p>
-                                    <p class="text-lg font-extrabold text-[#B45309]">${props.BARRENDERO || 'Sin asignar'}</p>
+                                <h4 class="font-bold border-b border-[#E6EDF3] pb-1 mb-2" style="color: ${colorHex}">Zona de Barrido</h4>
+                                <div class="p-2 rounded-md mb-2" style="background-color: ${colorHex}15; border: 1px solid ${colorHex}40;">
+                                    <p class="text-xs font-bold uppercase" style="color: ${colorHex}">Barrendero</p>
+                                    <p class="text-lg font-extrabold" style="color: ${colorHex}">${b}</p>
                                 </div>
                                 <ul class="text-xs text-[#64748B] space-y-1 mt-1">
                                     <li><b class="capitalize text-[#0F172A]">Calle/Tramo:</b> ${props.CALLE || '-'}</li>
@@ -593,7 +616,34 @@
                         layer.on('click', zoomToCgmBounds);
                     }
                 }).addTo(barrenderosLayer);
+            };
+
+            fetch('./barrenderos_parquebaron.geojson').then(r => r.json()).then(data => {
+                barrenderosData = data;
+                const setNombres = new Set();
+                data.features.forEach(f => {
+                    setNombres.add(f.properties.BARRENDERO || 'Sin asignar');
+                });
+
+                const selectEl = document.getElementById('select-barrendero');
+                let cIdx = 0;
+                
+                Array.from(setNombres).sort().forEach(b => {
+                    barrenderosColorMap[b] = paletaAzules[cIdx % paletaAzules.length];
+                    cIdx++;
+                    
+                    const opt = document.createElement('option');
+                    opt.value = b;
+                    opt.textContent = b;
+                    selectEl.appendChild(opt);
+                });
+
+                renderBarrenderos('ALL');
             }).catch(e => console.log('Error loading barrenderos:', e));
+
+            document.getElementById('select-barrendero').addEventListener('change', (e) => {
+                renderBarrenderos(e.target.value);
+            });
 
             // Seguridad
             cargarCapaPuntos('./Camaras_Parque Baron.geojson', camarasLayer, '#8B5CF6', pathCamara, '#8B5CF6', 'Cámara de Seguridad');
@@ -639,7 +689,19 @@
             toggleLayer('cb-barrios-populares', barriosPopularesLayer);
 
             // Gestión Territorial
-            toggleLayer('cb-barrenderos', barrenderosLayer);
+            const cbBarrenderos = document.getElementById('cb-barrenderos');
+            const selectBarrendero = document.getElementById('select-barrendero');
+            if(cbBarrenderos) {
+                cbBarrenderos.addEventListener('change', (e) => {
+                    if(e.target.checked) {
+                        map.addLayer(barrenderosLayer);
+                        selectBarrendero.classList.remove('hidden');
+                    } else {
+                        map.removeLayer(barrenderosLayer);
+                        selectBarrendero.classList.add('hidden');
+                    }
+                });
+            }
 
             // Seguridad
             toggleLayer('cb-camaras', camarasLayer);
