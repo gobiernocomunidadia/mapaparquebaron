@@ -7,8 +7,10 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -30,35 +32,18 @@
         .custom-scrollbar::-webkit-scrollbar-track { background: #F3F6F9; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #E6EDF3; border-radius: 4px; }
 
-        /* Ajustes para la ventana de Info de Google Maps */
-        .gm-style-iw.gm-style-iw-c {
-            border-radius: 8px !important;
-            padding: 12px !important;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+        /* Estilización de Popups de Leaflet para mantener el diseño limpio */
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-        .gm-style-iw-d { overflow: hidden !important; }
-        button.gm-ui-hover-effect { display: none !important; } /* Ocultamos el botón nativo de Google */
-
-        /* Estilos del Botón de Cierre Personalizado */
-        .custom-close-btn {
-            position: absolute;
-            right: -4px;
-            top: -6px;
+        .leaflet-popup-content {
+            margin: 14px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .custom-leaflet-icon {
             background: transparent;
             border: none;
-            cursor: pointer;
-            color: #94A3B8;
-            font-size: 22px;
-            font-weight: bold;
-            line-height: 1;
-            padding: 2px 6px;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            z-index: 50;
-        }
-        .custom-close-btn:hover {
-            background-color: #F1F5F9;
-            color: var(--bg-main);
         }
     </style>
 </head>
@@ -218,28 +203,6 @@
                     </div>
                 </div>
 
-                <!-- STREET VIEW -->
-                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
-                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-street-view text-[#19567C] h-4 w-4"></i> Street View
-                    </h4>
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" id="cb-streetview" class="w-4 h-4 accent-[#19567C]">
-                        <span class="text-sm text-[#0F172A] font-bold">Habilitar "Pegman"</span>
-                    </label>
-                </div>
-
-                <!-- TRÁFICO -->
-                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
-                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
-                        <i data-lucide="activity" class="h-4 w-4"></i> Tráfico
-                    </h4>
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" id="cb-trafico" class="w-4 h-4 accent-[#19567C]">
-                        <span class="text-sm text-[#0F172A] font-bold">Ver Tráfico Real</span>
-                    </label>
-                </div>
-
             </div>
         </aside>
 
@@ -249,221 +212,243 @@
 
     </main>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2MHti5Cy4IDKPc3Iu0ypNQg_BgsjcMoQ&callback=initMap" defer></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <script>
-        let map, trafficLayer, infoWindow;
-        let infoWindowTimer; 
-        
-        let semaforosLayer, reductoresLayer, solicitudesLayer;
-        let limiteElements = []; 
-        let limiteCgmLayer, barriosPopularesLayer;
-        let camarasLayer, alarmasLayer, comisariasLayer;
-        
-        // Variables de Capas Demografía y Zonificación
-        let poblacionLayer, pobrezaLayer, inundablesLayer;
+        let map;
+        let cgmBoundsCache = null; // Guardar los límites del CGM para el zoom
+        let limiteCgmLayerObj = null;
 
-        // Variables de Capas Instituciones
+        // Variables de Capas
+        let limiteElements, limiteCgmLayer, barriosPopularesLayer;
+        let poblacionLayer, pobrezaLayer, inundablesLayer;
+        let semaforosLayer, reductoresLayer, solicitudesLayer;
+        let camarasLayer, alarmasLayer, comisariasLayer;
         let asocCivilesLayer, jubiladosLayer, culturalesLayer, clubesLayer, comedoresLayer, 
             educacionLayer, fundacionesLayer, iglesiasLayer, saludLayer, fomentoLayer;
-
-        // --- FUNCIÓN PARA EL TEMPORIZADOR DE INFOWINDOW ---
-        function startInfoWindowTimer() {
-            if (infoWindowTimer) clearTimeout(infoWindowTimer);
-            infoWindowTimer = setTimeout(() => {
-                if (infoWindow) infoWindow.close();
-            }, 10000); 
-        }
-
-        // --- FUNCIÓN GLOBAL PARA EL BOTÓN MANUAL DE CIERRE ---
-        window.closeInfoWindow = function() {
-            if (infoWindow) {
-                infoWindow.close();
-            }
-            if (infoWindowTimer) {
-                clearTimeout(infoWindowTimer);
-            }
-        };
 
         function initMap() {
             lucide.createIcons();
             
-            // LA CLAVE: disableAutoPan evita que el infoWindow pelee con la función fitBounds() del mapa.
-            infoWindow = new google.maps.InfoWindow({
-                disableAutoPan: true
-            });
-            
-            // --- EVENTOS PARA PAUSAR EL TEMPORIZADOR POR INACTIVIDAD ---
-            google.maps.event.addListener(infoWindow, 'domready', () => {
-                const iwContainer = document.querySelector('.gm-style-iw-c');
-                if (iwContainer) {
-                    iwContainer.addEventListener('mouseenter', () => {
-                        if (infoWindowTimer) clearTimeout(infoWindowTimer);
-                    });
-                    iwContainer.addEventListener('mouseleave', () => {
-                        startInfoWindowTimer();
-                    });
-                }
-            });
+            // Inicialización de Leaflet
+            map = L.map('map').setView([-34.7573, -58.4035], 13);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors',
+                maxZoom: 19
+            }).addTo(map);
 
-            // Estilo claro minimalista
-            const mapStyle = [
-                { featureType: "poi", stylers: [{ visibility: "off" }] },
-                { featureType: "transit", stylers: [{ visibility: "off" }] },
-                { elementType: "geometry", stylers: [{ color: "#f5f5f5" }] },
-                { elementType: "labels.icon", stylers: [{ visibility: "off" }] },
-                { elementType: "labels.text.fill", stylers: [{ color: "#616161" }] },
-                { elementType: "labels.text.stroke", stylers: [{ color: "#f5f5f5" }] },
-                { featureType: "water", elementType: "geometry", stylers: [{ color: "#c9e8f5" }] },
-                { featureType: "water", elementType: "labels.text.fill", stylers: [{ color: "#9e9e9e" }] }
-            ];
-
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: -34.7573, lng: -58.4035 },
-                zoom: 13,
-                styles: mapStyle,
-                mapTypeControl: false,
-                streetViewControl: false, // Inicia desactivado
-                streetViewControlOptions: {
-                    position: google.maps.ControlPosition.RIGHT_BOTTOM // Posición cómoda
-                }
-            });
+            // Inicialización de Grupos de Capas
+            limiteElements = L.layerGroup().addTo(map);
+            limiteCgmLayer = L.layerGroup().addTo(map);
+            barriosPopularesLayer = L.layerGroup();
             
+            poblacionLayer = L.layerGroup();
+            pobrezaLayer = L.layerGroup();
+            inundablesLayer = L.layerGroup();
+
+            semaforosLayer = L.layerGroup();
+            reductoresLayer = L.layerGroup();
+            solicitudesLayer = L.layerGroup();
+
+            camarasLayer = L.layerGroup();
+            alarmasLayer = L.layerGroup();
+            comisariasLayer = L.layerGroup();
+
+            asocCivilesLayer = L.layerGroup();
+            jubiladosLayer = L.layerGroup();
+            culturalesLayer = L.layerGroup();
+            clubesLayer = L.layerGroup();
+            comedoresLayer = L.layerGroup();
+            educacionLayer = L.layerGroup();
+            fundacionesLayer = L.layerGroup();
+            iglesiasLayer = L.layerGroup();
+            saludLayer = L.layerGroup();
+            fomentoLayer = L.layerGroup();
+
+            // FUNCIÓN PARA ENCUADRAR LOS LÍMITES DEL CGM PARQUE BARON
+            window.zoomToCgmBounds = function() {
+                if (!cgmBoundsCache && limiteCgmLayerObj) {
+                    cgmBoundsCache = limiteCgmLayerObj.getBounds();
+                }
+                if (cgmBoundsCache && cgmBoundsCache.isValid()) {
+                    map.flyToBounds(cgmBoundsCache, { padding: [40, 40], duration: 0.5 });
+                }
+            };
+
             // -----------------------------------------------------
             // CARGA DE CAPAS GEOGRÁFICAS BÁSICAS
             // -----------------------------------------------------
             
-            fetch('./municipios_Lomas de Zamora.geojson').then(r => r.json()).then(geoJson => {
-                geoJson.features.forEach(feature => {
-                    if (feature.geometry.type === 'MultiPolygon' || feature.geometry.type === 'Polygon') {
-                        const polys = feature.geometry.type === 'Polygon' ? [feature.geometry.coordinates] : feature.geometry.coordinates;
-                        polys.forEach(poly => {
-                            poly.forEach(ring => {
-                                const path = ring.map(coord => ({ lat: coord[1], lng: coord[0] }));
-                                const p = new google.maps.Polygon({ paths: path, strokeOpacity: 0, fillColor: '#19567C', fillOpacity: 0.03, map: map, zIndex: 2 });
-                                const lineSymbol = { path: 'M 0,-1 0,1', strokeOpacity: 1, scale: 3 };
-                                const l = new google.maps.Polyline({ path: path, strokeOpacity: 0, icons: [{ icon: lineSymbol, offset: '0', repeat: '15px' }], strokeColor: '#19567C', strokeWeight: 3, map: map, zIndex: 3 });
-                                limiteElements.push(p, l);
-                            });
-                        });
+            fetch('./municipios_Lomas de Zamora.geojson').then(r => r.json()).then(data => {
+                L.geoJSON(data, {
+                    style: { color: '#19567C', weight: 3, dashArray: '5, 5', fillOpacity: 0.03 }
+                }).addTo(limiteElements);
+            }).catch(e => console.log('Error loading Límite Lomas:', e));
+
+            fetch('./cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
+                limiteCgmLayerObj = L.geoJSON(data, {
+                    style: { fillColor: '#4AB5E0', fillOpacity: 0.15, color: '#19567C', weight: 2 }
+                }).addTo(limiteCgmLayer);
+                
+                // Set bounds cache ready
+                cgmBoundsCache = limiteCgmLayerObj.getBounds();
+            }).catch(e => console.log('Error loading Límite CGM:', e));
+
+            fetch('./barrios_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
+                L.geoJSON(data, {
+                    style: { fillColor: '#D34872', fillOpacity: 0.4, color: '#D34872', weight: 2 },
+                    onEachFeature: function(feature, layer) {
+                        const props = feature.properties;
+                        const nombre = props.NOMBRE_BAR || 'Barrio Popular';
+                        let content = `<div class="font-sans min-w-[220px]">
+                            <h3 style="font-weight: 800; font-size: 14px; color: #D34872; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px;">${nombre}</h3>
+                            <p style="margin: 4px 0; font-size: 12px; color: #333;"><span style="background:#F3F6F9; padding:2px 6px; border-radius:4px; font-weight:bold; color:#19567C; font-size:10px;">ID RENABAP: ${props.ID_RENABAP || '-'}</span></p>
+                            <p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Clasificación:</b> ${props.CLASIFICAC || '-'}</p>
+                            <p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Familias:</b> ${props.FAMILIAS || '-'}</p>
+                            <p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Creación:</b> ${props.DECADA_CRE || '-'}</p>
+                            <div style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed #E6EDF3;">
+                                <p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Agua:</b> ${props.AGUA || 'S/D'}</p>
+                                <p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Cloacas:</b> ${props.CLOACAS || 'S/D'}</p>
+                                <p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Luz:</b> ${props.ELECTRICID || 'S/D'}</p>
+                            </div></div>`;
+                        layer.bindPopup(content);
+                        layer.on('click', zoomToCgmBounds);
                     }
-                });
-            }).catch(e => console.log('Error cargando límite:', e));
-
-            limiteCgmLayer = new google.maps.Data();
-            limiteCgmLayer.loadGeoJson('./cgm_Parque Baron.geojson');
-            limiteCgmLayer.setStyle({
-                fillColor: '#4AB5E0',
-                fillOpacity: 0.15,
-                strokeColor: '#19567C',
-                strokeWeight: 2,
-                zIndex: 5
-            });
-            limiteCgmLayer.setMap(map);
-
-            barriosPopularesLayer = new google.maps.Data();
-            barriosPopularesLayer.loadGeoJson('./barrios_cgm_Parque Baron.geojson');
-            barriosPopularesLayer.setStyle({
-                fillColor: '#D34872',
-                fillOpacity: 0.4,
-                strokeColor: '#D34872',
-                strokeWeight: 2,
-                zIndex: 6
-            });
+                }).addTo(barriosPopularesLayer);
+            }).catch(e => console.log('Error loading Barrios Populares:', e));
 
             // -----------------------------------------------------
-            // CAPAS DEMOGRÁFICAS Y DE ZONIFICACIÓN (Con Fetch y Estilos Dinámicos)
+            // CAPAS DEMOGRÁFICAS Y DE ZONIFICACIÓN
             // -----------------------------------------------------
             
-            poblacionLayer = new google.maps.Data(); 
             fetch('./poblacion_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
                 let maxVal = 0;
                 data.features.forEach(f => {
                     let val = parseInt(f.properties['Habitantes'] || f.properties['RADIOS_POB']) || 0;
                     if (val > maxVal) maxVal = val;
                 });
-                poblacionLayer.addGeoJson(data);
-                poblacionLayer.setStyle(function(feature) {
-                    let val = parseInt(feature.getProperty('Habitantes') || feature.getProperty('RADIOS_POB')) || 0;
-                    let color = '#D1E1F0';
-                    if (maxVal > 0) {
-                        if (val > maxVal * 0.8) color = '#084A6F';
-                        else if (val > maxVal * 0.6) color = '#0B5F8D';
-                        else if (val > maxVal * 0.4) color = '#2A7FA8';
-                        else if (val > maxVal * 0.2) color = '#6BA1C7';
+                
+                L.geoJSON(data, {
+                    style: function(feature) {
+                        let val = parseInt(feature.properties['Habitantes'] || feature.properties['RADIOS_POB']) || 0;
+                        let color = '#D1E1F0';
+                        if (maxVal > 0) {
+                            if (val > maxVal * 0.8) color = '#084A6F';
+                            else if (val > maxVal * 0.4) color = '#2A7FA8';
+                        }
+                        return { fillColor: color, fillOpacity: 0.7, color: '#FFFFFF', weight: 1 };
+                    },
+                    onEachFeature: function(feature, layer) {
+                        let props = feature.properties;
+                        let radioStr = props.REDCODE || props.RADIO || props.LINK_RADIO || props.NOMBRE || "Radio Censal";
+                        let valHabitantes = props.Habitantes || props.RADIOS_POB || 0;
+                        let valHogares = props.RADIOS_HOG || props.HOGARES;
+
+                        let content = `
+                            <div class="font-sans min-w-[200px]">
+                                <h4 class="font-bold text-[#0B5F8D] border-b border-[#E6EDF3] pb-1 mb-2">Sector / Radio: ${radioStr}</h4>
+                                <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
+                                    <p class="text-xs font-bold text-[#0B5F8D] uppercase">Total Habitantes</p>
+                                    <p class="text-xl font-extrabold text-[#0B5F8D]">${Number(valHabitantes).toLocaleString('es-AR')}</p>
+                                </div>`;
+                        
+                        if (valHogares !== undefined && valHogares !== null) {
+                            content += `<ul class="text-xs text-[#64748B] space-y-1 mt-1"><li><b class="capitalize text-[#0F172A]">Cantidad de Hogares:</b> ${Number(valHogares).toLocaleString('es-AR')}</li></ul>`;
+                        }
+                        content += `</div>`;
+
+                        layer.bindPopup(content);
+                        layer.on('click', zoomToCgmBounds);
                     }
-                    return { fillColor: color, fillOpacity: 0.85, strokeColor: '#FFFFFF', strokeWeight: 2, zIndex: 4 };
-                });
+                }).addTo(poblacionLayer);
             }).catch(e => console.log('Error loading poblacion:', e));
 
-            pobrezaLayer = new google.maps.Data(); 
             fetch('./pobreza_cronica_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
                 let maxVal = 0;
                 data.features.forEach(f => {
                     let val = parseFloat(f.properties['P_PC_PER']) || 0;
                     if (val > maxVal) maxVal = val;
                 });
-                pobrezaLayer.addGeoJson(data);
-                pobrezaLayer.setStyle(function(feature) {
-                    let pct = parseFloat(feature.getProperty('P_PC_PER')) || 0;
-                    // 3 Estados (Mayor a Menor) en azules institucionales
-                    let color = pct >= 15 ? '#084A6F' : // Estado 1: Alta (Azul oscuro)
-                                pct >= 5  ? '#2A7FA8' : // Estado 2: Media (Azul intermedio)
-                                            '#D1E1F0';  // Estado 3: Baja (Azul claro)
-                    return {
-                        fillColor: color,
-                        fillOpacity: 0.85,
-                        strokeColor: '#FFFFFF',
-                        strokeWeight: 2,
-                        zIndex: 4
-                    };
-                });
+                L.geoJSON(data, {
+                    style: function(feature) {
+                        let pct = parseFloat(feature.properties['P_PC_PER']) || 0;
+                        let color = '#D1E1F0';
+                        if(maxVal > 0) {
+                            if (pct >= 15) color = '#084A6F';
+                            else if (pct >= 5) color = '#2A7FA8';
+                        }
+                        return { fillColor: color, fillOpacity: 0.85, color: '#FFFFFF', weight: 2 };
+                    },
+                    onEachFeature: function(feature, layer) {
+                        let props = feature.properties;
+                        let radioStr = props.LINK_RADIO || "Radio Censal";
+                        let pct = props.P_PC_PER || 0;
+
+                        let content = `
+                            <div class="font-sans min-w-[200px]">
+                                <h4 class="font-bold text-[#19567C] border-b border-[#E6EDF3] pb-1 mb-2">Pobreza Crónica - Radio: ${radioStr}</h4>
+                                <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
+                                    <p class="text-xs font-bold text-[#0B5F8D] uppercase">% Pobreza Crónica</p>
+                                    <p class="text-xl font-extrabold text-[#19567C]">${pct}%</p>
+                                </div>
+                                <ul class="text-xs text-[#64748B] space-y-1 mt-1">
+                                    <li><b class="capitalize text-[#0F172A]">Población:</b> ${Number(props.POBLACION || 0).toLocaleString('es-AR')}</li>
+                                    <li><b class="capitalize text-[#0F172A]">Hogares:</b> ${Number(props.N_HOGARES || 0).toLocaleString('es-AR')}</li>
+                                    <li><b class="capitalize text-[#0F172A]">Personas afectadas:</b> ${Number(props.PC_PER || 0).toLocaleString('es-AR')}</li>
+                                </ul>
+                            </div>`;
+
+                        layer.bindPopup(content);
+                        layer.on('click', zoomToCgmBounds);
+                    }
+                }).addTo(pobrezaLayer);
             }).catch(e => console.log('Error loading pobreza:', e));
 
-            inundablesLayer = new google.maps.Data(); 
             fetch('./zonas_inundables_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
                 let maxVal = 0;
                 data.features.forEach(f => {
                     let val = parseFloat(f.properties['PORCENTAJE']) || 0;
                     if (val > maxVal) maxVal = val;
                 });
-                inundablesLayer.addGeoJson(data);
-                inundablesLayer.setStyle(function(feature) {
-                    let val = parseFloat(feature.getProperty('PORCENTAJE')) || 0;
-                    let color = '#38BDF8';
-                    if(maxVal > 0) {
-                        if (val > maxVal * 0.8) color = '#DC2626';
-                        else if (val > maxVal * 0.6) color = '#C026D3';
-                        else if (val > maxVal * 0.4) color = '#7C3AED';
-                        else if (val > maxVal * 0.2) color = '#4F46E5';
+                L.geoJSON(data, {
+                    style: function(feature) {
+                        let pct = parseFloat(feature.properties['PORCENTAJE']) || 0;
+                        let color = '#38BDF8';
+                        if(maxVal > 0) {
+                            if (pct >= 70) color = '#DC2626';
+                            else if (pct >= 30) color = '#9333EA';
+                        }
+                        return { fillColor: color, fillOpacity: 0.7, color: '#FFFFFF', weight: 1 };
+                    },
+                    onEachFeature: function(feature, layer) {
+                        let props = feature.properties;
+                        let radioStr = props.CODIGO_DE_ || "Radio Censal";
+                        let pct = props.PORCENTAJE || 0;
+
+                        let content = `
+                            <div class="font-sans min-w-[200px]">
+                                <h4 class="font-bold text-[#06B6D4] border-b border-[#E6EDF3] pb-1 mb-2">Zonas Inundables - Radio: ${radioStr}</h4>
+                                <div class="bg-[#ECFEFF] p-2 rounded-md mb-2 border border-[#A5F3FC]">
+                                    <p class="text-xs font-bold text-[#0891B2] uppercase">Afectación</p>
+                                    <p class="text-xl font-extrabold text-[#0891B2]">${pct}%</p>
+                                </div>
+                                <ul class="text-xs text-[#64748B] space-y-1 mt-1">
+                                    <li><b class="capitalize text-[#0F172A]">Población Afectada:</b> ${Number(props.POBLACION || 0).toLocaleString('es-AR')}</li>
+                                    <li><b class="capitalize text-[#0F172A]">Incidencia:</b> Nivel ${props.INCIDENCIA || 'N/D'}</li>
+                                </ul>
+                            </div>`;
+
+                        layer.bindPopup(content);
+                        layer.on('click', zoomToCgmBounds);
                     }
-                    return { fillColor: color, fillOpacity: 0.85, strokeColor: '#FFFFFF', strokeWeight: 2, zIndex: 4 };
-                });
+                }).addTo(inundablesLayer);
             }).catch(e => console.log('Error loading inundables:', e));
 
-            // Capas Puntos Varias
-            semaforosLayer = new google.maps.Data(); semaforosLayer.loadGeoJson('./Semaforos Activos.geojson');
-            reductoresLayer = new google.maps.Data(); reductoresLayer.loadGeoJson('./Reductores de Velocidad.geojson');
-            solicitudesLayer = new google.maps.Data(); solicitudesLayer.loadGeoJson('./Solicitudes Semaforos 2026.geojson');
+            // -----------------------------------------------------
+            // FUNCIONES AUXILIARES PARA PUNTOS
+            // -----------------------------------------------------
 
-            // Capas de Seguridad
-            camarasLayer = new google.maps.Data(); camarasLayer.loadGeoJson('./Camaras_Parque Baron.geojson');
-            alarmasLayer = new google.maps.Data(); alarmasLayer.loadGeoJson('./alarmas_Parque Baron.geojson');
-            comisariasLayer = new google.maps.Data(); comisariasLayer.loadGeoJson('./seguridad_Parque Baron.geojson');
-
-            // Capas Instituciones
-            asocCivilesLayer = new google.maps.Data(); asocCivilesLayer.loadGeoJson('./asociaciones_civiles_Parque Baron.geojson');
-            jubiladosLayer = new google.maps.Data(); jubiladosLayer.loadGeoJson('./centro_de_jubilados_Parque Baron.geojson');
-            culturalesLayer = new google.maps.Data(); culturalesLayer.loadGeoJson('./Centros_culturales_Parque Baron.geojson');
-            clubesLayer = new google.maps.Data(); clubesLayer.loadGeoJson('./Clubes_deportivos_Parque Baron.geojson');
-            comedoresLayer = new google.maps.Data(); comedoresLayer.loadGeoJson('./Comedores_Parque Baron.geojson');
-            educacionLayer = new google.maps.Data(); educacionLayer.loadGeoJson('./establecimientos_educativos_Parque Baron.geojson');
-            fundacionesLayer = new google.maps.Data(); fundacionesLayer.loadGeoJson('./fundaciones_Parque Baron.geojson');
-            iglesiasLayer = new google.maps.Data(); iglesiasLayer.loadGeoJson('./iglesias_Parque Baron.geojson');
-            saludLayer = new google.maps.Data(); saludLayer.loadGeoJson('./Centros_de_atencion_sanitaria_Parque Baron.geojson');
-            fomentoLayer = new google.maps.Data(); fomentoLayer.loadGeoJson('./sociedades_de_fomento_Parque Baron.geojson');
-
-            // --- RUTAS SVG PARA ICONOS ---
             const pathSemaforo = '<rect x="7" y="2" width="10" height="20" rx="3"/><circle cx="12" cy="7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="17" r="1.5"/>';
             const pathReductor = '<path d="m20.9 18.55-8-15.98a1 1 0 0 0-1.8 0l-8 15.98"/><path d="M4.34 10a11.24 11.24 0 0 1 15.32 0"/><path d="M8.64 14.5a5.42 5.42 0 0 1 6.72 0"/><path d="M2 22h20"/>';
             const pathSolicitud = '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="M9 15h6"/>';
@@ -483,7 +468,8 @@
             const pathSalud = '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>';
             const pathFomento = '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>';
 
-            function getSvgIcon(color, iconPath, size) {
+            function getLeafletIcon(color, iconPath) {
+                const size = 22; // Tamaño estándar para Leaflet
                 const svg = `
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="${size}" height="${size}">
                         <circle cx="16" cy="16" r="15" fill="${color}" stroke="#FFFFFF" stroke-width="2"/>
@@ -492,300 +478,94 @@
                         </g>
                     </svg>
                 `;
-                return {
-                    url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg),
-                    scaledSize: new google.maps.Size(size, size),
-                    anchor: new google.maps.Point(size/2, size/2)
-                };
-            }
-
-            function updatePointStyles() {
-                const zoom = map.getZoom();
-                let size = 10;   
-                if (zoom >= 15) { size = 20; }       
-                else if (zoom >= 13) { size = 14; } 
-
-                const targetCgm = "PARQUE BARON";
-
-                const applyStyleWithFilter = (layer, color, path) => {
-                    layer.setStyle((feature) => {
-                        const featCgm = feature.getProperty('CGM');
-                        let isVisible = false;
-                        
-                        if (featCgm) {
-                            if (featCgm.toUpperCase() === targetCgm) isVisible = true;
-                        } else {
-                            // Fallback de seguridad por Bounding Box para capas sin campo CGM explícito
-                            const geom = feature.getGeometry();
-                            if (geom && geom.getType() === 'Point') {
-                                const lat = geom.get().lat();
-                                const lng = geom.get().lng();
-                                // Bounding box geográfico para Parque Baron
-                                if (lat >= -34.786 && lat <= -34.750 && lng >= -58.456 && lng <= -58.423) {
-                                    isVisible = true; 
-                                }
-                            }
-                        }
-                        
-                        return {
-                            icon: getSvgIcon(color, path, size),
-                            zIndex: 10,
-                            visible: isVisible
-                        };
-                    });
-                };
-
-                // Infraestructura Vial
-                applyStyleWithFilter(semaforosLayer, '#19567C', pathSemaforo);
-                applyStyleWithFilter(reductoresLayer, '#D34872', pathReductor);
-                applyStyleWithFilter(solicitudesLayer, '#4AB5E0', pathSolicitud);
-
-                // Seguridad
-                applyStyleWithFilter(camarasLayer, '#8B5CF6', pathCamara); // Púrpura
-                applyStyleWithFilter(alarmasLayer, '#F59E0B', pathAlarma); // Naranja/Ambar
-                applyStyleWithFilter(comisariasLayer, '#10B981', pathComisaria); // Verde
-
-                // Instituciones
-                applyStyleWithFilter(asocCivilesLayer, '#3B82F6', pathAsoc);
-                applyStyleWithFilter(jubiladosLayer, '#14B8A6', pathJubilados);
-                applyStyleWithFilter(culturalesLayer, '#F43F5E', pathCulturales);
-                applyStyleWithFilter(clubesLayer, '#0EA5E9', pathClubes);
-                applyStyleWithFilter(comedoresLayer, '#EAB308', pathComedores);
-                applyStyleWithFilter(educacionLayer, '#2563EB', pathEducacion);
-                applyStyleWithFilter(fundacionesLayer, '#D946EF', pathFundaciones);
-                applyStyleWithFilter(iglesiasLayer, '#8B5CF6', pathIglesias);
-                applyStyleWithFilter(saludLayer, '#10B981', pathSalud);
-                applyStyleWithFilter(fomentoLayer, '#06B6D4', pathFomento);
-            }
-
-            map.addListener('zoom_changed', updatePointStyles);
-            
-            updatePointStyles();
-
-            // FUNCIÓN PARA ENCUADRAR LOS LÍMITES DEL CGM PARQUE BARON (MEJORADA Y CACHEADA)
-            let cgmBoundsCache = null;
-
-            function zoomToCgmBounds() {
-                if (!cgmBoundsCache) {
-                    const bounds = new google.maps.LatLngBounds();
-                    let hasBounds = false;
-                    limiteCgmLayer.forEach((feature) => {
-                        feature.getGeometry().forEachLatLng((latlng) => {
-                            bounds.extend(latlng);
-                            hasBounds = true;
-                        });
-                    });
-                    if (hasBounds) {
-                        cgmBoundsCache = bounds;
-                    }
-                }
-                
-                if (cgmBoundsCache) {
-                    // Timeout para asegurar que la acción venza a cualquier movimiento remanente del mapa
-                    setTimeout(() => {
-                        map.fitBounds(cgmBoundsCache, 40); // 40px padding para encuadre seguro
-                    }, 50);
-                }
-            }
-
-            // Popups de Demografía usando el HTML template especificado
-            poblacionLayer.addListener('click', function(event) {
-                let radioStr = event.feature.getProperty('REDCODE') || event.feature.getProperty('RADIO') || event.feature.getProperty('LINK_RADIO') || event.feature.getProperty('NOMBRE') || "Radio Censal";
-                let valHabitantes = event.feature.getProperty('Habitantes') || event.feature.getProperty('RADIOS_POB') || 0;
-                let valHogares = event.feature.getProperty('RADIOS_HOG') || event.feature.getProperty('HOGARES');
-
-                let content = `
-                    <div class="font-sans min-w-[200px] relative">
-                        <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
-                        <h4 class="font-bold text-[#0B5F8D] border-b border-[#E6EDF3] pb-1 mb-2">Sector / Radio: ${radioStr}</h4>
-                        <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
-                            <p class="text-xs font-bold text-[#0B5F8D] uppercase">Total Habitantes</p>
-                            <p class="text-xl font-extrabold text-[#0B5F8D]">${Number(valHabitantes).toLocaleString('es-AR')}</p>
-                        </div>`;
-                
-                if (valHogares !== undefined && valHogares !== null) {
-                    content += `
-                        <ul class="text-xs text-[#64748B] space-y-1 mt-1">
-                            <li><b class="capitalize text-[#0F172A]">Cantidad de Hogares:</b> ${Number(valHogares).toLocaleString('es-AR')}</li>
-                        </ul>`;
-                }
-                content += `</div>`;
-
-                infoWindow.setContent(content);
-                infoWindow.setPosition(event.latLng); 
-                infoWindow.open(map);
-                startInfoWindowTimer(); 
-                zoomToCgmBounds();
-            });
-
-            pobrezaLayer.addListener('click', function(event) {
-                let radioStr = event.feature.getProperty('LINK_RADIO') || "Radio Censal";
-                let pct = event.feature.getProperty('P_PC_PER') || 0;
-                let poblacion = event.feature.getProperty('POBLACION') || 0;
-                let hogares = event.feature.getProperty('N_HOGARES') || 0;
-                let personas = event.feature.getProperty('PC_PER') || 0;
-
-                let content = `
-                    <div class="font-sans min-w-[200px] relative">
-                        <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
-                        <h4 class="font-bold text-[#19567C] border-b border-[#E6EDF3] pb-1 mb-2">Pobreza Crónica - Radio: ${radioStr}</h4>
-                        <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
-                            <p class="text-xs font-bold text-[#0B5F8D] uppercase">% Pobreza Crónica</p>
-                            <p class="text-xl font-extrabold text-[#19567C]">${pct}%</p>
-                        </div>
-                        <ul class="text-xs text-[#64748B] space-y-1 mt-1">
-                            <li><b class="capitalize text-[#0F172A]">Población:</b> ${Number(poblacion).toLocaleString('es-AR')}</li>
-                            <li><b class="capitalize text-[#0F172A]">Hogares:</b> ${Number(hogares).toLocaleString('es-AR')}</li>
-                            <li><b class="capitalize text-[#0F172A]">Personas afectadas:</b> ${Number(personas).toLocaleString('es-AR')}</li>
-                        </ul>
-                    </div>`;
-
-                infoWindow.setContent(content);
-                infoWindow.setPosition(event.latLng); 
-                infoWindow.open(map);
-                startInfoWindowTimer(); 
-                zoomToCgmBounds();
-            });
-
-            inundablesLayer.addListener('click', function(event) {
-                let radioStr = event.feature.getProperty('CODIGO_DE_') || "Radio Censal";
-                let pct = event.feature.getProperty('PORCENTAJE') || 0;
-                let poblacion = event.feature.getProperty('POBLACION') || 0;
-                let incidencia = event.feature.getProperty('INCIDENCIA') || 'N/D';
-
-                let content = `
-                    <div class="font-sans min-w-[200px] relative">
-                        <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
-                        <h4 class="font-bold text-[#06B6D4] border-b border-[#E6EDF3] pb-1 mb-2">Zonas Inundables - Radio: ${radioStr}</h4>
-                        <div class="bg-[#ECFEFF] p-2 rounded-md mb-2 border border-[#A5F3FC]">
-                            <p class="text-xs font-bold text-[#0891B2] uppercase">Afectación</p>
-                            <p class="text-xl font-extrabold text-[#0891B2]">${pct}%</p>
-                        </div>
-                        <ul class="text-xs text-[#64748B] space-y-1 mt-1">
-                            <li><b class="capitalize text-[#0F172A]">Población Afectada:</b> ${Number(poblacion).toLocaleString('es-AR')}</li>
-                            <li><b class="capitalize text-[#0F172A]">Incidencia:</b> Nivel ${incidencia}</li>
-                        </ul>
-                    </div>`;
-
-                infoWindow.setContent(content);
-                infoWindow.setPosition(event.latLng); 
-                infoWindow.open(map);
-                startInfoWindowTimer(); 
-                zoomToCgmBounds();
-            });
-
-            function bindPopup(layer, colorTitle, defaultTitle, isPolygon) {
-                layer.addListener('click', function(event) {
-                    // Flexibilidad en el nombre según cómo venga en el GeoJSON
-                    const name = event.feature.getProperty('NOMBRE') || event.feature.getProperty('nombre') || event.feature.getProperty('Nombre Ins') || event.feature.getProperty('Name') || event.feature.getProperty('NAME') || defaultTitle;
-                    
-                    let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 180px; position: relative;">`;
-                    content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
-                    
-                    if (isPolygon) {
-                        content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">CGM: ${event.feature.getProperty('CGM')}</h3>`;
-                        content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Manzanas:</b> ${event.feature.getProperty('Manzanas') || '-'}</p>`;
-                        content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Cuadras:</b> ${event.feature.getProperty('Cuadras') || '-'}</p>`;
-                        content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Viviendas:</b> ${event.feature.getProperty('Viviendas') || '-'}</p>`;
-                    } else {
-                        content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">${name}</h3>`;
-                        
-                        if (event.feature.getProperty('description')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Detalle:</b> ${event.feature.getProperty('description')}</p>`;
-                        if (event.feature.getProperty('Tipo')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Tipo:</b> ${event.feature.getProperty('Tipo')}</p>`;
-                        if (event.feature.getProperty('TIPO')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Categoría:</b> ${event.feature.getProperty('TIPO')}</p>`;
-                        if (event.feature.getProperty('Tipo Pavimento')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Pavimento:</b> ${event.feature.getProperty('Tipo Pavimento')}</p>`;
-                        
-                        // Campos Específicos para Educación y Espacios
-                        if (event.feature.getProperty('UBICACION')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Ubicación:</b> ${event.feature.getProperty('UBICACION')}</p>`;
-                        if (event.feature.getProperty('nivel')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Nivel:</b> ${event.feature.getProperty('nivel')}</p>`;
-                        if (event.feature.getProperty('modalidad')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Modalidad:</b> ${event.feature.getProperty('modalidad')}</p>`;
-                        if (event.feature.getProperty('calle')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Dirección:</b> ${event.feature.getProperty('calle')} ${event.feature.getProperty('nro') || ''}</p>`;
-                        
-                        if (event.feature.getProperty('Ubicacion')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Ubicación:</b> ${event.feature.getProperty('Ubicacion')}</p>`;
-                        if (event.feature.getProperty('CGM')) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>CGM:</b> ${event.feature.getProperty('CGM')}</p>`;
-                    }
-                    content += `</div>`;
-                    infoWindow.setContent(content);
-                    
-                    const geomType = event.feature.getGeometry().getType();
-                    if (geomType === 'Point') {
-                        infoWindow.setPosition(event.feature.getGeometry().get());
-                    } else if (geomType === 'MultiLineString' || geomType === 'LineString') {
-                        const latLngs = event.feature.getGeometry().getAt(0).getAt(0);
-                        infoWindow.setPosition(latLngs);
-                    } else {
-                        infoWindow.setPosition(event.latLng); 
-                    }
-
-                    infoWindow.open(map);
-                    startInfoWindowTimer(); 
-                    zoomToCgmBounds(); // Zoom a límites de CGM
+                return L.divIcon({
+                    html: svg,
+                    className: 'custom-leaflet-icon',
+                    iconSize: [size, size],
+                    iconAnchor: [size/2, size/2],
+                    popupAnchor: [0, -size/2]
                 });
             }
 
-            // Popups de Infraestructura
-            bindPopup(semaforosLayer, '#19567C', 'Semáforo Activo', false);
-            bindPopup(reductoresLayer, '#D34872', 'Reductor de Velocidad', false);
-            bindPopup(solicitudesLayer, '#4AB5E0', 'Solicitud 2026', false);
-            bindPopup(limiteCgmLayer, '#19567C', 'Límite CGM', true);
-            
-            // Popups de Seguridad
-            bindPopup(camarasLayer, '#8B5CF6', 'Cámara de Seguridad', false);
-            bindPopup(alarmasLayer, '#F59E0B', 'Alarma Comunitaria', false);
-            bindPopup(comisariasLayer, '#10B981', 'Comisaría', false);
+            function cargarCapaPuntos(url, layerGroup, color, path, colorTitle, defaultTitle) {
+                fetch(url).then(r => r.json()).then(data => {
+                    L.geoJSON(data, {
+                        filter: function(feature) {
+                            const featCgm = feature.properties.CGM;
+                            if (featCgm && featCgm.toUpperCase() === "PARQUE BARON") return true;
+                            // Bounding box filter para casos sin la propiedad CGM asignada correctamente
+                            if (!featCgm && feature.geometry.type === 'Point') {
+                                const lng = feature.geometry.coordinates[0];
+                                const lat = feature.geometry.coordinates[1];
+                                if (lat >= -34.786 && lat <= -34.750 && lng >= -58.456 && lng <= -58.423) return true;
+                            }
+                            return false;
+                        },
+                        pointToLayer: function(feature, latlng) {
+                            return L.marker(latlng, { icon: getLeafletIcon(color, path) });
+                        },
+                        onEachFeature: function(feature, layer) {
+                            const props = feature.properties;
+                            const name = props.NOMBRE || props.nombre || props['Nombre Ins'] || props.Name || props.NAME || defaultTitle;
+                            
+                            let content = `<div class="font-sans min-w-[180px]">`;
+                            content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px;">${name}</h3>`;
+                            
+                            if (props.description) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Detalle:</b> ${props.description}</p>`;
+                            if (props.Tipo) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Tipo:</b> ${props.Tipo}</p>`;
+                            if (props.TIPO) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Categoría:</b> ${props.TIPO}</p>`;
+                            
+                            if (props.UBICACION) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Ubicación:</b> ${props.UBICACION}</p>`;
+                            if (props.nivel) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Nivel:</b> ${props.nivel}</p>`;
+                            if (props.modalidad) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Modalidad:</b> ${props.modalidad}</p>`;
+                            if (props.calle) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Dirección:</b> ${props.calle} ${props.nro || ''}</p>`;
+                            
+                            if (props.Ubicacion) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Ubicación:</b> ${props.Ubicacion}</p>`;
+                            if (props.CGM) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>CGM:</b> ${props.CGM}</p>`;
+                            
+                            content += `</div>`;
 
-            // Popups Instituciones
-            bindPopup(asocCivilesLayer, '#3B82F6', 'Asociación Civil', false);
-            bindPopup(jubiladosLayer, '#14B8A6', 'Centro de Jubilados', false);
-            bindPopup(culturalesLayer, '#F43F5E', 'Centro Cultural', false);
-            bindPopup(clubesLayer, '#0EA5E9', 'Club Deportivo', false);
-            bindPopup(comedoresLayer, '#EAB308', 'Comedor', false);
-            bindPopup(educacionLayer, '#2563EB', 'Establecimiento Educativo', false);
-            bindPopup(fundacionesLayer, '#D946EF', 'Fundación', false);
-            bindPopup(iglesiasLayer, '#8B5CF6', 'Iglesia', false);
-            bindPopup(saludLayer, '#10B981', 'Centro de Salud', false);
-            bindPopup(fomentoLayer, '#06B6D4', 'Sociedad de Fomento', false);
+                            layer.bindPopup(content);
+                            layer.on('click', zoomToCgmBounds);
+                        }
+                    }).addTo(layerGroup);
+                }).catch(e => console.log('Error loading ' + url, e));
+            }
 
-            barriosPopularesLayer.addListener('click', function(event) {
-                const nombre = event.feature.getProperty('NOMBRE_BAR') || 'Barrio Popular';
-                const familias = event.feature.getProperty('FAMILIAS') || '-';
-                const clasificacion = event.feature.getProperty('CLASIFICAC') || '-';
-                const decada = event.feature.getProperty('DECADA_CRE') || '-';
-                const idRenabap = event.feature.getProperty('ID_RENABAP') || '-';
+            // Infraestructura Vial
+            cargarCapaPuntos('./Semaforos Activos.geojson', semaforosLayer, '#19567C', pathSemaforo, '#19567C', 'Semáforo Activo');
+            cargarCapaPuntos('./Reductores de Velocidad.geojson', reductoresLayer, '#D34872', pathReductor, '#D34872', 'Reductor de Velocidad');
+            cargarCapaPuntos('./Solicitudes Semaforos 2026.geojson', solicitudesLayer, '#4AB5E0', pathSolicitud, '#4AB5E0', 'Solicitud 2026');
 
-                let content = `<div style="font-family: 'Montserrat', sans-serif; min-width: 220px; position: relative;">`;
-                content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
-                content += `<h3 style="font-weight: 800; font-size: 14px; color: #D34872; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">${nombre}</h3>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><span style="background:#F3F6F9; padding:2px 6px; border-radius:4px; font-weight:bold; color:#19567C; font-size:10px;">ID RENABAP: ${idRenabap}</span></p>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Clasificación:</b> ${clasificacion}</p>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Familias:</b> ${familias}</p>`;
-                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Creación:</b> ${decada}</p>`;
-                
-                content += `<div style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed #E6EDF3;">`;
-                content += `<p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Agua:</b> ${event.feature.getProperty('AGUA') || 'S/D'}</p>`;
-                content += `<p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Cloacas:</b> ${event.feature.getProperty('CLOACAS') || 'S/D'}</p>`;
-                content += `<p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Luz:</b> ${event.feature.getProperty('ELECTRICID') || 'S/D'}</p>`;
-                content += `</div></div>`;
+            // Seguridad
+            cargarCapaPuntos('./Camaras_Parque Baron.geojson', camarasLayer, '#8B5CF6', pathCamara, '#8B5CF6', 'Cámara de Seguridad');
+            cargarCapaPuntos('./alarmas_Parque Baron.geojson', alarmasLayer, '#F59E0B', pathAlarma, '#F59E0B', 'Alarma Comunitaria');
+            cargarCapaPuntos('./seguridad_Parque Baron.geojson', comisariasLayer, '#10B981', pathComisaria, '#10B981', 'Comisaría');
 
-                infoWindow.setContent(content);
-                infoWindow.setPosition(event.latLng); 
-                infoWindow.open(map);
-                startInfoWindowTimer(); 
-                zoomToCgmBounds(); // Zoom a límites de CGM
-            });
-
-            trafficLayer = new google.maps.TrafficLayer();
+            // Instituciones
+            cargarCapaPuntos('./asociaciones_civiles_Parque Baron.geojson', asocCivilesLayer, '#3B82F6', pathAsoc, '#3B82F6', 'Asociación Civil');
+            cargarCapaPuntos('./centro_de_jubilados_Parque Baron.geojson', jubiladosLayer, '#14B8A6', pathJubilados, '#14B8A6', 'Centro de Jubilados');
+            cargarCapaPuntos('./Centros_culturales_Parque Baron.geojson', culturalesLayer, '#F43F5E', pathCulturales, '#F43F5E', 'Centro Cultural');
+            cargarCapaPuntos('./Clubes_deportivos_Parque Baron.geojson', clubesLayer, '#0EA5E9', pathClubes, '#0EA5E9', 'Club Deportivo');
+            cargarCapaPuntos('./Comedores_Parque Baron.geojson', comedoresLayer, '#EAB308', pathComedores, '#EAB308', 'Comedor');
+            cargarCapaPuntos('./establecimientos_educativos_Parque Baron.geojson', educacionLayer, '#2563EB', pathEducacion, '#2563EB', 'Establecimiento Educativo');
+            cargarCapaPuntos('./fundaciones_Parque Baron.geojson', fundacionesLayer, '#D946EF', pathFundaciones, '#D946EF', 'Fundación');
+            cargarCapaPuntos('./iglesias_Parque Baron.geojson', iglesiasLayer, '#8B5CF6', pathIglesias, '#8B5CF6', 'Iglesia');
+            cargarCapaPuntos('./Centros_de_atencion_sanitaria_Parque Baron.geojson', saludLayer, '#10B981', pathSalud, '#10B981', 'Centro de Salud');
+            cargarCapaPuntos('./sociedades_de_fomento_Parque Baron.geojson', fomentoLayer, '#06B6D4', pathFomento, '#06B6D4', 'Sociedad de Fomento');
 
             // --- CHECKBOXES TOGGLES ---
             document.getElementById('cb-limite').addEventListener('change', (e) => {
-                const m = e.target.checked ? map : null;
-                limiteElements.forEach(el => el.setMap(m));
+                e.target.checked ? map.addLayer(limiteElements) : map.removeLayer(limiteElements);
             });
 
             const toggleLayer = (id, layerInstance) => {
-                document.getElementById(id).addEventListener('change', (e) => {
-                    e.target.checked ? layerInstance.setMap(map) : layerInstance.setMap(null);
-                });
+                const el = document.getElementById(id);
+                if(el) {
+                    el.addEventListener('change', (e) => {
+                        e.target.checked ? map.addLayer(layerInstance) : map.removeLayer(layerInstance);
+                    });
+                }
             };
 
             // Demografía
@@ -816,14 +596,9 @@
             toggleLayer('cb-iglesias', iglesiasLayer);
             toggleLayer('cb-salud', saludLayer);
             toggleLayer('cb-fomento', fomentoLayer);
-            
-            toggleLayer('cb-trafico', trafficLayer);
-            
-            // LOGICA PARA HABILITAR PEGMAN
-            document.getElementById('cb-streetview').addEventListener('change', (e) => {
-                map.setOptions({ streetViewControl: e.target.checked });
-            });
         }
+
+        document.addEventListener("DOMContentLoaded", initMap);
     </script>
 </body>
 </html>
