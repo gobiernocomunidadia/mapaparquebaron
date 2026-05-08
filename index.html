@@ -182,6 +182,39 @@
                     </div>
                 </div>
 
+                <!-- INFRAESTRUCTURA Y PLANEAMIENTO -->
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="hammer" class="h-4 w-4"></i> Infra. y Planeamiento
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-bacheo-2024" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Bacheo 2024</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-bacheo-2025" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Bacheo 2025</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-bacheo-2026" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Bacheo 2026</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-bacheo-concreto" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Bacheo en Concreto</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-bacheo-frio" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Bacheo en Frío</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-pavimentacion-concreto" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Pavimentación (Concreto)</span>
+                        </label>
+                    </div>
+                </div>
+
                 <!-- GESTIÓN TERRITORIAL -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
@@ -244,6 +277,9 @@
         let asocCivilesLayer, jubiladosLayer, culturalesLayer, clubesLayer, comedoresLayer, 
             educacionLayer, fundacionesLayer, iglesiasLayer, saludLayer, fomentoLayer;
         
+        // Variables para Obras (Infraestructura y Planeamiento)
+        let bacheo2024Layer, bacheo2025Layer, bacheo2026Layer, bacheoConcretoLayer, bacheoFrioLayer, pavimentacionConcretoLayer;
+        
         // Variables para Barrenderos
         let barrenderosLayer;
         let barrenderosData = null;
@@ -272,6 +308,13 @@
             semaforosLayer = L.layerGroup();
             reductoresLayer = L.layerGroup();
             solicitudesLayer = L.layerGroup();
+
+            bacheo2024Layer = L.layerGroup();
+            bacheo2025Layer = L.layerGroup();
+            bacheo2026Layer = L.layerGroup();
+            bacheoConcretoLayer = L.layerGroup();
+            bacheoFrioLayer = L.layerGroup();
+            pavimentacionConcretoLayer = L.layerGroup();
 
             camarasLayer = L.layerGroup();
             alarmasLayer = L.layerGroup();
@@ -579,6 +622,79 @@
             cargarCapaPuntos('./Reductores de Velocidad.geojson', reductoresLayer, '#D34872', pathReductor, '#D34872', 'Reductor de Velocidad');
             cargarCapaPuntos('./Solicitudes Semaforos 2026.geojson', solicitudesLayer, '#4AB5E0', pathSolicitud, '#4AB5E0', 'Solicitud 2026');
 
+            // -----------------------------------------------------
+            // INFRAESTRUCTURA Y PLANEAMIENTO (Obras)
+            // -----------------------------------------------------
+            function cargarCapaObras(url, layerGroup, color, colorTitle, defaultTitle) {
+                fetch(url).then(r => r.json()).then(data => {
+                    L.geoJSON(data, {
+                        filter: function(feature) {
+                            const featCgm = feature.properties.CGM;
+                            if (featCgm && featCgm.toUpperCase() === "PARQUE BARON") return true;
+                            // Fallback BBox
+                            const geom = feature.geometry;
+                            if (geom) {
+                                let lng, lat;
+                                if (geom.type === 'Point') {
+                                    lng = geom.coordinates[0]; lat = geom.coordinates[1];
+                                } else if (geom.type === 'MultiLineString' || geom.type === 'LineString') {
+                                    const coords = geom.type === 'LineString' ? geom.coordinates[0] : geom.coordinates[0][0];
+                                    lng = coords[0]; lat = coords[1];
+                                } else if (geom.type === 'Polygon' || geom.type === 'MultiPolygon') {
+                                    const coords = geom.type === 'Polygon' ? geom.coordinates[0][0] : geom.coordinates[0][0][0];
+                                    lng = coords[0]; lat = coords[1];
+                                }
+                                if (lng && lat) {
+                                    if (lat >= -34.786 && lat <= -34.750 && lng >= -58.456 && lng <= -58.423) return true;
+                                }
+                            }
+                            return false;
+                        },
+                        style: function(feature) {
+                            return { color: color, weight: 4, opacity: 0.8, fillColor: color, fillOpacity: 0.5 };
+                        },
+                        pointToLayer: function(feature, latlng) {
+                            return L.circleMarker(latlng, {
+                                radius: 6,
+                                fillColor: color,
+                                color: '#FFFFFF',
+                                weight: 2,
+                                opacity: 1,
+                                fillOpacity: 0.9
+                            });
+                        },
+                        onEachFeature: function(feature, layer) {
+                            const props = feature.properties;
+                            const name = props.Name || props.NOMBRE || props.nombre || defaultTitle;
+                            
+                            let content = `<div class="font-sans min-w-[180px]">`;
+                            content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px;">${name}</h3>`;
+                            
+                            if (props.description) {
+                                // Limpiamos brs generados por KML/GoogleEarth
+                                let cleanDesc = props.description.replace(/<br>/gi, ' ').trim();
+                                content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Detalle:</b> ${cleanDesc}</p>`;
+                            }
+                            if (props.descripci__n) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Detalle:</b> ${props.descripci__n}</p>`;
+                            
+                            if (props.CGM) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>CGM:</b> ${props.CGM}</p>`;
+                            
+                            content += `</div>`;
+                            layer.bindPopup(content);
+                            layer.on('click', zoomToCgmBounds);
+                        }
+                    }).addTo(layerGroup);
+                }).catch(e => console.log('Error loading ' + url, e));
+            }
+
+            cargarCapaObras('./bacheo_2024_Parque Baron.geojson', bacheo2024Layer, '#EAB308', '#CA8A04', 'Bacheo 2024');
+            cargarCapaObras('./bacheo_2025_Parque Baron.geojson', bacheo2025Layer, '#F97316', '#C2410C', 'Bacheo 2025');
+            cargarCapaObras('./bacheo_2026_Parque Baron.geojson', bacheo2026Layer, '#EF4444', '#B91C1C', 'Bacheo 2026');
+            cargarCapaObras('./bache_en_concreto_Parque Baron.geojson', bacheoConcretoLayer, '#64748B', '#475569', 'Bacheo en Concreto');
+            cargarCapaObras('./bacheo_en_frio_Parque Baron.geojson', bacheoFrioLayer, '#06B6D4', '#0E7490', 'Bacheo en Frío');
+            cargarCapaObras('./pavimentacion_en_concreto_Parque Baron.geojson', pavimentacionConcretoLayer, '#8B5CF6', '#6D28D9', 'Pavimentación en Concreto');
+
+
             // Gestión Territorial (Barrenderos con colores y filtro)
             const renderBarrenderos = (filtroVal) => {
                 barrenderosLayer.clearLayers();
@@ -680,6 +796,14 @@
             toggleLayer('cb-poblacion', poblacionLayer);
             toggleLayer('cb-pobreza', pobrezaLayer);
             toggleLayer('cb-inundables', inundablesLayer);
+
+            // Infraestructura y Planeamiento
+            toggleLayer('cb-bacheo-2024', bacheo2024Layer);
+            toggleLayer('cb-bacheo-2025', bacheo2025Layer);
+            toggleLayer('cb-bacheo-2026', bacheo2026Layer);
+            toggleLayer('cb-bacheo-concreto', bacheoConcretoLayer);
+            toggleLayer('cb-bacheo-frio', bacheoFrioLayer);
+            toggleLayer('cb-pavimentacion-concreto', pavimentacionConcretoLayer);
 
             // Infraestructura
             toggleLayer('cb-semaforos', semaforosLayer);
