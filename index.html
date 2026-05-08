@@ -182,6 +182,19 @@
                     </div>
                 </div>
 
+                <!-- GESTIÓN TERRITORIAL -->
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="users" class="h-4 w-4"></i> Gestión Territorial
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-barrenderos" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Barrenderos</span>
+                        </label>
+                    </div>
+                </div>
+
                 <!-- SEGURIDAD -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
@@ -227,10 +240,11 @@
         let camarasLayer, alarmasLayer, comisariasLayer;
         let asocCivilesLayer, jubiladosLayer, culturalesLayer, clubesLayer, comedoresLayer, 
             educacionLayer, fundacionesLayer, iglesiasLayer, saludLayer, fomentoLayer;
+        let barrenderosLayer;
 
         function initMap() {
             lucide.createIcons();
-            
+
             // Inicialización de Leaflet
             map = L.map('map').setView([-34.7573, -58.4035], 13);
             L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -265,6 +279,8 @@
             iglesiasLayer = L.layerGroup();
             saludLayer = L.layerGroup();
             fomentoLayer = L.layerGroup();
+
+            barrenderosLayer = L.layerGroup();
 
             // FUNCIÓN PARA ENCUADRAR LOS LÍMITES DEL CGM PARQUE BARON
             window.zoomToCgmBounds = function() {
@@ -319,23 +335,17 @@
                         const props = feature.properties;
                         const nombre = props.NOMBRE_BAR || 'Barrio Popular';
                         let content = `
-                            <div class="font-sans min-w-[200px]">
-                                <h4 class="font-bold text-[#D34872] border-b border-[#E6EDF3] pb-1 mb-2">Barrio: ${nombre}</h4>
-                                <div class="bg-[#FDF2F8] p-2 rounded-md mb-2 border border-[#FBCFE8]">
-                                    <p class="text-xs font-bold text-[#BE123C] uppercase">Total Familias</p>
-                                    <p class="text-xl font-extrabold text-[#BE123C]">${Number(props.FAMILIAS || 0).toLocaleString('es-AR')}</p>
-                                </div>
-                                <ul class="text-xs text-[#64748B] space-y-1 mt-1">
-                                    <li><b class="capitalize text-[#0F172A]">ID RENABAP:</b> ${props.ID_RENABAP || '-'}</li>
-                                    <li><b class="capitalize text-[#0F172A]">Clasificación:</b> ${props.CLASIFICAC || '-'}</li>
-                                    <li><b class="capitalize text-[#0F172A]">Creación:</b> ${props.DECADA_CRE || '-'}</li>
-                                </ul>
-                                <div class="mt-2 pt-2 border-t border-[#E6EDF3] text-[10px] text-[#64748B] space-y-1">
-                                    <p><b>Agua:</b> ${props.AGUA || 'S/D'}</p>
-                                    <p><b>Cloacas:</b> ${props.CLOACAS || 'S/D'}</p>
-                                    <p><b>Luz:</b> ${props.ELECTRICID || 'S/D'}</p>
-                                </div>
-                            </div>`;
+                            <div class="font-sans min-w-[220px]">
+                                <h3 style="font-weight: 800; font-size: 14px; color: #D34872; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px;">${nombre}</h3>
+                                <p style="margin: 4px 0; font-size: 12px; color: #333;"><span style="background:#F3F6F9; padding:2px 6px; border-radius:4px; font-weight:bold; color:#19567C; font-size:10px;">ID RENABAP: ${props.ID_RENABAP || '-'}</span></p>
+                                <p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Clasificación:</b> ${props.CLASIFICAC || '-'}</p>
+                                <p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Familias:</b> ${props.FAMILIAS || '-'}</p>
+                                <p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Creación:</b> ${props.DECADA_CRE || '-'}</p>
+                                <div style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed #E6EDF3;">
+                                    <p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Agua:</b> ${props.AGUA || 'S/D'}</p>
+                                    <p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Cloacas:</b> ${props.CLOACAS || 'S/D'}</p>
+                                    <p style="margin: 2px 0; font-size: 10px; color: #64748B;"><b>Luz:</b> ${props.ELECTRICID || 'S/D'}</p>
+                                </div></div>`;
                         layer.bindPopup(content);
                         layer.on('click', zoomToCgmBounds);
                     }
@@ -470,7 +480,7 @@
             }).catch(e => console.log('Error loading inundables:', e));
 
             // -----------------------------------------------------
-            // FUNCIONES AUXILIARES PARA PUNTOS
+            // FUNCIONES AUXILIARES PARA PUNTOS Y LÍNEAS
             // -----------------------------------------------------
 
             const pathSemaforo = '<rect x="7" y="2" width="10" height="20" rx="3"/><circle cx="12" cy="7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="17" r="1.5"/>';
@@ -561,6 +571,30 @@
             cargarCapaPuntos('./Reductores de Velocidad.geojson', reductoresLayer, '#D34872', pathReductor, '#D34872', 'Reductor de Velocidad');
             cargarCapaPuntos('./Solicitudes Semaforos 2026.geojson', solicitudesLayer, '#4AB5E0', pathSolicitud, '#4AB5E0', 'Solicitud 2026');
 
+            // Gestión Territorial (Barrenderos)
+            fetch('./barrenderos_parquebaron.geojson').then(r => r.json()).then(data => {
+                L.geoJSON(data, {
+                    style: { color: '#F59E0B', weight: 4, opacity: 0.8 },
+                    onEachFeature: function(feature, layer) {
+                        const props = feature.properties;
+                        let content = `
+                            <div class="font-sans min-w-[200px]">
+                                <h4 class="font-bold text-[#F59E0B] border-b border-[#E6EDF3] pb-1 mb-2">Zona de Barrido</h4>
+                                <div class="bg-[#FEF3C7] p-2 rounded-md mb-2 border border-[#FDE68A]">
+                                    <p class="text-xs font-bold text-[#D97706] uppercase">Barrendero</p>
+                                    <p class="text-lg font-extrabold text-[#B45309]">${props.BARRENDERO || 'Sin asignar'}</p>
+                                </div>
+                                <ul class="text-xs text-[#64748B] space-y-1 mt-1">
+                                    <li><b class="capitalize text-[#0F172A]">Calle/Tramo:</b> ${props.CALLE || '-'}</li>
+                                    <li><b class="capitalize text-[#0F172A]">Legajo/DNI:</b> ${props['LEGAJO/DNI'] || 'S/D'}</li>
+                                </ul>
+                            </div>`;
+                        layer.bindPopup(content);
+                        layer.on('click', zoomToCgmBounds);
+                    }
+                }).addTo(barrenderosLayer);
+            }).catch(e => console.log('Error loading barrenderos:', e));
+
             // Seguridad
             cargarCapaPuntos('./Camaras_Parque Baron.geojson', camarasLayer, '#8B5CF6', pathCamara, '#8B5CF6', 'Cámara de Seguridad');
             cargarCapaPuntos('./alarmas_Parque Baron.geojson', alarmasLayer, '#F59E0B', pathAlarma, '#F59E0B', 'Alarma Comunitaria');
@@ -603,6 +637,9 @@
             toggleLayer('cb-solicitudes', solicitudesLayer);
             toggleLayer('cb-limite-cgm', limiteCgmLayer);
             toggleLayer('cb-barrios-populares', barriosPopularesLayer);
+
+            // Gestión Territorial
+            toggleLayer('cb-barrenderos', barrenderosLayer);
 
             // Seguridad
             toggleLayer('cb-camaras', camarasLayer);
