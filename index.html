@@ -972,17 +972,17 @@
                 L.geoJSON(barrenderosData, {
                     filter: function(feature) {
                         if (filtroVal === 'ALL') return true;
-                        const b = feature.properties.BARRENDERO || 'Sin asignar';
+                        const b = (feature.properties.BARRENDERO || 'Sin asignar').trim();
                         return b === filtroVal;
                     },
                     style: function(feature) {
-                        const b = feature.properties.BARRENDERO || 'Sin asignar';
+                        const b = (feature.properties.BARRENDERO || 'Sin asignar').trim();
                         const colorHex = barrenderosColorMap[b] || '#19567C';
                         return { color: colorHex, weight: 4, opacity: 0.9 };
                     },
                     onEachFeature: function(feature, layer) {
                         const props = feature.properties;
-                        const b = props.BARRENDERO || 'Sin asignar';
+                        const b = (props.BARRENDERO || 'Sin asignar').trim();
                         const colorHex = barrenderosColorMap[b] || '#19567C';
 
                         let content = `
@@ -1008,7 +1008,7 @@
                 barrenderosData = data;
                 const setNombres = new Set();
                 data.features.forEach(f => {
-                    setNombres.add(f.properties.BARRENDERO || 'Sin asignar');
+                    setNombres.add((f.properties.BARRENDERO || 'Sin asignar').trim());
                 });
 
                 const selectEl = document.getElementById('select-barrendero');
@@ -1026,6 +1026,10 @@
 
                 renderBarrenderos('ALL');
             }).catch(e => console.log('Error loading barrenderos:', e));
+
+            document.getElementById('select-barrendero').addEventListener('change', (e) => {
+                renderBarrenderos(e.target.value);
+            });
 
             // Espacios Públicos
             cargarCapaPuntos('./plazas_Parque Baron.geojson', plazasLayer, '#10B981', pathPlaza, '#10B981', 'Plaza');
