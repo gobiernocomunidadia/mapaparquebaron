@@ -112,6 +112,27 @@
                     </div>
                 </div>
 
+                <!-- ESPACIOS PÚBLICOS -->
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="tree-pine" class="h-4 w-4"></i> Espacios Públicos
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-plazas" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Plazas</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-parques" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Parques Municipales</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-potreros" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Potreros</span>
+                        </label>
+                    </div>
+                </div>
+
                 <!-- INSTITUCIONES -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
@@ -277,6 +298,9 @@
         let asocCivilesLayer, jubiladosLayer, culturalesLayer, clubesLayer, comedoresLayer, 
             educacionLayer, fundacionesLayer, iglesiasLayer, saludLayer, fomentoLayer;
         
+        // Variables para Espacios Públicos
+        let plazasLayer, parquesLayer, potrerosLayer;
+
         // Variables para Obras (Infraestructura y Planeamiento)
         let bacheo2024Layer, bacheo2025Layer, bacheo2026Layer, bacheoConcretoLayer, bacheoFrioLayer, pavimentacionConcretoLayer;
         
@@ -304,6 +328,10 @@
             poblacionLayer = L.layerGroup();
             pobrezaLayer = L.layerGroup();
             inundablesLayer = L.layerGroup();
+
+            plazasLayer = L.layerGroup();
+            parquesLayer = L.layerGroup();
+            potrerosLayer = L.layerGroup();
 
             semaforosLayer = L.layerGroup();
             reductoresLayer = L.layerGroup();
@@ -552,6 +580,8 @@
             const pathIglesias = '<path d="M12 2v20"/><path d="M8 7h8"/>';
             const pathSalud = '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>';
             const pathFomento = '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>';
+            
+            const pathPlaza = '<path d="M12 22v-7l-3-3"/><path d="M15 12l-3 3"/><path d="M12 2a4 4 0 0 0-4 4c0 1.5 1 2.5 1 4s-1 2.5-1 4a4 4 0 0 0 8 0c0-1.5-1-2.5-1-4s1-2.5 1-4a4 4 0 0 0-4-4Z"/>';
 
             function getLeafletIcon(color, iconPath) {
                 const size = 22; // Tamaño estándar para Leaflet
@@ -591,7 +621,7 @@
                         },
                         onEachFeature: function(feature, layer) {
                             const props = feature.properties;
-                            const name = props.NOMBRE || props.nombre || props['Nombre Ins'] || props.Name || props.NAME || defaultTitle;
+                            const name = props.NOMBRE || props.nombre || props.PLAZA || props.Potrero || props['Nombre Ins'] || props.Name || props.NAME || defaultTitle;
                             
                             let content = `<div class="font-sans min-w-[180px]">`;
                             content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px;">${name}</h3>`;
@@ -601,6 +631,12 @@
                             if (props.TIPO) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Categoría:</b> ${props.TIPO}</p>`;
                             
                             if (props.UBICACION) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Ubicación:</b> ${props.UBICACION}</p>`;
+                            if (props.DIRECCION) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Dirección:</b> ${props.DIRECCION}</p>`;
+                            if (props.Direccion) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Dirección:</b> ${props.Direccion}</p>`;
+                            
+                            if (props.Tipo_de_Intervenci__n) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Intervención:</b> ${props.Tipo_de_Intervenci__n}</p>`;
+                            if (props.Presupuesto__SP_) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Presupuesto:</b> ${props.Presupuesto__SP_}</p>`;
+                            
                             if (props.nivel) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Nivel:</b> ${props.nivel}</p>`;
                             if (props.modalidad) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Modalidad:</b> ${props.modalidad}</p>`;
                             if (props.calle) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Dirección:</b> ${props.calle} ${props.nro || ''}</p>`;
@@ -757,9 +793,10 @@
                 renderBarrenderos('ALL');
             }).catch(e => console.log('Error loading barrenderos:', e));
 
-            document.getElementById('select-barrendero').addEventListener('change', (e) => {
-                renderBarrenderos(e.target.value);
-            });
+            // Espacios Públicos
+            cargarCapaPuntos('./plazas_Parque Baron.geojson', plazasLayer, '#10B981', pathPlaza, '#10B981', 'Plaza');
+            cargarCapaPuntos('./parques_municipales_Parque Baron.geojson', parquesLayer, '#059669', pathPlaza, '#059669', 'Parque Municipal');
+            cargarCapaPuntos('./potreros_Parque Baron.geojson', potrerosLayer, '#F59E0B', pathClubes, '#F59E0B', 'Potrero');
 
             // Seguridad
             cargarCapaPuntos('./Camaras_Parque Baron.geojson', camarasLayer, '#8B5CF6', pathCamara, '#8B5CF6', 'Cámara de Seguridad');
@@ -796,6 +833,11 @@
             toggleLayer('cb-poblacion', poblacionLayer);
             toggleLayer('cb-pobreza', pobrezaLayer);
             toggleLayer('cb-inundables', inundablesLayer);
+
+            // Espacios Públicos
+            toggleLayer('cb-plazas', plazasLayer);
+            toggleLayer('cb-parques', parquesLayer);
+            toggleLayer('cb-potreros', potrerosLayer);
 
             // Infraestructura y Planeamiento
             toggleLayer('cb-bacheo-2024', bacheo2024Layer);
