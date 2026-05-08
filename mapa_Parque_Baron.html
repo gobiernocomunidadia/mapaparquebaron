@@ -106,6 +106,14 @@
                             <span class="text-sm text-[#0F172A] font-bold">Pobreza Crónica</span>
                         </label>
                         <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-escolaridad" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Escolaridad / Cobertura Salud</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-ind-salud" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Indicadores de Salud</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
                             <input type="checkbox" id="cb-inundables" class="w-4 h-4 accent-[#19567C]">
                             <span class="text-sm text-[#0F172A] font-bold">Zonas Inundables</span>
                         </label>
@@ -303,7 +311,7 @@
 
         // Variables de Capas
         let limiteElements, limiteCgmLayer, barriosPopularesLayer;
-        let poblacionLayer, pobrezaLayer, inundablesLayer;
+        let poblacionLayer, pobrezaLayer, inundablesLayer, escolaridadLayer, indSaludLayer;
         let semaforosLayer, reductoresLayer, solicitudesLayer;
         let camarasLayer, alarmasLayer, comisariasLayer, lprLayer;
         let asocCivilesLayer, jubiladosLayer, culturalesLayer, clubesLayer, comedoresLayer, 
@@ -366,6 +374,8 @@
             poblacionLayer = L.layerGroup();
             pobrezaLayer = L.layerGroup();
             inundablesLayer = L.layerGroup();
+            escolaridadLayer = L.layerGroup();
+            indSaludLayer = L.layerGroup();
 
             plazasLayer = L.layerGroup();
             parquesLayer = L.layerGroup();
@@ -427,7 +437,8 @@
                     onEachFeature: function(feature, layer) {
                         const props = feature.properties;
                         let content = `
-                            <div class="font-sans min-w-[200px]">
+                            <div class="font-sans min-w-[200px] relative">
+                                <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
                                 <h4 class="font-bold text-[#19567C] border-b border-[#E6EDF3] pb-1 mb-2">CGM: ${props.CGM || 'Parque Baron'}</h4>
                                 <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
                                     <p class="text-xs font-bold text-[#19567C] uppercase">Viviendas</p>
@@ -453,7 +464,8 @@
                         const props = feature.properties;
                         const nombre = props.NOMBRE_BAR || 'Barrio Popular';
                         let content = `
-                            <div class="font-sans min-w-[220px]">
+                            <div class="font-sans min-w-[220px] relative">
+                                <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
                                 <h3 style="font-weight: 800; font-size: 14px; color: #D34872; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px;">${nombre}</h3>
                                 <p style="margin: 4px 0; font-size: 12px; color: #333;"><span style="background:#F3F6F9; padding:2px 6px; border-radius:4px; font-weight:bold; color:#19567C; font-size:10px;">ID RENABAP: ${props.ID_RENABAP || '-'}</span></p>
                                 <p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Clasificación:</b> ${props.CLASIFICAC || '-'}</p>
@@ -498,7 +510,8 @@
                         let valHogares = props.RADIOS_HOG || props.HOGARES;
 
                         let content = `
-                            <div class="font-sans min-w-[200px]">
+                            <div class="font-sans min-w-[200px] relative">
+                                <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
                                 <h4 class="font-bold text-[#0B5F8D] border-b border-[#E6EDF3] pb-1 mb-2">Sector / Radio: ${radioStr}</h4>
                                 <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
                                     <p class="text-xs font-bold text-[#0B5F8D] uppercase">Total Habitantes</p>
@@ -538,7 +551,8 @@
                         let pct = props.P_PC_PER || 0;
 
                         let content = `
-                            <div class="font-sans min-w-[200px]">
+                            <div class="font-sans min-w-[200px] relative">
+                                <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
                                 <h4 class="font-bold text-[#19567C] border-b border-[#E6EDF3] pb-1 mb-2">Pobreza Crónica - Radio: ${radioStr}</h4>
                                 <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
                                     <p class="text-xs font-bold text-[#0B5F8D] uppercase">% Pobreza Crónica</p>
@@ -556,6 +570,87 @@
                     }
                 }).addTo(pobrezaLayer);
             }).catch(e => console.log('Error loading pobreza:', e));
+
+            fetch('./escolaridad_Parque Baron.geojson').then(r => r.json()).then(data => {
+                let maxVal = 0;
+                data.features.forEach(f => {
+                    let val = parseFloat(f.properties['Solo salud pública']) || 0;
+                    if (val > maxVal) maxVal = val;
+                });
+                L.geoJSON(data, {
+                    style: function(feature) {
+                        let val = parseFloat(feature.properties['Solo salud pública']) || 0;
+                        let color = '#D1E1F0';
+                        if(maxVal > 0) {
+                            if (val > maxVal * 0.8) color = '#084A6F';
+                            else if (val > maxVal * 0.4) color = '#2A7FA8';
+                        }
+                        return { fillColor: color, fillOpacity: 0.85, color: '#FFFFFF', weight: 1 };
+                    },
+                    onEachFeature: function(feature, layer) {
+                        let props = feature.properties;
+                        let radioStr = props['Código de radio'] || "Radio Censal";
+                        let saludPub = props['Solo salud pública'] || 0;
+                        let obraSoc = props['Obra social o prepaga (incluye PAMI)'] || 0;
+
+                        let content = `
+                            <div class="font-sans min-w-[200px] relative">
+                                <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
+                                <h4 class="font-bold text-[#19567C] border-b border-[#E6EDF3] pb-1 mb-2">Sector / Radio: ${radioStr}</h4>
+                                <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
+                                    <p class="text-xs font-bold text-[#0B5F8D] uppercase">Solo Salud Pública</p>
+                                    <p class="text-xl font-extrabold text-[#19567C]">${Number(saludPub).toLocaleString('es-AR')}</p>
+                                </div>
+                                <ul class="text-xs text-[#64748B] space-y-1 mt-1">
+                                    <li><b class="capitalize text-[#0F172A]">Población Total:</b> ${Number(props['Población total'] || 0).toLocaleString('es-AR')}</li>
+                                    <li><b class="capitalize text-[#0F172A]">Obra Social/Prepaga:</b> ${Number(obraSoc).toLocaleString('es-AR')}</li>
+                                </ul>
+                            </div>`;
+
+                        layer.bindPopup(content);
+                        layer.on('click', zoomToCgmBounds);
+                    }
+                }).addTo(escolaridadLayer);
+            }).catch(e => console.log('Error loading escolaridad:', e));
+
+            fetch('./indicadores_de_salud_Parque Baron.geojson').then(r => r.json()).then(data => {
+                let maxVal = 0;
+                data.features.forEach(f => {
+                    let val = parseFloat(f.properties['Ctro Salud'] || f.properties['Viviendas']) || 0;
+                    if (val > maxVal) maxVal = val;
+                });
+                L.geoJSON(data, {
+                    style: function(feature) {
+                        let val = parseFloat(feature.properties['Ctro Salud'] || feature.properties['Viviendas']) || 0;
+                        let color = '#D1E1F0';
+                        if(maxVal > 0) {
+                            if (val >= maxVal * 0.8) color = '#084A6F';
+                            else if (val >= maxVal * 0.4) color = '#2A7FA8';
+                        }
+                        return { fillColor: color, fillOpacity: 0.85, color: '#FFFFFF', weight: 2 };
+                    },
+                    onEachFeature: function(feature, layer) {
+                        let props = feature.properties;
+                        
+                        let content = `
+                            <div class="font-sans min-w-[200px] relative">
+                                <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
+                                <h4 class="font-bold text-[#19567C] border-b border-[#E6EDF3] pb-1 mb-2">Indicadores de Salud CGM</h4>
+                                <div class="bg-[#EAF1F7] p-2 rounded-md mb-2 border border-[#D1E1F0]">
+                                    <p class="text-xs font-bold text-[#0B5F8D] uppercase">Centros de Salud</p>
+                                    <p class="text-xl font-extrabold text-[#19567C]">${props['Ctro Salud'] || 'S/D'}</p>
+                                </div>
+                                <ul class="text-xs text-[#64748B] space-y-1 mt-1">
+                                    <li><b class="capitalize text-[#0F172A]">Nativos:</b> ${Number(props['Nativos'] || 0).toLocaleString('es-AR')}</li>
+                                    <li><b class="capitalize text-[#0F172A]">Migrantes:</b> ${Number(props['Migrantes'] || 0).toLocaleString('es-AR')}</li>
+                                </ul>
+                            </div>`;
+
+                        layer.bindPopup(content);
+                        layer.on('click', zoomToCgmBounds);
+                    }
+                }).addTo(indSaludLayer);
+            }).catch(e => console.log('Error loading indicadores de salud:', e));
 
             fetch('./zonas_inundables_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
                 let maxVal = 0;
@@ -579,7 +674,8 @@
                         let pct = props.PORCENTAJE || 0;
 
                         let content = `
-                            <div class="font-sans min-w-[200px]">
+                            <div class="font-sans min-w-[200px] relative">
+                                <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
                                 <h4 class="font-bold text-[#06B6D4] border-b border-[#E6EDF3] pb-1 mb-2">Zonas Inundables - Radio: ${radioStr}</h4>
                                 <div class="bg-[#ECFEFF] p-2 rounded-md mb-2 border border-[#A5F3FC]">
                                     <p class="text-xs font-bold text-[#0891B2] uppercase">Afectación</p>
@@ -662,8 +758,9 @@
                             const props = feature.properties;
                             const name = props.NOMBRE || props.nombre || props.PLAZA || props.Potrero || props['Nombre Ins'] || props.Name || props.NAME || defaultTitle;
                             
-                            let content = `<div class="font-sans min-w-[180px]">`;
-                            content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px;">${name}</h3>`;
+                            let content = `<div class="font-sans min-w-[180px] relative">`;
+                            content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
+                            content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">${name}</h3>`;
                             
                             if (props.description) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Detalle:</b> ${props.description}</p>`;
                             if (props.Tipo) content += `<p style="margin: 4px 0; font-size: 12px; color: #333;"><b>Tipo:</b> ${props.Tipo}</p>`;
@@ -724,8 +821,9 @@
                         const colorHex = pavimentosColorMap[p] || '#64748B';
 
                         let content = `
-                            <div class="font-sans min-w-[200px]">
-                                <h4 class="font-bold border-b border-[#E6EDF3] pb-1 mb-2" style="color: ${colorHex}">Tramo de Calle</h4>
+                            <div class="font-sans min-w-[200px] relative">
+                                <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
+                                <h4 class="font-bold border-b border-[#E6EDF3] pb-1 mb-2 pr-6" style="color: ${colorHex}">Tramo de Calle</h4>
                                 <div class="p-2 rounded-md mb-2" style="background-color: ${colorHex}15; border: 1px solid ${colorHex}40;">
                                     <p class="text-xs font-bold uppercase" style="color: ${colorHex}">Pavimento</p>
                                     <p class="text-sm font-extrabold" style="color: ${colorHex}">${p}</p>
@@ -837,8 +935,9 @@
                             const props = feature.properties;
                             const name = props.Name || props.NOMBRE || props.nombre || defaultTitle;
                             
-                            let content = `<div class="font-sans min-w-[180px]">`;
-                            content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px;">${name}</h3>`;
+                            let content = `<div class="font-sans min-w-[180px] relative">`;
+                            content += `<button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>`;
+                            content += `<h3 style="font-weight: 800; font-size: 14px; color: ${colorTitle}; border-bottom: 1px solid #E6EDF3; padding-bottom: 4px; margin-bottom: 8px; padding-right: 20px;">${name}</h3>`;
                             
                             if (props.description) {
                                 // Limpiamos brs generados por KML/GoogleEarth
@@ -887,8 +986,9 @@
                         const colorHex = barrenderosColorMap[b] || '#19567C';
 
                         let content = `
-                            <div class="font-sans min-w-[200px]">
-                                <h4 class="font-bold border-b border-[#E6EDF3] pb-1 mb-2" style="color: ${colorHex}">Zona de Barrido</h4>
+                            <div class="font-sans min-w-[200px] relative">
+                                <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
+                                <h4 class="font-bold border-b border-[#E6EDF3] pb-1 mb-2 pr-6" style="color: ${colorHex}">Zona de Barrido</h4>
                                 <div class="p-2 rounded-md mb-2" style="background-color: ${colorHex}15; border: 1px solid ${colorHex}40;">
                                     <p class="text-xs font-bold uppercase" style="color: ${colorHex}">Barrendero</p>
                                     <p class="text-lg font-extrabold" style="color: ${colorHex}">${b}</p>
@@ -967,6 +1067,8 @@
             // Demografía
             toggleLayer('cb-poblacion', poblacionLayer);
             toggleLayer('cb-pobreza', pobrezaLayer);
+            toggleLayer('cb-escolaridad', escolaridadLayer);
+            toggleLayer('cb-ind-salud', indSaludLayer);
             toggleLayer('cb-inundables', inundablesLayer);
 
             // Espacios Públicos
