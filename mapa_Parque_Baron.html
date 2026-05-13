@@ -267,6 +267,35 @@
                     </div>
                 </div>
 
+                <!-- RECLAMOS -->
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="message-square-warning" class="h-4 w-4"></i> Reclamos
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-reclamos" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Reclamos Recurrentes</span>
+                        </label>
+                        
+                        <div id="filtros-reclamos" class="hidden flex-col gap-2 mt-2 border-t border-[#19567C]/20 pt-2">
+                            <input type="text" id="filter-dni" placeholder="Buscar por DNI..." class="w-full text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none">
+                            
+                            <select id="filter-mes" class="w-full text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none">
+                                <option value="ALL">Todos los Meses</option>
+                            </select>
+                            
+                            <select id="filter-tipo" class="w-full text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none">
+                                <option value="ALL">Todos los Tipos</option>
+                            </select>
+                            
+                            <select id="filter-subtipo" class="w-full text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none">
+                                <option value="ALL">Todos los Sub Tipos</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- SEGURIDAD -->
                 <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
@@ -331,6 +360,10 @@
         let callejeroLayer;
         let callejeroData = null;
         let pavimentosColorMap = {};
+
+        // Variables para Reclamos
+        let reclamosLayer;
+        let reclamosData = null;
 
         const paletaAzules = ['#084A6F', '#0B5F8D', '#2A7FA8', '#6BA1C7', '#19567C', '#4AB5E0', '#003B5C', '#1E3A8A', '#3B82F6', '#60A5FA'];
         const paletaPavimentos = ['#475569', '#3B82F6', '#D97706', '#10B981', '#8B5CF6', '#F43F5E', '#64748B'];
@@ -410,6 +443,7 @@
             fomentoLayer = L.layerGroup();
 
             barrenderosLayer = L.layerGroup();
+            reclamosLayer = L.layerGroup();
 
             // FUNCIÓN PARA ENCUADRAR LOS LÍMITES DEL CGM PARQUE BARON
             window.zoomToCgmBounds = function() {
@@ -705,6 +739,7 @@
             const pathAlarma = '<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>';
             const pathComisaria = '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>';
             const pathLpr = '<path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10" rx="1"/>';
+            const pathReclamo = '<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>';
 
             const pathAsoc = '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>';
             const pathJubilados = '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>';
@@ -963,6 +998,136 @@
             cargarCapaObras('./bacheo_en_frio_Parque Baron.geojson', bacheoFrioLayer, '#06B6D4', '#0E7490', 'Bacheo en Frío');
             cargarCapaObras('./pavimentacion_en_concreto_Parque Baron.geojson', pavimentacionConcretoLayer, '#8B5CF6', '#6D28D9', 'Pavimentación en Concreto');
 
+            // -----------------------------------------------------
+            // RECLAMOS RECURRENTES (Con filtros dinámicos)
+            // -----------------------------------------------------
+            const renderReclamos = () => {
+                reclamosLayer.clearLayers();
+                if(!reclamosData) return;
+
+                const fMes = document.getElementById('filter-mes').value;
+                const fTipo = document.getElementById('filter-tipo').value;
+                const fSubTipo = document.getElementById('filter-subtipo').value;
+                const fDNI = document.getElementById('filter-dni').value.trim().toLowerCase();
+
+                L.geoJSON(reclamosData, {
+                    filter: function(feature) {
+                        const props = feature.properties;
+                        
+                        // Filter by DNI
+                        if (fDNI !== '' && (!props.DNI || !props.DNI.toString().toLowerCase().includes(fDNI))) {
+                            return false;
+                        }
+
+                        // Check if AT LEAST ONE history item matches all active dropdown filters
+                        if (fMes === 'ALL' && fTipo === 'ALL' && fSubTipo === 'ALL') return true;
+
+                        const historial = props.Detalle_Historial || [];
+                        const matchesHistorial = historial.some(h => {
+                            const mesMatch = (fMes === 'ALL' || (h.Fecha && h.Fecha.startsWith(fMes)));
+                            const tipoMatch = (fTipo === 'ALL' || h.Tipo === fTipo);
+                            const subTipoMatch = (fSubTipo === 'ALL' || h.SubTipo === fSubTipo);
+                            return mesMatch && tipoMatch && subTipoMatch;
+                        });
+
+                        return matchesHistorial;
+                    },
+                    pointToLayer: function(feature, latlng) {
+                        return L.marker(latlng, { icon: getLeafletIcon('#E11D48', pathReclamo) }); // Rose/Red for alerts
+                    },
+                    onEachFeature: function(feature, layer) {
+                        const props = feature.properties;
+                        const hist = props.Detalle_Historial || [];
+                        
+                        let histHtml = '<div class="max-h-[120px] overflow-y-auto mt-2 space-y-2 pr-1 custom-scrollbar">';
+                        hist.forEach(h => {
+                            histHtml += `
+                                <div class="bg-[#F3F6F9] p-2 rounded border border-[#E6EDF3] text-[10px]">
+                                    <p class="font-bold text-[#0F172A] leading-tight">${h.SubTipo || 'S/D'}</p>
+                                    <p class="text-[#64748B]">${h.Tipo || 'S/D'}</p>
+                                    <p class="text-[#0B5F8D] font-semibold mt-1"><i data-lucide="calendar" class="h-3 w-3 inline"></i> ${h.Fecha || 'S/D'}</p>
+                                </div>
+                            `;
+                        });
+                        histHtml += '</div>';
+
+                        let content = `
+                            <div class="font-sans min-w-[220px] relative">
+                                <button onclick="window.closeInfoWindow()" class="custom-close-btn">&times;</button>
+                                <h4 class="font-bold border-b border-[#E6EDF3] pb-1 mb-2 pr-6 text-[#E11D48]">Reclamos Recurrentes</h4>
+                                <div class="p-2 rounded-md mb-2 bg-[#FFE4E6] border border-[#FECDD3]">
+                                    <p class="text-xs font-bold uppercase text-[#E11D48]">Vecino/a</p>
+                                    <p class="text-sm font-extrabold text-[#9F1239]">${props.Vecino || 'S/D'}</p>
+                                </div>
+                                <ul class="text-xs text-[#64748B] space-y-1 mt-1">
+                                    <li><b class="capitalize text-[#0F172A]">DNI:</b> ${props.DNI || '-'}</li>
+                                    <li><b class="capitalize text-[#0F172A]">Dirección:</b> ${props.Direccion || '-'}</li>
+                                    <li><b class="capitalize text-[#0F172A]">Total Reclamos:</b> ${props.Total_Reclamos_Zona || 0}</li>
+                                </ul>
+                                ${histHtml}
+                            </div>`;
+                        
+                        layer.bindPopup(content);
+                        layer.on('click', () => {
+                            zoomToCgmBounds();
+                            setTimeout(() => lucide.createIcons(), 50); // Re-render icons inside popup
+                        });
+                    }
+                }).addTo(reclamosLayer);
+            };
+
+            fetch('./recurrentes_Parque Baron.geojson').then(r => r.json()).then(data => {
+                reclamosData = data;
+                
+                const setMeses = new Set();
+                const setTipos = new Set();
+                const setSubTipos = new Set();
+
+                data.features.forEach(f => {
+                    const historial = f.properties.Detalle_Historial || [];
+                    historial.forEach(h => {
+                        if(h.Fecha) {
+                            const mesAnio = h.Fecha.substring(0, 7); // "YYYY-MM"
+                            setMeses.add(mesAnio);
+                        }
+                        if(h.Tipo) setTipos.add(h.Tipo);
+                        if(h.SubTipo) setSubTipos.add(h.SubTipo);
+                    });
+                });
+
+                // Populate selects
+                const popSelect = (id, set) => {
+                    const el = document.getElementById(id);
+                    Array.from(set).sort().reverse().forEach(v => { // Reverse for descending dates
+                        const opt = document.createElement('option');
+                        opt.value = v;
+                        opt.textContent = v;
+                        el.appendChild(opt);
+                    });
+                };
+                
+                popSelect('filter-mes', setMeses);
+                
+                const sortAndPop = (id, set) => {
+                    const el = document.getElementById(id);
+                    Array.from(set).sort().forEach(v => {
+                        const opt = document.createElement('option');
+                        opt.value = v;
+                        opt.textContent = v;
+                        el.appendChild(opt);
+                    });
+                }
+                sortAndPop('filter-tipo', setTipos);
+                sortAndPop('filter-subtipo', setSubTipos);
+
+                renderReclamos();
+            }).catch(e => console.log('Error loading reclamos:', e));
+
+            // Attach listeners to filters
+            ['filter-mes', 'filter-tipo', 'filter-subtipo'].forEach(id => {
+                document.getElementById(id).addEventListener('change', renderReclamos);
+            });
+            document.getElementById('filter-dni').addEventListener('input', renderReclamos);
 
             // Gestión Territorial (Barrenderos con colores y filtro)
             const renderBarrenderos = (filtroVal) => {
@@ -1120,6 +1285,23 @@
                     } else {
                         map.removeLayer(barrenderosLayer);
                         selectBarrendero.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // Reclamos
+            const cbReclamos = document.getElementById('cb-reclamos');
+            const filtrosReclamos = document.getElementById('filtros-reclamos');
+            if(cbReclamos) {
+                cbReclamos.addEventListener('change', (e) => {
+                    if(e.target.checked) {
+                        map.addLayer(reclamosLayer);
+                        filtrosReclamos.classList.remove('hidden');
+                        filtrosReclamos.classList.add('flex');
+                    } else {
+                        map.removeLayer(reclamosLayer);
+                        filtrosReclamos.classList.add('hidden');
+                        filtrosReclamos.classList.remove('flex');
                     }
                 });
             }
