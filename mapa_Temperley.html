@@ -438,7 +438,7 @@
             barrenderosLayer = L.layerGroup();
             reclamosLayer = L.layerGroup();
 
-            // FUNCIÓN PARA ENCUADRAR LOS LÍMITES DEL CGM PARQUE BARON
+            // FUNCIÓN PARA ENCUADRAR LOS LÍMITES DEL CGM TEMPERLEY
             window.zoomToCgmBounds = function() {
                 if (!cgmBoundsCache && limiteCgmLayerObj) {
                     cgmBoundsCache = limiteCgmLayerObj.getBounds();
@@ -868,7 +868,7 @@
                 }).addTo(callejeroLayer);
             };
 
-            fetch('./callejero_Parque Baron.geojson').then(r => r.json()).then(data => {
+            fetch('./callejero_Temperley.geojson').then(r => r.json()).then(data => {
                 // Chequeo y transformación para EPSG:3857 (coordenadas esféricas en metros)
                 let is3857 = false;
                 if (data.crs && data.crs.properties && data.crs.properties.name && data.crs.properties.name.includes('3857')) {
@@ -985,12 +985,12 @@
                 }).catch(e => console.log('Error loading ' + url, e));
             }
 
-            cargarCapaObras('./bacheo_2024_Parque Baron.geojson', bacheo2024Layer, '#EAB308', '#CA8A04', 'Bacheo 2024');
-            cargarCapaObras('./bacheo_2025_Parque Baron.geojson', bacheo2025Layer, '#F97316', '#C2410C', 'Bacheo 2025');
-            cargarCapaObras('./bacheo_2026_Parque Baron.geojson', bacheo2026Layer, '#EF4444', '#B91C1C', 'Bacheo 2026');
-            cargarCapaObras('./bache_en_concreto_Parque Baron.geojson', bacheoConcretoLayer, '#64748B', '#475569', 'Bacheo en Concreto');
-            cargarCapaObras('./bacheo_en_frio_Parque Baron.geojson', bacheoFrioLayer, '#06B6D4', '#0E7490', 'Bacheo en Frío');
-            cargarCapaObras('./pavimentacion_en_concreto_Parque Baron.geojson', pavimentacionConcretoLayer, '#8B5CF6', '#6D28D9', 'Pavimentación en Concreto');
+            cargarCapaObras('./bacheo_2024_Temperley.geojson', bacheo2024Layer, '#EAB308', '#CA8A04', 'Bacheo 2024');
+            cargarCapaObras('./bacheo_2025_Temperley.geojson', bacheo2025Layer, '#F97316', '#C2410C', 'Bacheo 2025');
+            cargarCapaObras('./bacheo_2026_Temperley.geojson', bacheo2026Layer, '#EF4444', '#B91C1C', 'Bacheo 2026');
+            cargarCapaObras('./bache_en_concreto_Temperley.geojson', bacheoConcretoLayer, '#64748B', '#475569', 'Bacheo en Concreto');
+            cargarCapaObras('./bacheo_en_frio_Temperley.geojson', bacheoFrioLayer, '#06B6D4', '#0E7490', 'Bacheo en Frío');
+            cargarCapaObras('./pavimentacion_en_concreto_Temperley.geojson', pavimentacionConcretoLayer, '#8B5CF6', '#6D28D9', 'Pavimentación en Concreto');
 
             // -----------------------------------------------------
             // RECLAMOS RECURRENTES (Con filtros dinámicos)
@@ -1070,7 +1070,7 @@
                 }).addTo(reclamosLayer);
             };
 
-            fetch('./recurrentes_Parque Baron.geojson').then(r => r.json()).then(data => {
+            fetch('./recurrentes_Temperley.geojson').then(r => r.json()).then(data => {
                 reclamosData = data;
                 
                 const setMeses = new Set();
@@ -1163,7 +1163,7 @@
                 }).addTo(barrenderosLayer);
             };
 
-            fetch('./barrenderos_parquebaron.geojson').then(r => r.json()).then(data => {
+            fetch('./zonas_barrenderos_Temperley.geojson').then(r => r.json()).then(data => {
                 barrenderosData = data;
                 const setNombres = new Set();
                 data.features.forEach(f => {
