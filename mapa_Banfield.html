@@ -523,7 +523,7 @@
             // CAPAS DEMOGRÁFICAS Y DE ZONIFICACIÓN
             // -----------------------------------------------------
             
-            fetch('./poblacion_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
+            fetch('./poblacion_cgm_Banfield.geojson').then(r => r.json()).then(data => {
                 let maxVal = 0;
                 data.features.forEach(f => {
                     let val = parseInt(f.properties['Habitantes'] || f.properties['RADIOS_POB']) || 0;
@@ -566,7 +566,7 @@
                 }).addTo(poblacionLayer);
             }).catch(e => console.log('Error loading poblacion:', e));
 
-            fetch('./pobreza_cronica_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
+            fetch('./pobreza_cronica_cgm_Banfield.geojson').then(r => r.json()).then(data => {
                 let maxVal = 0;
                 data.features.forEach(f => {
                     let val = parseFloat(f.properties['P_PC_PER']) || 0;
@@ -608,7 +608,7 @@
                 }).addTo(pobrezaLayer);
             }).catch(e => console.log('Error loading pobreza:', e));
 
-            fetch('./escolaridad_Parque Baron.geojson').then(r => r.json()).then(data => {
+            fetch('./escolaridad_Banfield.geojson').then(r => r.json()).then(data => {
                 let maxVal = 0;
                 data.features.forEach(f => {
                     let val = parseFloat(f.properties['Solo salud pública']) || 0;
@@ -626,7 +626,7 @@
                     },
                     onEachFeature: function(feature, layer) {
                         let props = feature.properties;
-                        let radioStr = props['Código de radio'] || "Radio Censal";
+                        let radioStr = props['Código de radio'] || props['Código de radio.'] || "Radio Censal";
                         let saludPub = props['Solo salud pública'] || 0;
                         let obraSoc = props['Obra social o prepaga (incluye PAMI)'] || 0;
 
@@ -650,7 +650,7 @@
                 }).addTo(escolaridadLayer);
             }).catch(e => console.log('Error loading escolaridad:', e));
 
-            fetch('./indicadores_de_salud_Parque Baron.geojson').then(r => r.json()).then(data => {
+            fetch('./indicadores_de_salud_Banfield.geojson').then(r => r.json()).then(data => {
                 let maxVal = 0;
                 data.features.forEach(f => {
                     let val = parseFloat(f.properties['Ctro Salud'] || f.properties['Viviendas']) || 0;
@@ -689,7 +689,7 @@
                 }).addTo(indSaludLayer);
             }).catch(e => console.log('Error loading indicadores de salud:', e));
 
-            fetch('./zonas_inundables_cgm_Parque Baron.geojson').then(r => r.json()).then(data => {
+            fetch('./zonas_inundables_cgm_Banfield.geojson').then(r => r.json()).then(data => {
                 let maxVal = 0;
                 data.features.forEach(f => {
                     let val = parseFloat(f.properties['PORCENTAJE']) || 0;
