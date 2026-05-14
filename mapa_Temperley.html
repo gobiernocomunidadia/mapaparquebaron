@@ -129,6 +129,10 @@
                             <span class="text-sm text-[#0F172A] font-bold">Plazas</span>
                         </label>
                         <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-parques" class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Parques Municipales</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
                             <input type="checkbox" id="cb-potreros" class="w-4 h-4 accent-[#19567C]">
                             <span class="text-sm text-[#0F172A] font-bold">Potreros</span>
                         </label>
@@ -341,7 +345,7 @@
             educacionLayer, fundacionesLayer, iglesiasLayer, saludLayer, fomentoLayer;
         
         // Variables para Espacios Públicos
-        let plazasLayer, potrerosLayer;
+        let plazasLayer, parquesLayer, potrerosLayer;
 
         // Variables para Obras (Infraestructura y Planeamiento)
         let bacheo2024Layer, bacheo2025Layer, bacheo2026Layer, bacheoConcretoLayer, bacheoFrioLayer, pavimentacionConcretoLayer;
@@ -405,6 +409,7 @@
             indSaludLayer = L.layerGroup();
 
             plazasLayer = L.layerGroup();
+            parquesLayer = L.layerGroup();
             potrerosLayer = L.layerGroup();
 
             semaforosLayer = L.layerGroup();
@@ -1163,7 +1168,7 @@
                 }).addTo(barrenderosLayer);
             };
 
-            fetch('./zonas_barrenderos_Temperley.geojson').then(r => r.json()).then(data => {
+            fetch('./zona_barrenderos_Temperley.geojson').then(r => r.json()).then(data => {
                 barrenderosData = data;
                 const setNombres = new Set();
                 data.features.forEach(f => {
@@ -1192,6 +1197,7 @@
 
             // Espacios Públicos
             cargarCapaPuntos('./plazas_Temperley.geojson', plazasLayer, '#10B981', pathPlaza, '#10B981', 'Plaza');
+            cargarCapaPuntos('./parques_municipales_Temperley.geojson', parquesLayer, '#059669', pathPlaza, '#059669', 'Parque Municipal');
             cargarCapaPuntos('./potreros_Temperley.geojson', potrerosLayer, '#F59E0B', pathClubes, '#F59E0B', 'Potrero');
 
             // Seguridad
@@ -1235,6 +1241,7 @@
 
             // Espacios Públicos
             toggleLayer('cb-plazas', plazasLayer);
+            toggleLayer('cb-parques', parquesLayer);
             toggleLayer('cb-potreros', potrerosLayer);
 
             // Infraestructura y Planeamiento
