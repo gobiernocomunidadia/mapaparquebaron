@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "bacheo_2025_Banfield",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.4140782, -34.7351096, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.3704355, -34.7458322, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.3692798, -34.7456759, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.4150777, -34.7421202, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.3707273, -34.7492831, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.4071057, -34.7414886, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.4236194, -34.7378654, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.3705611, -34.7474395, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.3710903, -34.7474232, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.406073, -34.74165, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.3884938, -34.7514809, 0.0 ] } }
+]
+}

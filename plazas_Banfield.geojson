@@ -1,0 +1,19 @@
+{
+"type": "FeatureCollection",
+"name": "plazas_Banfield",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA ROLDAN", "UBICACION": "BELISARIO ROLDÁN 295", "Lat": "-34.74946924681299", "Long": " -58.37050373955795", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.370503739557947, -34.749469246812993 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA HEROES DE MALVINAS", "UBICACION": "ROLDAN Y CAPITÁN ROJAS", "Lat": "-34.75148923423439", "Long": " -58.37024533366208", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.370245333662083, -34.751489234234391 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA 11 DE SEPTIEMBRE", "UBICACION": "11 DE SEPTIEMBRE 1900", "Lat": "-34.74233009185865", "Long": " -58.37620063660679", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.376200636606789, -34.742330091858648 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA EEUU DE BRASIL (plazoleta Roberto Sanchez) ESTACION DE BANFIELD /PLAZA  ANGELIS ", "UBICACION": "LEANDRO N. ALEM & ANTONIO BERUTI", "Lat": "-34.743881059764384", "Long": " -58.39610791508919", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.396107915089189, -34.743881059764384 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA DEL CAMPEON", "UBICACION": "VALENTÍN VERGARA 1529", "Lat": "-34.74252889481494", "Long": " -58.394780343207415", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.394780343207415, -34.742528894814939 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA COMBATIENTES DE MALVINAS", "UBICACION": "VERGARA E/ GASCÓN Y MEDRANO", "Lat": "-34.74731323482849", "Long": " -58.39558491921744", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.395584919217441, -34.747313234828489 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA TUNEL CHACABUCO", "UBICACION": "CHACABUCO Y LAS VIAS ", "Lat": "-34.74539057610683", "Long": " -58.39518282833215", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.395182828332153, -34.745390576106828 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA LOS VECINOS", "UBICACION": "GASCÓN Y MEDRANO", "Lat": "-34.7482023428546", "Long": " -58.386399984559425", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.386399984559425, -34.748202342854597 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA GARRAFA SANCHEZ", "UBICACION": "PEÑA & LUGANO", "Lat": "-34.750170581437544", "Long": " -58.38662555178425", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.386625551784249, -34.750170581437544 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA RUBEN HECTOR MARTEL", "UBICACION": "RINCÓN & GENERAL CAPDEVILA", "Lat": "-34.74348350226239", "Long": " -58.38161781002049", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.381617810020487, -34.743483502262393 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA LEVALLE", "UBICACION": "EZEIZA & AVENIDA LA PLATA", "Lat": "-34.74630012857197", "Long": " -58.36953947376966", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.369539473769663, -34.746300128571967 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA ROBERTO SANCHEZ ", "UBICACION": "ALEM Y GODOY CRUZ ", "Lat": "-34.73904827669531", "Long": " -58.39525320244843", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.39525320244843, -34.739048276695307 ] } }
+]
+}
