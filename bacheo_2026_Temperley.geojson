@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "bacheo_2026_Temperley",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.38927, -34.7653855, 0.0 ] } }
+]
+}

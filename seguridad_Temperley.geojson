@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "seguridad_Temperley",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "fid": 24, "OSM_ID": 573407650, "CODE": 2001, "NAME": "Comisaría 33", "LATITUD": -34.763596, "LONGITUD": -58.379803, "IDPROV": "06", "PROV": "Buenos Aires", "IDDPTO": "06490", "Partido": "Lomas de Zamora", "REDCODE": "064901906", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.379803, -34.763596 ] } },
+{ "type": "Feature", "properties": { "fid": 105, "OSM_ID": 1715389993, "CODE": 2001, "NAME": "Comisaría 3era.", "LATITUD": -34.778396, "LONGITUD": -58.395167, "IDPROV": "06", "PROV": "Buenos Aires", "IDDPTO": "06490", "Partido": "Lomas de Zamora", "REDCODE": "064904911", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3951675, -34.7783968 ] } },
+{ "type": "Feature", "properties": { "fid": 532, "OSM_ID": 405787334, "CODE": 2001, "NAME": "Policía Federal", "LATITUD": -34.776085, "LONGITUD": -58.396689, "IDPROV": "06", "PROV": "Buenos Aires", "IDDPTO": "06490", "Partido": "Lomas de Zamora", "REDCODE": "064904911", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3966898, -34.7760856 ] } }
+]
+}

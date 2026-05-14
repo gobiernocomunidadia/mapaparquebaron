@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "sociedades_de_fomento_Temperley",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Temperley", "NOMBRE": "Sociedad De Fomento Villa La Perla", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.77817102, "LONGITUD": -58.37873467 }, "geometry": { "type": "Point", "coordinates": [ -58.37873467, -34.77817102 ] } },
+{ "type": "Feature", "properties": { "CGM": "Temperley", "NOMBRE": "Asociacion De Fomento Bartolome Mitre", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.7772152, "LONGITUD": -58.37165942 }, "geometry": { "type": "Point", "coordinates": [ -58.37165942, -34.7772152 ] } },
+{ "type": "Feature", "properties": { "CGM": "Temperley", "NOMBRE": "Sociedad De Fomento Barrio Moderno Y Villa Moderna", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.783078, "LONGITUD": -58.3851 }, "geometry": { "type": "Point", "coordinates": [ -58.3851, -34.783078 ] } },
+{ "type": "Feature", "properties": { "CGM": "Temperley", "NOMBRE": "Sociedad De Fomento Temperley Oeste", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.778949, "LONGITUD": -58.409672 }, "geometry": { "type": "Point", "coordinates": [ -58.409672, -34.778949 ] } },
+{ "type": "Feature", "properties": { "CGM": "Temperley", "NOMBRE": "Sociedad De Fomento Y Sala De Asistencia Medica Bernardino Rivadavia", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.775288, "LONGITUD": -58.387944 }, "geometry": { "type": "Point", "coordinates": [ -58.387944, -34.775288 ] } },
+{ "type": "Feature", "properties": { "CGM": "Temperley", "NOMBRE": "Sociedad De Fomento Gral Roca", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.769423, "LONGITUD": -58.369389 }, "geometry": { "type": "Point", "coordinates": [ -58.369389, -34.769423 ] } },
+{ "type": "Feature", "properties": { "CGM": "Temperley", "NOMBRE": "Sociedad De Fomento Carola Lorenzini", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.767389, "LONGITUD": -58.385703 }, "geometry": { "type": "Point", "coordinates": [ -58.385703, -34.767389 ] } },
+{ "type": "Feature", "properties": { "CGM": "Temperley", "NOMBRE": "Sociedad De Fomento Oro Oeste", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.762793, "LONGITUD": -58.38439 }, "geometry": { "type": "Point", "coordinates": [ -58.38439, -34.762793 ] } }
+]
+}

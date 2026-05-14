@@ -1,0 +1,23 @@
+{
+"type": "FeatureCollection",
+"name": "bacheo_2025_Temperley",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3791282, -34.7767849, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3841748, -34.7808927, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3859614, -34.7835717, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3909681, -34.7872774, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3741717, -34.7640676, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3847991, -34.7727007, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3897981, -34.7842378, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3903468, -34.7859917, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3765867, -34.7637539, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3929321, -34.7778645, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3856084, -34.7760456, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3748479, -34.7618487, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.4116165, -34.7828013, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.4113308, -34.7811677, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.4075822, -34.7791279, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.4103445, -34.7760213, 0.0 ] } }
+]
+}
