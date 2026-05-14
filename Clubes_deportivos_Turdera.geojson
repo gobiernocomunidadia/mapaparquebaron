@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "Clubes_deportivos_Turdera",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Turdera", "NOMBRE": "Club Social Y Deportivo Juventud Obrera", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.79079824, "LONGITUD": -58.39914842 }, "geometry": { "type": "Point", "coordinates": [ -58.39914842, -34.79079824 ] } },
+{ "type": "Feature", "properties": { "CGM": "Turdera", "NOMBRE": "Taekwon-Do Asociacion Civil Provincial Lomas De Zamora", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.792115, "LONGITUD": -58.403306 }, "geometry": { "type": "Point", "coordinates": [ -58.403306, -34.792115 ] } }
+]
+}

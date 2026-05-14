@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "sociedades_de_fomento_Turdera",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Turdera", "NOMBRE": "Sociedad De Fomento Y Alumni Social Club", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.79051866, "LONGITUD": -58.4061585 }, "geometry": { "type": "Point", "coordinates": [ -58.4061585, -34.79051866 ] } },
+{ "type": "Feature", "properties": { "CGM": "Turdera", "NOMBRE": "Asociacion De Fomento Villa Ratti", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.78626348, "LONGITUD": -58.41120392 }, "geometry": { "type": "Point", "coordinates": [ -58.41120392, -34.78626348 ] } }
+]
+}

@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "centro_de_jubilados_Turdera",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Turdera", "NOMBRE": "Centro Recreativo De Jubilados Y Pensionados De Turdera", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.79211407, "LONGITUD": -58.40339332 }, "geometry": { "type": "Point", "coordinates": [ -58.40339332, -34.79211407 ] } },
+{ "type": "Feature", "properties": { "CGM": "Turdera", "NOMBRE": "Centro De Jubilados Y Pensionados Sol De Turdera", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.79365713, "LONGITUD": -58.40816899 }, "geometry": { "type": "Point", "coordinates": [ -58.40816899, -34.79365713 ] } }
+]
+}

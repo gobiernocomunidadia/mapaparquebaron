@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "iglesias_Turdera",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Turdera", "NOMBRE": "Iglesia Nueva Apostolica (Sud America) Filial Nº 3 Lomas De Zamora", "TIPO": "IGLESIAS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.78984966, "LONGITUD": -58.4108445 }, "geometry": { "type": "Point", "coordinates": [ -58.4108445, -34.78984966 ] } },
+{ "type": "Feature", "properties": { "CGM": "Turdera", "NOMBRE": "Religion Cristiana Argentina Filial Lomas De Zamora", "TIPO": "IGLESIAS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.787795, "LONGITUD": -58.402402 }, "geometry": { "type": "Point", "coordinates": [ -58.402402, -34.787795 ] } },
+{ "type": "Feature", "properties": { "CGM": "Turdera", "NOMBRE": "Ile Oxum Epanda Ibeji", "TIPO": "IGLESIAS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.78933, "LONGITUD": -58.40424 }, "geometry": { "type": "Point", "coordinates": [ -58.40424, -34.78933 ] } }
+]
+}
