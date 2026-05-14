@@ -133,10 +133,6 @@
                             <span class="text-sm text-[#0F172A] font-bold">Plazas</span>
                         </label>
                         <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="checkbox" id="cb-parques" class="w-4 h-4 accent-[#19567C]">
-                            <span class="text-sm text-[#0F172A] font-bold">Parques Municipales</span>
-                        </label>
-                        <label class="flex items-center gap-3 cursor-pointer">
                             <input type="checkbox" id="cb-potreros" class="w-4 h-4 accent-[#19567C]">
                             <span class="text-sm text-[#0F172A] font-bold">Potreros</span>
                         </label>
@@ -349,7 +345,7 @@
             educacionLayer, fundacionesLayer, iglesiasLayer, saludLayer, fomentoLayer;
         
         // Variables para Espacios Públicos
-        let plazasLayer, parquesLayer, potrerosLayer;
+        let plazasLayer, potrerosLayer;
 
         // Variables para Obras (Infraestructura y Planeamiento)
         let bacheo2024Layer, bacheo2025Layer, bacheo2026Layer, bacheoConcretoLayer, bacheoFrioLayer, pavimentacionConcretoLayer;
@@ -413,7 +409,6 @@
             indSaludLayer = L.layerGroup();
 
             plazasLayer = L.layerGroup();
-            parquesLayer = L.layerGroup();
             potrerosLayer = L.layerGroup();
 
             semaforosLayer = L.layerGroup();
@@ -447,7 +442,7 @@
             barrenderosLayer = L.layerGroup();
             reclamosLayer = L.layerGroup();
 
-            // FUNCIÓN PARA ENCUADRAR LOS LÍMITES DEL CGM PARQUE BARON
+            // FUNCIÓN PARA ENCUADRAR LOS LÍMITES DEL CGM BANFIELD
             window.zoomToCgmBounds = function() {
                 if (!cgmBoundsCache && limiteCgmLayerObj) {
                     cgmBoundsCache = limiteCgmLayerObj.getBounds();
@@ -780,7 +775,7 @@
                     L.geoJSON(data, {
                         filter: function(feature) {
                             const featCgm = feature.properties.CGM;
-                            if (featCgm && featCgm.toUpperCase() === "PARQUE BARON") return true;
+                            if (featCgm && featCgm.toUpperCase() === "BANFIELD") return true;
                             // Bounding box filter para casos sin la propiedad CGM asignada correctamente
                             if (!featCgm && feature.geometry.type === 'Point') {
                                 const lng = feature.geometry.coordinates[0];
@@ -842,7 +837,7 @@
                 L.geoJSON(callejeroData, {
                     filter: function(feature) {
                         const featCgm = feature.properties.CGM;
-                        if (!featCgm || featCgm.toUpperCase() !== "PARQUE BARON") return false;
+                        if (!featCgm || featCgm.toUpperCase() !== "BANFIELD") return false;
                         
                         if (filtroVal === 'ALL') return true;
                         const p = feature.properties['Tipo Pavimento'] || 'Sin datos';
@@ -877,7 +872,7 @@
                 }).addTo(callejeroLayer);
             };
 
-            fetch('./callejero_Parque Baron.geojson').then(r => r.json()).then(data => {
+            fetch('./callejero_Banfield.geojson').then(r => r.json()).then(data => {
                 // Chequeo y transformación para EPSG:3857 (coordenadas esféricas en metros)
                 let is3857 = false;
                 if (data.crs && data.crs.properties && data.crs.properties.name && data.crs.properties.name.includes('3857')) {
@@ -897,7 +892,7 @@
                 const setPavimentos = new Set();
                 data.features.forEach(f => {
                     const featCgm = f.properties.CGM;
-                    if (featCgm && featCgm.toUpperCase() === "PARQUE BARON") {
+                    if (featCgm && featCgm.toUpperCase() === "BANFIELD") {
                         setPavimentos.add(f.properties['Tipo Pavimento'] || 'Sin datos');
                     }
                 });
@@ -936,7 +931,7 @@
                     L.geoJSON(data, {
                         filter: function(feature) {
                             const featCgm = feature.properties.CGM;
-                            if (featCgm && featCgm.toUpperCase() === "PARQUE BARON") return true;
+                            if (featCgm && featCgm.toUpperCase() === "BANFIELD") return true;
                             // Fallback BBox
                             const geom = feature.geometry;
                             if (geom) {
@@ -994,12 +989,12 @@
                 }).catch(e => console.log('Error loading ' + url, e));
             }
 
-            cargarCapaObras('./bacheo_2024_Parque Baron.geojson', bacheo2024Layer, '#EAB308', '#CA8A04', 'Bacheo 2024');
-            cargarCapaObras('./bacheo_2025_Parque Baron.geojson', bacheo2025Layer, '#F97316', '#C2410C', 'Bacheo 2025');
-            cargarCapaObras('./bacheo_2026_Parque Baron.geojson', bacheo2026Layer, '#EF4444', '#B91C1C', 'Bacheo 2026');
-            cargarCapaObras('./bache_en_concreto_Parque Baron.geojson', bacheoConcretoLayer, '#64748B', '#475569', 'Bacheo en Concreto');
-            cargarCapaObras('./bacheo_en_frio_Parque Baron.geojson', bacheoFrioLayer, '#06B6D4', '#0E7490', 'Bacheo en Frío');
-            cargarCapaObras('./pavimentacion_en_concreto_Parque Baron.geojson', pavimentacionConcretoLayer, '#8B5CF6', '#6D28D9', 'Pavimentación en Concreto');
+            cargarCapaObras('./bacheo_2024_Banfield.geojson', bacheo2024Layer, '#EAB308', '#CA8A04', 'Bacheo 2024');
+            cargarCapaObras('./bacheo_2025_Banfield.geojson', bacheo2025Layer, '#F97316', '#C2410C', 'Bacheo 2025');
+            cargarCapaObras('./bacheo_2026_Banfield.geojson', bacheo2026Layer, '#EF4444', '#B91C1C', 'Bacheo 2026');
+            cargarCapaObras('./bache_en_concreto_Banfield.geojson', bacheoConcretoLayer, '#64748B', '#475569', 'Bacheo en Concreto');
+            cargarCapaObras('./bacheo_en_frio_Banfield.geojson', bacheoFrioLayer, '#06B6D4', '#0E7490', 'Bacheo en Frío');
+            cargarCapaObras('./pavimentacion_en_concreto_Banfield.geojson', pavimentacionConcretoLayer, '#8B5CF6', '#6D28D9', 'Pavimentación en Concreto');
 
             // -----------------------------------------------------
             // RECLAMOS RECURRENTES (Con filtros dinámicos)
@@ -1079,7 +1074,7 @@
                 }).addTo(reclamosLayer);
             };
 
-            fetch('./recurrentes_Parque Baron.geojson').then(r => r.json()).then(data => {
+            fetch('./recurrentes_Banfield.geojson').then(r => r.json()).then(data => {
                 reclamosData = data;
                 
                 const setMeses = new Set();
@@ -1200,27 +1195,26 @@
             });
 
             // Espacios Públicos
-            cargarCapaPuntos('./plazas_Parque Baron.geojson', plazasLayer, '#10B981', pathPlaza, '#10B981', 'Plaza');
-            cargarCapaPuntos('./parques_municipales_Parque Baron.geojson', parquesLayer, '#059669', pathPlaza, '#059669', 'Parque Municipal');
-            cargarCapaPuntos('./potreros_Parque Baron.geojson', potrerosLayer, '#F59E0B', pathClubes, '#F59E0B', 'Potrero');
+            cargarCapaPuntos('./plazas_Banfield.geojson', plazasLayer, '#10B981', pathPlaza, '#10B981', 'Plaza');
+            cargarCapaPuntos('./potreros_Banfield.geojson', potrerosLayer, '#F59E0B', pathClubes, '#F59E0B', 'Potrero');
 
             // Seguridad
-            cargarCapaPuntos('./Camaras_Parque Baron.geojson', camarasLayer, '#8B5CF6', pathCamara, '#8B5CF6', 'Cámara de Seguridad');
-            cargarCapaPuntos('./alarmas_Parque Baron.geojson', alarmasLayer, '#F59E0B', pathAlarma, '#F59E0B', 'Alarma Comunitaria');
-            cargarCapaPuntos('./seguridad_Parque Baron.geojson', comisariasLayer, '#10B981', pathComisaria, '#10B981', 'Comisaría');
-            cargarCapaPuntos('./lpr_Parque Baron.geojson', lprLayer, '#4F46E5', pathLpr, '#4F46E5', 'LPR (Lector de Patentes)');
+            cargarCapaPuntos('./Camaras_Banfield.geojson', camarasLayer, '#8B5CF6', pathCamara, '#8B5CF6', 'Cámara de Seguridad');
+            cargarCapaPuntos('./alarmas_Banfield.geojson', alarmasLayer, '#F59E0B', pathAlarma, '#F59E0B', 'Alarma Comunitaria');
+            cargarCapaPuntos('./seguridad_Banfield.geojson', comisariasLayer, '#10B981', pathComisaria, '#10B981', 'Comisaría');
+            cargarCapaPuntos('./lpr_Banfield.geojson', lprLayer, '#4F46E5', pathLpr, '#4F46E5', 'LPR (Lector de Patentes)');
 
             // Instituciones
-            cargarCapaPuntos('./asociaciones_civiles_Parque Baron.geojson', asocCivilesLayer, '#3B82F6', pathAsoc, '#3B82F6', 'Asociación Civil');
-            cargarCapaPuntos('./centro_de_jubilados_Parque Baron.geojson', jubiladosLayer, '#14B8A6', pathJubilados, '#14B8A6', 'Centro de Jubilados');
-            cargarCapaPuntos('./Centros_culturales_Parque Baron.geojson', culturalesLayer, '#F43F5E', pathCulturales, '#F43F5E', 'Centro Cultural');
-            cargarCapaPuntos('./Clubes_deportivos_Parque Baron.geojson', clubesLayer, '#0EA5E9', pathClubes, '#0EA5E9', 'Club Deportivo');
-            cargarCapaPuntos('./Comedores_Parque Baron.geojson', comedoresLayer, '#EAB308', pathComedores, '#EAB308', 'Comedor');
-            cargarCapaPuntos('./establecimientos_educativos_Parque Baron.geojson', educacionLayer, '#2563EB', pathEducacion, '#2563EB', 'Establecimiento Educativo');
-            cargarCapaPuntos('./fundaciones_Parque Baron.geojson', fundacionesLayer, '#D946EF', pathFundaciones, '#D946EF', 'Fundación');
-            cargarCapaPuntos('./iglesias_Parque Baron.geojson', iglesiasLayer, '#8B5CF6', pathIglesias, '#8B5CF6', 'Iglesia');
-            cargarCapaPuntos('./Centros_de_atencion_sanitaria_Parque Baron.geojson', saludLayer, '#10B981', pathSalud, '#10B981', 'Centro de Salud');
-            cargarCapaPuntos('./sociedades_de_fomento_Parque Baron.geojson', fomentoLayer, '#06B6D4', pathFomento, '#06B6D4', 'Sociedad de Fomento');
+            cargarCapaPuntos('./asociaciones_civiles_Banfield.geojson', asocCivilesLayer, '#3B82F6', pathAsoc, '#3B82F6', 'Asociación Civil');
+            cargarCapaPuntos('./centro_de_jubilados_Banfield.geojson', jubiladosLayer, '#14B8A6', pathJubilados, '#14B8A6', 'Centro de Jubilados');
+            cargarCapaPuntos('./Centros_culturales_Banfield.geojson', culturalesLayer, '#F43F5E', pathCulturales, '#F43F5E', 'Centro Cultural');
+            cargarCapaPuntos('./Clubes_deportivos_Banfield.geojson', clubesLayer, '#0EA5E9', pathClubes, '#0EA5E9', 'Club Deportivo');
+            cargarCapaPuntos('./Comedores_Banfield.geojson', comedoresLayer, '#EAB308', pathComedores, '#EAB308', 'Comedor');
+            cargarCapaPuntos('./establecimientos_educativos_Banfield.geojson', educacionLayer, '#2563EB', pathEducacion, '#2563EB', 'Establecimiento Educativo');
+            cargarCapaPuntos('./fundaciones_Banfield.geojson', fundacionesLayer, '#D946EF', pathFundaciones, '#D946EF', 'Fundación');
+            cargarCapaPuntos('./iglesias_Banfield.geojson', iglesiasLayer, '#8B5CF6', pathIglesias, '#8B5CF6', 'Iglesia');
+            cargarCapaPuntos('./Centros_de_atencion_sanitaria_Banfield.geojson', saludLayer, '#10B981', pathSalud, '#10B981', 'Centro de Salud');
+            cargarCapaPuntos('./sociedades_de_fomento_Banfield.geojson', fomentoLayer, '#06B6D4', pathFomento, '#06B6D4', 'Sociedad de Fomento');
 
             // --- CHECKBOXES TOGGLES ---
             document.getElementById('cb-limite').addEventListener('change', (e) => {
@@ -1245,7 +1239,6 @@
 
             // Espacios Públicos
             toggleLayer('cb-plazas', plazasLayer);
-            toggleLayer('cb-parques', parquesLayer);
             toggleLayer('cb-potreros', potrerosLayer);
 
             // Infraestructura y Planeamiento
