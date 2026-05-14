@@ -1167,7 +1167,7 @@
                 }).addTo(barrenderosLayer);
             };
 
-            fetch('./barrenderos_parquebaron.geojson').then(r => r.json()).then(data => {
+            fetch('./zona_barrenderos_Banfield.geojson').then(r => r.json()).then(data => {
                 barrenderosData = data;
                 const setNombres = new Set();
                 data.features.forEach(f => {
@@ -1176,7 +1176,11 @@
 
                 const selectEl = document.getElementById('select-barrendero');
                 let cIdx = 0;
-                
+                const allOption = document.createElement('option');
+                allOption.value = 'ALL';
+                allOption.textContent = 'Todos';
+                selectEl.appendChild(allOption);
+
                 Array.from(setNombres).sort().forEach(b => {
                     barrenderosColorMap[b] = paletaAzules[cIdx % paletaAzules.length];
                     cIdx++;
