@@ -404,9 +404,16 @@
                                         </div>
                                     </div>
 
-                                    <div class="mt-2 pt-2 border-t border-[#E6EDF3] max-h-24 overflow-y-auto custom-scrollbar">
+                                    <div class="mt-2 pt-2 border-t border-[#E6EDF3] max-h-32 overflow-y-auto custom-scrollbar">
                                         <p class="text-[10px] text-[#0F172A] font-bold mb-1">Subtipos de Reclamo:</p>
-                                        <p class="text-[10px] text-[#64748B] leading-tight">${(props.Sub_Tipos_Totales || '-').replace(/\|/g, '<br>•')}</p>
+                                        <p class="text-[10px] text-[#64748B] leading-tight">• ${(props.Sub_Tipos_Totales || '-').replace(/\|/g, '<br>•')}</p>
+                                        
+                                        ${props.Sub_Tipos_No_Solucionados && props.Sub_Tipos_No_Solucionados.trim() !== '' ? `
+                                        <div class="mt-2 pt-1.5 border-t border-[#FECACA]">
+                                            <p class="text-[10px] text-[#991B1B] font-bold mb-1">Pendientes (No Solucionados):</p>
+                                            <p class="text-[10px] text-[#DC2626] leading-tight font-medium">• ${props.Sub_Tipos_No_Solucionados.replace(/\|/g, '<br>•')}</p>
+                                        </div>
+                                        ` : ''}
                                     </div>
                                 </div>
                             `;
