@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "seguridad_Fiorito",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "fid": 25, "OSM_ID": 573407824, "CODE": 2001, "NAME": "Comisaría 39", "LATITUD": -34.705953, "LONGITUD": -58.438328, "IDPROV": "06", "PROV": "Buenos Aires", "IDDPTO": "06490", "Partido": "Lomas de Zamora", "REDCODE": "064900209", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4383288, -34.7059534 ] } },
+{ "type": "Feature", "properties": { "fid": 347, "OSM_ID": 4656909889, "CODE": 2001, "NAME": "Comisaría 10", "LATITUD": -34.705512, "LONGITUD": -58.460353, "IDPROV": "06", "PROV": "Buenos Aires", "IDDPTO": "06490", "Partido": "Lomas de Zamora", "REDCODE": "064900101", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4603539, -34.7055124 ] } }
+]
+}

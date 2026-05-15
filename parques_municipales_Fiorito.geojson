@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "parques_municipales_Fiorito",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "NOMBRE": "Parque Recondo", "DIRECCION": "Recondo & Gabriel Miró", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.44836, -34.71312 ] } }
+]
+}

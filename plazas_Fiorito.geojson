@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "plazas_Fiorito",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA DIEGO ARMANDO MARADONA (barrio 8 de diciembre)", "UBICACION": "AZAMOR Y CHIVILCOY", "Lat": "-34.706613266176255", "Long": " -58.451401173035606", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.451401173035606, -34.706613266176255 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA UPA /CENTRO CULTURAL(misma plaza es)", "UBICACION": "RECONDO & PRES. JUAN DOMINGO PERÓN", "Lat": "-34.715725641189096", "Long": " -58.450010722295346", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.450010722295346, -34.715725641189096 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA CACHO SANTARELLI", "UBICACION": "JOSÉ LUIS MURATURE & AUSTRALIA", "Lat": "-34.714668424387256", "Long": " -58.4329854215422", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.432985421542199, -34.714668424387256 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA 1 DE OCTUBRE", "UBICACION": "LARRAZABAL 3001", "Lat": "-34.69738325177951", "Long": " -58.44554354332916", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.445543543329158, -34.697383251779513 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA ESQUEL", "UBICACION": "ESQUEL 2735", "Lat": "-34.701392631046595", "Long": " -58.44741874379277", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.447418743792767, -34.701392631046595 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA CHAPERIO, LA CAVA plaza diego armando ", "UBICACION": "MILÁN & ISLANDIA", "Lat": "-34.71637914595449", "Long": " -58.43880150859416", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.43880150859416, -34.716379145954491 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA PILCOMAYO", "UBICACION": "Larrazabal y Pilcomayo", "Lat": "-34.704421977258335", "Long": " -58.439289247146135", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.439289247146135, -34.704421977258335 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA  SIN NONMRE 1", "UBICACION": "HORNOS & PILCOMAYO", "Lat": "-34.702632425070256", "Long": " -58.436566226057465", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.436566226057465, -34.702632425070256 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA  SIN NOMBRE 2", "UBICACION": "PILCOMAYO MURATURE", "Lat": "-34.7050743566944", "Long": " -58.44033660693868", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.440336606938679, -34.705074356694404 ] } }
+]
+}
