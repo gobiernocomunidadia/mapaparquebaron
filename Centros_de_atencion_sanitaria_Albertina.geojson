@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "Centros_de_atencion_sanitaria_Albertina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. DR. E. FINOCHIETTO 24Hs.", "Servicios": null, "Detalle [x": null, "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.44696, -34.72518 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. 19 DE DICIEMBRE", "Servicios": null, "Detalle [x": null, "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.456528, -34.734967 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. PROVINCIAS UNIDAS", "Servicios": null, "Detalle [x": null, "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.444882, -34.731957 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. VILLA ALBERTINA", "Servicios": null, "Detalle [x": null, "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.458546, -34.745822 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. NESTOR KIRCHNER", "Servicios": null, "Detalle [x": null, "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.43935, -34.738333 ] } }
+]
+}

@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "centro_de_jubilados_Albertina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Albertina", "NOMBRE": "Centro De Jubilados Y Pensionados Corazones Bondadosos", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72659455, "LONGITUD": -58.44501586 }, "geometry": { "type": "Point", "coordinates": [ -58.44501586, -34.72659455 ] } },
+{ "type": "Feature", "properties": { "CGM": "Albertina", "NOMBRE": "Centro De Jubilados Y Pensionados 12 De Septiembre", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.744683, "LONGITUD": -58.457402 }, "geometry": { "type": "Point", "coordinates": [ -58.457402, -34.744683 ] } },
+{ "type": "Feature", "properties": { "CGM": "Albertina", "NOMBRE": "Centro De Jubilados Y Pensionados Nueva Esperanza", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.737566, "LONGITUD": -58.449971 }, "geometry": { "type": "Point", "coordinates": [ -58.449971, -34.737566 ] } },
+{ "type": "Feature", "properties": { "CGM": "Albertina", "NOMBRE": "Centro De Jubilados Y Pensionados La Merced", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.736373, "LONGITUD": -58.443435 }, "geometry": { "type": "Point", "coordinates": [ -58.443435, -34.736373 ] } },
+{ "type": "Feature", "properties": { "CGM": "Albertina", "NOMBRE": "Centro De Jubilados Y Pensionados Provincias Unidas La Merced", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.736373, "LONGITUD": -58.443435 }, "geometry": { "type": "Point", "coordinates": [ -58.443435, -34.736373 ] } },
+{ "type": "Feature", "properties": { "CGM": "Albertina", "NOMBRE": "Centro De Jubilados Y Pensionados Alejandrina", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.734828, "LONGITUD": -58.448293 }, "geometry": { "type": "Point", "coordinates": [ -58.448293, -34.734828 ] } },
+{ "type": "Feature", "properties": { "CGM": "Albertina", "NOMBRE": "Centro De Jubilados Y Pensionados Mario Esteban", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.731225, "LONGITUD": -58.448148 }, "geometry": { "type": "Point", "coordinates": [ -58.448148, -34.731225 ] } },
+{ "type": "Feature", "properties": { "CGM": "Albertina", "NOMBRE": "Centro De Jubilados Y Pensionados La Alegria De Vivir", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.730834, "LONGITUD": -58.452037 }, "geometry": { "type": "Point", "coordinates": [ -58.452037, -34.730834 ] } }
+]
+}

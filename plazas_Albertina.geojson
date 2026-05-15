@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "plazas_Albertina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA DE LOS MILITANTES", "UBICACION": "RICARDO PALMA & CAPITÁN SARMIENTO", "Lat": "-34.73917556714278", "Long": " -58.44436359210667", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.444363592106669, -34.73917556714278 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "POLIDEPORTIVO EVITA", "UBICACION": "ATENAS Y MONTIEL", "Lat": "-34.72953718224349", "Long": " -58.447232750535974", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.447232750535974, -34.72953718224349 ] } }
+]
+}

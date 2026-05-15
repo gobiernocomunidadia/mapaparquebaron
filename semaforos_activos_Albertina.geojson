@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "semaforos_activos_Albertina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA ESTE Y VIRGEN DE ITATI", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.442585, -34.726163, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA OESTE Y VIRGEN DE ITATI", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.442585, -34.726163, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "VIRGEN DE ITATI Y CAMPOAMOR", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.445103, -34.727496, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA ESTE Y MARSELLA", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.438333, -34.731762, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA OESTE Y MARSELLA", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.438333, -34.731762, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "MARSELLA Y ESPRONCEDA", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.445739, -34.735651, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "HOMERO Y BIDAZOA", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4564531, -34.7427548, 0.0 ] } }
+]
+}

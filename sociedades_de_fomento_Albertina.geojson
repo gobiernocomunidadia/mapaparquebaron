@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "sociedades_de_fomento_Albertina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Albertina", "NOMBRE": "Sociedad De Fomento Barrio Gral Paz", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.728415, "LONGITUD": -58.447442 }, "geometry": { "type": "Point", "coordinates": [ -58.447442, -34.728415 ] } },
+{ "type": "Feature", "properties": { "CGM": "Albertina", "NOMBRE": "Sociedad De Fomento Los Chicos De Malvinas", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.74582846, "LONGITUD": -58.46213215 }, "geometry": { "type": "Point", "coordinates": [ -58.46213215, -34.74582846 ] } }
+]
+}
