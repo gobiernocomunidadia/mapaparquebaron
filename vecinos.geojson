@@ -1,0 +1,1955 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417559762371,
+          -34.763183776489
+        ]
+      },
+      "properties": {
+        "Nombre": "Eduardo Hugo",
+        "Apellido": "Caggiano",
+        "DNI": 10087402,
+        "Direccion": "JUAN A GARONA 1348",
+        "Zona": "Lomas",
+        "Latitud": -34.763183776489,
+        "Longitud": -58.417559762371,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda en vía pública | Retiro de ramas y troncos de poda domiciliaria | Luminaria LED no enciende | Retiro de escombros 1m3",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41624253847,
+          -34.760249278115
+        ]
+      },
+      "properties": {
+        "Nombre": "Patricia",
+        "Apellido": "Narvaiz",
+        "DNI": 11492541,
+        "Direccion": "FRAY LUIS BELTRAN 110",
+        "Zona": "Lomas",
+        "Latitud": -34.760249278115,
+        "Longitud": -58.41624253847,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Inconveniente por obra de empresa de servicios | Retiro de ramas y troncos de poda en vía pública | Árbol Caído con Riesgo de Caída en la Vía Pública",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417559762371,
+          -34.763183776489
+        ]
+      },
+      "properties": {
+        "Nombre": "Marta Liliana",
+        "Apellido": "Pistasoli",
+        "DNI": 12001312,
+        "Direccion": "JUAN A GARONA 1365",
+        "Zona": "Lomas",
+        "Latitud": -34.763183776489,
+        "Longitud": -58.417559762371,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda en vía pública | Retiro de escombros 1m3 | Retiro de montículos de basura o tierra | Retiro de ramas y troncos de poda domiciliaria | Solicitud de extracción de árbol pedido extraordinario",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413916802136,
+          -34.761135465177
+        ]
+      },
+      "properties": {
+        "Nombre": "EDITH",
+        "Apellido": "SANTANGELO",
+        "DNI": 13348788,
+        "Direccion": "LORIA 1123",
+        "Zona": "Lomas",
+        "Latitud": -34.761135465177,
+        "Longitud": -58.413916802136,
+        "Total_Reclamos": 16,
+        "Reclamos_Solucionados": 15,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Falta de barrido y limpieza de calles | Retiro de ramas y troncos de poda domiciliaria | Solicitud de autorización para extracción de árbol | Falta de barrido en zonas concesionadas (Covelia)",
+        "Sub_Tipos_No_Solucionados": "Solicitud de autorización para extracción de árbol",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418466662898,
+          -34.760467121362
+        ]
+      },
+      "properties": {
+        "Nombre": "CRISTINA",
+        "Apellido": "PAGNA",
+        "DNI": 16587643,
+        "Direccion": "LORIA 1422",
+        "Zona": "Lomas",
+        "Latitud": -34.760467121362,
+        "Longitud": -58.418466662898,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Falta de barrido y limpieza de calles | Retiro de ramas y troncos de poda domiciliaria | Retiro de ramas y troncos de poda en vía pública | Árbol Caído con Riesgo de Caída en la Vía Pública | Luminaria LED no enciende | Otras Derivaciones",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414862607256,
+          -34.761542991827
+        ]
+      },
+      "properties": {
+        "Nombre": "ALICIA",
+        "Apellido": "QUIROGA",
+        "DNI": 17230084,
+        "Direccion": "GERVASIO ANTONIO DE POSADAS 250",
+        "Zona": "Lomas",
+        "Latitud": -34.761542991827,
+        "Longitud": -58.414862607256,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Luminaria LED intermitente encendida 24 hs | Retiro de ramas y troncos de poda en vía pública | Luminaria LED no enciende",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Nombre": "ADRIANA",
+        "Apellido": "POZOS",
+        "DNI": 17485921,
+        "Direccion": "Alvarez Thomas  399",
+        "Zona": "Lomas",
+        "Latitud": -34.76306785859,
+        "Longitud": -58.413542202485,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 5,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Cables Sueltos / Arrancados | Otras intervenciones del área | Luminaria LED no enciende | solicitud de cartelería \"prohibido arrojar basura\" | Limpieza de basural crónico",
+        "Sub_Tipos_No_Solucionados": "Otras intervenciones del área",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414640735962,
+          -34.76044044671
+        ]
+      },
+      "properties": {
+        "Nombre": "NORA GABRIELA",
+        "Apellido": "SCHNID",
+        "DNI": 18391688,
+        "Direccion": "GERVASIO ANTONIO DE POSADAS 158",
+        "Zona": "Lomas",
+        "Latitud": -34.76044044671,
+        "Longitud": -58.414640735962,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Eximiciones | Retiro de ramas y troncos de poda en vía pública | TSG (Tasa por Servicios Generales) | Retiro de ramas y troncos de poda domiciliaria",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416821568431,
+          -34.759546840873
+        ]
+      },
+      "properties": {
+        "Nombre": "María Isabel",
+        "Apellido": "Saravia",
+        "DNI": 18558269,
+        "Direccion": "JOSE I GORRITI 1370",
+        "Zona": "Lomas",
+        "Latitud": -34.759546840873,
+        "Longitud": -58.416821568431,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Pedido de Mayor Presencia Policial | Solicitud de luminaria LED | Solicitud de despeje lumínico | Retiro de escombros 1m3",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413720781819,
+          -34.7599914221
+        ]
+      },
+      "properties": {
+        "Nombre": "RUBEN DARIO",
+        "Apellido": "RIZZI",
+        "DNI": 20831823,
+        "Direccion": "JOSE I GORRITI 1199",
+        "Zona": "Lomas",
+        "Latitud": -34.7599914221,
+        "Longitud": -58.413720781819,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Solicitud de despeje lumínico | Luminaria LED no enciende",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415397229691,
+          -34.759752532001
+        ]
+      },
+      "properties": {
+        "Nombre": "Ricardo",
+        "Apellido": "Molina",
+        "DNI": 21437745,
+        "Direccion": "Gorriti  1242",
+        "Zona": "Lomas",
+        "Latitud": -34.759752532001,
+        "Longitud": -58.415397229691,
+        "Total_Reclamos": 8,
+        "Reclamos_Solucionados": 8,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Luminaria LED no enciende",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418466662898,
+          -34.760467121362
+        ]
+      },
+      "properties": {
+        "Nombre": "karina",
+        "Apellido": "Jaime",
+        "DNI": 21468212,
+        "Direccion": "Loria  1485",
+        "Zona": "Lomas",
+        "Latitud": -34.760467121362,
+        "Longitud": -58.418466662898,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Solicitud de autorización de poda | Luminaria LED no enciende | Solicitud de autorización de corte de raíces",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418466662898,
+          -34.760467121362
+        ]
+      },
+      "properties": {
+        "Nombre": "karina",
+        "Apellido": "Jaime",
+        "DNI": 21468212,
+        "Direccion": "LORIA 1485",
+        "Zona": "Lomas",
+        "Latitud": -34.760467121362,
+        "Longitud": -58.418466662898,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Poste de empresa de servicios en mal estado | Señalización de Poste / Columna con Riesgo de Caída | Solicitud de extracción de árbol pedido extraordinario | Ramas de Gran Porte con Riesgo de Caída sobre Techo de Vivienda | Solicitud de despeje lumínico",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.419114884221,
+          -34.760372836517
+        ]
+      },
+      "properties": {
+        "Nombre": "MARCELO",
+        "Apellido": "GUITARONI",
+        "DNI": 21669483,
+        "Direccion": "24 DE MAYO",
+        "Zona": "Lomas",
+        "Latitud": -34.760372836517,
+        "Longitud": -58.419114884221,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 5,
+        "Reclamos_No_Solucionados": 4,
+        "Sub_Tipos_Totales": "Pavimento roto | Señalización de Bocas de Tormenta / Sumideros sin Tapa | Otras intervenciones del área",
+        "Sub_Tipos_No_Solucionados": "Pavimento roto | Otras intervenciones del área",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413916802136,
+          -34.761135465177
+        ]
+      },
+      "properties": {
+        "Nombre": "Maria Paola",
+        "Apellido": "Pastrone",
+        "DNI": 21820620,
+        "Direccion": "LORIA 1136",
+        "Zona": "Lomas",
+        "Latitud": -34.761135465177,
+        "Longitud": -58.413916802136,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Falta de barrido y limpieza de calles | Luminaria LED no enciende",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418466662898,
+          -34.760467121362
+        ]
+      },
+      "properties": {
+        "Nombre": "Gustavo",
+        "Apellido": "Richards",
+        "DNI": 21836351,
+        "Direccion": "LORIA 1447",
+        "Zona": "Lomas",
+        "Latitud": -34.760467121362,
+        "Longitud": -58.418466662898,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Nombre": "AREA",
+        "Apellido": "DEFENSA CIVIL",
+        "DNI": 22,
+        "Direccion": "IGNACIO ALVAREZ THOMAS 390",
+        "Zona": "Lomas",
+        "Latitud": -34.76306785859,
+        "Longitud": -58.413542202485,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Poste de empresa de servicios en mal estado | Señalización de Poste / Columna con Riesgo de Caída",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416166777541,
+          -34.76339238928
+        ]
+      },
+      "properties": {
+        "Nombre": "Adrián",
+        "Apellido": "Tanoni",
+        "DNI": 22922985,
+        "Direccion": "JUAN A GARONA 1274",
+        "Zona": "Lomas",
+        "Latitud": -34.76339238928,
+        "Longitud": -58.416166777541,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Otras Intervenciones del Área | Retiro de montículos de basura o tierra | Retiro de ramas y troncos de poda en vía pública | Retiro de ramas y troncos de poda domiciliaria",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414862607256,
+          -34.761542991827
+        ]
+      },
+      "properties": {
+        "Nombre": "Monica",
+        "Apellido": "Zardoya",
+        "DNI": 23090862,
+        "Direccion": "gervasio de posadas  241",
+        "Zona": "Lomas",
+        "Latitud": -34.761542991827,
+        "Longitud": -58.414862607256,
+        "Total_Reclamos": 11,
+        "Reclamos_Solucionados": 10,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Retiro de escombros 1m3 | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "Retiro de escombros 1m3",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413720781819,
+          -34.7599914221
+        ]
+      },
+      "properties": {
+        "Nombre": "Martin",
+        "Apellido": "Sabio",
+        "DNI": 24159359,
+        "Direccion": "JOSE I GORRITI 1171",
+        "Zona": "Lomas",
+        "Latitud": -34.7599914221,
+        "Longitud": -58.413720781819,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Denuncia de vehículo mal estacionado | Retiro de ramas y troncos de poda en vía pública | Vehículo abandonado en la vía pública | Retiro de ramas y troncos de poda domiciliaria",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414380984204,
+          -34.759324549361
+        ]
+      },
+      "properties": {
+        "Nombre": "Mariela",
+        "Apellido": "Muñoz",
+        "DNI": 24488744,
+        "Direccion": "GERVASIO ANTONIO DE POSADAS 60",
+        "Zona": "Lomas",
+        "Latitud": -34.759324549361,
+        "Longitud": -58.414380984204,
+        "Total_Reclamos": 10,
+        "Reclamos_Solucionados": 10,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Solicitud de corte de pasto pedido extraordinario | Retiro de montículos de basura o tierra",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413720781819,
+          -34.7599914221
+        ]
+      },
+      "properties": {
+        "Nombre": "PABLO",
+        "Apellido": "MARTINO",
+        "DNI": 25029150,
+        "Direccion": "Gorriti  1168",
+        "Zona": "Lomas",
+        "Latitud": -34.7599914221,
+        "Longitud": -58.413720781819,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417509498965,
+          -34.759513773173
+        ]
+      },
+      "properties": {
+        "Nombre": "Maria",
+        "Apellido": "Lambo",
+        "DNI": 25739089,
+        "Direccion": "BOQUERON",
+        "Zona": "Lomas",
+        "Latitud": -34.759513773173,
+        "Longitud": -58.417509498965,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Solicitud de corte de pasto pedido extraordinario | Retiro de montículos de basura o tierra",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Nombre": "Nora Mariana",
+        "Apellido": "Sayago",
+        "DNI": 27373139,
+        "Direccion": "IGNACIO ALVAREZ THOMAS 390",
+        "Zona": "Lomas",
+        "Latitud": -34.76306785859,
+        "Longitud": -58.413542202485,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Ramas de Gran Porte con Riesgo de Caída sobre Techo de Vivienda | TSG (Tasa por Servicios Generales)",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41624253847,
+          -34.760249278115
+        ]
+      },
+      "properties": {
+        "Nombre": "Gisela",
+        "Apellido": "Galucci",
+        "DNI": 27820714,
+        "Direccion": "FRAY LUIS BELTRAN 142",
+        "Zona": "Lomas",
+        "Latitud": -34.760249278115,
+        "Longitud": -58.41624253847,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Nombre": "valeria lorena",
+        "Apellido": "dag",
+        "DNI": 28362126,
+        "Direccion": "IGNACIO ALVAREZ THOMAS 370",
+        "Zona": "Lomas",
+        "Latitud": -34.76306785859,
+        "Longitud": -58.413542202485,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Asesoramiento Defensoría del Consumidor | Solicitud de poda pedido extraordinario | Árbol Caído con Riesgo de Caída en la Vía Pública | Retiro de ramas y troncos de poda domiciliaria | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "Asesoramiento Defensoría del Consumidor",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41624253847,
+          -34.760249278115
+        ]
+      },
+      "properties": {
+        "Nombre": "andrea",
+        "Apellido": "memoli",
+        "DNI": 28506456,
+        "Direccion": "FRAY LUIS BELTRAN 141",
+        "Zona": "Lomas",
+        "Latitud": -34.760249278115,
+        "Longitud": -58.41624253847,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Asesoramiento Escrituración | Retiro de ramas y troncos de poda domiciliaria | Otras intervenciones del área | Otras Intervenciones del Área",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Nombre": "Agustina",
+        "Apellido": "Zárate",
+        "DNI": 31452627,
+        "Direccion": "IGNACIO ALVAREZ THOMAS 345",
+        "Zona": "Lomas",
+        "Latitud": -34.76306785859,
+        "Longitud": -58.413542202485,
+        "Total_Reclamos": 8,
+        "Reclamos_Solucionados": 8,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Otras Intervenciones del área | Árbol Caído con Riesgo de Caída en la Vía Pública | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415121948036,
+          -34.762695167208
+        ]
+      },
+      "properties": {
+        "Nombre": "Marina Laura",
+        "Apellido": "Saed",
+        "DNI": 31935575,
+        "Direccion": "GERVASIO ANTONIO DE POSADAS 366",
+        "Zona": "Lomas",
+        "Latitud": -34.762695167208,
+        "Longitud": -58.415121948036,
+        "Total_Reclamos": 8,
+        "Reclamos_Solucionados": 8,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Solicitud de corte de pasto pedido extraordinario | Retiro de ramas y troncos de poda domiciliaria | Actividades Deportivas | Luminaria LED no enciende",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413428561091,
+          -34.758911085558
+        ]
+      },
+      "properties": {
+        "Nombre": "Maria Silva",
+        "Apellido": "Blythman",
+        "DNI": 33339435,
+        "Direccion": "FRANCISCO LAPRIDA 1119",
+        "Zona": "Lomas",
+        "Latitud": -34.758911085558,
+        "Longitud": -58.413428561091,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418120327221,
+          -34.762294314539
+        ]
+      },
+      "properties": {
+        "Nombre": "GUADALUPE",
+        "Apellido": "BOETTI",
+        "DNI": 42292435,
+        "Direccion": "BOQUERON 354",
+        "Zona": "Lomas",
+        "Latitud": -34.762294314539,
+        "Longitud": -58.418120327221,
+        "Total_Reclamos": 11,
+        "Reclamos_Solucionados": 11,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Retiro de ramas y troncos de poda en vía pública | Retiro de montículos de basura o tierra",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41624253847,
+          -34.760249278115
+        ]
+      },
+      "properties": {
+        "Nombre": "ELSA",
+        "Apellido": "PAVONI",
+        "DNI": 4236986,
+        "Direccion": "FRAY LUIS BELTRAN 130",
+        "Zona": "Lomas",
+        "Latitud": -34.760249278115,
+        "Longitud": -58.41624253847,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417898455928,
+          -34.761160659301
+        ]
+      },
+      "properties": {
+        "Nombre": "Melissa",
+        "Apellido": "Sena Acevedo",
+        "DNI": 46088531,
+        "Direccion": "BOQUERON 273",
+        "Zona": "Lomas",
+        "Latitud": -34.761160659301,
+        "Longitud": -58.417898455928,
+        "Total_Reclamos": 10,
+        "Reclamos_Solucionados": 8,
+        "Reclamos_No_Solucionados": 2,
+        "Sub_Tipos_Totales": "Emprendedurismo | Turnos | Propuestas Culturales | Asesoramiento Salud Mental",
+        "Sub_Tipos_No_Solucionados": "Emprendedurismo | Turnos",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418120327221,
+          -34.762294314539
+        ]
+      },
+      "properties": {
+        "Nombre": "ROSA DEL CARMEN",
+        "Apellido": "CICHELO",
+        "DNI": 4657734,
+        "Direccion": "BOQUERON 348",
+        "Zona": "Lomas",
+        "Latitud": -34.762294314539,
+        "Longitud": -58.418120327221,
+        "Total_Reclamos": 12,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 3,
+        "Sub_Tipos_Totales": "Agua estancada en cordón de calle | Solicitud de poda pedido extraordinario | Asesoramiento Alarma Vecinal | Retiro de ramas y troncos de poda domiciliaria | Pavimento roto | Retiro de escombros 1m3 | Cables Sueltos / Arrancados | Solicitud de autorización de corte de raíces | Falta de barrido y limpieza de calles",
+        "Sub_Tipos_No_Solucionados": "Agua estancada en cordón de calle | Pavimento roto | Solicitud de autorización de corte de raíces",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416166777541,
+          -34.76339238928
+        ]
+      },
+      "properties": {
+        "Nombre": "Adriana",
+        "Apellido": "Fonseca",
+        "DNI": 6217183,
+        "Direccion": "JUAN A GARONA 1296",
+        "Zona": "Lomas",
+        "Latitud": -34.76339238928,
+        "Longitud": -58.416166777541,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda en vía pública | Retiro de ramas y troncos de poda domiciliaria | Falta de barrido y limpieza de calles",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417059674209,
+          -34.760662735217
+        ]
+      },
+      "properties": {
+        "Nombre": "ALICIA SUSANA",
+        "Apellido": "DANGELO",
+        "DNI": 6279702,
+        "Direccion": "LORIA 1360",
+        "Zona": "Lomas",
+        "Latitud": -34.760662735217,
+        "Longitud": -58.417059674209,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Árbol Caído con Riesgo de Caída en la Vía Pública | Retiro de ramas y troncos de poda en vía pública | Retiro de ramas y troncos de poda domiciliaria | Teatro Municipal",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41426734281,
+          -34.762347662637
+        ]
+      },
+      "properties": {
+        "Nombre": "ALEJANDRO",
+        "Apellido": "TASSARA",
+        "DNI": 7776440,
+        "Direccion": "JOSE E COLOMBRES 1177",
+        "Zona": "Lomas",
+        "Latitud": -34.762347662637,
+        "Longitud": -58.41426734281,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Asesoramiento a Instituciones",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.408118859003,
+          -34.778762031053
+        ]
+      },
+      "properties": {
+        "Nombre": "ANTONIO LUIS",
+        "Apellido": "OCHOA",
+        "DNI": 10128276,
+        "Direccion": "SOLER 450",
+        "Zona": "Temperley",
+        "Latitud": -34.778762031053,
+        "Longitud": -58.408118859003,
+        "Total_Reclamos": 15,
+        "Reclamos_Solucionados": 15,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Asesoramiento a Instituciones",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414680156947,
+          -34.780891799918
+        ]
+      },
+      "properties": {
+        "Nombre": "Silva",
+        "Apellido": "Nelida",
+        "DNI": 10347319,
+        "Direccion": "JUAN B VAGO 355",
+        "Zona": "Temperley",
+        "Latitud": -34.780891799918,
+        "Longitud": -58.414680156947,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Solicitud de despeje lumínico | Luminaria LED no enciende | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410065687176,
+          -34.775259414474
+        ]
+      },
+      "properties": {
+        "Nombre": "Juan Jose",
+        "Apellido": "Molinari",
+        "DNI": 10814979,
+        "Direccion": "CORONEL PRINGLES 857",
+        "Zona": "Temperley",
+        "Latitud": -34.775259414474,
+        "Longitud": -58.410065687176,
+        "Total_Reclamos": 12,
+        "Reclamos_Solucionados": 12,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de montículos de basura o tierra | Retiro de ramas y troncos de poda domiciliaria | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410559238683,
+          -34.776762347612
+        ]
+      },
+      "properties": {
+        "Nombre": "Carlos",
+        "Apellido": "Franco",
+        "DNI": 11234984,
+        "Direccion": "J M FERNANDEZ 849",
+        "Zona": "Temperley",
+        "Latitud": -34.776762347612,
+        "Longitud": -58.410559238683,
+        "Total_Reclamos": 10,
+        "Reclamos_Solucionados": 10,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de montículos de basura o tierra | Retiro de ramas y troncos de poda domiciliaria | Falta de barrido y limpieza de calles",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409675373147,
+          -34.776883970427
+        ]
+      },
+      "properties": {
+        "Nombre": "sonia",
+        "Apellido": "guevara",
+        "DNI": 12708180,
+        "Direccion": "SOLER 207",
+        "Zona": "Temperley",
+        "Latitud": -34.776883970427,
+        "Longitud": -58.409675373147,
+        "Total_Reclamos": 8,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda en vía pública | Solicitud de Control de Plagas/Fumigación | Retiro de montículos de basura o tierra | Pedido de Mayor Presencia Policial | Luminaria LED no enciende | Persona en situación de calle",
+        "Sub_Tipos_No_Solucionados": "Solicitud de Control de Plagas/Fumigación",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410461151815,
+          -34.780105818569
+        ]
+      },
+      "properties": {
+        "Nombre": "Eduardo O.",
+        "Apellido": "Castaño",
+        "DNI": 12708437,
+        "Direccion": "SAN CARLOS 415",
+        "Zona": "Temperley",
+        "Latitud": -34.780105818569,
+        "Longitud": -58.410461151815,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Luminaria LED no enciende",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413361958931,
+          -34.779490012215
+        ]
+      },
+      "properties": {
+        "Nombre": "Graciela",
+        "Apellido": "Arana",
+        "DNI": 13663093,
+        "Direccion": "JUAN GALO DE LAVALLE 1250",
+        "Zona": "Temperley",
+        "Latitud": -34.779490012215,
+        "Longitud": -58.413361958931,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Otras intervenciones del área | Luminaria LED no enciende | Retiro de ramas y troncos de poda domiciliaria | Solicitud de despeje lumínico",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410323161399,
+          -34.779282774779
+        ]
+      },
+      "properties": {
+        "Nombre": "Raúl",
+        "Apellido": "Perez",
+        "DNI": 14142739,
+        "Direccion": "GENERAL JOSE M PAZ 963",
+        "Zona": "Temperley",
+        "Latitud": -34.779282774779,
+        "Longitud": -58.410323161399,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Luminaria LED no enciende | Retiro de ramas y troncos de poda domiciliaria | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.408866831598,
+          -34.777838310825
+        ]
+      },
+      "properties": {
+        "Nombre": "ADRIANA",
+        "Apellido": "GONZALEZ",
+        "DNI": 16326094,
+        "Direccion": "SOLER 367",
+        "Zona": "Temperley",
+        "Latitud": -34.777838310825,
+        "Longitud": -58.408866831598,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 5,
+        "Reclamos_No_Solucionados": 2,
+        "Sub_Tipos_Totales": "Solicitud de extracción de árbol pedido extraordinario | Pérdida de gas o agua en la vía pública | Agua estancada en cordón de calle | Bache en la vía pública | Otras intervenciones del área | Solicitud de despeje lumínico | Solicitud de poda pedido extraordinario",
+        "Sub_Tipos_No_Solucionados": "Bache en la vía pública | Otras intervenciones del área",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.411779743548,
+          -34.781447950281
+        ]
+      },
+      "properties": {
+        "Nombre": "Lucia",
+        "Apellido": "Italiani",
+        "DNI": 17429974,
+        "Direccion": "C AVELLANEDA 1291",
+        "Zona": "Temperley",
+        "Latitud": -34.781447950281,
+        "Longitud": -58.411779743548,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de escombros 1m3 | Falta de recolección de residuos en zonas concesionadas (Covelia) | Retiro de ramas y troncos de poda en vía pública | Retiro de montículos de basura o tierra | Falta de barrido y limpieza de calles | Falta de recolección de residuos domiciliarios",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414680156947,
+          -34.780891799918
+        ]
+      },
+      "properties": {
+        "Nombre": "JORGE MARCELO",
+        "Apellido": "PARADA",
+        "DNI": 18317061,
+        "Direccion": "JUAN B VAGO 369",
+        "Zona": "Temperley",
+        "Latitud": -34.780891799918,
+        "Longitud": -58.414680156947,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Solicitud de extracción de árbol pedido extraordinario",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409089736855,
+          -34.778643247026
+        ]
+      },
+      "properties": {
+        "Nombre": "Pablo",
+        "Apellido": "Tome",
+        "DNI": 28831050,
+        "Direccion": "GENERAL JOSE M PAZ 900",
+        "Zona": "Temperley",
+        "Latitud": -34.778643247026,
+        "Longitud": -58.409089736855,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Otras intervenciones del área | Denuncia de vehículo mal estacionado",
+        "Sub_Tipos_No_Solucionados": "Otras intervenciones del área",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409089736855,
+          -34.778643247026
+        ]
+      },
+      "properties": {
+        "Nombre": "Pablo",
+        "Apellido": "Tome",
+        "DNI": 28831050,
+        "Direccion": "Gral José María Paz  900",
+        "Zona": "Temperley",
+        "Latitud": -34.778643247026,
+        "Longitud": -58.409089736855,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 1,
+        "Reclamos_No_Solucionados": 5,
+        "Sub_Tipos_Totales": "Denuncia de vehículo mal estacionado | Otras intervenciones del área",
+        "Sub_Tipos_No_Solucionados": "Denuncia de vehículo mal estacionado | Otras intervenciones del área",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410670748292,
+          -34.780850753617
+        ]
+      },
+      "properties": {
+        "Nombre": "NADIA DANIELA",
+        "Apellido": "CAAMAÑO",
+        "DNI": 29578066,
+        "Direccion": "C AVELLANEDA 1179",
+        "Zona": "Temperley",
+        "Latitud": -34.780850753617,
+        "Longitud": -58.410670748292,
+        "Total_Reclamos": 10,
+        "Reclamos_Solucionados": 10,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Turnos | Retiro de ramas y troncos de poda domiciliaria | Solicitud de autorización para extracción de árbol | Señalización de bache peligroso | Pavimento roto | Retiro de montículos de basura o tierra",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413361958931,
+          -34.779490012215
+        ]
+      },
+      "properties": {
+        "Nombre": "Maria Angeles",
+        "Apellido": "Leonar",
+        "DNI": 30217842,
+        "Direccion": "JUAN GALO DE LAVALLE 1218",
+        "Zona": "Temperley",
+        "Latitud": -34.779490012215,
+        "Longitud": -58.413361958931,
+        "Total_Reclamos": 8,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Árbol Caído con Riesgo de Caída en la Vía Pública | Retiro de escombros 1m3 | Solicitud de autorización para extracción de árbol",
+        "Sub_Tipos_No_Solucionados": "Solicitud de autorización para extracción de árbol",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410837556313,
+          -34.7775275476
+        ]
+      },
+      "properties": {
+        "Nombre": "magali",
+        "Apellido": "Grieco",
+        "DNI": 34205188,
+        "Direccion": "SAN PEDRO 204",
+        "Zona": "Temperley",
+        "Latitud": -34.7775275476,
+        "Longitud": -58.410837556313,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Denuncia por ferias | Señalización de Bocas de Tormenta / Sumideros sin Tapa",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410670748292,
+          -34.780850753617
+        ]
+      },
+      "properties": {
+        "Nombre": "Camila Ayelen",
+        "Apellido": "Orfano",
+        "DNI": 37612154,
+        "Direccion": "C AVELLANEDA 1163",
+        "Zona": "Temperley",
+        "Latitud": -34.780850753617,
+        "Longitud": -58.410670748292,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda en vía pública | Retiro de montículos de basura o tierra | Asesoramiento patentes municipalizadas | Otras intervenciones del área | Retiro de escombros 1m3 | Retiro de ramas y troncos de poda domiciliaria",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409901517142,
+          -34.777681244554
+        ]
+      },
+      "properties": {
+        "Nombre": "AGUSTIN",
+        "Apellido": "DIAZ",
+        "DNI": 42843204,
+        "Direccion": "JUAN GALO DE LAVALLE 924",
+        "Zona": "Temperley",
+        "Latitud": -34.777681244554,
+        "Longitud": -58.409901517142,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Retiro de montículos de basura o tierra | Solicitud de corte de pasto pedido extraordinario",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.412666934112,
+          -34.777278592773
+        ]
+      },
+      "properties": {
+        "Nombre": "MERCEDES",
+        "Apellido": "BARBERAN",
+        "DNI": 4797617,
+        "Direccion": "SAN CARLOS 114",
+        "Zona": "Temperley",
+        "Latitud": -34.777278592773,
+        "Longitud": -58.412666934112,
+        "Total_Reclamos": 13,
+        "Reclamos_Solucionados": 13,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413620571978,
+          -34.780336171656
+        ]
+      },
+      "properties": {
+        "Nombre": "Elsa Noemi",
+        "Apellido": "ercolano",
+        "DNI": 6524402,
+        "Direccion": "SCALABRINI ORTIZ 353",
+        "Zona": "Temperley",
+        "Latitud": -34.780336171656,
+        "Longitud": -58.413620571978,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda en vía pública | Renovación de servicios | Otras intervenciones del área",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413944620946,
+          -34.807721665003
+        ]
+      },
+      "properties": {
+        "Nombre": "susana",
+        "Apellido": "romero",
+        "DNI": 11759408,
+        "Direccion": "H BOUCHARD 1308",
+        "Zona": "Llavallol",
+        "Latitud": -34.807721665003,
+        "Longitud": -58.413944620946,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Luminaria LED no enciende | Retiro de ramas y troncos de poda en vía pública | Árbol Caído con Riesgo de Caída en la Vía Pública | Solicitud de poda pedido extraordinario",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416330872324,
+          -34.803805916306
+        ]
+      },
+      "properties": {
+        "Nombre": "JORGE OSCAR",
+        "Apellido": "CORDOBA",
+        "DNI": 14260177,
+        "Direccion": "POBLADORA 768",
+        "Zona": "Llavallol",
+        "Latitud": -34.803805916306,
+        "Longitud": -58.416330872324,
+        "Total_Reclamos": 10,
+        "Reclamos_Solucionados": 10,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Solicitud de camión atmosférico pedido extraordinario | Solicitud de poda pedido extraordinario | Árbol Caído con Riesgo de Caída en la Vía Pública | Solicitud de luminaria LED | Retiro de montículos de basura o tierra | Reposición por pérdida o rotura | Retiro de ramas y troncos de poda domiciliaria",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414151611437,
+          -34.807432348834
+        ]
+      },
+      "properties": {
+        "Nombre": "Susana Alejandra",
+        "Apellido": "Ramos",
+        "DNI": 17931331,
+        "Direccion": "H BOUCHARD 585",
+        "Zona": "Llavallol",
+        "Latitud": -34.807432348834,
+        "Longitud": -58.414151611437,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 5,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Árbol Caído con Riesgo de Caída en la Vía Pública | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "Retiro de ramas y troncos de poda en vía pública",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41816005847,
+          -34.802869445612
+        ]
+      },
+      "properties": {
+        "Nombre": "CLELIA LUCIA",
+        "Apellido": "DELLI SANTI",
+        "DNI": 18647374,
+        "Direccion": "1 DE MARZO 767",
+        "Zona": "Llavallol",
+        "Latitud": -34.802869445612,
+        "Longitud": -58.41816005847,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 3,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Retiro de ramas y troncos de poda en vía pública | Sumidero tapado",
+        "Sub_Tipos_No_Solucionados": "Sumidero tapado",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418496339681,
+          -34.803430242791
+        ]
+      },
+      "properties": {
+        "Nombre": "juan carlos",
+        "Apellido": "matiauda",
+        "DNI": 20177048,
+        "Direccion": "RONDEAU 703",
+        "Zona": "Llavallol",
+        "Latitud": -34.803430242791,
+        "Longitud": -58.418496339681,
+        "Total_Reclamos": 8,
+        "Reclamos_Solucionados": 8,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Luminaria LED no enciende | Luminaria LED intermitente encendida 24 hs | Retiro de ramas y troncos de poda en vía pública | Solicitud de camión atmosférico pedido extraordinario",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416452148738,
+          -34.804447273618
+        ]
+      },
+      "properties": {
+        "Nombre": "ALBINA",
+        "Apellido": "LOBOS",
+        "DNI": 23853525,
+        "Direccion": "H BOUCHARD 975",
+        "Zona": "Llavallol",
+        "Latitud": -34.804447273618,
+        "Longitud": -58.416452148738,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Falta de recolección de residuos domiciliarios | Retiro de montículos de basura o tierra | Retiro de ramas y troncos de poda en vía pública",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415124687843,
+          -34.805429212301
+        ]
+      },
+      "properties": {
+        "Nombre": "JORGE",
+        "Apellido": "CABRERA",
+        "DNI": 25826597,
+        "Direccion": "CUYO 767",
+        "Zona": "Llavallol",
+        "Latitud": -34.805429212301,
+        "Longitud": -58.415124687843,
+        "Total_Reclamos": 12,
+        "Reclamos_Solucionados": 11,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Retiro de escombros 1m3 | Falta de barrido y limpieza de calles | Retiro de montículos de basura o tierra | Luminaria LED no enciende | Luminaria LED intermitente encendida 24 hs | Zanja obstruida | Turnos",
+        "Sub_Tipos_No_Solucionados": "Zanja obstruida",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417399609925,
+          -34.803174870495
+        ]
+      },
+      "properties": {
+        "Nombre": "Noemi",
+        "Apellido": "Gauna",
+        "DNI": 28769015,
+        "Direccion": "AVENIDA DEL REY 745",
+        "Zona": "Llavallol",
+        "Latitud": -34.803174870495,
+        "Longitud": -58.417399609925,
+        "Total_Reclamos": 8,
+        "Reclamos_Solucionados": 5,
+        "Reclamos_No_Solucionados": 3,
+        "Sub_Tipos_Totales": "Solicitud de camión atmosférico pedido extraordinario | Bache en la vía pública | Luminaria LED no enciende",
+        "Sub_Tipos_No_Solucionados": "Bache en la vía pública",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413944620946,
+          -34.807721665003
+        ]
+      },
+      "properties": {
+        "Nombre": "Karen",
+        "Apellido": "Gallardo",
+        "DNI": 30182661,
+        "Direccion": "H BOUCHARD 1392",
+        "Zona": "Llavallol",
+        "Latitud": -34.807721665003,
+        "Longitud": -58.413944620946,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 5,
+        "Reclamos_No_Solucionados": 2,
+        "Sub_Tipos_Totales": "Mejorado de calle de tierra | TSG (Tasa por Servicios Generales) | Bache en la vía pública | Boca de tormenta obstruida | Limpieza de basural crónico | Retiro de montículos de basura o tierra | solicitud de cartelería \"prohibido arrojar basura\"",
+        "Sub_Tipos_No_Solucionados": "Mejorado de calle de tierra | Bache en la vía pública",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415879830491,
+          -34.805206167896
+        ]
+      },
+      "properties": {
+        "Nombre": "CARINA",
+        "Apellido": "COMAN",
+        "DNI": 30306137,
+        "Direccion": "H BOUCHARD 1037",
+        "Zona": "Llavallol",
+        "Latitud": -34.805206167896,
+        "Longitud": -58.415879830491,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Solicitud de camión atmosférico pedido extraordinario",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415124687843,
+          -34.805429212301
+        ]
+      },
+      "properties": {
+        "Nombre": "INGRID DELIA",
+        "Apellido": "GOMEZ",
+        "DNI": 30662729,
+        "Direccion": "CUYO 741",
+        "Zona": "Llavallol",
+        "Latitud": -34.805429212301,
+        "Longitud": -58.415124687843,
+        "Total_Reclamos": 12,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 3,
+        "Sub_Tipos_Totales": "Turnos | Especialidades",
+        "Sub_Tipos_No_Solucionados": "Turnos",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415773898475,
+          -34.804595596499
+        ]
+      },
+      "properties": {
+        "Nombre": "monica",
+        "Apellido": "sanchez",
+        "DNI": 30669057,
+        "Direccion": "MERCEDES 780",
+        "Zona": "Llavallol",
+        "Latitud": -34.804595596499,
+        "Longitud": -58.415773898475,
+        "Total_Reclamos": 7,
+        "Reclamos_Solucionados": 7,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda en vía pública | Retiro de escombros 1m3 | Cables Sueltos / Arrancados | Solicitud de camión atmosférico pedido extraordinario",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41369948906,
+          -34.806410751134
+        ]
+      },
+      "properties": {
+        "Nombre": "Miriam Yanel",
+        "Apellido": "Aguilar",
+        "DNI": 32335797,
+        "Direccion": "ROSALES 1300",
+        "Zona": "Llavallol",
+        "Latitud": -34.806410751134,
+        "Longitud": -58.41369948906,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Luminaria LED no enciende | Retiro de ramas y troncos de poda domiciliaria | Retiro de montículos de basura o tierra",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416168380731,
+          -34.804826854984
+        ]
+      },
+      "properties": {
+        "Nombre": "VIVIANA GLADIS",
+        "Apellido": "ESPINOZA",
+        "DNI": 36593586,
+        "Direccion": "H BOUCHARD",
+        "Zona": "Llavallol",
+        "Latitud": -34.804826854984,
+        "Longitud": -58.416168380731,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Pérdida de gas o agua en la vía pública",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416500048522,
+          -34.805507273535
+        ]
+      },
+      "properties": {
+        "Nombre": "cristian",
+        "Apellido": "luna",
+        "DNI": 36877220,
+        "Direccion": "AVENIDA DEL REY 1062",
+        "Zona": "Llavallol",
+        "Latitud": -34.805507273535,
+        "Longitud": -58.416500048522,
+        "Total_Reclamos": 9,
+        "Reclamos_Solucionados": 8,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Solicitud de camión atmosférico pedido extraordinario | Falta de recolección de residuos domiciliarios | Otras intervenciones del área",
+        "Sub_Tipos_No_Solucionados": "Otras intervenciones del área",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41369948906,
+          -34.806410751134
+        ]
+      },
+      "properties": {
+        "Nombre": "Antonella",
+        "Apellido": "Valls",
+        "DNI": 37252661,
+        "Direccion": "ROSALES 1230",
+        "Zona": "Llavallol",
+        "Latitud": -34.806410751134,
+        "Longitud": -58.41369948906,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de ramas y troncos de poda domiciliaria | Retiro de ramas y troncos de poda en vía pública | Retiro de montículos de basura o tierra",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416330872324,
+          -34.803805916306
+        ]
+      },
+      "properties": {
+        "Nombre": "Norma",
+        "Apellido": "Mora",
+        "DNI": 4153433,
+        "Direccion": "C LUJAN 725",
+        "Zona": "Llavallol",
+        "Latitud": -34.803805916306,
+        "Longitud": -58.416330872324,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 5,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Solicitud de camión atmosférico pedido extraordinario | Árbol Caído con Riesgo de Caída en la Vía Pública",
+        "Sub_Tipos_No_Solucionados": "Solicitud de camión atmosférico pedido extraordinario",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.4173728,
+          -34.8040785
+        ]
+      },
+      "properties": {
+        "Nombre": "Luana Ailen",
+        "Apellido": "Ojeda",
+        "DNI": 45009600,
+        "Direccion": "AVENIDA DEL REY 866",
+        "Zona": "Llavallol",
+        "Latitud": -34.8040785,
+        "Longitud": -58.4173728,
+        "Total_Reclamos": 10,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Turnos | Especialidades | Zoonosis",
+        "Sub_Tipos_No_Solucionados": "Especialidades",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415124687843,
+          -34.805429212301
+        ]
+      },
+      "properties": {
+        "Nombre": "nahuel",
+        "Apellido": "GUTIERREZ",
+        "DNI": 49212079,
+        "Direccion": "CUYO 741",
+        "Zona": "Llavallol",
+        "Latitud": -34.805429212301,
+        "Longitud": -58.415124687843,
+        "Total_Reclamos": 6,
+        "Reclamos_Solucionados": 6,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Turnos",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415247567066,
+          -34.806071212678
+        ]
+      },
+      "properties": {
+        "Nombre": "AZUCENA MATILDE",
+        "Apellido": "TZAULEFF",
+        "DNI": 6413759,
+        "Direccion": "H BOUCHARD 1145",
+        "Zona": "Llavallol",
+        "Latitud": -34.806071212678,
+        "Longitud": -58.415247567066,
+        "Total_Reclamos": 8,
+        "Reclamos_Solucionados": 8,
+        "Reclamos_No_Solucionados": 0,
+        "Sub_Tipos_Totales": "Retiro de montículos de basura o tierra | Solicitud de camión atmosférico pedido extraordinario | Retiro de escombros 1m3",
+        "Sub_Tipos_No_Solucionados": "",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416330872324,
+          -34.803805916306
+        ]
+      },
+      "properties": {
+        "Nombre": "LISANDRO",
+        "Apellido": "ARAUJO",
+        "DNI": 92034084,
+        "Direccion": "POBLADORA 713",
+        "Zona": "Llavallol",
+        "Latitud": -34.803805916306,
+        "Longitud": -58.416330872324,
+        "Total_Reclamos": 10,
+        "Reclamos_Solucionados": 9,
+        "Reclamos_No_Solucionados": 1,
+        "Sub_Tipos_Totales": "Solicitud de camión atmosférico pedido extraordinario | Retiro de ramas y troncos de poda en vía pública | Sumidero tapado | Retiro de ramas y troncos de poda domiciliaria",
+        "Sub_Tipos_No_Solucionados": "Retiro de ramas y troncos de poda domiciliaria",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    }
+  ]
+}
