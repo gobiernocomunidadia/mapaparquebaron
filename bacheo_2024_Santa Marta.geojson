@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "bacheo_2024_Santa Marta",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Tavano ENTRE Mar del Plata y Valparaiso", "description": "CGM SANTA MARTA<br><br>nombre: <br>descripción: ", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "nombre": "", "descripci__n": "", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.4484666, -34.750529, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Jose Ingenieros entre Mayor Oliveros y Vernet", "description": "CGM SANTA MARTA<br><br>nombre: <br>descripción: ", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "nombre": "", "descripci__n": "", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.4426299, -34.7442789, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Tavano entre Miramar y Copihue", "description": "CGM SANTA MARTA<br><br>nombre: <br>descripción: ", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "nombre": "", "descripci__n": "", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.4501721, -34.7483503, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Urunday & Iparraguirre", "description": "CGM PARQUE BARÓN<br><br>nombre: <br>descripción: ", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "nombre": "", "descripci__n": "", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.4521591, -34.7562979, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "HUNDIMIENTO Gral.Martin Rodriguez entre Colectora y Barbieri (Cosquin)", "description": "CGM ALBERTINA<br><br>nombre: <br>descripción: ", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "nombre": "", "descripci__n": "", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.4355923, -34.7364328, 0.0 ] } }
+]
+}

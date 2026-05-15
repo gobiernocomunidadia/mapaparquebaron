@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "potreros_Santa Marta",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Santa Marta", "Potrero": "Club La Soledad", "Dimensiones": "F5 Y F7", "Direccion": "Club Atlético Soledad, Santa Marta", "Lat_Long": "-34.75322799939751, -58.444784243556356", "Tipo_de_Intervenci__n": "Construcción desde cero.", "Presupuesto__SP_": "$105.000.000", "Informaci__n_Adicional": "Persona jurídica caída. Se tramita la prescripción del dominio en articulación con la SS de Tierras." }, "geometry": { "type": "Point", "coordinates": [ -58.444784243556398, -34.753227999397502, 0.0 ] } }
+]
+}

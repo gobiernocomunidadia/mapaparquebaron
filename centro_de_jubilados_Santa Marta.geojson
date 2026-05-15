@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "centro_de_jubilados_Santa Marta",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Santa Marta", "NOMBRE": "Centro De Jubilados Y Pensionados Euskadi", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.750762, "LONGITUD": -58.449358 }, "geometry": { "type": "Point", "coordinates": [ -58.449358, -34.750762 ] } },
+{ "type": "Feature", "properties": { "CGM": "Santa Marta", "NOMBRE": "Centro De Jubilados Y Pensionados Ubuntu", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.747565, "LONGITUD": -58.459603 }, "geometry": { "type": "Point", "coordinates": [ -58.459603, -34.747565 ] } },
+{ "type": "Feature", "properties": { "CGM": "Santa Marta", "NOMBRE": "Centro De Jubilados Y Pensionados Nicolasa Santandrea", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.747014, "LONGITUD": -58.436741 }, "geometry": { "type": "Point", "coordinates": [ -58.436741, -34.747014 ] } },
+{ "type": "Feature", "properties": { "CGM": "Santa Marta", "NOMBRE": "Centro De Jubilados Y Pensionados El Obrero", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.746158, "LONGITUD": -58.442332 }, "geometry": { "type": "Point", "coordinates": [ -58.442332, -34.746158 ] } },
+{ "type": "Feature", "properties": { "CGM": "Santa Marta", "NOMBRE": "Centro De Jubilados Y Pensionados Sol De Justicia", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.745317, "LONGITUD": -58.43069 }, "geometry": { "type": "Point", "coordinates": [ -58.43069, -34.745317 ] } }
+]
+}

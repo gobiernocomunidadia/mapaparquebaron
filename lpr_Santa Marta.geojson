@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "lpr_Santa Marta",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "LPR39", "Ubicacion": "Pte Juan D. Peron y Minetto", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.4337695, -34.7375885, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR32", "Ubicacion": "Pte Juan D. Peron y Timoteo Gordillo", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.4325482, -34.740012, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR33", "Ubicacion": "Pte Juan D Peron y S. Puccini", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.4345332, -34.7501028, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR54", "Ubicacion": "Homero y Arlucea", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.454843, -34.745038, 0.0 ] } }
+]
+}

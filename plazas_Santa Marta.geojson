@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "plazas_Santa Marta",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA REY MOMO", "UBICACION": "CHAMPALAN Y COLECTORA Presidente Peron", "Lat": "-34.75132644551467", "Long": " -58.43649810118661", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.436498101186608, -34.751326445514671 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA 22 DE MAYO 8 (barrio odisa)", "UBICACION": "VICENTE BARBIERI & GABRIELA MISTRAL", "Lat": "-34.73815361822311", "Long": " -58.43544006525333", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.435440065253331, -34.738153618223109 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA LA MEMORIA", "UBICACION": "BENJAMÍN FRANKLIN & SAN VICENTE", "Lat": "-34.74420128756011", "Long": " -58.438218690921545", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.438218690921545, -34.744201287560109 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA MARIANO MORENO", "UBICACION": "TIMOTEO GORDILLO & VICENTE BARBIERI", "Lat": "-34.74095255441569", "Long": " -58.432821658955774", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.432821658955774, -34.740952554415692 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA SANTA MARTA", "UBICACION": "TAVANO Y VALPARAISO", "Lat": "-34.74956000560246", "Long": " -58.44947667955979", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.449476679559787, -34.749560005602461 ] } }
+]
+}

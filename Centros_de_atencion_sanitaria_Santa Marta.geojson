@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "Centros_de_atencion_sanitaria_Santa Marta",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. SANTA MARTA 24Hs.", "Servicios": null, "Detalle [x": null, "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.450063, -34.749704 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. DR. MARIANO MORENO", "Servicios": null, "Detalle [x": null, "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.432445, -34.740799 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. EL FARO", "Servicios": null, "Detalle [x": null, "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.441841, -34.745236 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. EL PROGRESO", "Servicios": null, "Detalle [x": null, "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.439689, -34.751239 ] } }
+]
+}

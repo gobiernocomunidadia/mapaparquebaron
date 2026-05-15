@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "semaforos_activos_Santa Marta",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA OESTE Y FOURNIER", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.432655, -34.749154, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA ESTE Y MARTIN RODRIGUEZ", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.434959, -34.736089, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA OESTE Y MARTIN RODRIGUEZ", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.434959, -34.736089, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "MARTIN RODRIGUEZ Y COSQUIN", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.436206, -34.736773, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA ESTE Y OLIVERO", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.433022, -34.739462, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LISANDRO DE LA TORRE Y GAONA", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.438238, -34.74774, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA OESTE Y GAONA", "CGM": "Santa Marta" }, "geometry": { "type": "Point", "coordinates": [ -58.435748, -34.750793, 0.0 ] } }
+]
+}
