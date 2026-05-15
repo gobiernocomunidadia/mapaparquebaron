@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "Comedores_Lomas",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Lomas", "NOMBRE": "Comedor Y Merendero Abuela Felipa", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.761602, "LONGITUD": -58.41925 }, "geometry": { "type": "Point", "coordinates": [ -58.41925, -34.761602 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lomas", "NOMBRE": "Comedor Una Caricia Al Alma", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.759925, "LONGITUD": -58.385496 }, "geometry": { "type": "Point", "coordinates": [ -58.385496, -34.759925 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lomas", "NOMBRE": "Comedor Infantil Padre Vasco", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.754992, "LONGITUD": -58.397097 }, "geometry": { "type": "Point", "coordinates": [ -58.397097, -34.754992 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lomas", "NOMBRE": "Merendero Mil Tacitas", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.751727, "LONGITUD": -58.435518 }, "geometry": { "type": "Point", "coordinates": [ -58.435518, -34.751727 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lomas", "NOMBRE": "Comedor Chaco Chico", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.749966, "LONGITUD": -58.426677 }, "geometry": { "type": "Point", "coordinates": [ -58.426677, -34.749966 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lomas", "NOMBRE": "Danilo", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.749614, "LONGITUD": -58.429933 }, "geometry": { "type": "Point", "coordinates": [ -58.429933, -34.749614 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lomas", "NOMBRE": "Los Niños Primero", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.748347, "LONGITUD": -58.426422 }, "geometry": { "type": "Point", "coordinates": [ -58.426422, -34.748347 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lomas", "NOMBRE": "Merendero Comedor Principe De Paz", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.747808, "LONGITUD": -58.421435 }, "geometry": { "type": "Point", "coordinates": [ -58.421435, -34.747808 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lomas", "NOMBRE": "Comedor Y Merendero Granito De Arena", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.76725, "LONGITUD": -58.414503 }, "geometry": { "type": "Point", "coordinates": [ -58.414503, -34.76725 ] } }
+]
+}

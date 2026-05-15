@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "seguridad_Lomas",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "fid": 168, "OSM_ID": 2643643290, "CODE": 2001, "NAME": "Policía", "LATITUD": -34.765409, "LONGITUD": -58.398414, "IDPROV": "06", "PROV": "Buenos Aires", "IDDPTO": "06490", "Partido": "Lomas de Zamora", "REDCODE": "064902313", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.3984141, -34.7654096 ] } },
+{ "type": "Feature", "properties": { "fid": 208, "OSM_ID": 3219302004, "CODE": 2001, "NAME": "gendarmeria nacional", "LATITUD": -34.771303, "LONGITUD": -58.424174, "IDPROV": "06", "PROV": "Buenos Aires", "IDDPTO": "06490", "Partido": "Lomas de Zamora", "REDCODE": "064902705", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.4241748, -34.771303 ] } },
+{ "type": "Feature", "properties": { "fid": 264, "OSM_ID": 3916263451, "CODE": 2001, "NAME": "Policía", "LATITUD": -34.75826, "LONGITUD": -58.399208, "IDPROV": "06", "PROV": "Buenos Aires", "IDDPTO": "06490", "Partido": "Lomas de Zamora", "REDCODE": "064902205", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.3992083, -34.7582602 ] } }
+]
+}
