@@ -97,6 +97,14 @@
                                 <span class="text-sm text-[#0F172A] font-bold">Reclamos Pendientes</span>
                             </label>
                         </div>
+                        
+                        <!-- Bloque de Vecinos Recurrentes -->
+                        <div class="flex flex-col gap-2">
+                            <label class="flex items-center gap-3 cursor-pointer">
+                                <input type="checkbox" id="cb-vecinos" checked class="w-4 h-4 accent-[#19567C]">
+                                <span class="text-sm text-[#0F172A] font-bold">Vecinos Recurrentes</span>
+                            </label>
+                        </div>
 
                         <!-- Contenedor de filtros de CGM y Fecha (afecta a ambos) -->
                         <div id="filtros-operativos" class="border-t border-[#19567C]/20 pt-3 mt-2 space-y-3 transition-all duration-300">
@@ -133,9 +141,10 @@
         let map;
         let limiteElements;
 
-        let poligonosLayer, reclamosPendientesLayer;
+        let poligonosLayer, reclamosPendientesLayer, vecinosLayer;
         let poligonosData = null;
         let reclamosPendientesData = null;
+        let vecinosData = null;
 
         const pathWarning = '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>';
 
@@ -158,6 +167,25 @@
             });
         }
 
+        function getTriangleAlertIcon() {
+            const size = 30;
+            const svg = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="${size}" height="${size}">
+                    <!-- Triángulo Rojo -->
+                    <path d="M16 2 L30 28 L2 28 Z" fill="#DC2626" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+                    <!-- Signo de Exclamación ! -->
+                    <path d="M16 10 v8 M16 23 v2" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            `;
+            return L.divIcon({
+                html: svg,
+                className: 'custom-leaflet-icon',
+                iconSize: [size, size],
+                iconAnchor: [size/2, size], // Anclado en la punta inferior
+                popupAnchor: [0, -size]
+            });
+        }
+
         function initMap() {
             lucide.createIcons();
 
@@ -172,6 +200,7 @@
             limiteElements = L.layerGroup().addTo(map);
             poligonosLayer = L.layerGroup().addTo(map);
             reclamosPendientesLayer = L.layerGroup().addTo(map);
+            vecinosLayer = L.layerGroup().addTo(map);
 
             // Actualizar opciones del select de CGM
             function updateCGMOptions() {
@@ -179,6 +208,12 @@
                 if (poligonosData) {
                     poligonosData.features.forEach(f => {
                         if (f.properties.CGM) cgms.add(f.properties.CGM);
+                    });
+                }
+                // Agregar las Zonas de los vecinos como CGM
+                if (vecinosData) {
+                    vecinosData.features.forEach(f => {
+                        if (f.properties.Zona) cgms.add(f.properties.Zona);
                     });
                 }
 
@@ -209,6 +244,17 @@
                     });
                 }
 
+                if (vecinosData) {
+                    vecinosData.features.forEach(f => {
+                        // Validar con la propiedad "Zona" en lugar de "CGM" para los vecinos
+                        if (selectedCGM === 'ALL' || f.properties.Zona === selectedCGM) {
+                            if (f.properties.Fecha_Operativo) {
+                                fechas.add(f.properties.Fecha_Operativo.substring(0, 10)); 
+                            }
+                        }
+                    });
+                }
+
                 const selectFecha = document.getElementById('filter-fecha-operativo');
                 selectFecha.innerHTML = '<option value="ALL">Todas las fechas</option>';
                 
@@ -229,6 +275,7 @@
             window.renderSuperOperativos = function() {
                 poligonosLayer.clearLayers();
                 reclamosPendientesLayer.clearLayers();
+                vecinosLayer.clearLayers();
 
                 const selectedDate = document.getElementById('filter-fecha-operativo').value;
                 const selectedCGM = document.getElementById('filter-cgm').value;
@@ -313,6 +360,60 @@
                         }
                     }).addTo(reclamosPendientesLayer);
                 }
+
+                // 3. Renderizar Vecinos Recurrentes (Afectados por CGM/Zona y Fecha)
+                if (vecinosData && document.getElementById('cb-vecinos').checked) {
+                    L.geoJSON(vecinosData, {
+                        filter: function(feature) {
+                            const matchCGM = (selectedCGM === 'ALL' || feature.properties.Zona === selectedCGM);
+                            const matchDate = (selectedDate === 'ALL' || (feature.properties.Fecha_Operativo && feature.properties.Fecha_Operativo.substring(0, 10) === selectedDate));
+                            
+                            return matchCGM && matchDate;
+                        },
+                        pointToLayer: function(feature, latlng) {
+                            return L.marker(latlng, { icon: getTriangleAlertIcon() }); 
+                        },
+                        onEachFeature: function(feature, layer) {
+                            const props = feature.properties;
+                            
+                            let content = `
+                                <div class="font-sans min-w-[240px]">
+                                    <h4 class="font-bold text-[#DC2626] border-b border-[#E6EDF3] pb-1 mb-2">
+                                        <i class="fa-solid fa-triangle-exclamation mr-1"></i> Vecino Recurrente
+                                    </h4>
+                                    
+                                    <div class="space-y-1 mb-3">
+                                        <p class="text-sm font-extrabold text-[#0F172A] uppercase">${props.Nombre || ''} ${props.Apellido || ''}</p>
+                                        <p class="text-xs text-[#0F172A]"><b>DNI:</b> ${props.DNI || '-'}</p>
+                                        <p class="text-xs text-[#0F172A]"><b>Dirección:</b> ${props.Direccion || '-'}</p>
+                                        <p class="text-[10px] text-[#64748B] uppercase"><b>Zona:</b> ${props.Zona || '-'}</p>
+                                    </div>
+                                    
+                                    <div class="bg-[#FEF2F2] p-2 rounded border border-[#FECACA] mb-2 flex justify-between text-center">
+                                        <div>
+                                            <p class="text-[10px] font-bold text-[#991B1B] uppercase">Total</p>
+                                            <p class="text-lg font-extrabold text-[#991B1B]">${props.Total_Reclamos || 0}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-[10px] font-bold text-[#166534] uppercase">Solucionado</p>
+                                            <p class="text-lg font-extrabold text-[#166534]">${props.Reclamos_Solucionados || 0}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-[10px] font-bold text-[#B91C1C] uppercase">Pendiente</p>
+                                            <p class="text-lg font-extrabold text-[#B91C1C]">${props.Reclamos_No_Solucionados || 0}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-2 pt-2 border-t border-[#E6EDF3] max-h-24 overflow-y-auto custom-scrollbar">
+                                        <p class="text-[10px] text-[#0F172A] font-bold mb-1">Subtipos de Reclamo:</p>
+                                        <p class="text-[10px] text-[#64748B] leading-tight">${(props.Sub_Tipos_Totales || '-').replace(/\|/g, '<br>•')}</p>
+                                    </div>
+                                </div>
+                            `;
+                            layer.bindPopup(content);
+                        }
+                    }).addTo(vecinosLayer);
+                }
             };
 
             // -----------------------------------------------------
@@ -329,17 +430,19 @@
             // -----------------------------------------------------
             Promise.all([
                 fetch('./poligonos_operativos.geojson').then(r => r.json()).catch(e => { console.log('Error poligonos:', e); return null; }),
-                fetch('./reportes_filtrados.geojson').then(r => r.json()).catch(e => { console.log('Error reportes:', e); return null; })
-            ]).then(([poligonos, reportes]) => {
+                fetch('./reportes_filtrados.geojson').then(r => r.json()).catch(e => { console.log('Error reportes:', e); return null; }),
+                fetch('./vecinos.geojson').then(r => r.json()).catch(e => { console.log('Error vecinos:', e); return null; })
+            ]).then(([poligonos, reportes, vecinos]) => {
                 if (poligonos) poligonosData = poligonos;
                 if (reportes) reclamosPendientesData = reportes;
+                if (vecinos) vecinosData = vecinos;
                 
                 updateCGMOptions();
                 updateDateFilterOptions();
                 renderSuperOperativos();
                 
                 // Hacer un acercamiento a la zona de Lomas centro donde están los datos
-                if (poligonos || reportes) {
+                if (poligonos || reportes || vecinos) {
                     map.setView([-34.7610, -58.4150], 15);
                 }
             });
@@ -351,6 +454,7 @@
 
             document.getElementById('cb-poligonos').addEventListener('change', renderSuperOperativos);
             document.getElementById('cb-reclamos-pendientes').addEventListener('change', renderSuperOperativos);
+            document.getElementById('cb-vecinos').addEventListener('change', renderSuperOperativos);
 
             // Si se cambia el CGM, se actualizan las fechas disponibles y se renderiza de nuevo
             document.getElementById('filter-cgm').addEventListener('change', () => {
