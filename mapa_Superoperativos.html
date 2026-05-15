@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Super Operativos de la Comunidad</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-main: #19567C;
+            --blanco: #FFFFFF;
+            --acento: #4AB5E0;
+            --magenta: #D34872;
+            --azul-inst: #19567C;
+        }
+
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-main); color: var(--blanco); margin: 0; min-height: 100vh; }
+        
+        #map { height: 100%; width: 100%; border-radius: 8px; background-color: #f8fafc; z-index: 10; }
+        
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #F3F6F9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E6EDF3; border-radius: 4px; }
+
+        /* Estilos Leaflet Popups e Iconos */
+        .leaflet-popup-content-wrapper { border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .leaflet-popup-content { margin: 14px; font-family: 'Montserrat', sans-serif; }
+        .custom-leaflet-icon { background: transparent; border: none; }
+    </style>
+</head>
+<body class="flex flex-col">
+
+    <header class="bg-[var(--bg-main)] shadow-lg border-b-4 border-[var(--acento)] z-20 py-6 px-4 shrink-0">
+        <div class="max-w-[1600px] mx-auto flex items-center justify-center gap-4">
+            <div class="bg-white text-[var(--bg-main)] rounded-full h-14 w-14 flex items-center justify-center shadow-md">
+                <i class="fa-solid fa-car text-2xl"></i>
+            </div>
+            <div class="flex flex-col">
+                <h1 class="text-3xl font-extrabold tracking-tight uppercase leading-none">Mapa Super Operativos de la Comunidad</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full max-w-[1600px] mx-auto py-8 px-4 flex-1 flex flex-col lg:flex-row gap-6">
+        
+        <aside class="w-full lg:w-80 bg-white rounded-xl shadow-md border border-[#E6EDF3] flex flex-col max-h-[calc(100vh-200px)] overflow-hidden shrink-0 z-20">
+            <div class="p-4 border-b bg-[#F3F6F9] flex items-center gap-2">
+                <i data-lucide="filter" class="text-[#0B5F8D] h-5 w-5"></i>
+                <h3 class="font-bold text-[#0F172A] uppercase text-sm">Filtros Operativos</h3>
+            </div>
+            
+            <div class="p-5 overflow-y-auto custom-scrollbar flex-1 space-y-6">
+
+                <!-- DIVISIÓN TERRITORIAL -->
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="map" class="h-4 w-4"></i> División Territorial
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-limite" checked class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Límite Lomas de Zamora</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- SUPER OPERATIVOS -->
+                <div class="bg-[#19567C]/10 p-3 rounded-lg border border-[#19567C]/30">
+                    <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
+                        <i data-lucide="siren" class="h-4 w-4"></i> Super Operativos
+                    </h4>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-poligonos" checked class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Zonas Super Operativos</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="cb-reclamos-pendientes" checked class="w-4 h-4 accent-[#19567C]">
+                            <span class="text-sm text-[#0F172A] font-bold">Reclamos Pendientes</span>
+                        </label>
+                        
+                        <div class="mt-4 pt-3 border-t border-[#19567C]/20">
+                            <label class="text-xs font-bold text-[#19567C] block mb-2 flex items-center gap-2"><i data-lucide="calendar" class="h-3 w-3"></i> Filtro por Fecha</label>
+                            <select id="filter-fecha" class="w-full text-xs p-2 border border-[#19567C]/30 rounded text-[#0F172A] outline-none bg-white">
+                                <option value="ALL">Todas las fechas</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+        <div class="flex-1 bg-white p-2 rounded-xl shadow-lg border border-[#E6EDF3] flex flex-col min-h-[500px] relative z-10">
+            <div id="map"></div>
+        </div>
+
+    </main>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        let map;
+        let limiteElements;
+
+        // Nuevas variables para Super Operativos
+        let poligonosLayer, reclamosPendientesLayer;
+        let poligonosData = null;
+        let reclamosPendientesData = null;
+
+        const pathWarning = '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>';
+
+        function getLeafletIcon(color, iconPath) {
+            const size = 26;
+            const svg = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="${size}" height="${size}">
+                    <circle cx="16" cy="16" r="15" fill="${color}" stroke="#FFFFFF" stroke-width="2"/>
+                    <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(6, 6) scale(0.8)">
+                        ${iconPath}
+                    </g>
+                </svg>
+            `;
+            return L.divIcon({
+                html: svg,
+                className: 'custom-leaflet-icon',
+                iconSize: [size, size],
+                iconAnchor: [size/2, size/2],
+                popupAnchor: [0, -size/2]
+            });
+        }
+
+        function initMap() {
+            lucide.createIcons();
+
+            map = L.map('map').setView([-34.7573, -58.4035], 13);
+            
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors',
+                maxZoom: 19
+            }).addTo(map);
+
+            // Inicialización de Capas
+            limiteElements = L.layerGroup().addTo(map);
+            poligonosLayer = L.layerGroup().addTo(map);
+            reclamosPendientesLayer = L.layerGroup().addTo(map);
+
+            // Función para actualizar las opciones del selector de fecha
+            function updateDateFilterOptions() {
+                const fechas = new Set();
+                const extractDate = (feature) => {
+                    if (feature.properties.Fecha) {
+                        fechas.add(feature.properties.Fecha.substring(0, 10)); // Extraer AAAA-MM-DD
+                    }
+                };
+
+                if (poligonosData) poligonosData.features.forEach(extractDate);
+                if (reclamosPendientesData) reclamosPendientesData.features.forEach(extractDate);
+
+                const select = document.getElementById('filter-fecha');
+                select.innerHTML = '<option value="ALL">Todas las fechas</option>';
+                
+                // Ordenar descendentemente
+                Array.from(fechas).sort().reverse().forEach(fecha => {
+                    const opt = document.createElement('option');
+                    opt.value = fecha;
+                    
+                    // Formato DD/MM/YYYY para visualización
+                    const partes = fecha.split('-');
+                    opt.textContent = `${partes[2]}/${partes[1]}/${partes[0]}`;
+                    
+                    select.appendChild(opt);
+                });
+            }
+
+            // Función principal de renderizado con filtros aplicados
+            window.renderSuperOperativos = function() {
+                poligonosLayer.clearLayers();
+                reclamosPendientesLayer.clearLayers();
+
+                const selectedDate = document.getElementById('filter-fecha').value;
+
+                if (poligonosData && document.getElementById('cb-poligonos').checked) {
+                    L.geoJSON(poligonosData, {
+                        filter: function(feature) {
+                            if (selectedDate === 'ALL') return true;
+                            return feature.properties.Fecha && feature.properties.Fecha.substring(0, 10) === selectedDate;
+                        },
+                        style: { fillColor: '#D34872', color: '#9F1239', weight: 3, fillOpacity: 0.25, dashArray: '6, 6' },
+                        onEachFeature: function(feature, layer) {
+                            const props = feature.properties;
+                            // Prevenir error de zona horaria usando solo la fecha extraída
+                            const fechaVisual = props.Fecha ? props.Fecha.substring(0,10).split('-').reverse().join('/') : 'S/D';
+                            
+                            let content = `
+                                <div class="font-sans min-w-[220px]">
+                                    <h4 class="font-bold text-[#9F1239] border-b border-[#E6EDF3] pb-1 mb-2">Zona de Super Operativo</h4>
+                                    <p class="text-xs text-[#64748B] mb-2"><i class="fa-regular fa-calendar mr-1"></i> Fecha: <b>${fechaVisual}</b></p>
+                                    <div class="bg-[#FFE4E6] p-2 rounded-md mb-2 border border-[#FECDD3]">
+                                        <p class="text-[10px] font-bold text-[#E11D48] uppercase">Puntos de Referencia</p>
+                                        <ul class="text-xs text-[#9F1239] font-medium mt-1 pl-3 list-disc">
+                                            <li>${props.Punto_1 || '-'}</li>
+                                            <li>${props.Punto_2 || '-'}</li>
+                                            <li>${props.Punto_3 || '-'}</li>
+                                            <li>${props.Punto_4 || '-'}</li>
+                                        </ul>
+                                    </div>
+                                    <p class="text-xs text-[#0F172A]"><b>Localidad:</b> ${props.Localidad || '-'} (CGM ${props.CGM || '-'})</p>
+                                </div>
+                            `;
+                            layer.bindPopup(content);
+                        }
+                    }).addTo(poligonosLayer);
+                }
+
+                if (reclamosPendientesData && document.getElementById('cb-reclamos-pendientes').checked) {
+                    L.geoJSON(reclamosPendientesData, {
+                        filter: function(feature) {
+                            if (selectedDate === 'ALL') return true;
+                            return feature.properties.Fecha && feature.properties.Fecha.substring(0, 10) === selectedDate;
+                        },
+                        pointToLayer: function(feature, latlng) {
+                            return L.marker(latlng, { icon: getLeafletIcon('#F59E0B', pathWarning) }); 
+                        },
+                        onEachFeature: function(feature, layer) {
+                            const props = feature.properties;
+                            const fechaObj = new Date(props.Fecha);
+                            const fechaVisual = isNaN(fechaObj.getTime()) ? 'S/D' : fechaObj.toLocaleDateString('es-AR') + ' ' + fechaObj.toLocaleTimeString('es-AR', {hour: '2-digit', minute:'2-digit'});
+                            
+                            let colorEstado = '#3B82F6'; // Azul por defecto
+                            if (props.Estado === 'Nuevo') colorEstado = '#10B981'; // Verde
+                            if (props.Estado === 'Reiterado' || props.Estado === 'Duplicado') colorEstado = '#EF4444'; // Rojo
+                            if (props.Estado === 'En Abordaje') colorEstado = '#F59E0B'; // Naranja
+
+                            let content = `
+                                <div class="font-sans min-w-[240px]">
+                                    <h4 class="font-bold text-[#0F172A] border-b border-[#E6EDF3] pb-1 mb-2">Reclamo: ${props.Numero_Caso || 'S/N'}</h4>
+                                    
+                                    <span style="background-color: ${colorEstado}20; color: ${colorEstado}; border: 1px solid ${colorEstado}50;" class="inline-block px-2 py-1 rounded text-[10px] font-bold uppercase mb-2">
+                                        ${props.Estado || 'S/D'}
+                                    </span>
+
+                                    <div class="space-y-1 mb-2">
+                                        <p class="text-xs text-[#0F172A]"><b>Tipo:</b> ${props.Tipo || '-'} (${props.Sub_Tipo || '-'})</p>
+                                        <p class="text-xs text-[#0F172A]"><b>Dirección:</b> ${props.Direccion || '-'}</p>
+                                        <p class="text-xs text-[#0F172A]"><b>Vecino/a:</b> ${props.Nombre || ''} ${props.Apellido || ''}</p>
+                                    </div>
+                                    
+                                    <div class="mt-2 pt-2 border-t border-[#E6EDF3] text-[10px] text-[#64748B]">
+                                        <i class="fa-regular fa-clock"></i> Reportado: ${fechaVisual}
+                                    </div>
+                                </div>
+                            `;
+                            layer.bindPopup(content);
+                        }
+                    }).addTo(reclamosPendientesLayer);
+                }
+            };
+
+            // -----------------------------------------------------
+            // CARGA DE LÍMITE LOMAS DE ZAMORA
+            // -----------------------------------------------------
+            fetch('./municipios_Lomas de Zamora.geojson').then(r => r.json()).then(data => {
+                L.geoJSON(data, {
+                    style: { color: '#19567C', weight: 3, dashArray: '5, 5', fillOpacity: 0.03 }
+                }).addTo(limiteElements);
+            }).catch(e => console.log('Error loading Límite Lomas:', e));
+
+            // -----------------------------------------------------
+            // CARGA DE DATOS Y EVENTOS
+            // -----------------------------------------------------
+            Promise.all([
+                fetch('./poligonos_operativos.geojson').then(r => r.json()).catch(e => { console.log('Error poligonos:', e); return null; }),
+                fetch('./reportes_filtrados.geojson').then(r => r.json()).catch(e => { console.log('Error reportes:', e); return null; })
+            ]).then(([poligonos, reportes]) => {
+                if (poligonos) poligonosData = poligonos;
+                if (reportes) reclamosPendientesData = reportes;
+                
+                updateDateFilterOptions();
+                renderSuperOperativos();
+                
+                // Hacer un acercamiento a la zona de Lomas centro donde están los datos
+                if (poligonos || reportes) {
+                    map.setView([-34.7610, -58.4150], 15);
+                }
+            });
+
+            // --- LISTENERS PARA FILTROS ---
+            document.getElementById('cb-limite').addEventListener('change', (e) => {
+                e.target.checked ? map.addLayer(limiteElements) : map.removeLayer(limiteElements);
+            });
+
+            document.getElementById('cb-poligonos').addEventListener('change', renderSuperOperativos);
+            document.getElementById('cb-reclamos-pendientes').addEventListener('change', renderSuperOperativos);
+            document.getElementById('filter-fecha').addEventListener('change', renderSuperOperativos);
+        }
+
+        document.addEventListener("DOMContentLoaded", initMap);
+    </script>
+</body>
+</html>

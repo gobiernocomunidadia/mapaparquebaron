@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.412677,
+              -34.7590112
+            ],
+            [
+              -58.4186779,
+              -34.7581636
+            ],
+            [
+              -58.4196811,
+              -34.7628815
+            ],
+            [
+              -58.4136819,
+              -34.7637591
+            ],
+            [
+              -58.412677,
+              -34.7590112
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Fecha": "2026-05-18T03:00:00.000Z",
+        "Punto_1": "Laprida & Alvarez Thomas",
+        "Punto_2": "Laprida & 24 de Mayo",
+        "Punto_3": "24 de Mayo & Garona",
+        "Punto_4": "Garona & Alvarez Thomas",
+        "Localidad": "Lomas de Zamora",
+        "CGM": "Lomas"
+      }
+    }
+  ]
+}
