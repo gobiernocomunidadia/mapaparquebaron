@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -79,22 +79,41 @@
                     <h4 class="text-xs font-extrabold text-[#19567C] uppercase mb-3 flex items-center gap-2">
                         <i data-lucide="siren" class="h-4 w-4"></i> Super Operativos
                     </h4>
-                    <div class="space-y-3">
-                        <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="checkbox" id="cb-poligonos" checked class="w-4 h-4 accent-[#19567C]">
-                            <span class="text-sm text-[#0F172A] font-bold">Zonas Super Operativos</span>
-                        </label>
-                        <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="checkbox" id="cb-reclamos-pendientes" checked class="w-4 h-4 accent-[#19567C]">
-                            <span class="text-sm text-[#0F172A] font-bold">Reclamos Pendientes</span>
-                        </label>
+                    
+                    <div class="space-y-4">
                         
-                        <div class="mt-4 pt-3 border-t border-[#19567C]/20">
-                            <label class="text-xs font-bold text-[#19567C] block mb-2 flex items-center gap-2"><i data-lucide="calendar" class="h-3 w-3"></i> Filtro por Fecha</label>
-                            <select id="filter-fecha" class="w-full text-xs p-2 border border-[#19567C]/30 rounded text-[#0F172A] outline-none bg-white">
-                                <option value="ALL">Todas las fechas</option>
-                            </select>
+                        <!-- Bloque de Polígonos y sus filtros dependientes -->
+                        <div class="flex flex-col gap-2">
+                            <label class="flex items-center gap-3 cursor-pointer">
+                                <input type="checkbox" id="cb-poligonos" checked class="w-4 h-4 accent-[#19567C]">
+                                <span class="text-sm text-[#0F172A] font-bold">Zonas Super Operativos</span>
+                            </label>
+                            
+                            <!-- Contenedor de filtros de CGM y Fecha (solo afecta a polígonos) -->
+                            <div id="filtros-poligonos" class="pl-7 border-l-2 border-[#19567C]/20 ml-2 space-y-3 transition-all duration-300">
+                                <div>
+                                    <label class="text-[10px] font-bold text-[#19567C] block mb-1 flex items-center gap-1 uppercase"><i data-lucide="map-pin" class="h-3 w-3"></i> Seleccionar CGM</label>
+                                    <select id="filter-cgm" class="w-full text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none bg-white">
+                                        <option value="ALL">Todos los CGM</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="text-[10px] font-bold text-[#19567C] block mb-1 flex items-center gap-1 uppercase"><i data-lucide="calendar" class="h-3 w-3"></i> Fecha del Operativo</label>
+                                    <select id="filter-fecha-operativo" class="w-full text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none bg-white">
+                                        <option value="ALL">Todas las fechas</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Bloque de Reclamos -->
+                        <div class="pt-3 border-t border-[#19567C]/20">
+                            <label class="flex items-center gap-3 cursor-pointer">
+                                <input type="checkbox" id="cb-reclamos-pendientes" checked class="w-4 h-4 accent-[#19567C]">
+                                <span class="text-sm text-[#0F172A] font-bold">Reclamos Pendientes</span>
+                            </label>
+                        </div>
+
                     </div>
                 </div>
 
@@ -114,7 +133,6 @@
         let map;
         let limiteElements;
 
-        // Nuevas variables para Super Operativos
         let poligonosLayer, reclamosPendientesLayer;
         let poligonosData = null;
         let reclamosPendientesData = null;
@@ -155,20 +173,44 @@
             poligonosLayer = L.layerGroup().addTo(map);
             reclamosPendientesLayer = L.layerGroup().addTo(map);
 
-            // Función para actualizar las opciones del selector de fecha
+            // Actualizar opciones del select de CGM
+            function updateCGMOptions() {
+                const cgms = new Set();
+                if (poligonosData) {
+                    poligonosData.features.forEach(f => {
+                        if (f.properties.CGM) cgms.add(f.properties.CGM);
+                    });
+                }
+
+                const selectCGM = document.getElementById('filter-cgm');
+                selectCGM.innerHTML = '<option value="ALL">Todos los CGM</option>';
+                
+                Array.from(cgms).sort().forEach(cgm => {
+                    const opt = document.createElement('option');
+                    opt.value = cgm;
+                    opt.textContent = cgm;
+                    selectCGM.appendChild(opt);
+                });
+            }
+
+            // Actualizar opciones de fechas BASADO en el CGM seleccionado
             function updateDateFilterOptions() {
+                const selectedCGM = document.getElementById('filter-cgm').value;
                 const fechas = new Set();
-                const extractDate = (feature) => {
-                    if (feature.properties.Fecha) {
-                        fechas.add(feature.properties.Fecha.substring(0, 10)); // Extraer AAAA-MM-DD
-                    }
-                };
+                
+                if (poligonosData) {
+                    poligonosData.features.forEach(f => {
+                        // Solo tomamos las fechas si el CGM coincide (o si está en "Todos")
+                        if (selectedCGM === 'ALL' || f.properties.CGM === selectedCGM) {
+                            if (f.properties.Fecha) {
+                                fechas.add(f.properties.Fecha.substring(0, 10)); // Extraer AAAA-MM-DD
+                            }
+                        }
+                    });
+                }
 
-                if (poligonosData) poligonosData.features.forEach(extractDate);
-                if (reclamosPendientesData) reclamosPendientesData.features.forEach(extractDate);
-
-                const select = document.getElementById('filter-fecha');
-                select.innerHTML = '<option value="ALL">Todas las fechas</option>';
+                const selectFecha = document.getElementById('filter-fecha-operativo');
+                selectFecha.innerHTML = '<option value="ALL">Todas las fechas</option>';
                 
                 // Ordenar descendentemente
                 Array.from(fechas).sort().reverse().forEach(fecha => {
@@ -179,7 +221,7 @@
                     const partes = fecha.split('-');
                     opt.textContent = `${partes[2]}/${partes[1]}/${partes[0]}`;
                     
-                    select.appendChild(opt);
+                    selectFecha.appendChild(opt);
                 });
             }
 
@@ -188,18 +230,21 @@
                 poligonosLayer.clearLayers();
                 reclamosPendientesLayer.clearLayers();
 
-                const selectedDate = document.getElementById('filter-fecha').value;
+                const selectedDate = document.getElementById('filter-fecha-operativo').value;
+                const selectedCGM = document.getElementById('filter-cgm').value;
 
+                // 1. Renderizar Polígonos de Super Operativos (Afectados por CGM y Fecha)
                 if (poligonosData && document.getElementById('cb-poligonos').checked) {
                     L.geoJSON(poligonosData, {
                         filter: function(feature) {
-                            if (selectedDate === 'ALL') return true;
-                            return feature.properties.Fecha && feature.properties.Fecha.substring(0, 10) === selectedDate;
+                            const matchCGM = (selectedCGM === 'ALL' || feature.properties.CGM === selectedCGM);
+                            const matchDate = (selectedDate === 'ALL' || (feature.properties.Fecha && feature.properties.Fecha.substring(0, 10) === selectedDate));
+                            
+                            return matchCGM && matchDate;
                         },
                         style: { fillColor: '#D34872', color: '#9F1239', weight: 3, fillOpacity: 0.25, dashArray: '6, 6' },
                         onEachFeature: function(feature, layer) {
                             const props = feature.properties;
-                            // Prevenir error de zona horaria usando solo la fecha extraída
                             const fechaVisual = props.Fecha ? props.Fecha.substring(0,10).split('-').reverse().join('/') : 'S/D';
                             
                             let content = `
@@ -223,11 +268,11 @@
                     }).addTo(poligonosLayer);
                 }
 
+                // 2. Renderizar Reclamos Pendientes (NO afectados por filtros de fecha ni CGM)
                 if (reclamosPendientesData && document.getElementById('cb-reclamos-pendientes').checked) {
                     L.geoJSON(reclamosPendientesData, {
                         filter: function(feature) {
-                            if (selectedDate === 'ALL') return true;
-                            return feature.properties.Fecha && feature.properties.Fecha.substring(0, 10) === selectedDate;
+                            return true; // Se muestran todos, sin importar fecha ni CGM
                         },
                         pointToLayer: function(feature, latlng) {
                             return L.marker(latlng, { icon: getLeafletIcon('#F59E0B', pathWarning) }); 
@@ -286,6 +331,7 @@
                 if (poligonos) poligonosData = poligonos;
                 if (reportes) reclamosPendientesData = reportes;
                 
+                updateCGMOptions();
                 updateDateFilterOptions();
                 renderSuperOperativos();
                 
@@ -300,9 +346,25 @@
                 e.target.checked ? map.addLayer(limiteElements) : map.removeLayer(limiteElements);
             });
 
-            document.getElementById('cb-poligonos').addEventListener('change', renderSuperOperativos);
+            // Mostrar/Ocultar subménu de filtros de polígonos
+            document.getElementById('cb-poligonos').addEventListener('change', (e) => {
+                const filtrosDiv = document.getElementById('filtros-poligonos');
+                if (e.target.checked) {
+                    filtrosDiv.style.display = 'block';
+                } else {
+                    filtrosDiv.style.display = 'none';
+                }
+                renderSuperOperativos();
+            });
+
+            // Si se cambia el CGM, se actualizan las fechas disponibles y se renderiza de nuevo
+            document.getElementById('filter-cgm').addEventListener('change', () => {
+                updateDateFilterOptions();
+                renderSuperOperativos();
+            });
+
+            document.getElementById('filter-fecha-operativo').addEventListener('change', renderSuperOperativos);
             document.getElementById('cb-reclamos-pendientes').addEventListener('change', renderSuperOperativos);
-            document.getElementById('filter-fecha').addEventListener('change', renderSuperOperativos);
         }
 
         document.addEventListener("DOMContentLoaded", initMap);
