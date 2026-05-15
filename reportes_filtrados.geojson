@@ -196,6 +196,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -58.412715292676,
+          -34.780540534497
+        ]
+      },
+      "properties": {
+        "Caso": "#G472849",
+        "Tipo": "Servicios Públicos",
+        "Sub_Tipo": "Retiro de ramas y troncos de poda domiciliaria",
+        "Direccion": "GENERAL JOSE M PAZ 1179",
+        "Estado": "Nuevo",
+        "Fecha_Reporte": "2026-05-15T11:29:57.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -58.407611993288,
           -34.777281520439
         ]
@@ -226,6 +245,63 @@
         "Direccion": "SAN PEDRO ",
         "Estado": "Nuevo",
         "Fecha_Reporte": "2026-05-14T14:44:30.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414680156947,
+          -34.780891799918
+        ]
+      },
+      "properties": {
+        "Caso": "#G472031",
+        "Tipo": "Arbolado",
+        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
+        "Direccion": "JUAN B VAGO 381",
+        "Estado": "Nuevo",
+        "Fecha_Reporte": "2026-05-14T14:26:35.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413620571978,
+          -34.780336171656
+        ]
+      },
+      "properties": {
+        "Caso": "#G472029",
+        "Tipo": "Arbolado",
+        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
+        "Direccion": "SCALABRINI ORTIZ 335",
+        "Estado": "Nuevo",
+        "Fecha_Reporte": "2026-05-14T14:25:00.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.412732029048,
+          -34.781367106581
+        ]
+      },
+      "properties": {
+        "Caso": "#G472026",
+        "Tipo": "Arbolado",
+        "Sub_Tipo": "Solicitud de despeje lumínico",
+        "Direccion": "SCALABRINI ORTIZ 409",
+        "Estado": "Nuevo",
+        "Fecha_Reporte": "2026-05-14T14:22:46.000Z",
         "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
@@ -283,6 +359,25 @@
         "Direccion": "J M FERNANDEZ 1000",
         "Estado": "Nuevo",
         "Fecha_Reporte": "2026-05-14T14:05:22.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410091982382,
+          -34.77845169008
+        ]
+      },
+      "properties": {
+        "Caso": "#G471971",
+        "Tipo": "Arbolado",
+        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
+        "Direccion": "SAN PEDRO 301",
+        "Estado": "Nuevo",
+        "Fecha_Reporte": "2026-05-14T13:59:43.000Z",
         "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
@@ -367,6 +462,25 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -58.410477936035,
+          -34.777943752859
+        ]
+      },
+      "properties": {
+        "Caso": "#G471213",
+        "Tipo": "Asuntos Hidricos",
+        "Sub_Tipo": "Boca de tormenta obstruida",
+        "Direccion": "SAN PEDRO ",
+        "Estado": "Nuevo",
+        "Fecha_Reporte": "2026-05-13T16:49:46.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -58.411166747977,
           -34.777055960601
         ]
@@ -424,6 +538,120 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -58.409650264444,
+          -34.77895140029
+        ]
+      },
+      "properties": {
+        "Caso": "#G471163",
+        "Tipo": "Arbolado",
+        "Sub_Tipo": "Solicitud de despeje lumínico",
+        "Direccion": "GENERAL JOSE M PAZ ",
+        "Estado": "Nuevo",
+        "Fecha_Reporte": "2026-05-13T16:18:15.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409650264444,
+          -34.77895140029
+        ]
+      },
+      "properties": {
+        "Caso": "#G471147",
+        "Tipo": "Arbolado",
+        "Sub_Tipo": "Solicitud de autorización para extracción de árbol",
+        "Direccion": "GENERAL JOSE M PAZ 940",
+        "Estado": "En Abordaje",
+        "Fecha_Reporte": "2026-05-13T16:12:47.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410670748292,
+          -34.780850753617
+        ]
+      },
+      "properties": {
+        "Caso": "#G470634",
+        "Tipo": "Salud",
+        "Sub_Tipo": "Turnos",
+        "Direccion": "C AVELLANEDA 1179",
+        "Estado": "En Abordaje",
+        "Fecha_Reporte": "2026-05-13T12:22:31.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41247032406,
+          -34.779665871887
+        ]
+      },
+      "properties": {
+        "Caso": "#G468178",
+        "Tipo": "Arbolado",
+        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
+        "Direccion": "J M HUERGO 399",
+        "Estado": "En Abordaje",
+        "Fecha_Reporte": "2026-05-11T13:11:34.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.411249067033,
+          -34.779114956618
+        ]
+      },
+      "properties": {
+        "Caso": "#G468036",
+        "Tipo": "Arbolado",
+        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
+        "Direccion": "SAN CARLOS 355",
+        "Estado": "Tratado sin resolver",
+        "Fecha_Reporte": "2026-05-11T11:57:24.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414680156947,
+          -34.780891799918
+        ]
+      },
+      "properties": {
+        "Caso": "#G464027",
+        "Tipo": "Salud",
+        "Sub_Tipo": "Turnos",
+        "Direccion": "JUAN B VAGO 395",
+        "Estado": "En Abordaje",
+        "Fecha_Reporte": "2026-05-05T18:48:52.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -58.410065687176,
           -34.775259414474
         ]
@@ -436,82 +664,6 @@
         "Estado": "Reiterado",
         "Fecha_Reporte": "2026-05-03T15:14:00.000Z",
         "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.41762634273,
-          -34.807262327647
-        ]
-      },
-      "properties": {
-        "Caso": "#G473278",
-        "Tipo": "Arbolado",
-        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
-        "Direccion": "LUIS DAVILA 903",
-        "Estado": "Nuevo",
-        "Fecha_Reporte": "2026-05-15T15:10:03.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.41762634273,
-          -34.807262327647
-        ]
-      },
-      "properties": {
-        "Caso": "#G473271",
-        "Tipo": "Seguridad",
-        "Sub_Tipo": "Asesoramiento App Seguridad Lomas",
-        "Direccion": "LUIS DAVILA 903",
-        "Estado": "Nuevo",
-        "Fecha_Reporte": "2026-05-15T15:05:13.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.419352777579,
-          -34.808136268494
-        ]
-      },
-      "properties": {
-        "Caso": "#G473262",
-        "Tipo": "Salud",
-        "Sub_Tipo": "Turnos",
-        "Direccion": "LUIS DAVILA 1094",
-        "Estado": "Nuevo",
-        "Fecha_Reporte": "2026-05-15T15:01:04.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.423145385881,
-          -34.812916982288
-        ]
-      },
-      "properties": {
-        "Caso": "#G473117",
-        "Tipo": "Servicios Públicos",
-        "Sub_Tipo": "Retiro de ramas y troncos de poda en vía pública",
-        "Direccion": "TUPAC AMARU 1411",
-        "Estado": "Nuevo",
-        "Fecha_Reporte": "2026-05-15T13:49:40.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
       }
     },
     {
@@ -538,188 +690,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.423857569745,
-          -34.812694885562
+          -58.416452148738,
+          -34.804447273618
         ]
       },
       "properties": {
-        "Caso": "#G472411",
-        "Tipo": "Inspecciones",
-        "Sub_Tipo": "Otras intervenciones del área",
-        "Direccion": "SILVA 163",
-        "Estado": "En Abordaje",
-        "Fecha_Reporte": "2026-05-14T17:36:15.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.419734203293,
-          -34.80946448467
-        ]
-      },
-      "properties": {
-        "Caso": "#G472253",
-        "Tipo": "Alumbrado Público",
-        "Sub_Tipo": "Luminaria LED intermitente encendida 24 hs",
-        "Direccion": "ANTONIO SASTRE 1257",
-        "Estado": "En Abordaje",
-        "Fecha_Reporte": "2026-05-14T16:08:53.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.420051144443,
-          -34.807986855945
-        ]
-      },
-      "properties": {
-        "Caso": "#G472091",
-        "Tipo": "Transporte",
-        "Sub_Tipo": "Otras intervenciones del área",
-        "Direccion": "DOYHENARD 1300",
-        "Estado": "Reiterado",
-        "Fecha_Reporte": "2026-05-14T14:51:45.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.420051144443,
-          -34.807986855945
-        ]
-      },
-      "properties": {
-        "Caso": "#G471742",
-        "Tipo": "Transporte",
-        "Sub_Tipo": "Otras intervenciones del área",
-        "Direccion": "Doyhenard  1300",
-        "Estado": "Tratado sin resolver",
-        "Fecha_Reporte": "2026-05-14T12:13:38.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.420051144443,
-          -34.807986855945
-        ]
-      },
-      "properties": {
-        "Caso": "#G471657",
-        "Tipo": "Tránsito",
-        "Sub_Tipo": "Presencia de control de tránsito en la zona",
-        "Direccion": "Doyhenard  1300",
-        "Estado": "Error en derivación",
-        "Fecha_Reporte": "2026-05-14T10:24:07.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.418018394884,
-          -34.807509728574
-        ]
-      },
-      "properties": {
-        "Caso": "#G471080",
-        "Tipo": "Alumbrado Público",
-        "Sub_Tipo": "Luminaria con riesgo de caída",
-        "Direccion": "LA PORTEÑA ",
-        "Estado": "En Abordaje",
-        "Fecha_Reporte": "2026-05-13T15:42:13.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.421371905691,
-          -34.808137392561
-        ]
-      },
-      "properties": {
-        "Caso": "#G470860",
-        "Tipo": "Servicios Públicos",
-        "Sub_Tipo": "Retiro de montículos de basura o tierra",
-        "Direccion": "RAMON PARETA ",
-        "Estado": "Nuevo",
-        "Fecha_Reporte": "2026-05-13T13:59:30.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.41807602678,
-          -34.809823346184
-        ]
-      },
-      "properties": {
-        "Caso": "#G465024",
-        "Tipo": "IMPTCE",
-        "Sub_Tipo": "Capacitaciones y Talleres de Oficio",
-        "Direccion": "SILVA 1075",
-        "Estado": "En Abordaje",
-        "Fecha_Reporte": "2026-05-06T15:50:03.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.417686826494,
-          -34.80794310016
-        ]
-      },
-      "properties": {
-        "Caso": "#G463382",
+        "Caso": "#G468701",
         "Tipo": "Arbolado",
         "Sub_Tipo": "Solicitud de poda pedido extraordinario",
-        "Direccion": "LA PORTEÑA 1342",
-        "Estado": "Nuevo",
-        "Fecha_Reporte": "2026-05-05T14:27:38.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.419038566332,
-          -34.80694670588
-        ]
-      },
-      "properties": {
-        "Caso": "#G463238",
-        "Tipo": "Arbolado",
-        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
-        "Direccion": "CUYO 980",
+        "Direccion": "H BOUCHARD 950",
         "Estado": "En Abordaje",
-        "Fecha_Reporte": "2026-05-05T13:31:04.000Z",
+        "Fecha_Reporte": "2026-05-11T16:57:52.000Z",
         "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
       }
     },
@@ -747,36 +728,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -58.417955933619,
-          -34.805911966695
+          -58.414698037939,
+          -34.807714362941
         ]
       },
       "properties": {
-        "Caso": "#G463219",
-        "Tipo": "Arbolado",
-        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
-        "Direccion": "CHARLONE 1097",
-        "Estado": "Tratado sin resolver",
-        "Fecha_Reporte": "2026-05-05T13:24:50.000Z",
-        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -58.421902707911,
-          -34.811143570046
-        ]
-      },
-      "properties": {
-        "Caso": "#G462746",
-        "Tipo": "Salud",
-        "Sub_Tipo": "Turnos",
-        "Direccion": "GRAL NECOCHEA 1396",
-        "Estado": "En Abordaje",
-        "Fecha_Reporte": "2026-05-04T21:26:30.000Z",
+        "Caso": "#G461570",
+        "Tipo": "Asuntos Hidricos",
+        "Sub_Tipo": "Zanja obstruida",
+        "Direccion": "ANTONIO SASTRE ",
+        "Estado": "Nuevo",
+        "Fecha_Reporte": "2026-05-04T13:01:34.000Z",
         "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
       }
     },
@@ -796,6 +758,25 @@
         "Direccion": "1 DE MARZO ",
         "Estado": "Nuevo",
         "Fecha_Reporte": "2026-05-04T12:33:10.000Z",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413500076441,
+          -34.808254421921
+        ]
+      },
+      "properties": {
+        "Caso": "#G461239",
+        "Tipo": "Empresa de Servicios Públicos",
+        "Sub_Tipo": "Poste de empresa de servicios en mal estado",
+        "Direccion": "H BOUCHARD 1440",
+        "Estado": "En Abordaje",
+        "Fecha_Reporte": "2026-05-04T04:58:36.000Z",
         "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
       }
     },

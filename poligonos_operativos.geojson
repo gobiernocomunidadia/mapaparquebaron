@@ -71,8 +71,8 @@
               -34.780379
             ],
             [
-              -58.4089325,
-              -34.7798835
+              -58.4135052,
+              -34.7824404
             ],
             [
               -58.4066047,
@@ -88,11 +88,66 @@
         "Punto_3": "Pringles & San Carlos",
         "Punto_4": "San Carlos & Lavalle",
         "Punto_5": "Lavalle & Juan Bautista Vago",
-        "Punto_6": "Vago & Avellaneda",
+        "Punto_6": "Juan Bautista Vago & Avellaneda",
         "Punto_7": "",
         "Punto_8": "",
         "Localidad": "Temperley",
         "CGM": "Temperley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.4169021,
+              -34.8017686
+            ],
+            [
+              -58.4187216,
+              -34.8031438
+            ],
+            [
+              -58.4142273,
+              -34.8090819
+            ],
+            [
+              -58.4123144,
+              -34.808137
+            ],
+            [
+              -58.416539,
+              -34.802746
+            ],
+            [
+              -58.4168963,
+              -34.8017765
+            ],
+            [
+              -58.4169021,
+              -34.8017686
+            ],
+            [
+              -58.4169021,
+              -34.8017686
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z",
+        "Punto_1": "1 de Marzo & Rosales",
+        "Punto_2": "1 de Marzo y Rondeau",
+        "Punto_3": "Rondeau & Cap. de Fragata Moyano",
+        "Punto_4": "Cap. de Fragata Moyano & Rosales",
+        "Punto_5": "Rosales & Lujan 658",
+        "Punto_6": "Rosales & Lujan 687",
+        "Punto_7": "Rosales & 1 de Marzo",
+        "Punto_8": "",
+        "Localidad": "Llavallol",
+        "CGM": "Llavallol"
       }
     }
   ]
