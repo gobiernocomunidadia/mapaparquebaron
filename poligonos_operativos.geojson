@@ -31,7 +31,7 @@
         ]
       },
       "properties": {
-        "Fecha_Operativo": "2026-05-18T03:00:00.000Z",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z",
         "Punto_1": "Laprida & Alvarez Thomas",
         "Punto_2": "Laprida & 24 de Mayo",
         "Punto_3": "24 de Mayo & Garona",
@@ -42,6 +42,108 @@
         "Punto_8": "",
         "Localidad": "Lomas de Zamora",
         "CGM": "Lomas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.4066047,
+              -34.7785906
+            ],
+            [
+              -58.4094034,
+              -34.7748825
+            ],
+            [
+              -58.4129999,
+              -34.7768518
+            ],
+            [
+              -58.4116831,
+              -34.7785809
+            ],
+            [
+              -58.4092903,
+              -34.7772932
+            ],
+            [
+              -58.4089325,
+              -34.7798835
+            ],
+            [
+              -58.4066047,
+              -34.7785906
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z",
+        "Punto_1": "Guido y Spano & Avellaneda",
+        "Punto_2": "Guido y Spano & Pringles",
+        "Punto_3": "San Carlos & Pringles",
+        "Punto_4": "San Carlos & Lavalle",
+        "Punto_5": "Lavalle & Vago",
+        "Punto_6": "Vago & Avellaneda",
+        "Punto_7": "",
+        "Punto_8": "",
+        "Localidad": "Temperley",
+        "CGM": "Temperley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.4169021,
+              -34.8017686
+            ],
+            [
+              -58.4163181,
+              -34.8025601
+            ],
+            [
+              -58.417791,
+              -34.8108684
+            ],
+            [
+              -58.4423606,
+              -34.8230962
+            ],
+            [
+              -58.4172516,
+              -34.8051467
+            ],
+            [
+              -58.4187216,
+              -34.8031438
+            ],
+            [
+              -58.4169021,
+              -34.8017686
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z",
+        "Punto_1": "1 de Marzo & Rosales",
+        "Punto_2": "Rosales & Lujan",
+        "Punto_3": "Rosales & Capitan de Fragata Moyano",
+        "Punto_4": "Capitan de Fragata Moyano & Arroyo del Rey",
+        "Punto_5": "Rondeau & Mercedes",
+        "Punto_6": "Rondeau & 1 de Marzo",
+        "Punto_7": "",
+        "Punto_8": "",
+        "Localidad": "Llavallol",
+        "CGM": "Llavallol"
       }
     }
   ]
