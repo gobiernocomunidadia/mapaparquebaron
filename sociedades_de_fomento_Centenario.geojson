@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "sociedades_de_fomento_Centenario",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Sociedad De Fomento Villa Elvira", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.7173711, "LONGITUD": -58.43259829 }, "geometry": { "type": "Point", "coordinates": [ -58.43259829, -34.7173711 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Sociedad De Fomento Luz Y Fuerza Barrio Sitra", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.73474028, "LONGITUD": -58.43142796 }, "geometry": { "type": "Point", "coordinates": [ -58.43142796, -34.73474028 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Sociedad De Fomento Fiorito", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.716536, "LONGITUD": -58.432692 }, "geometry": { "type": "Point", "coordinates": [ -58.432692, -34.716536 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Sociedad De Fomento Y Sala De Primeros Auxilios Union Vecinal Villa Elvira", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.71740637, "LONGITUD": -58.43258756 }, "geometry": { "type": "Point", "coordinates": [ -58.43258756, -34.71740637 ] } }
+]
+}

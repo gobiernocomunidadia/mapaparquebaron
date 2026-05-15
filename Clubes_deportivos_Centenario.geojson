@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "Clubes_deportivos_Centenario",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Club Social 25 De Mayo", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.73204849, "LONGITUD": -58.41816653 }, "geometry": { "type": "Point", "coordinates": [ -58.41816653, -34.73204849 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Club Social Deportivo America De Banfield", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72761977, "LONGITUD": -58.41882035 }, "geometry": { "type": "Point", "coordinates": [ -58.41882035, -34.72761977 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Club Social  Cultural Y Deportivo Sargento Cabral", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72525275, "LONGITUD": -58.4302132 }, "geometry": { "type": "Point", "coordinates": [ -58.4302132, -34.72525275 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Asociacion Civil Social Y Cultural Y Deportiva Horang-Yi J.F.", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.71390059, "LONGITUD": -58.42753624 }, "geometry": { "type": "Point", "coordinates": [ -58.42753624, -34.71390059 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Futbol Infantil Villa Centenario", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.730838, "LONGITUD": -58.429462 }, "geometry": { "type": "Point", "coordinates": [ -58.429462, -34.730838 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Club Social Y Deportivo Bujia", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.729817, "LONGITUD": -58.427547 }, "geometry": { "type": "Point", "coordinates": [ -58.427547, -34.729817 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "El Porvenir", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.720581, "LONGITUD": -58.438987 }, "geometry": { "type": "Point", "coordinates": [ -58.438987, -34.720581 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Club Social San Jose", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.719939, "LONGITUD": -58.437804 }, "geometry": { "type": "Point", "coordinates": [ -58.437804, -34.719939 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Juventud Unida De Fiorito", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.718254, "LONGITUD": -58.43455 }, "geometry": { "type": "Point", "coordinates": [ -58.43455, -34.718254 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Club Social Cultural Y Deportivo Sargento Cabral", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72491648, "LONGITUD": -58.4294334 }, "geometry": { "type": "Point", "coordinates": [ -58.4294334, -34.72491648 ] } },
+{ "type": "Feature", "properties": { "CGM": "Centenario", "NOMBRE": "Comision De Futbol Infantil El Tizon", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72732047, "LONGITUD": -58.4350962 }, "geometry": { "type": "Point", "coordinates": [ -58.4350962, -34.72732047 ] } }
+]
+}

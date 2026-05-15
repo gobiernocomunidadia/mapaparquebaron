@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "lpr_Centenario",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "LPR40", "Ubicacion": "Pte Juan D. Peron y Bolonia", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.4414084, -34.7265922, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR38", "Ubicacion": "Pte Juan D. Peron y V. de la Plaza", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.4291395, -34.7424645, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR50", "Ubicacion": "Rodriguez y Hornos", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.417713, -34.7269036, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR72", "Ubicacion": "GLADE Y URIARTE", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.413632, -34.7326027, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR74", "Ubicacion": "ITATI Y PLUMERILLO", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.4299864, -34.7197065, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR75", "Ubicacion": "UNAMUNO E ITATI", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.4355907, -34.7226685, 0.0 ] } }
+]
+}

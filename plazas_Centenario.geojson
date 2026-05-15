@@ -1,0 +1,19 @@
+{
+"type": "FeatureCollection",
+"name": "plazas_Centenario",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA DE LA JUSTICIA", "UBICACION": "12 DE OCTUBRE & ALBERTO LARROQUE", "Lat": "-34.74141171503424", "Long": " -58.42537462158667", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.42537462158667, -34.741411715034239 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA COLECTORA", "UBICACION": "ENTRE EJERCITO DE LOS ANDES Y BRAGADO", "Lat": "-34.72295071087957", "Long": " -58.44439642252375", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.444396422523752, -34.722950710879573 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA SARGENTO CABRAL", "UBICACION": "AMSTERDAM Y FILARDI", "Lat": "-34.72614581938671", "Long": " -58.42869620721182", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.428696207211821, -34.726145819386709 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA 17 DE AGOSTO", "UBICACION": "PROF CID GUIDI DE FRANC 1301", "Lat": "-34.739688322304836", "Long": " -58.42969039880324", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.429690398803238, -34.739688322304836 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA EMANUEL MAIDANA", "UBICACION": "RAWSON & JOSÉ LUIS MURATURE", "Lat": "-34.72679176353902", "Long": " -58.422824406458126", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.422824406458126, -34.726791763539019 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA PASEO SMITH", "UBICACION": "PRENSA ARGENTINA Y RODRIGUEZ", "Lat": "-34.73558276930118", "Long": " -58.43388981096037", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.433889810960373, -34.735582769301182 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA BARRIO 420", "UBICACION": "MINETTO Y LUIS SICILIANO", "Lat": "-34.736373992085085", "Long": " -58.43163802753126", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.431638027531257, -34.736373992085085 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA ZAMORA", "UBICACION": "ZAMMORA RODRIGUEZ HASTA ZAPATA", "Lat": "-34.73031648465841", "Long": " -58.41953817978032", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.419538179780318, -34.73031648465841 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA JUAN XXIII", "UBICACION": "Carlos Glade, Av. Sta. Fe", "Lat": "-34.73441398839957", "Long": " -58.417243276802054", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.417243276802054, -34.734413988399567 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZOLETA NUESTRAS MADRES", "UBICACION": "CARLOS GLADE & AV. STA. FE", "Lat": "-34.73441398839957", "Long": " -58.417243276802054", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.417243276802054, -34.734413988399567 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA SOLDADO LENA", "UBICACION": "EJERCITO DE LOS ANDES Y MILAN", "Lat": "-34.718303585218635", "Long": " -58.437035853784124", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.437035853784124, -34.718303585218635 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA SIN NOMBRE Barrio Apolo", "UBICACION": "PRES JUAN DOMINGO PERON 2751", "Lat": "-34.73676221903304", "Long": " -58.433979158106006", "CGM": "Centenario" }, "geometry": { "type": "Point", "coordinates": [ -58.433979158106006, -34.736762219033039 ] } }
+]
+}
