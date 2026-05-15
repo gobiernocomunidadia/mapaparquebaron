@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "plazas_Budge",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA TURNER", "UBICACION": "CIPOLLETI & CLAUDIO DE ALAS", "Lat": "-34.71899530932346", "Long": " -58.463768428167334", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.463768428167334, -34.718995309323461 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA CANADA", "UBICACION": "C. CANADÁ & JUAN M. DE LAVARDÉN", "Lat": "-34.72633172158324", "Long": " -58.46333532425214", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.463335324252142, -34.726331721583243 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA DE LOS NIÑOS", "UBICACION": "GINEBRA Y LABARDEN", "Lat": "-34.72955737128402", "Long": " -58.4560787087376", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4560787087376, -34.729557371284017 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA MALDONADO", "UBICACION": "PASAJE MALDONADO  Y CLAUDIO DE ALAS", "Lat": "-34.72789876413898", "Long": " -58.45680919430798", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.456809194307979, -34.727898764138978 ] } }
+]
+}

@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "semaforos_activos_Budge",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "COSQUIN Y AZAMOR", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.457677, -34.709268, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "RIBERA SUR Y ESPRONCEDA", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.465785, -34.710873, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "RIBERA SUR Y CLAUDIO DE ALAS", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.468416, -34.713456, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "RECONDO Y CLAUDIO DE ALAS", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.462398, -34.720924, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA ESTE Y EJERCITO DE LOS ANDES", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.445299, -34.722799, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA OESTE Y EJERCITO DE LOS ANDES", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.445299, -34.722799, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "QUESADA Y ANDRES BELLO", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.462831, -34.724647, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "FIGUEREDO &amp; PRESIDENTE JUAN DOMINGO PERÓN", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.455596, -34.709917, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "FIGUEREDO Y JUAN D. PERON", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.455596, -34.709917, 0.0 ] } }
+]
+}

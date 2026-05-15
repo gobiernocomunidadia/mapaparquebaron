@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "Centros_de_atencion_sanitaria_Budge",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. INGENIERO BUDGE", "Servicios": null, "Detalle [x": null, "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.45189, -34.718579 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "UPA Unidad de Pronta Atención", "Servicios": null, "Detalle [x": null, "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.451314, -34.715403 ] } }
+]
+}

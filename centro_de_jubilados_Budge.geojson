@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "centro_de_jubilados_Budge",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Budge", "NOMBRE": "Centro De Jubilados Y Pensionados San Expedito De Sole", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.71970047, "LONGITUD": -58.45083821 }, "geometry": { "type": "Point", "coordinates": [ -58.45083821, -34.71970047 ] } },
+{ "type": "Feature", "properties": { "CGM": "Budge", "NOMBRE": "Centro De Jubilados Y Pensionados Tiempos Para  Disfrutar", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.71851983, "LONGITUD": -58.45539526 }, "geometry": { "type": "Point", "coordinates": [ -58.45539526, -34.71851983 ] } },
+{ "type": "Feature", "properties": { "CGM": "Budge", "NOMBRE": "Centro De Jubilados Y Pensionados El Misionero Daniel Abildgaard", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.7284732, "LONGITUD": -58.45769164 }, "geometry": { "type": "Point", "coordinates": [ -58.45769164, -34.7284732 ] } },
+{ "type": "Feature", "properties": { "CGM": "Budge", "NOMBRE": "Centro De Jubilados Y Pensionados Ingeniero Budge", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.71175889, "LONGITUD": -58.4638392 }, "geometry": { "type": "Point", "coordinates": [ -58.4638392, -34.71175889 ] } },
+{ "type": "Feature", "properties": { "CGM": "Budge", "NOMBRE": "Centro De Jubilados Y Pensionados Tardes De Mates", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.71079561, "LONGITUD": -58.46054255 }, "geometry": { "type": "Point", "coordinates": [ -58.46054255, -34.71079561 ] } },
+{ "type": "Feature", "properties": { "CGM": "Budge", "NOMBRE": "Centro De Jubilados Y Pensionados Los Pasivos", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.723708, "LONGITUD": -58.464478 }, "geometry": { "type": "Point", "coordinates": [ -58.464478, -34.723708 ] } },
+{ "type": "Feature", "properties": { "CGM": "Budge", "NOMBRE": "Centro De Jubilados Y Pensionados Los Abuelos De Ingeniero Budge", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.719467, "LONGITUD": -58.459392 }, "geometry": { "type": "Point", "coordinates": [ -58.459392, -34.719467 ] } },
+{ "type": "Feature", "properties": { "CGM": "Budge", "NOMBRE": "Centro De Jubilados Y Pensionados Siempre Con La Gente", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.711609, "LONGITUD": -58.4572 }, "geometry": { "type": "Point", "coordinates": [ -58.4572, -34.711609 ] } },
+{ "type": "Feature", "properties": { "CGM": "Budge", "NOMBRE": "Centro De Jubilados Y Pensionados La Tranquera", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.7264, "LONGITUD": -58.449398 }, "geometry": { "type": "Point", "coordinates": [ -58.449398, -34.7264 ] } }
+]
+}

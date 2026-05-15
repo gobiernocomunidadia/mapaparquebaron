@@ -1,0 +1,22 @@
+{
+"type": "FeatureCollection",
+"name": "bacheo_2025_Budge",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4686548, -34.7153969, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4479375, -34.7194877, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4642828, -34.7165947, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4468907, -34.7250971, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4556299, -34.729642, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4668217, -34.7143687, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4628377, -34.7203647, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4656784, -34.7147617, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4638393, -34.72342, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4543491, -34.7289736, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4607647, -34.722983, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4621446, -34.7212321, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4599668, -34.7141826, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4605129, -34.7213559, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "Budge" }, "geometry": { "type": "Point", "coordinates": [ -58.4673932, -34.7146961, 0.0 ] } }
+]
+}
