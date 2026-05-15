@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "parques_municipales_Santa Catalina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "NOMBRE": "Parque Santa Catalina", "DIRECCION": "Manuela Pedraza & Soldado Brito", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.47148, -34.74251 ] } },
+{ "type": "Feature", "properties": { "NOMBRE": "Polideportivo 2 de Abril", "DIRECCION": "Padre Carlos Mujica 2621", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4659, -34.74405 ] } }
+]
+}

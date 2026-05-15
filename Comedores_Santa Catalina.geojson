@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "Comedores_Santa Catalina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Santa Catalina", "NOMBRE": "Comedor Merendero Estrellitas 2018", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.7521799, "LONGITUD": -58.46950427 }, "geometry": { "type": "Point", "coordinates": [ -58.46950427, -34.7521799 ] } },
+{ "type": "Feature", "properties": { "CGM": "Santa Catalina", "NOMBRE": "Merendero Nuestra Sra. Del Carmen", "TIPO": "COMEDORES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.75682046, "LONGITUD": -58.47400053 }, "geometry": { "type": "Point", "coordinates": [ -58.47400053, -34.75682046 ] } }
+]
+}

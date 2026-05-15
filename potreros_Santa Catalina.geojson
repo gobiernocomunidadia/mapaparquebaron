@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "potreros_Santa Catalina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Santa Catalina", "Potrero": "Club Monteverde Calabaza", "Dimensiones": "F7", "Direccion": "Calabaza - Santa Catalina", "Lat_Long": "-34.72878262226603, -58.48182257116436", "Tipo_de_Intervenci__n": "Ampliación y colocación de luminaria.", "Presupuesto__SP_": "$9.368.500", "Informaci__n_Adicional": "Potrero construido en 2024." }, "geometry": { "type": "Point", "coordinates": [ -58.4818225711644, -34.728782622266003, 0.0 ] } },
+{ "type": "Feature", "properties": { "CGM": "Santa Catalina", "Potrero": "Barrio Obrero", "Dimensiones": "F11", "Direccion": "Calle 2 y 104, Santa Catalina", "Lat_Long": "-34.74847230092466, -58.467591416873866", "Tipo_de_Intervenci__n": "Cambio de arcos y luminaria, colocación de bancos de suplentes, alambrado, relleno y nivelación.", "Presupuesto__SP_": "$55.672.977 (SP 83)", "Informaci__n_Adicional": "Cooperativa Minka. Próximo a finalizar." }, "geometry": { "type": "Point", "coordinates": [ -58.467591416873901, -34.748472300924703, 0.0 ] } },
+{ "type": "Feature", "properties": { "CGM": "Santa Catalina", "Potrero": "Club Monteverde", "Dimensiones": "", "Direccion": "Calabaza, Santa Catalina", "Lat_Long": "-34.72878262226603, -58.48182257116436", "Tipo_de_Intervenci__n": "Construcción de cero.", "Presupuesto__SP_": "$71.383.738", "Informaci__n_Adicional": "N/A" }, "geometry": { "type": "Point", "coordinates": [ -58.4818225711644, -34.728782622266003, 0.0 ] } },
+{ "type": "Feature", "properties": { "CGM": "Santa Catalina", "Potrero": "Guardianes de Homero Manzi", "Dimensiones": "", "Direccion": "Homero Manzi y Cabo Caceres, Santa Catalina", "Lat_Long": "-34.736119538442544, -58.47317852904676", "Tipo_de_Intervenci__n": "Intervenciones.", "Presupuesto__SP_": "N/A", "Informaci__n_Adicional": "Sin ejecución de presupuesto." }, "geometry": { "type": "Point", "coordinates": [ -58.473178529046798, -34.736119538442502, 0.0 ] } }
+]
+}

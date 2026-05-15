@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "Centros_de_atencion_sanitaria_Santa Catalina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. BARRIO OBRERO", "Servicios": null, "Detalle [x": "Dirección: Calle 107 esq. 4 Manz. 1 entre calle 1 y calle 2", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.467463, -34.750773 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. JUAN MANUEL DE ROSAS", "Servicios": null, "Detalle [x": "Dirección: Corsini. entre Correa y Cabo del Monte", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.472672, -34.739454 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. NUEVA ESPERANZA", "Servicios": null, "Detalle [x": "Dirección: Elizalde Manzana 41 Casa Nº 7", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.485283, -34.741368 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. SANTA CATALINA", "Servicios": null, "Detalle [x": "Dirección: Mercuri/Diagonal 61 entre Santa fe y Milan", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.483678, -34.736092 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. SOLIDARIDAD", "Servicios": null, "Detalle [x": "Dirección: Ruben Martell 911 entre Juan Facundo Quiroga y Diagonal 59", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.478199, -34.751303 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. 2 DE ABRIL", "Servicios": null, "Detalle [x": "Dirección: Soldado Zelarrayan 1103  esq. Homero Manzi", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.468572, -34.742345 ] } }
+]
+}

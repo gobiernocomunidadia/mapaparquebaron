@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "sociedades_de_fomento_Santa Catalina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Santa Catalina", "NOMBRE": "Sociedad De Fomento Juan Manuel De Rosas", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.73928958, "LONGITUD": -58.47403895 }, "geometry": { "type": "Point", "coordinates": [ -58.47403895, -34.73928958 ] } }
+]
+}

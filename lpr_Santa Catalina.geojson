@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "lpr_Santa Catalina",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "LPR48", "Ubicacion": "Olimpo y Elizalde", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.488687, -34.739253, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR18", "Ubicacion": "LPR Quiroga y Giachino", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.472136, -34.748106, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR59", "Ubicacion": "CHACHO PEÑALOZA Y GIACHINO", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4653621, -34.7567892, 0.0 ] } }
+]
+}
