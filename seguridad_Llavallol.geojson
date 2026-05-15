@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "seguridad_Llavallol",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "fid": 22, "OSM_ID": 573407600, "CODE": 2001, "NAME": "Comisaría 20", "LATITUD": -34.80118, "LONGITUD": -58.425558, "IDPROV": "06", "PROV": "Buenos Aires", "IDDPTO": "06490", "Partido": "Lomas de Zamora", "REDCODE": "064904402", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4255587, -34.8011804 ] } }
+]
+}

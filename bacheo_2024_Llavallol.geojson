@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "bacheo_2024_Llavallol",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Antártida Argentina entre Bv. Polonia y Pareta (Colegio Euskal Echea)", "description": "CGM LLAVALLOL<br><br>nombre: <br>descripción: ", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "nombre": "", "descripci__n": "", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4293115, -34.8001667, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Ascasubi y Blvar. Polonia", "description": "CGM LLAVALLOL<br><br>nombre: <br>descripción: ", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "nombre": "", "descripci__n": "", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.428803, -34.804061, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Ascasubi y Ucrania", "description": "CGM LLAVALLOL<br><br>nombre: <br>descripción: ", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "nombre": "", "descripci__n": "", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4327311, -34.8060428, 0.0 ] } }
+]
+}

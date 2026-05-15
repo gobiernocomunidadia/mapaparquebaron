@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "semaforos_solicitudes_Llavallol",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Luzuriaga & Moldes", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4330396, -34.7912707, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Mendoza & Doctor Jorge Melber", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4139729, -34.8026343, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Charlone & Doctor Jorge Melber", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4186627, -34.8049717, 0.0 ] } }
+]
+}

@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "lpr_Llavallol",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "LPR43", "Ubicacion": "Antartida Argentina y Mendoza", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.419436, -34.795195, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR15", "Ubicacion": "LPR Frias y Garibaldi", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.42378, -34.781578, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR23", "Ubicacion": "LPR Facultad Lomas Juan XXIII", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.454843, -34.777221, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR19", "Ubicacion": "LPR R4 y Antartida", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4385962, -34.8048678, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR09", "Ubicacion": "LPR Frias y Melber", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.408587, -34.80115, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR70", "Ubicacion": "LIBRES Y RUTA 4", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4361481, -34.7954276, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR71", "Ubicacion": "MOYANO Y CAMINO DE CINTURA", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4300878, -34.8169451, 0.0 ] } }
+]
+}
