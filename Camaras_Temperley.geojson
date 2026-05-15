@@ -88,8 +88,6 @@
 { "type": "Feature", "properties": { "Name": "TEM75", "Tipo": "DOMO", "Ubicacion": "FERNANDEZ Y SUAREZ", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.4029806, -34.7726334, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TEM76", "Tipo": "DOMO", "Ubicacion": "LAVALLE Y TOMAS GUIDO", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.4017894, -34.7732648, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TEM18", "Tipo": "DOMO", "Ubicacion": "MEEKS Y AVELLANEDA (  EST. TEMPERLEY)", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.397472, -34.774792, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "TUR38", "Tipo": "FIJA", "Ubicacion": "SANTA INES Y GUIDO SPANO", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.401521, -34.785558, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "TUR39", "Tipo": "FIJA", "Ubicacion": "SOLER Y SAN ANTONIO", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.403383, -34.784404, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TEM61", "Tipo": "FIJA", "Ubicacion": "MEEKS Y LAVALLE", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.397854, -34.771118, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "LMC158", "Tipo": "FIJA", "Ubicacion": "YRIGOYEN Y J. M. FERNANDEZ", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.405333, -34.773857, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TEM21a", "Tipo": "FIJA", "Ubicacion": "VICENTE LOPEZ Y 9 DE JULIO", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.401587, -34.782549, 0.0 ] } },
