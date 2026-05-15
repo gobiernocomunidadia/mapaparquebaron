@@ -11,14 +11,13 @@
         ]
       },
       "properties": {
-        "Numero_Caso": "#G472580",
-        "Sub_Tipo": "Otras Intervenciones del Área",
+        "Caso": "#G472580",
         "Tipo": "Educacion",
-        "Nombre": "Marcelo Alejandro",
-        "Apellido": "Gomez",
+        "Sub_Tipo": "Otras Intervenciones del Área",
         "Direccion": "GERVASIO ANTONIO DE POSADAS 60",
         "Estado": "Nuevo",
-        "Fecha": "2026-05-14T18:55:22.000Z"
+        "Fecha_Reporte": "2026-05-14T18:55:22.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
     {
@@ -31,14 +30,13 @@
         ]
       },
       "properties": {
-        "Numero_Caso": "#G466708",
-        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
+        "Caso": "#G466708",
         "Tipo": "Arbolado",
-        "Nombre": "HECTOR OSVALDO",
-        "Apellido": "SAINZ",
+        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
         "Direccion": "LORIA 1123",
         "Estado": "Nuevo",
-        "Fecha": "2026-05-08T13:00:52.000Z"
+        "Fecha_Reporte": "2026-05-08T13:00:52.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
     {
@@ -51,14 +49,13 @@
         ]
       },
       "properties": {
-        "Numero_Caso": "#G465120",
-        "Sub_Tipo": "Solicitud de despeje lumínico",
+        "Caso": "#G465120",
         "Tipo": "Arbolado",
-        "Nombre": "Agustina ",
-        "Apellido": "Zárate",
+        "Sub_Tipo": "Solicitud de despeje lumínico",
         "Direccion": "IGNACIO ALVAREZ THOMAS 345",
         "Estado": "Nuevo",
-        "Fecha": "2026-05-06T16:32:45.000Z"
+        "Fecha_Reporte": "2026-05-06T16:32:45.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
     {
@@ -71,14 +68,13 @@
         ]
       },
       "properties": {
-        "Numero_Caso": "#G465041",
-        "Sub_Tipo": "Boca de tormenta obstruida",
+        "Caso": "#G465041",
         "Tipo": "Asuntos Hidricos",
-        "Nombre": "Carlos Roberto",
-        "Apellido": "Monje",
+        "Sub_Tipo": "Boca de tormenta obstruida",
         "Direccion": "JOSE E COLOMBRES ",
         "Estado": "Nuevo",
-        "Fecha": "2026-05-06T15:55:36.000Z"
+        "Fecha_Reporte": "2026-05-06T15:55:36.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
     {
@@ -91,14 +87,13 @@
         ]
       },
       "properties": {
-        "Numero_Caso": "#G464197",
-        "Sub_Tipo": "Turnos",
+        "Caso": "#G464197",
         "Tipo": "Salud",
-        "Nombre": "Alejandra ",
-        "Apellido": "Paradiso",
+        "Sub_Tipo": "Turnos",
         "Direccion": "GERVASIO ANTONIO DE POSADAS 40",
         "Estado": "En Abordaje",
-        "Fecha": "2026-05-05T22:16:56.000Z"
+        "Fecha_Reporte": "2026-05-05T22:16:56.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
     {
@@ -111,14 +106,13 @@
         ]
       },
       "properties": {
-        "Numero_Caso": "#G462695",
-        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
+        "Caso": "#G462695",
         "Tipo": "Arbolado",
-        "Nombre": "SARA",
-        "Apellido": "BONFIGLIO",
+        "Sub_Tipo": "Solicitud de poda pedido extraordinario",
         "Direccion": "LORIA 1102",
         "Estado": "En Abordaje",
-        "Fecha": "2026-05-04T20:41:38.000Z"
+        "Fecha_Reporte": "2026-05-04T20:41:38.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
     {
@@ -131,14 +125,13 @@
         ]
       },
       "properties": {
-        "Numero_Caso": "#G460721",
-        "Sub_Tipo": "Vehículo abandonado en la vía pública",
+        "Caso": "#G460721",
         "Tipo": "Tribunal de Faltas",
-        "Nombre": "VERONICA",
-        "Apellido": "ADDUCCI",
+        "Sub_Tipo": "Vehículo abandonado en la vía pública",
         "Direccion": "LORIA 1272",
         "Estado": "Duplicado",
-        "Fecha": "2026-05-02T14:54:56.000Z"
+        "Fecha_Reporte": "2026-05-02T14:54:56.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
     {
@@ -151,14 +144,13 @@
         ]
       },
       "properties": {
-        "Numero_Caso": "#G460639",
-        "Sub_Tipo": "Vehículo abandonado en la vía pública",
+        "Caso": "#G460639",
         "Tipo": "Tribunal de Faltas",
-        "Nombre": "Eva",
-        "Apellido": "Barilari",
+        "Sub_Tipo": "Vehículo abandonado en la vía pública",
         "Direccion": "LORIA 1276",
         "Estado": "Reiterado",
-        "Fecha": "2026-05-02T12:21:34.000Z"
+        "Fecha_Reporte": "2026-05-02T12:21:34.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
     {
@@ -171,14 +163,13 @@
         ]
       },
       "properties": {
-        "Numero_Caso": "#G460621",
-        "Sub_Tipo": "Vehículo abandonado en la vía pública",
+        "Caso": "#G460621",
         "Tipo": "Tribunal de Faltas",
-        "Nombre": "Jorge",
-        "Apellido": "Castorina",
+        "Sub_Tipo": "Vehículo abandonado en la vía pública",
         "Direccion": "LORIA 1276",
         "Estado": "Duplicado",
-        "Fecha": "2026-05-02T11:41:37.000Z"
+        "Fecha_Reporte": "2026-05-02T11:41:37.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     },
     {
@@ -191,14 +182,13 @@
         ]
       },
       "properties": {
-        "Numero_Caso": "#G460304",
-        "Sub_Tipo": "Vehículo abandonado en la vía pública",
+        "Caso": "#G460304",
         "Tipo": "Tribunal de Faltas",
-        "Nombre": "demian",
-        "Apellido": "estepa",
+        "Sub_Tipo": "Vehículo abandonado en la vía pública",
         "Direccion": "Loria  1200",
         "Estado": "En Abordaje",
-        "Fecha": "2026-05-01T17:40:51.000Z"
+        "Fecha_Reporte": "2026-05-01T17:40:51.000Z",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
       }
     }
   ]
