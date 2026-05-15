@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -82,36 +82,36 @@
                     
                     <div class="space-y-4">
                         
-                        <!-- Bloque de Polígonos y sus filtros dependientes -->
+                        <!-- Bloque de Polígonos -->
                         <div class="flex flex-col gap-2">
                             <label class="flex items-center gap-3 cursor-pointer">
                                 <input type="checkbox" id="cb-poligonos" checked class="w-4 h-4 accent-[#19567C]">
                                 <span class="text-sm text-[#0F172A] font-bold">Zonas Super Operativos</span>
                             </label>
-                            
-                            <!-- Contenedor de filtros de CGM y Fecha (solo afecta a polígonos) -->
-                            <div id="filtros-poligonos" class="pl-7 border-l-2 border-[#19567C]/20 ml-2 space-y-3 transition-all duration-300">
-                                <div>
-                                    <label class="text-[10px] font-bold text-[#19567C] block mb-1 flex items-center gap-1 uppercase"><i data-lucide="map-pin" class="h-3 w-3"></i> Seleccionar CGM</label>
-                                    <select id="filter-cgm" class="w-full text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none bg-white">
-                                        <option value="ALL">Todos los CGM</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="text-[10px] font-bold text-[#19567C] block mb-1 flex items-center gap-1 uppercase"><i data-lucide="calendar" class="h-3 w-3"></i> Fecha del Operativo</label>
-                                    <select id="filter-fecha-operativo" class="w-full text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none bg-white">
-                                        <option value="ALL">Todas las fechas</option>
-                                    </select>
-                                </div>
-                            </div>
                         </div>
 
                         <!-- Bloque de Reclamos -->
-                        <div class="pt-3 border-t border-[#19567C]/20">
+                        <div class="flex flex-col gap-2">
                             <label class="flex items-center gap-3 cursor-pointer">
                                 <input type="checkbox" id="cb-reclamos-pendientes" checked class="w-4 h-4 accent-[#19567C]">
                                 <span class="text-sm text-[#0F172A] font-bold">Reclamos Pendientes</span>
                             </label>
+                        </div>
+
+                        <!-- Contenedor de filtros de CGM y Fecha (afecta a ambos) -->
+                        <div id="filtros-operativos" class="border-t border-[#19567C]/20 pt-3 mt-2 space-y-3 transition-all duration-300">
+                            <div>
+                                <label class="text-[10px] font-bold text-[#19567C] block mb-1 flex items-center gap-1 uppercase"><i data-lucide="map-pin" class="h-3 w-3"></i> Seleccionar CGM</label>
+                                <select id="filter-cgm" class="w-full text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none bg-white">
+                                    <option value="ALL">Todos los CGM</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-bold text-[#19567C] block mb-1 flex items-center gap-1 uppercase"><i data-lucide="calendar" class="h-3 w-3"></i> Fecha del Operativo</label>
+                                <select id="filter-fecha-operativo" class="w-full text-xs p-1.5 border border-[#19567C]/30 rounded text-[#0F172A] outline-none bg-white">
+                                    <option value="ALL">Todas las fechas</option>
+                                </select>
+                            </div>
                         </div>
 
                     </div>
@@ -202,8 +202,8 @@
                     poligonosData.features.forEach(f => {
                         // Solo tomamos las fechas si el CGM coincide (o si está en "Todos")
                         if (selectedCGM === 'ALL' || f.properties.CGM === selectedCGM) {
-                            if (f.properties.Fecha) {
-                                fechas.add(f.properties.Fecha.substring(0, 10)); // Extraer AAAA-MM-DD
+                            if (f.properties.Fecha_Operativo) {
+                                fechas.add(f.properties.Fecha_Operativo.substring(0, 10)); // Extraer AAAA-MM-DD
                             }
                         }
                     });
@@ -238,14 +238,14 @@
                     L.geoJSON(poligonosData, {
                         filter: function(feature) {
                             const matchCGM = (selectedCGM === 'ALL' || feature.properties.CGM === selectedCGM);
-                            const matchDate = (selectedDate === 'ALL' || (feature.properties.Fecha && feature.properties.Fecha.substring(0, 10) === selectedDate));
+                            const matchDate = (selectedDate === 'ALL' || (feature.properties.Fecha_Operativo && feature.properties.Fecha_Operativo.substring(0, 10) === selectedDate));
                             
                             return matchCGM && matchDate;
                         },
                         style: { fillColor: '#D34872', color: '#9F1239', weight: 3, fillOpacity: 0.25, dashArray: '6, 6' },
                         onEachFeature: function(feature, layer) {
                             const props = feature.properties;
-                            const fechaVisual = props.Fecha ? props.Fecha.substring(0,10).split('-').reverse().join('/') : 'S/D';
+                            const fechaVisual = props.Fecha_Operativo ? props.Fecha_Operativo.substring(0,10).split('-').reverse().join('/') : 'S/D';
                             
                             let content = `
                                 <div class="font-sans min-w-[220px]">
@@ -268,18 +268,22 @@
                     }).addTo(poligonosLayer);
                 }
 
-                // 2. Renderizar Reclamos Pendientes (NO afectados por filtros de fecha ni CGM)
+                // 2. Renderizar Reclamos Pendientes (Afectados por CGM y Fecha)
                 if (reclamosPendientesData && document.getElementById('cb-reclamos-pendientes').checked) {
                     L.geoJSON(reclamosPendientesData, {
                         filter: function(feature) {
-                            return true; // Se muestran todos, sin importar fecha ni CGM
+                            // Validar CGM si existiera en el reclamo. Si no tiene campo CGM, asume válido para el filtro general.
+                            const matchCGM = (selectedCGM === 'ALL' || !feature.properties.CGM || feature.properties.CGM === selectedCGM);
+                            const matchDate = (selectedDate === 'ALL' || (feature.properties.Fecha_Operativo && feature.properties.Fecha_Operativo.substring(0, 10) === selectedDate));
+                            
+                            return matchCGM && matchDate;
                         },
                         pointToLayer: function(feature, latlng) {
                             return L.marker(latlng, { icon: getLeafletIcon('#F59E0B', pathWarning) }); 
                         },
                         onEachFeature: function(feature, layer) {
                             const props = feature.properties;
-                            const fechaObj = new Date(props.Fecha);
+                            const fechaObj = new Date(props.Fecha_Reporte || props.Fecha);
                             const fechaVisual = isNaN(fechaObj.getTime()) ? 'S/D' : fechaObj.toLocaleDateString('es-AR') + ' ' + fechaObj.toLocaleTimeString('es-AR', {hour: '2-digit', minute:'2-digit'});
                             
                             let colorEstado = '#3B82F6'; // Azul por defecto
@@ -289,7 +293,7 @@
 
                             let content = `
                                 <div class="font-sans min-w-[240px]">
-                                    <h4 class="font-bold text-[#0F172A] border-b border-[#E6EDF3] pb-1 mb-2">Reclamo: ${props.Numero_Caso || 'S/N'}</h4>
+                                    <h4 class="font-bold text-[#0F172A] border-b border-[#E6EDF3] pb-1 mb-2">Reclamo: ${props.Caso || props.Numero_Caso || 'S/N'}</h4>
                                     
                                     <span style="background-color: ${colorEstado}20; color: ${colorEstado}; border: 1px solid ${colorEstado}50;" class="inline-block px-2 py-1 rounded text-[10px] font-bold uppercase mb-2">
                                         ${props.Estado || 'S/D'}
@@ -298,7 +302,6 @@
                                     <div class="space-y-1 mb-2">
                                         <p class="text-xs text-[#0F172A]"><b>Tipo:</b> ${props.Tipo || '-'} (${props.Sub_Tipo || '-'})</p>
                                         <p class="text-xs text-[#0F172A]"><b>Dirección:</b> ${props.Direccion || '-'}</p>
-                                        <p class="text-xs text-[#0F172A]"><b>Vecino/a:</b> ${props.Nombre || ''} ${props.Apellido || ''}</p>
                                     </div>
                                     
                                     <div class="mt-2 pt-2 border-t border-[#E6EDF3] text-[10px] text-[#64748B]">
@@ -346,16 +349,8 @@
                 e.target.checked ? map.addLayer(limiteElements) : map.removeLayer(limiteElements);
             });
 
-            // Mostrar/Ocultar subménu de filtros de polígonos
-            document.getElementById('cb-poligonos').addEventListener('change', (e) => {
-                const filtrosDiv = document.getElementById('filtros-poligonos');
-                if (e.target.checked) {
-                    filtrosDiv.style.display = 'block';
-                } else {
-                    filtrosDiv.style.display = 'none';
-                }
-                renderSuperOperativos();
-            });
+            document.getElementById('cb-poligonos').addEventListener('change', renderSuperOperativos);
+            document.getElementById('cb-reclamos-pendientes').addEventListener('change', renderSuperOperativos);
 
             // Si se cambia el CGM, se actualizan las fechas disponibles y se renderiza de nuevo
             document.getElementById('filter-cgm').addEventListener('change', () => {
@@ -364,7 +359,6 @@
             });
 
             document.getElementById('filter-fecha-operativo').addEventListener('change', renderSuperOperativos);
-            document.getElementById('cb-reclamos-pendientes').addEventListener('change', renderSuperOperativos);
         }
 
         document.addEventListener("DOMContentLoaded", initMap);
