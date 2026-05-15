@@ -1,0 +1,28 @@
+{
+"type": "FeatureCollection",
+"name": "semaforos_activos_San Jose",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "ARMESTI Y HUNGRIA", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.355293, -34.745113, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "ARMESTI Y MEXICO", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.349958, -34.742344, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "ARMESTI Y CAAGUAZU", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.347153, -34.740897, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "ROMA Y LYNCH", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.366762, -34.745512, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "CAAGUAZU Y ANCHORIS CENTRO CULTURAL", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.345225, -34.74614, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "CAAGUAZU Y EL TALA", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.344354, -34.748216, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "ARMESTI Y PORTUGAL", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.363812, -34.749446, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EVA PERON Y CAAGUAZU", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.342915, -34.752041, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EVA PERON Y LA PERDIZ", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.345581, -34.75344, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EVA PERON Y SAN CRISTOBAL", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.349493, -34.755472, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EVA PERON Y EL PICAFLOR", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.353649, -34.757532, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EVA PERON Y CHARCAS", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.364846, -34.763075, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "CERRITO Y COLLIVADINO", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.365161, -34.75741, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "COLLIVADINO Y MADRESELVA", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.365161, -34.75741, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EVA PERON Y PORTUGAL", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.356474, -34.758932, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EL ZORZAL Y COMTE", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.36134, -34.76518, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EVA PERON Y SALTA", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.361442, -34.761376, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EVA PERON Y COLLIVADINO", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.362078, -34.761667, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EL ZORZAL Y SALTA", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.359385, -34.764232, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "EVA PERON Y BOSTON", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.368683, -34.764923, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LOS EUCALIPTOS Y GARAY", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.359408, -34.766045, 0.0 ] } }
+]
+}

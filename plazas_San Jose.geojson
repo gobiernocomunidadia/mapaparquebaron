@@ -1,0 +1,21 @@
+{
+"type": "FeatureCollection",
+"name": "plazas_San Jose",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA GOWLAND", "UBICACION": "CAPITAN ROJAS Y GOWLAND", "Lat": "-34.74433960512109", "Long": " -58.355719060095915", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.355719060095915, -34.744339605121091 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA SAN MARTÍN", "UBICACION": "LA PAMPA & EL ZORZAL", "Lat": "-34.76292143219527", "Long": " -58.357375207160395", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.357375207160395, -34.76292143219527 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA LENCINA", "UBICACION": "LAS PERDICES 2601", "Lat": "-34.760932371353384", "Long": " -58.36439966689214", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.36439966689214, -34.760932371353384 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA BRUNO TAVANO", "UBICACION": "SUECIA Y EL TALA", "Lat": "-34.75482036103199", "Long": " -58.358542046969276", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.358542046969276, -34.754820361031989 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA BETO CARASATORRE", "UBICACION": "OTTAWA Y EL TALA", "Lat": "-34.75632205601567", "Long": " -58.35972923831705", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.359729238317051, -34.756322056015669 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA SAN CRISTOBAL", "UBICACION": "EL HORNERO & EL CHAJÁ", "Lat": "-34.755580990677984", "Long": " -58.344720264531944", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.344720264531944, -34.755580990677984 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA CABRERA", "UBICACION": "RUBEN DE ROSA Y AV REPUBLICA ARGENTINA", "Lat": "-34.76937395716487", "Long": " -58.362422286570265", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.362422286570265, -34.769373957164873 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA FUNDACION BANCO PROVINCIA", "UBICACION": "CAAGUAZU Y ARMESTI", "Lat": "-34.74090569093171", "Long": " -58.34696369729809", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.346963697298087, -34.740905690931712 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA LINCH Y CAAGUAZU", "UBICACION": "CORONEL LYNCH Y CAAGUAZU", "Lat": "-34.73977904216256", "Long": " -58.34746709491118", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.347467094911181, -34.73977904216256 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA LAS FLORES", "UBICACION": "DINAMARCA 3699( el entuvado)", "Lat": "-34.74804466606209", "Long": " -58.35720037299193", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.357200372991933, -34.748044666062093 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA NORMA PLA", "UBICACION": "SALTA Y AV. EVA PERON ", "Lat": "-34.76155644645653", "Long": " -58.361489574491834", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.361489574491834, -34.761556446456531 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA SANTA ROSA", "UBICACION": "CAAGUAZU Y EL HORNERO", "Lat": "-34.753703124351226", "Long": " -58.34219832604038", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.342198326040382, -34.753703124351226 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA REP ARGENTINA", "UBICACION": "JURAMENTO Y REP. ARGENTINA", "Lat": "-34.77212197083479", "Long": " -58.362434891363115", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.362434891363115, -34.772121970834789 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA CABRERA", "UBICACION": "RUBEN DE ROSA Y AV REPUBLICA ARGENTINA", "Lat": "-34.76943718832897", "Long": " -58.362444012336226", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.362444012336226, -34.769437188328972 ] } }
+]
+}

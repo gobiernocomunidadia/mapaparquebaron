@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "bacheo_2026_San Jose",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "nombre": "", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.3517494, -34.7400036, 0.0 ] } }
+]
+}

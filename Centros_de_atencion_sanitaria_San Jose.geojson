@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "Centros_de_atencion_sanitaria_San Jose",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. DR. JOSÉ M. OLIVERAS 24Hs.", "Servicios": null, "Detalle [x": null, "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.367804, -34.760876 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. ALICIA MOREAU DE JUSTO 24Hs.", "Servicios": null, "Detalle [x": null, "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.365919, -34.745184 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. VILLA GRAL. SAN MARTIN", "Servicios": null, "Detalle [x": null, "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.3494, -34.748102 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. SANTA ROSA", "Servicios": null, "Detalle [x": null, "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.340684, -34.751416 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. SAN JOSÉ", "Servicios": null, "Detalle [x": null, "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.36208, -34.762244 ] } },
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. LAS CASUARINAS", "Servicios": null, "Detalle [x": null, "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.355258, -34.749927 ] } }
+]
+}

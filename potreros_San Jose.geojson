@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "potreros_San Jose",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "San Jose", "Potrero": "Parque Caaguazú", "Dimensiones": "", "Direccion": "Caaguazú 500, San José - Temperley", "Lat_Long": "-34.74612682704337, -58.34518644668505", "Tipo_de_Intervenci__n": "Nivelación de terreno y colocación de arcos.", "Presupuesto__SP_": "N/A", "Informaci__n_Adicional": "N/A" }, "geometry": { "type": "Point", "coordinates": [ -58.345186446684998, -34.746126827043398, 0.0 ] } }
+]
+}

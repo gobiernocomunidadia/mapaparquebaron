@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "seguridad_San Jose",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "fid": 23, "OSM_ID": 573407628, "CODE": 2001, "NAME": "Comisaría 34", "LATITUD": -34.766321, "LONGITUD": -58.362186, "IDPROV": "06", "PROV": "Buenos Aires", "IDDPTO": "06490", "Partido": "Lomas de Zamora", "REDCODE": "064901609", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.362186, -34.766321 ] } }
+]
+}
