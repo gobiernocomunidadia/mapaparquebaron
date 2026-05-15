@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "Clubes_deportivos_Lamadrid",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Club Social Cultural Y Deportivo E Inclusion Las Primeras De Fiorito", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-04-19T00:00:00", "LATITUD": -34.72749806, "LONGITUD": -58.46671273 }, "geometry": { "type": "Point", "coordinates": [ -58.46671273, -34.72749806 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Club Social Y Deportivo El Globito", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-04-19T00:00:00", "LATITUD": -34.72749806, "LONGITUD": -58.46671273 }, "geometry": { "type": "Point", "coordinates": [ -58.46671273, -34.72749806 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Club Social Y Deportivo River De Villa Lamadrid", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72963125, "LONGITUD": -58.46689743 }, "geometry": { "type": "Point", "coordinates": [ -58.46689743, -34.72963125 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Club Atletico Villa Amelia Social Cultural Y Deportivo", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72254024, "LONGITUD": -58.47078136 }, "geometry": { "type": "Point", "coordinates": [ -58.47078136, -34.72254024 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Club Social Y Deportivo Vicenta Tinte", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.728789, "LONGITUD": -58.479634 }, "geometry": { "type": "Point", "coordinates": [ -58.479634, -34.728789 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Asociacion Civil Social Cultural Y Deportivo  Lamadrid", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.727069, "LONGITUD": -58.482414 }, "geometry": { "type": "Point", "coordinates": [ -58.482414, -34.727069 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Asociacion Cultural Y Deportiva 23 De Marzo", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.73032, "LONGITUD": -58.473188 }, "geometry": { "type": "Point", "coordinates": [ -58.473188, -34.73032 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Club Unidos Por Villa Constitucion", "TIPO": "CLUBES DEPORTIVOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.71823721, "LONGITUD": -58.47089989 }, "geometry": { "type": "Point", "coordinates": [ -58.47089989, -34.71823721 ] } }
+]
+}

@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "sociedades_de_fomento_Lamadrid",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Sociedad De Fomento Unidos Por Villa Constitucion", "TIPO": "SOCIEDADES DE FOMENTO", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.71783451, "LONGITUD": -58.47085585 }, "geometry": { "type": "Point", "coordinates": [ -58.47085585, -34.71783451 ] } }
+]
+}

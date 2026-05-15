@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "lpr_Lamadrid",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "LPR44", "Ubicacion": "Albert Einstein y Epecuen", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4737759, -34.7328512, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR45", "Ubicacion": "Ribera Sur y Newton", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.479252, -34.72365, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LPR22", "Ubicacion": "LPR Homero y Escobar", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.46412, -34.732527, 0.0 ] } }
+]
+}

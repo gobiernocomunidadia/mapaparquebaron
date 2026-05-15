@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "potreros_Lamadrid",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "Potrero": "Villa Amelia", "Dimensiones": "", "Direccion": "", "Lat_Long": "-34.72229655527183, -58.47078008013314", "Tipo_de_Intervenci__n": "Equipamiento con material deportivo.", "Presupuesto__SP_": "$250.00", "Informaci__n_Adicional": "N/A" }, "geometry": { "type": "Point", "coordinates": [ -58.470780080133103, -34.722296555271797, 0.0 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "Potrero": "River de Lamadrid", "Dimensiones": "", "Direccion": "Epecuén entre Homero y Euskadi, Budge", "Lat_Long": "-34.72889373129434, -58.46734789144838", "Tipo_de_Intervenci__n": "Material deportivo.", "Presupuesto__SP_": "$250.00", "Informaci__n_Adicional": "N/A" }, "geometry": { "type": "Point", "coordinates": [ -58.467347891448398, -34.728893731294299, 0.0 ] } }
+]
+}

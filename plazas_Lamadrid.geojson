@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "plazas_Lamadrid",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "PLAZA": "PARQUE LINEAL PAPA FRANCISCO", "UBICACION": "ESCOBAR Y HOMERO", "Lat": "-34.732362287056354", "Long": " -58.46393947931261", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.463939479312607, -34.732362287056354 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA SIN NOMBRE", "UBICACION": "BUSTOS Y ORAN", "Lat": "-34.725246152563514", "Long": " -58.474395851381665", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.474395851381665, -34.725246152563514 ] } },
+{ "type": "Feature", "properties": { "PLAZA": "PLAZA SIN NOMBRE", "UBICACION": "LAVARDEN Y COMODORO RIVADAVIA", "Lat": "-34.721489610609", "Long": " -58.4671759885101", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4671759885101, -34.721489610608998 ] } }
+]
+}

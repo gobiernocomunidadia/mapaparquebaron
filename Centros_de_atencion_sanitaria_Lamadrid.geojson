@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "Centros_de_atencion_sanitaria_Lamadrid",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Nombre Ins": "C.A.P.S. GRAL. LAMADRID  24Hs.", "Servicios": null, "Detalle [x": null, "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.472956, -34.726841 ] } }
+]
+}

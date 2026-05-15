@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "centro_de_jubilados_Lamadrid",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Centro De Jubilados Y Pensionados Juntos Podemos", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72908195, "LONGITUD": -58.46398372 }, "geometry": { "type": "Point", "coordinates": [ -58.46398372, -34.72908195 ] } },
+{ "type": "Feature", "properties": { "CGM": "Lamadrid", "NOMBRE": "Centro De Jubilados Y Pensionados No Queremos Ser Olvidados", "TIPO": "CENTRO DE JUBILADOS Y PENSIONADOS", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.73186485, "LONGITUD": -58.47366856 }, "geometry": { "type": "Point", "coordinates": [ -58.47366856, -34.73186485 ] } }
+]
+}

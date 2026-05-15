@@ -1,0 +1,31 @@
+{
+"type": "FeatureCollection",
+"name": "Camaras_Lamadrid",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "BUD06", "Tipo": "DOMO", "Ubicacion": "HORNERO Y ECOBAR", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.464045, -34.732426, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD07", "Tipo": "DOMO", "Ubicacion": "VIRGILIO Y CANADA", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.465741, -34.727717, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD14", "Tipo": "DOMO", "Ubicacion": "CAMINO RE LA RIVERA Y VIRGILIO", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4744187, -34.7191198, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD15", "Tipo": "DOMO", "Ubicacion": "RIBERA SUR Y NEWTON", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.479228, -34.723551, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD18", "Tipo": "DOMO", "Ubicacion": "ORAN Y VUCETICH", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.479034, -34.727982, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD20", "Tipo": "DOMO", "Ubicacion": "IPARRAGUIRRE Y METAN", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.473777, -34.727426, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD22", "Tipo": "DOMO", "Ubicacion": "EPECUEN Y TUYUTI", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.47471, -34.733184, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD26", "Tipo": "DOMO", "Ubicacion": "EPECUEN Y NEWTON", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.472693, -34.732443, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD16", "Tipo": "FIJA", "Ubicacion": "RIBERA SUR Y NEWTON", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.479103, -34.723691, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD32", "Tipo": "DOMO", "Ubicacion": "VIRGILIO Y TILCARA", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.47359, -34.719626, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD33", "Tipo": "DOMO", "Ubicacion": "RIVERA Y EUSKADI", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.476319, -34.721068, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD34", "Tipo": "DOMO", "Ubicacion": "ANDRES BELLO Y LA RIVERA", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.471427, -34.71635, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD35", "Tipo": "DOMO", "Ubicacion": "PERGAMINO E IPARRAGUIRRE", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.476577, -34.724296, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD37", "Tipo": "DOMO", "Ubicacion": "NEWTON Y LIMAY", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.475107, -34.729057, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD65a", "Tipo": "FIJA", "Ubicacion": "ORAN 599 ESC 49", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4751015, -34.7258234, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD65B", "Tipo": "FIJA", "Ubicacion": "ORAN 599 ESC 49", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.475158, -34.7258458, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD17", "Tipo": "FIJA", "Ubicacion": "RIBERA SUR Y NEWTON", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.479134, -34.72365, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD32b", "Tipo": "FIJA", "Ubicacion": "VIRGILIO Y TILCARA", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.473574, -34.719672, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD32c", "Tipo": "FIJA", "Ubicacion": "VIRGILIO Y TILCARA", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.473665, -34.719633, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD75", "Tipo": "", "Ubicacion": "Bruselas & Juan M. de Lavardén", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4695475, -34.7193603, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD75A", "Tipo": "", "Ubicacion": "BRUSELAS Y LAVARDEN", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4695797, -34.7193802, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD74", "Tipo": "", "Ubicacion": "Natal & Juan M. de Lavardén", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4712376, -34.7182246, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD96", "Tipo": "", "Ubicacion": "Cañuelas & Iparraguirre", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4703307, -34.7321322, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BUD96B", "Tipo": "", "Ubicacion": "CAÑUELAS E IPARAGUIRRE", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4703763, -34.732066, 0.0 ] } }
+]
+}
