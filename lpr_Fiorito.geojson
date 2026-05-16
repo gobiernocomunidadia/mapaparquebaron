@@ -3,6 +3,7 @@
 "name": "lpr_Fiorito",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
+{ "type": "Feature", "properties": { "Name": "LPR25", "Ubicacion": "1er Bajada La Noria", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.459049, -34.706792, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "LPR42", "Ubicacion": "Pte Juan D. Peron y Baradero", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.454054, -34.710925, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "LPR41", "Ubicacion": "Pte Juan D Peron y Pje Quesada", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4491843, -34.716737, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "LPR49", "Ubicacion": "Ejercito de Los Andes y Hornos", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.428048, -34.713548, 0.0 ] } },
