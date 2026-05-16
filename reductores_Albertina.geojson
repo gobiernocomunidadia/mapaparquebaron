@@ -66,6 +66,7 @@
 { "type": "Feature", "properties": { "Name": "Eibar & Homero", "description": "Nombre: Eibar & Homero<br>Descripción: ", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4582475, -34.740401, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Bayona & Homero", "description": "Nombre: Bayona & Homero<br>Descripción: ", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4586138, -34.7396524, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Homero y Virgen de Itati", "description": "Nombre: Homero y Virgen de Itati<br>Descripción: ", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4616128, -34.735855, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Arlucea & Homero", "description": "Nombre: <br>Descripción: ", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4546111, -34.7448816, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Nápoles 2533", "description": "Nombre: <br>Descripción: ", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4547637, -34.7348084, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Falucho & Ginebra", "description": null, "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4602547, -34.7322313, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Terrada & Oyarzun", "description": null, "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4624018, -34.7446957, 0.0 ] } },
