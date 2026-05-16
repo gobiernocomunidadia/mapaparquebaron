@@ -9,6 +9,7 @@
 { "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4683289, -34.7245058, 0.0 ] } },
 { "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4690267, -34.7236732, 0.0 ] } },
 { "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4690937, -34.7235961, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4672304, -34.7341581, 0.0 ] } },
 { "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.476174, -34.7296266, 0.0 ] } },
 { "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4761069, -34.7295958, 0.0 ] } }
 ]
