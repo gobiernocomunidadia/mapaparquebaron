@@ -1,0 +1,22 @@
+{
+"type": "FeatureCollection",
+"name": "semaforos_activos_Parque Baron",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA ESTE Y BOUCHARD", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.431454, -34.759828, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLECTORA OESTE Y LAPRIDA", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.432865, -34.756227, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y COLOMBRES Y SCHIAFINO", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.431279, -34.759932, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "MEEKS Y JUAN MANUEL FERNANDEZ", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.430248, -34.761182, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "DORREGO Y 25 DE MAYO", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.430248, -34.761182, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "9 DE JULIO Y VICENTE LOPEZ", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.430248, -34.761182, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y SIRITO Y FALUCHO", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.43454, -34.76609, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PRESIDENTE PERON Y GIMENEZ Y LOS ROBLES", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.431658, -34.764902, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "MOLINA ARROTEA Y LOS ROBLES", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.430603, -34.766067, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "JUAN XXIII Y ESTOCOLMO", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.435797, -34.766751, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "JUAN XXIII Y MADRID", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.438359, -34.768452, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "MADRID Y MUZZILLI", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.435231, -34.772581, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "MADRID Y OLIDEN", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.430586, -34.778807, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "GARIBALDI Y MADRID", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.42768, -34.782818, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "SIRITTO Y MOLINA ARROTEA", "CGM": "Parque Baron" }, "geometry": { "type": "Point", "coordinates": [ -58.4334175, -34.7676613, 0.0 ] } }
+]
+}

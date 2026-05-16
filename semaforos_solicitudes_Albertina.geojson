@@ -5,7 +5,9 @@
 "features": [
 { "type": "Feature", "properties": { "Name": "Homero & Virgen de Itatí", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4615306, -34.7359596, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Eibar & Bustos", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4612589, -34.7421008, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Avenida General Martín Rodríguez & Andrés Bello", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4484214, -34.7435486, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Marsella & Antonio Machado", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4482617, -34.7369482, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "Virgen de Itatí & Andrés Bello", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4562991, -34.7332415, 0.0 ] } }
+{ "type": "Feature", "properties": { "Name": "Virgen de Itatí & Andrés Bello", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4562991, -34.7332415, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Avenida General Martín Rodríguez & Andrés Bello", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4484214, -34.7435486, 0.0 ] } }
 ]
 }

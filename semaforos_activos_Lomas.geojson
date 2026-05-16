@@ -17,7 +17,6 @@
 { "type": "Feature", "properties": { "Name": "ACEVEDO Y RIVERA", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.400117, -34.755847, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "LEANDRO N ALEM Y RIVERA", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.398708, -34.756039, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "MATHEU Y ARENALES", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.389156, -34.756155, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "MARI�O Y SOLER", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.4040381, -34.7829076, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "MANUEL CASTRO Y PORTELA", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.403311, -34.75661, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "AVENIDA HIPOLITO YRIGOYEN Y PORTELA", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.401875, -34.75681, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "ACEVEDO Y PORTELA", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.400355, -34.757008, 0.0 ] } },

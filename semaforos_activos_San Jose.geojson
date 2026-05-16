@@ -6,7 +6,6 @@
 { "type": "Feature", "properties": { "Name": "ARMESTI Y HUNGRIA", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.355293, -34.745113, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "ARMESTI Y MEXICO", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.349958, -34.742344, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "ARMESTI Y CAAGUAZU", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.347153, -34.740897, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "ROMA Y LYNCH", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.366762, -34.745512, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "CAAGUAZU Y ANCHORIS CENTRO CULTURAL", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.345225, -34.74614, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "CAAGUAZU Y EL TALA", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.344354, -34.748216, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "ARMESTI Y PORTUGAL", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.363812, -34.749446, 0.0 ] } },

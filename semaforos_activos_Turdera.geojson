@@ -3,6 +3,21 @@
 "name": "semaforos_activos_Turdera",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-
+{ "type": "Feature", "properties": { "Name": "AVENIDA HIPOLITO YRIGOYEN Y BUENAVENTURA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.40811, -34.787681, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "AVENIDA HIPOLITO YRIGOYEN Y PRETI ESQUIU", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.408981, -34.794919, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "AVENIDA HIPOLITO YRIGOYEN Y RECONQUISTA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.409023, -34.791796, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "AVENIDA HIPOLITO YRIGOYEN Y SEGUROLA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.408398, -34.79772, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "HIPOLITO YRIGOYEN Y SUIPACHA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.408709, -34.79088, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "AVENIDA HIPOLITO YRIGOYEN Y ANTARTIDA ARGENTINA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.408473, -34.789295, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "ANTARTIDA ARGENTINA Y SAN ISIDRO", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.410324, -34.79032, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "ANTARTIDA ARGENTINA Y SAN BLAS", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.412868, -34.791729, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "FRIAS Y ANTARTIDA ARGENTINA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.414713, -34.792752, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "AVENIDA HIPOLITO YRIGOYEN Y SEGUROLA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.408473, -34.797764, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "AVENIDA HIPÓLITO YRIGOYEN &amp; JOSÉ E. AGÜERO", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.408594, -34.790131, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "AVENIDA HIPÓLITO YRIGOYEN &amp; PATRICIOS", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.409112, -34.793423, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "HIPOLITO YRIGOYEN Y SUIPACHA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.408795, -34.790862, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "HIPOLITO YRIGOYEN  Y JOSE AGUERO", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.408594, -34.790131, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "HIPOLITO YRIGOYEN Y PATRICIOS", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.409112, -34.793423, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "HIPOLITO YRIGOYEN Y FRAY MAMERTO ESQUIU", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.409093, -34.794942, 0.0 ] } }
 ]
 }

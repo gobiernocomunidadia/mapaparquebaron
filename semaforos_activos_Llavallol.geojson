@@ -15,10 +15,8 @@
 { "type": "Feature", "properties": { "Name": "ANTARTIDA ARGENTINA Y TUPAC AMARU", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.432191, -34.801622, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "ANTARTIDA ARGENTINA Y DUHALDE", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.435816, -34.803462, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "DOYHENARD Y MELBER", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.421377, -34.806301, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "JUAN XXIII Y UNLZ PUERTA 2", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.452494, -34.775289, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "JUAN XXIII Y UNLZ PUERTA 3", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.452494, -34.775289, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "FRIAS Y GARIBALDI", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.423768, -34.781193, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "DOYHENARD Y SEGUI", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.417878, -34.810914, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "ANTARTIDA ARGENTINA", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4292855, -34.8002003, 0.0 ] } }
+{ "type": "Feature", "properties": { "Name": "ANTARTIDA ARGENTINA", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4292855, -34.8002003, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "FRIAS Y LAVALLE", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.421763, -34.783899, 0.0 ] } }
 ]
 }
