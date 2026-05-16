@@ -40,6 +40,7 @@
 { "type": "Feature", "properties": { "Name": "LVL34", "Tipo": "DOMO", "Ubicacion": "PARQUE LAVALLOL", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.437009, -34.794986, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "LVL31", "Tipo": "DOMO", "Ubicacion": "BAHIA BLANCA Y SASTRE", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4305818, -34.8148534, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "LVL35", "Tipo": "DOMO", "Ubicacion": "GARIBALDI Y LUZURIAGA", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4366545, -34.7867481, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "LMC147", "Tipo": "DOMO", "Ubicacion": "Entrada Reserva GARIBALDI Y VIAS", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.431312, -34.784258, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "LVL36", "Tipo": "FIJA", "Ubicacion": "WILDE Y ASCASUBI", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.434304, -34.806855, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "LVL38", "Tipo": "FIJA", "Ubicacion": "MELBER Y JOSE HERNANDEZ", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.4280014, -34.8096542, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "LVL37", "Tipo": "FIJA", "Ubicacion": "PIEDRABUENA Y 9 DE FEBRERO", "CGM": "Llavallol" }, "geometry": { "type": "Point", "coordinates": [ -58.433365, -34.795555, 0.0 ] } },

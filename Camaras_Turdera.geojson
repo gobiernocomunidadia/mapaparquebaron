@@ -5,6 +5,7 @@
 "features": [
 { "type": "Feature", "properties": { "Name": "BFD04", "Tipo": "DOMO", "Ubicacion": "PUENTE TURDERA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.40906, -34.795039, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TEM04", "Tipo": "DOMO", "Ubicacion": "PARQUE FINKY", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.3988034, -34.7862629, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "TEM21", "Tipo": "DOMO", "Ubicacion": "V. F. LOPEZ Y 9 DE JULIO", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.401502, -34.782611, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TUR03", "Tipo": "FIJA", "Ubicacion": "YRIGOYEN Y ANTARTIDA ARGENTINA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.408639, -34.7893578, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TUR08", "Tipo": "DOMO", "Ubicacion": "SANABRIA Y ESQUIU", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.401947, -34.794246, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TUR01", "Tipo": "DOMO", "Ubicacion": "FRIAS Y ANTARTIDA ARGENTINA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.4146404, -34.7927781, 0.0 ] } },
@@ -33,6 +34,8 @@
 { "type": "Feature", "properties": { "Name": "TUR34", "Tipo": "DOMO", "Ubicacion": "YRIGOYEN Y BUENAVENTURA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.4081009, -34.7876397, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TUR10", "Tipo": "DOMO", "Ubicacion": "SANTA MARIA Y SAN LORENZO", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.406367, -34.786642, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TUR36", "Tipo": "DOMO", "Ubicacion": "PICHINCHA Y SAN FRANCISCO", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.414897, -34.787638, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "TUR38", "Tipo": "FIJA", "Ubicacion": "SANTA INES Y GUIDO SPANO", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.401521, -34.785558, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "TUR39", "Tipo": "FIJA", "Ubicacion": "SOLER Y SAN ANTONIO", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.403383, -34.784404, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TUR37", "Tipo": "FIJA", "Ubicacion": "AGUERO Y PUIG", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.402919, -34.790803, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TUR04", "Tipo": "FIJA", "Ubicacion": "YRIGOYEN Y ANTARTIDA ARGENTINA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.4086658, -34.7893733, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TUR23b", "Tipo": "FIJA", "Ubicacion": "YRIGOYEN Y RECONQUISTA", "CGM": "Turdera" }, "geometry": { "type": "Point", "coordinates": [ -58.409091, -34.7918151, 0.0 ] } },

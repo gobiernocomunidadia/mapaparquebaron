@@ -35,7 +35,6 @@
 { "type": "Feature", "properties": { "Name": "TEM17", "Tipo": "DOMO", "Ubicacion": "MEEKS Y AVELLANEDA   ( AUD SUR)", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.39755, -34.774425, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TEM19", "Tipo": "DOMO", "Ubicacion": "MEEKS Y MORENO", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.397119, -34.778214, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TEM20", "Tipo": "DOMO", "Ubicacion": "9 DE JULIO Y VIAS", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.3964, -34.779778, 0.0 ] } },
-{ "type": "Feature", "properties": { "Name": "TEM21", "Tipo": "DOMO", "Ubicacion": "V. F. LOPEZ Y 9 DE JULIO", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.401502, -34.782611, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TEM28", "Tipo": "DOMO", "Ubicacion": "STA M. DE ORO Y 14 DE JULIO", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.395736, -34.774624, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TEM31", "Tipo": "DOMO", "Ubicacion": "EVA PERON Y B. DE YRIGOYEN", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.382764, -34.772464, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "TEM36", "Tipo": "DOMO", "Ubicacion": "14 DE JULIO Y LUCIO LOPEZ", "CGM": "Temperley" }, "geometry": { "type": "Point", "coordinates": [ -58.387098, -34.771036, 0.0 ] } },
