@@ -3,13 +3,6 @@
 "name": "asociaciones_civiles_Lamadrid",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "NOMBRE": "Asociacion Civil Padre Miguel Angel Bianchi", "TIPO": "ASOCIACIONES CIVILES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72616, "LONGITUD": -58.481825, "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.481825, -34.72616 ] } },
-{ "type": "Feature", "properties": { "NOMBRE": "Asociacion Civil Permanece Para Siempre", "TIPO": "ASOCIACIONES CIVILES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.726108, "LONGITUD": -58.470376, "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.470376, -34.726108 ] } },
-{ "type": "Feature", "properties": { "NOMBRE": "Estrellitas De Lamadrid", "TIPO": "ASOCIACIONES CIVILES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.7309305, "LONGITUD": -58.47193147, "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.47193147, -34.7309305 ] } },
-{ "type": "Feature", "properties": { "NOMBRE": "La Nueva Independencia", "TIPO": "ASOCIACIONES CIVILES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.7308588, "LONGITUD": -58.46568929, "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.46568929, -34.7308588 ] } },
-{ "type": "Feature", "properties": { "NOMBRE": "Pequeño Gorrion", "TIPO": "ASOCIACIONES CIVILES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.719238, "LONGITUD": -58.471654, "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.471654, -34.719238 ] } },
-{ "type": "Feature", "properties": { "NOMBRE": "Sol Naciente De Villa Amelia", "TIPO": "ASOCIACIONES CIVILES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72252183, "LONGITUD": -58.4707749, "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4707749, -34.72252183 ] } },
-{ "type": "Feature", "properties": { "NOMBRE": "Uniendo Generaciones", "TIPO": "ASOCIACIONES CIVILES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.727083, "LONGITUD": -58.480662, "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.480662, -34.727083 ] } },
-{ "type": "Feature", "properties": { "NOMBRE": "Union Vecinal Juntos Por El Barrio", "TIPO": "ASOCIACIONES CIVILES", "Fecha Vencimiento Reconocimiento": "2026-12-21T00:00:00", "LATITUD": -34.72856913, "LONGITUD": -58.48023556, "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.48023556, -34.72856913 ] } }
+
 ]
 }

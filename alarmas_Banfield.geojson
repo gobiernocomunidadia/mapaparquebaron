@@ -93,6 +93,8 @@
 { "type": "Feature", "properties": { "Name": "DOMINGO FRENCH & VETERE", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.420946, -34.739298, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Alberto Larroque & Vetere", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.421288, -34.741879, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Bernardo de Monteagudo & Vetere", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.421807, -34.745674, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Carlos Glade & Vieytes", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.422122, -34.736587, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "12 DE OCTUBRE & FRENCH", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.425896, -34.738865, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Vieytes & Pasaje Pallich", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.4184795, -34.7370892, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Baliña & Monteagudo", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.4131739, -34.7467721, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "General Capdevila & Peña", "CGM": "Banfield" }, "geometry": { "type": "Point", "coordinates": [ -58.3823184, -34.7481047, 0.0 ] } },

@@ -29,6 +29,7 @@
 { "type": "Feature", "properties": { "Name": "Sixto FernÃ¡ndez & EspaÃ±a", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.400251, -34.766545, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "JUAN JOSE PASO Y MANUEL CASTRO", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.4023346, -34.7518973, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Italia & Coronel RamÃ³n FalcÃ³n", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.402816, -34.767665, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Italia & Garibaldi", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.402885, -34.770072, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Pedro Ignacio Rivera & Manuel Castro", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.40306, -34.755435, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Felix de Azara y Juan Larrea", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.4034627, -34.7506107, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "FELIX DE AZARA & JUAN LARREA", "CGM": "Lomas" }, "geometry": { "type": "Point", "coordinates": [ -58.403492, -34.750565, 0.0 ] } },

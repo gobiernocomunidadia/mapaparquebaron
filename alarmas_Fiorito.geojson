@@ -72,6 +72,7 @@
 { "type": "Feature", "properties": { "Name": "HORNOS Y BERNAL", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4386093, -34.6996703, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Quesada & Presidente Juan Domingo Perón", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.449049, -34.716985, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "CALINGASTA E/MILAN Y FILARDI", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4477728, -34.703566, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Presidente Juan Domingo Perón & Figueredo", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4554848, -34.7098969, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Roberto Arlt 1758", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4406888, -34.714913, 0.0 ] } },
 { "type": "Feature", "properties": { "Name": "Reaño & Larrazabal", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4441943, -34.6981975, 0.0 ] } }
 ]
