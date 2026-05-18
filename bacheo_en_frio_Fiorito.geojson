@@ -3,15 +3,15 @@
 "name": "bacheo_en_frio_Fiorito",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4288223, -34.7125168, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4301444, -34.7105372, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4456533, -34.690265, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4420801, -34.6952395, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4421493, -34.6951652, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4357959, -34.7033776, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4311886, -34.7094209, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4519034, -34.7125286, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.437107, -34.7181756, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4483221, -34.7039559, 0.0 ] } }
+{ "type": "Feature", "properties": { "Nombre": "Av. Gral. Hornos 1402, B1821 Villa Fiorito, Provincia de Buenos Aires, Argentina", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4288223, -34.7125168, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Estados Unidos 4490, B1824IBO Lanús, Provincia de Buenos Aires, Argentina", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4301444, -34.7105372, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Pje. Horizonte 109, B1832 Villa Fiorito, Provincia de Buenos Aires, Argentina", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4456533, -34.690265, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "gral. hornos, Sta. María y, B1824 Lanús, Provincia de Buenos Aires, Argentina", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4420801, -34.6952395, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Av. Gral. Hornos 3030, B1821 Villa Fiorito, Provincia de Buenos Aires, Argentina", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4421493, -34.6951652, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Zárate 24, B1821CKB Villa Fiorito, Provincia de Buenos Aires, Argentina", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4357959, -34.7033776, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Avenida Hornos Gral 3512, 3512 Villa Fiorito, Provincia de Buenos Aires, Argentina", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4311886, -34.7094209, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Fallieres 2245, B1821FAS Villa Fiorito, Provincia de Buenos Aires, Argentina", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4519034, -34.7125286, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Milán 1349, B1821EHA Villa Centenario, Provincia de Buenos Aires, Argentina", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.437107, -34.7181756, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Azamor 766, B1832 Villa Fiorito, Provincia de Buenos Aires, Argentina", "CGM": "Fiorito" }, "geometry": { "type": "Point", "coordinates": [ -58.4483221, -34.7039559, 0.0 ] } }
 ]
 }

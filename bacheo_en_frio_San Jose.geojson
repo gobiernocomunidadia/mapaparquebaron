@@ -3,7 +3,7 @@
 "name": "bacheo_en_frio_San Jose",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.3628949, -34.7686266, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.3625432, -34.7684064, 0.0 ] } }
+{ "type": "Feature", "properties": { "Nombre": "Quilmes 2595, B1834 Lomas de Zamora, Provincia de Buenos Aires, Argentina", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.3628949, -34.7686266, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Quilmes 2608, B1834DAA Temperley, Provincia de Buenos Aires, Argentina", "CGM": "San Jose" }, "geometry": { "type": "Point", "coordinates": [ -58.3625432, -34.7684064, 0.0 ] } }
 ]
 }

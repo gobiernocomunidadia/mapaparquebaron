@@ -3,8 +3,8 @@
 "name": "bacheo_en_frio_Albertina",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.461319, -34.7420405, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4672304, -34.7341581, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4448101, -34.7256178, 0.0 ] } }
+{ "type": "Feature", "properties": { "Nombre": "Bustos 2616, B1827CNL Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.461319, -34.7420405, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Escobar, Bustos &, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4672304, -34.7341581, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Cosquín 996 1832, B1821FFV Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4448101, -34.7256178, 0.0 ] } }
 ]
 }

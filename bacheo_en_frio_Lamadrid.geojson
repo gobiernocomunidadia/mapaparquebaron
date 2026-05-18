@@ -3,14 +3,14 @@
 "name": "bacheo_en_frio_Lamadrid",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.468919, -34.7238114, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4688734, -34.72384, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4680446, -34.7248232, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4683289, -34.7245058, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4690267, -34.7236732, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4690937, -34.7235961, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4672304, -34.7341581, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.476174, -34.7296266, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4761069, -34.7295958, 0.0 ] } }
+{ "type": "Feature", "properties": { "Nombre": "Bruno Tavano 4560, B1827CDT Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.468919, -34.7238114, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Bruno Tavano 4560, B1827CDT Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4688734, -34.72384, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Bruno Tavano 4448, B1827CDR Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4680446, -34.7248232, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Bruno Tavano 4501, B1821 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4683289, -34.7245058, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Bruno Tavano 4650, B1827CDT Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4690267, -34.7236732, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Bruno Tavano 4652, B1827CDT Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4690937, -34.7235961, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Escobar, Bustos &, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4672304, -34.7341581, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Albert Einstein 4397, B1827CZE Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.476174, -34.7296266, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Albert Einstein 4397, B1827CZE Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4761069, -34.7295958, 0.0 ] } }
 ]
 }

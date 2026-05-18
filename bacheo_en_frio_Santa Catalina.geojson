@@ -3,10 +3,10 @@
 "name": "bacheo_en_frio_Santa Catalina",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.472008, -34.7476519, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4722875, -34.7478049, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4721602, -34.7477351, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4717616, -34.7475178, 0.0 ] } },
-{ "type": "Feature", "properties": { "Nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4655321, -34.7442082, 0.0 ] } }
+{ "type": "Feature", "properties": { "Nombre": "General Juan Facundo Quiroga 1555-1699, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.472008, -34.7476519, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "General Juan Facundo Quiroga 1700-1738, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4722875, -34.7478049, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Quiroga Juan Facundo Gral. 1700, B1700 Llavallol, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4721602, -34.7477351, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "Gral. Juan Facundo Quiroga 1685, B1827ENU Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4717616, -34.7475178, 0.0 ] } },
+{ "type": "Feature", "properties": { "Nombre": "C. Union 4, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4655321, -34.7442082, 0.0 ] } }
 ]
 }
