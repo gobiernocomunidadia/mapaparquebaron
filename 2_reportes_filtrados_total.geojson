@@ -1,0 +1,719 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414380984204,
+          -34.759324549361
+        ]
+      },
+      "properties": {
+        "Caso": "#G472580",
+        "Tipo": "Educacion",
+        "Direccion": "GERVASIO ANTONIO DE POSADAS 60",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413916802136,
+          -34.761135465177
+        ]
+      },
+      "properties": {
+        "Caso": "#G466708",
+        "Tipo": "Arbolado",
+        "Direccion": "LORIA 1123",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Caso": "#G465120",
+        "Tipo": "Arbolado",
+        "Direccion": "IGNACIO ALVAREZ THOMAS 345",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.419380171987,
+          -34.761638096616
+        ]
+      },
+      "properties": {
+        "Caso": "#G465041",
+        "Tipo": "Asuntos Hidricos",
+        "Direccion": "JOSE E COLOMBRES ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414380984204,
+          -34.759324549361
+        ]
+      },
+      "properties": {
+        "Caso": "#G464197",
+        "Tipo": "Salud",
+        "Direccion": "GERVASIO ANTONIO DE POSADAS 40",
+        "Estado": "En Abordaje",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413916802136,
+          -34.761135465177
+        ]
+      },
+      "properties": {
+        "Caso": "#G462695",
+        "Tipo": "Arbolado",
+        "Direccion": "LORIA 1102",
+        "Estado": "En Abordaje",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415598543955,
+          -34.760886046754
+        ]
+      },
+      "properties": {
+        "Caso": "#G460721",
+        "Tipo": "Tribunal de Faltas",
+        "Direccion": "LORIA 1272",
+        "Estado": "Duplicado",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415598543955,
+          -34.760886046754
+        ]
+      },
+      "properties": {
+        "Caso": "#G460639",
+        "Tipo": "Tribunal de Faltas",
+        "Direccion": "LORIA 1276",
+        "Estado": "Reiterado",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415598543955,
+          -34.760886046754
+        ]
+      },
+      "properties": {
+        "Caso": "#G460621",
+        "Tipo": "Tribunal de Faltas",
+        "Direccion": "LORIA 1276",
+        "Estado": "Duplicado",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413916802136,
+          -34.761135465177
+        ]
+      },
+      "properties": {
+        "Caso": "#G460304",
+        "Tipo": "Tribunal de Faltas",
+        "Direccion": "Loria  1200",
+        "Estado": "En Abordaje",
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.412715292676,
+          -34.780540534497
+        ]
+      },
+      "properties": {
+        "Caso": "#G472849",
+        "Tipo": "Servicios Públicos",
+        "Direccion": "GENERAL JOSE M PAZ 1179",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.407611993288,
+          -34.777281520439
+        ]
+      },
+      "properties": {
+        "Caso": "#G472343",
+        "Tipo": "Arbolado",
+        "Direccion": "CARLOS GUIDO SPANO 310",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.411166747977,
+          -34.777055960601
+        ]
+      },
+      "properties": {
+        "Caso": "#G472077",
+        "Tipo": "Seguridad Vial",
+        "Direccion": "SAN PEDRO ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414680156947,
+          -34.780891799918
+        ]
+      },
+      "properties": {
+        "Caso": "#G472031",
+        "Tipo": "Arbolado",
+        "Direccion": "JUAN B VAGO 381",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413620571978,
+          -34.780336171656
+        ]
+      },
+      "properties": {
+        "Caso": "#G472029",
+        "Tipo": "Arbolado",
+        "Direccion": "SCALABRINI ORTIZ 335",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.412732029048,
+          -34.781367106581
+        ]
+      },
+      "properties": {
+        "Caso": "#G472026",
+        "Tipo": "Arbolado",
+        "Direccion": "SCALABRINI ORTIZ 409",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.40862449934,
+          -34.776997027443
+        ]
+      },
+      "properties": {
+        "Caso": "#G472008",
+        "Tipo": "Arbolado",
+        "Direccion": "JUAN GALO DE LAVALLE 818",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.411721004526,
+          -34.777368787011
+        ]
+      },
+      "properties": {
+        "Caso": "#G471992",
+        "Tipo": "Arbolado",
+        "Direccion": "J M FERNANDEZ 1000",
+        "Estado": "En Abordaje",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.411721004526,
+          -34.777368787011
+        ]
+      },
+      "properties": {
+        "Caso": "#G471985",
+        "Tipo": "Arbolado",
+        "Direccion": "J M FERNANDEZ 1000",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410091982382,
+          -34.77845169008
+        ]
+      },
+      "properties": {
+        "Caso": "#G471971",
+        "Tipo": "Arbolado",
+        "Direccion": "SAN PEDRO 301",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.411216537474,
+          -34.775888670183
+        ]
+      },
+      "properties": {
+        "Caso": "#G471966",
+        "Tipo": "Arbolado",
+        "Direccion": "CORONEL PRINGLES 915",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.407611993288,
+          -34.777281520439
+        ]
+      },
+      "properties": {
+        "Caso": "#G471937",
+        "Tipo": "Arbolado",
+        "Direccion": "CARLOS GUIDO SPANO 320",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.40807198213,
+          -34.776668523454
+        ]
+      },
+      "properties": {
+        "Caso": "#G471895",
+        "Tipo": "Arbolado",
+        "Direccion": "CARLOS GUIDO SPANO ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409085457795,
+          -34.775327148293
+        ]
+      },
+      "properties": {
+        "Caso": "#G471866",
+        "Tipo": "Arbolado",
+        "Direccion": "CARLOS GUIDO SPANO 196",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410477936035,
+          -34.777943752859
+        ]
+      },
+      "properties": {
+        "Caso": "#G471213",
+        "Tipo": "Asuntos Hidricos",
+        "Direccion": "SAN PEDRO ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.411166747977,
+          -34.777055960601
+        ]
+      },
+      "properties": {
+        "Caso": "#G471210",
+        "Tipo": "Asuntos Hidricos",
+        "Direccion": "SAN PEDRO ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409950290987,
+          -34.776409169536
+        ]
+      },
+      "properties": {
+        "Caso": "#G471198",
+        "Tipo": "Seguridad Vial",
+        "Direccion": "SOLER ferna",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409950290987,
+          -34.776409169536
+        ]
+      },
+      "properties": {
+        "Caso": "#G471195",
+        "Tipo": "Seguridad Vial",
+        "Direccion": "SOLER ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409650264444,
+          -34.77895140029
+        ]
+      },
+      "properties": {
+        "Caso": "#G471163",
+        "Tipo": "Arbolado",
+        "Direccion": "GENERAL JOSE M PAZ ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409650264444,
+          -34.77895140029
+        ]
+      },
+      "properties": {
+        "Caso": "#G471147",
+        "Tipo": "Arbolado",
+        "Direccion": "GENERAL JOSE M PAZ 940",
+        "Estado": "En Abordaje",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410670748292,
+          -34.780850753617
+        ]
+      },
+      "properties": {
+        "Caso": "#G470634",
+        "Tipo": "Salud",
+        "Direccion": "C AVELLANEDA 1179",
+        "Estado": "En Abordaje",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41247032406,
+          -34.779665871887
+        ]
+      },
+      "properties": {
+        "Caso": "#G468178",
+        "Tipo": "Arbolado",
+        "Direccion": "J M HUERGO 399",
+        "Estado": "En Abordaje",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.411249067033,
+          -34.779114956618
+        ]
+      },
+      "properties": {
+        "Caso": "#G468036",
+        "Tipo": "Arbolado",
+        "Direccion": "SAN CARLOS 355",
+        "Estado": "Tratado sin resolver",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414680156947,
+          -34.780891799918
+        ]
+      },
+      "properties": {
+        "Caso": "#G464027",
+        "Tipo": "Salud",
+        "Direccion": "JUAN B VAGO 395",
+        "Estado": "En Abordaje",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410065687176,
+          -34.775259414474
+        ]
+      },
+      "properties": {
+        "Caso": "#G461003",
+        "Tipo": "Inspecciones",
+        "Direccion": "CORONEL PRINGLES 897",
+        "Estado": "Reiterado",
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41864820174,
+          -34.803142153696
+        ]
+      },
+      "properties": {
+        "Caso": "#G472566",
+        "Tipo": "Servicios Públicos",
+        "Direccion": "RONDEAU ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416452148738,
+          -34.804447273618
+        ]
+      },
+      "properties": {
+        "Caso": "#G468701",
+        "Tipo": "Arbolado",
+        "Direccion": "H BOUCHARD 950",
+        "Estado": "En Abordaje",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41864820174,
+          -34.803142153696
+        ]
+      },
+      "properties": {
+        "Caso": "#G463222",
+        "Tipo": "Mantenimiento y Obras Públicas",
+        "Direccion": "1 DE MARZO ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414698037939,
+          -34.807714362941
+        ]
+      },
+      "properties": {
+        "Caso": "#G461570",
+        "Tipo": "Asuntos Hidricos",
+        "Direccion": "ANTONIO SASTRE ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417319789995,
+          -34.802482029161
+        ]
+      },
+      "properties": {
+        "Caso": "#G461479",
+        "Tipo": "Asuntos Hidricos",
+        "Direccion": "1 DE MARZO ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413500076441,
+          -34.808254421921
+        ]
+      },
+      "properties": {
+        "Caso": "#G461239",
+        "Tipo": "Empresa de Servicios Públicos",
+        "Direccion": "H BOUCHARD 1440",
+        "Estado": "En Abordaje",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417199780773,
+          -34.804256883593
+        ]
+      },
+      "properties": {
+        "Caso": "#G461232",
+        "Tipo": "Arbolado",
+        "Direccion": "AVENIDA DEL REY ",
+        "Estado": "Nuevo",
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    }
+  ]
+}
