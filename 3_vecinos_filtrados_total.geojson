@@ -1,0 +1,1409 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417559762371,
+          -34.763183776489
+        ]
+      },
+      "properties": {
+        "Nombre": "Eduardo Hugo",
+        "Apellido": "Caggiano",
+        "DNI": 10087402,
+        "Direccion": "JUAN A GARONA 1348",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41624253847,
+          -34.760249278115
+        ]
+      },
+      "properties": {
+        "Nombre": "Patricia",
+        "Apellido": "Narvaiz",
+        "DNI": 11492541,
+        "Direccion": "FRAY LUIS BELTRAN 110",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417559762371,
+          -34.763183776489
+        ]
+      },
+      "properties": {
+        "Nombre": "Marta Liliana",
+        "Apellido": "Pistasoli",
+        "DNI": 12001312,
+        "Direccion": "JUAN A GARONA 1365",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413916802136,
+          -34.761135465177
+        ]
+      },
+      "properties": {
+        "Nombre": "EDITH",
+        "Apellido": "SANTANGELO",
+        "DNI": 13348788,
+        "Direccion": "LORIA 1123",
+        "Total_Reclamos": 16,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418466662898,
+          -34.760467121362
+        ]
+      },
+      "properties": {
+        "Nombre": "CRISTINA",
+        "Apellido": "PAGNA",
+        "DNI": 16587643,
+        "Direccion": "LORIA 1422",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414862607256,
+          -34.761542991827
+        ]
+      },
+      "properties": {
+        "Nombre": "ALICIA",
+        "Apellido": "QUIROGA",
+        "DNI": 17230084,
+        "Direccion": "GERVASIO ANTONIO DE POSADAS 250",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Nombre": "ADRIANA",
+        "Apellido": "POZOS",
+        "DNI": 17485921,
+        "Direccion": "Alvarez Thomas  399",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414640735962,
+          -34.76044044671
+        ]
+      },
+      "properties": {
+        "Nombre": "NORA GABRIELA",
+        "Apellido": "SCHNID",
+        "DNI": 18391688,
+        "Direccion": "GERVASIO ANTONIO DE POSADAS 158",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416821568431,
+          -34.759546840873
+        ]
+      },
+      "properties": {
+        "Nombre": "María Isabel",
+        "Apellido": "Saravia",
+        "DNI": 18558269,
+        "Direccion": "JOSE I GORRITI 1370",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413720781819,
+          -34.7599914221
+        ]
+      },
+      "properties": {
+        "Nombre": "RUBEN DARIO",
+        "Apellido": "RIZZI",
+        "DNI": 20831823,
+        "Direccion": "JOSE I GORRITI 1199",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415397229691,
+          -34.759752532001
+        ]
+      },
+      "properties": {
+        "Nombre": "Ricardo",
+        "Apellido": "Molina",
+        "DNI": 21437745,
+        "Direccion": "Gorriti  1242",
+        "Total_Reclamos": 8,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418466662898,
+          -34.760467121362
+        ]
+      },
+      "properties": {
+        "Nombre": "karina",
+        "Apellido": "Jaime",
+        "DNI": 21468212,
+        "Direccion": "Loria  1485",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418466662898,
+          -34.760467121362
+        ]
+      },
+      "properties": {
+        "Nombre": "karina",
+        "Apellido": "Jaime",
+        "DNI": 21468212,
+        "Direccion": "LORIA 1485",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.419114884221,
+          -34.760372836517
+        ]
+      },
+      "properties": {
+        "Nombre": "MARCELO",
+        "Apellido": "GUITARONI",
+        "DNI": 21669483,
+        "Direccion": "24 DE MAYO",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413916802136,
+          -34.761135465177
+        ]
+      },
+      "properties": {
+        "Nombre": "Maria Paola",
+        "Apellido": "Pastrone",
+        "DNI": 21820620,
+        "Direccion": "LORIA 1136",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418466662898,
+          -34.760467121362
+        ]
+      },
+      "properties": {
+        "Nombre": "Gustavo",
+        "Apellido": "Richards",
+        "DNI": 21836351,
+        "Direccion": "LORIA 1447",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Nombre": "AREA",
+        "Apellido": "DEFENSA CIVIL",
+        "DNI": 22,
+        "Direccion": "IGNACIO ALVAREZ THOMAS 390",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416166777541,
+          -34.76339238928
+        ]
+      },
+      "properties": {
+        "Nombre": "Adrián",
+        "Apellido": "Tanoni",
+        "DNI": 22922985,
+        "Direccion": "JUAN A GARONA 1274",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414862607256,
+          -34.761542991827
+        ]
+      },
+      "properties": {
+        "Nombre": "Monica",
+        "Apellido": "Zardoya",
+        "DNI": 23090862,
+        "Direccion": "gervasio de posadas  241",
+        "Total_Reclamos": 11,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413720781819,
+          -34.7599914221
+        ]
+      },
+      "properties": {
+        "Nombre": "Martin",
+        "Apellido": "Sabio",
+        "DNI": 24159359,
+        "Direccion": "JOSE I GORRITI 1171",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414380984204,
+          -34.759324549361
+        ]
+      },
+      "properties": {
+        "Nombre": "Mariela",
+        "Apellido": "Muñoz",
+        "DNI": 24488744,
+        "Direccion": "GERVASIO ANTONIO DE POSADAS 60",
+        "Total_Reclamos": 10,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413720781819,
+          -34.7599914221
+        ]
+      },
+      "properties": {
+        "Nombre": "PABLO",
+        "Apellido": "MARTINO",
+        "DNI": 25029150,
+        "Direccion": "Gorriti  1168",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417509498965,
+          -34.759513773173
+        ]
+      },
+      "properties": {
+        "Nombre": "Maria",
+        "Apellido": "Lambo",
+        "DNI": 25739089,
+        "Direccion": "BOQUERON",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Nombre": "Nora Mariana",
+        "Apellido": "Sayago",
+        "DNI": 27373139,
+        "Direccion": "IGNACIO ALVAREZ THOMAS 390",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41624253847,
+          -34.760249278115
+        ]
+      },
+      "properties": {
+        "Nombre": "Gisela",
+        "Apellido": "Galucci",
+        "DNI": 27820714,
+        "Direccion": "FRAY LUIS BELTRAN 142",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Nombre": "valeria lorena",
+        "Apellido": "dag",
+        "DNI": 28362126,
+        "Direccion": "IGNACIO ALVAREZ THOMAS 370",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41624253847,
+          -34.760249278115
+        ]
+      },
+      "properties": {
+        "Nombre": "andrea",
+        "Apellido": "memoli",
+        "DNI": 28506456,
+        "Direccion": "FRAY LUIS BELTRAN 141",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413542202485,
+          -34.76306785859
+        ]
+      },
+      "properties": {
+        "Nombre": "Agustina",
+        "Apellido": "Zárate",
+        "DNI": 31452627,
+        "Direccion": "IGNACIO ALVAREZ THOMAS 345",
+        "Total_Reclamos": 8,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415121948036,
+          -34.762695167208
+        ]
+      },
+      "properties": {
+        "Nombre": "Marina Laura",
+        "Apellido": "Saed",
+        "DNI": 31935575,
+        "Direccion": "GERVASIO ANTONIO DE POSADAS 366",
+        "Total_Reclamos": 8,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413428561091,
+          -34.758911085558
+        ]
+      },
+      "properties": {
+        "Nombre": "Maria Silva",
+        "Apellido": "Blythman",
+        "DNI": 33339435,
+        "Direccion": "FRANCISCO LAPRIDA 1119",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418120327221,
+          -34.762294314539
+        ]
+      },
+      "properties": {
+        "Nombre": "GUADALUPE",
+        "Apellido": "BOETTI",
+        "DNI": 42292435,
+        "Direccion": "BOQUERON 354",
+        "Total_Reclamos": 11,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41624253847,
+          -34.760249278115
+        ]
+      },
+      "properties": {
+        "Nombre": "ELSA",
+        "Apellido": "PAVONI",
+        "DNI": 4236986,
+        "Direccion": "FRAY LUIS BELTRAN 130",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417898455928,
+          -34.761160659301
+        ]
+      },
+      "properties": {
+        "Nombre": "Melissa",
+        "Apellido": "Sena Acevedo",
+        "DNI": 46088531,
+        "Direccion": "BOQUERON 273",
+        "Total_Reclamos": 10,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418120327221,
+          -34.762294314539
+        ]
+      },
+      "properties": {
+        "Nombre": "ROSA DEL CARMEN",
+        "Apellido": "CICHELO",
+        "DNI": 4657734,
+        "Direccion": "BOQUERON 348",
+        "Total_Reclamos": 12,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416166777541,
+          -34.76339238928
+        ]
+      },
+      "properties": {
+        "Nombre": "Adriana",
+        "Apellido": "Fonseca",
+        "DNI": 6217183,
+        "Direccion": "JUAN A GARONA 1296",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417059674209,
+          -34.760662735217
+        ]
+      },
+      "properties": {
+        "Nombre": "ALICIA SUSANA",
+        "Apellido": "DANGELO",
+        "DNI": 6279702,
+        "Direccion": "LORIA 1360",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41426734281,
+          -34.762347662637
+        ]
+      },
+      "properties": {
+        "Nombre": "ALEJANDRO",
+        "Apellido": "TASSARA",
+        "DNI": 7776440,
+        "Direccion": "JOSE E COLOMBRES 1177",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-20T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.408118859003,
+          -34.778762031053
+        ]
+      },
+      "properties": {
+        "Nombre": "ANTONIO LUIS",
+        "Apellido": "OCHOA",
+        "DNI": 10128276,
+        "Direccion": "SOLER 450",
+        "Total_Reclamos": 15,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414680156947,
+          -34.780891799918
+        ]
+      },
+      "properties": {
+        "Nombre": "Silva",
+        "Apellido": "Nelida",
+        "DNI": 10347319,
+        "Direccion": "JUAN B VAGO 355",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410065687176,
+          -34.775259414474
+        ]
+      },
+      "properties": {
+        "Nombre": "Juan Jose",
+        "Apellido": "Molinari",
+        "DNI": 10814979,
+        "Direccion": "CORONEL PRINGLES 857",
+        "Total_Reclamos": 12,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410559238683,
+          -34.776762347612
+        ]
+      },
+      "properties": {
+        "Nombre": "Carlos",
+        "Apellido": "Franco",
+        "DNI": 11234984,
+        "Direccion": "J M FERNANDEZ 849",
+        "Total_Reclamos": 10,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409675373147,
+          -34.776883970427
+        ]
+      },
+      "properties": {
+        "Nombre": "sonia",
+        "Apellido": "guevara",
+        "DNI": 12708180,
+        "Direccion": "SOLER 207",
+        "Total_Reclamos": 8,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410461151815,
+          -34.780105818569
+        ]
+      },
+      "properties": {
+        "Nombre": "Eduardo O.",
+        "Apellido": "Castaño",
+        "DNI": 12708437,
+        "Direccion": "SAN CARLOS 415",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413361958931,
+          -34.779490012215
+        ]
+      },
+      "properties": {
+        "Nombre": "Graciela",
+        "Apellido": "Arana",
+        "DNI": 13663093,
+        "Direccion": "JUAN GALO DE LAVALLE 1250",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410323161399,
+          -34.779282774779
+        ]
+      },
+      "properties": {
+        "Nombre": "Raúl",
+        "Apellido": "Perez",
+        "DNI": 14142739,
+        "Direccion": "GENERAL JOSE M PAZ 963",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.408866831598,
+          -34.777838310825
+        ]
+      },
+      "properties": {
+        "Nombre": "ADRIANA",
+        "Apellido": "GONZALEZ",
+        "DNI": 16326094,
+        "Direccion": "SOLER 367",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.411779743548,
+          -34.781447950281
+        ]
+      },
+      "properties": {
+        "Nombre": "Lucia",
+        "Apellido": "Italiani",
+        "DNI": 17429974,
+        "Direccion": "C AVELLANEDA 1291",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414680156947,
+          -34.780891799918
+        ]
+      },
+      "properties": {
+        "Nombre": "JORGE MARCELO",
+        "Apellido": "PARADA",
+        "DNI": 18317061,
+        "Direccion": "JUAN B VAGO 369",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409089736855,
+          -34.778643247026
+        ]
+      },
+      "properties": {
+        "Nombre": "Pablo",
+        "Apellido": "Tome",
+        "DNI": 28831050,
+        "Direccion": "GENERAL JOSE M PAZ 900",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409089736855,
+          -34.778643247026
+        ]
+      },
+      "properties": {
+        "Nombre": "Pablo",
+        "Apellido": "Tome",
+        "DNI": 28831050,
+        "Direccion": "Gral José María Paz  900",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410670748292,
+          -34.780850753617
+        ]
+      },
+      "properties": {
+        "Nombre": "NADIA DANIELA",
+        "Apellido": "CAAMAÑO",
+        "DNI": 29578066,
+        "Direccion": "C AVELLANEDA 1179",
+        "Total_Reclamos": 10,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413361958931,
+          -34.779490012215
+        ]
+      },
+      "properties": {
+        "Nombre": "Maria Angeles",
+        "Apellido": "Leonar",
+        "DNI": 30217842,
+        "Direccion": "JUAN GALO DE LAVALLE 1218",
+        "Total_Reclamos": 8,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410837556313,
+          -34.7775275476
+        ]
+      },
+      "properties": {
+        "Nombre": "magali",
+        "Apellido": "Grieco",
+        "DNI": 34205188,
+        "Direccion": "SAN PEDRO 204",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.410670748292,
+          -34.780850753617
+        ]
+      },
+      "properties": {
+        "Nombre": "Camila Ayelen",
+        "Apellido": "Orfano",
+        "DNI": 37612154,
+        "Direccion": "C AVELLANEDA 1163",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.409901517142,
+          -34.777681244554
+        ]
+      },
+      "properties": {
+        "Nombre": "AGUSTIN",
+        "Apellido": "DIAZ",
+        "DNI": 42843204,
+        "Direccion": "JUAN GALO DE LAVALLE 924",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.412666934112,
+          -34.777278592773
+        ]
+      },
+      "properties": {
+        "Nombre": "MERCEDES",
+        "Apellido": "BARBERAN",
+        "DNI": 4797617,
+        "Direccion": "SAN CARLOS 114",
+        "Total_Reclamos": 13,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413620571978,
+          -34.780336171656
+        ]
+      },
+      "properties": {
+        "Nombre": "Elsa Noemi",
+        "Apellido": "ercolano",
+        "DNI": 6524402,
+        "Direccion": "SCALABRINI ORTIZ 353",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-18T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413944620946,
+          -34.807721665003
+        ]
+      },
+      "properties": {
+        "Nombre": "susana",
+        "Apellido": "romero",
+        "DNI": 11759408,
+        "Direccion": "H BOUCHARD 1308",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416330872324,
+          -34.803805916306
+        ]
+      },
+      "properties": {
+        "Nombre": "JORGE OSCAR",
+        "Apellido": "CORDOBA",
+        "DNI": 14260177,
+        "Direccion": "POBLADORA 768",
+        "Total_Reclamos": 10,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.414151611437,
+          -34.807432348834
+        ]
+      },
+      "properties": {
+        "Nombre": "Susana Alejandra",
+        "Apellido": "Ramos",
+        "DNI": 17931331,
+        "Direccion": "H BOUCHARD 585",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41816005847,
+          -34.802869445612
+        ]
+      },
+      "properties": {
+        "Nombre": "CLELIA LUCIA",
+        "Apellido": "DELLI SANTI",
+        "DNI": 18647374,
+        "Direccion": "1 DE MARZO 767",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.418496339681,
+          -34.803430242791
+        ]
+      },
+      "properties": {
+        "Nombre": "juan carlos",
+        "Apellido": "matiauda",
+        "DNI": 20177048,
+        "Direccion": "RONDEAU 703",
+        "Total_Reclamos": 8,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416452148738,
+          -34.804447273618
+        ]
+      },
+      "properties": {
+        "Nombre": "ALBINA",
+        "Apellido": "LOBOS",
+        "DNI": 23853525,
+        "Direccion": "H BOUCHARD 975",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415124687843,
+          -34.805429212301
+        ]
+      },
+      "properties": {
+        "Nombre": "JORGE",
+        "Apellido": "CABRERA",
+        "DNI": 25826597,
+        "Direccion": "CUYO 767",
+        "Total_Reclamos": 12,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.417399609925,
+          -34.803174870495
+        ]
+      },
+      "properties": {
+        "Nombre": "Noemi",
+        "Apellido": "Gauna",
+        "DNI": 28769015,
+        "Direccion": "AVENIDA DEL REY 745",
+        "Total_Reclamos": 8,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.413944620946,
+          -34.807721665003
+        ]
+      },
+      "properties": {
+        "Nombre": "Karen",
+        "Apellido": "Gallardo",
+        "DNI": 30182661,
+        "Direccion": "H BOUCHARD 1392",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415879830491,
+          -34.805206167896
+        ]
+      },
+      "properties": {
+        "Nombre": "CARINA",
+        "Apellido": "COMAN",
+        "DNI": 30306137,
+        "Direccion": "H BOUCHARD 1037",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415124687843,
+          -34.805429212301
+        ]
+      },
+      "properties": {
+        "Nombre": "INGRID DELIA",
+        "Apellido": "GOMEZ",
+        "DNI": 30662729,
+        "Direccion": "CUYO 741",
+        "Total_Reclamos": 12,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415773898475,
+          -34.804595596499
+        ]
+      },
+      "properties": {
+        "Nombre": "monica",
+        "Apellido": "sanchez",
+        "DNI": 30669057,
+        "Direccion": "MERCEDES 780",
+        "Total_Reclamos": 7,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41369948906,
+          -34.806410751134
+        ]
+      },
+      "properties": {
+        "Nombre": "Miriam Yanel",
+        "Apellido": "Aguilar",
+        "DNI": 32335797,
+        "Direccion": "ROSALES 1300",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416168380731,
+          -34.804826854984
+        ]
+      },
+      "properties": {
+        "Nombre": "VIVIANA GLADIS",
+        "Apellido": "ESPINOZA",
+        "DNI": 36593586,
+        "Direccion": "H BOUCHARD",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416500048522,
+          -34.805507273535
+        ]
+      },
+      "properties": {
+        "Nombre": "cristian",
+        "Apellido": "luna",
+        "DNI": 36877220,
+        "Direccion": "AVENIDA DEL REY 1062",
+        "Total_Reclamos": 9,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.41369948906,
+          -34.806410751134
+        ]
+      },
+      "properties": {
+        "Nombre": "Antonella",
+        "Apellido": "Valls",
+        "DNI": 37252661,
+        "Direccion": "ROSALES 1230",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416330872324,
+          -34.803805916306
+        ]
+      },
+      "properties": {
+        "Nombre": "Norma",
+        "Apellido": "Mora",
+        "DNI": 4153433,
+        "Direccion": "C LUJAN 725",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.4173728,
+          -34.8040785
+        ]
+      },
+      "properties": {
+        "Nombre": "Luana Ailen",
+        "Apellido": "Ojeda",
+        "DNI": 45009600,
+        "Direccion": "AVENIDA DEL REY 866",
+        "Total_Reclamos": 10,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415124687843,
+          -34.805429212301
+        ]
+      },
+      "properties": {
+        "Nombre": "nahuel",
+        "Apellido": "GUTIERREZ",
+        "DNI": 49212079,
+        "Direccion": "CUYO 741",
+        "Total_Reclamos": 6,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.415247567066,
+          -34.806071212678
+        ]
+      },
+      "properties": {
+        "Nombre": "AZUCENA MATILDE",
+        "Apellido": "TZAULEFF",
+        "DNI": 6413759,
+        "Direccion": "H BOUCHARD 1145",
+        "Total_Reclamos": 8,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -58.416330872324,
+          -34.803805916306
+        ]
+      },
+      "properties": {
+        "Nombre": "LISANDRO",
+        "Apellido": "ARAUJO",
+        "DNI": 92034084,
+        "Direccion": "POBLADORA 713",
+        "Total_Reclamos": 10,
+        "Fecha_Operativo": "2026-05-06T03:00:00.000Z"
+      }
+    }
+  ]
+}
