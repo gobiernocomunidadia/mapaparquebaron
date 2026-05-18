@@ -1,0 +1,154 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.412677,
+              -34.7590112
+            ],
+            [
+              -58.4186779,
+              -34.7581636
+            ],
+            [
+              -58.4196811,
+              -34.7628815
+            ],
+            [
+              -58.4136819,
+              -34.7637591
+            ],
+            [
+              -58.412677,
+              -34.7590112
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Fecha": "2026-05-20T03:00:00.000Z",
+        "Pto_1": "Laprida & Alvarez Thomas",
+        "Pto_2": "Laprida & 24 de Mayo",
+        "Pto_3": "24 de Mayo & Garona",
+        "Pto_4": "Garona & Alvarez Thomas",
+        "Pto_5": "",
+        "Pto_6": "",
+        "Pto_7": "",
+        "Pto_8": "",
+        "Localidad": "Lomas de Zamora",
+        "CGM": "Lomas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.4066047,
+              -34.7785906
+            ],
+            [
+              -58.4094034,
+              -34.7748825
+            ],
+            [
+              -58.4129999,
+              -34.7768518
+            ],
+            [
+              -58.4116831,
+              -34.7785809
+            ],
+            [
+              -58.415098,
+              -34.780379
+            ],
+            [
+              -58.4135052,
+              -34.7824404
+            ],
+            [
+              -58.4066047,
+              -34.7785906
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Fecha": "2026-05-18T03:00:00.000Z",
+        "Pto_1": "Guido y Spano & Avellaneda",
+        "Pto_2": "Guido y Spano & Pringles",
+        "Pto_3": "Pringles & San Carlos",
+        "Pto_4": "San Carlos & Lavalle",
+        "Pto_5": "Lavalle & Juan Bautista Vago",
+        "Pto_6": "Juan Bautista Vago & Avellaneda",
+        "Pto_7": "",
+        "Pto_8": "",
+        "Localidad": "Temperley",
+        "CGM": "Temperley"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -58.4169021,
+              -34.8017686
+            ],
+            [
+              -58.4187216,
+              -34.8031438
+            ],
+            [
+              -58.4142273,
+              -34.8090819
+            ],
+            [
+              -58.4123144,
+              -34.808137
+            ],
+            [
+              -58.416539,
+              -34.802746
+            ],
+            [
+              -58.4168963,
+              -34.8017765
+            ],
+            [
+              -58.4169021,
+              -34.8017686
+            ],
+            [
+              -58.4169021,
+              -34.8017686
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "Fecha": "2026-05-06T03:00:00.000Z",
+        "Pto_1": "1 de Marzo & Rosales",
+        "Pto_2": "1 de Marzo y Rondeau",
+        "Pto_3": "Rondeau & Cap. de Fragata Moyano",
+        "Pto_4": "Cap. de Fragata Moyano & Rosales",
+        "Pto_5": "Rosales & Lujan 658",
+        "Pto_6": "Rosales & Lujan 687",
+        "Pto_7": "Rosales & 1 de Marzo",
+        "Pto_8": "",
+        "Localidad": "Llavallol",
+        "CGM": "Llavallol"
+      }
+    }
+  ]
+}
