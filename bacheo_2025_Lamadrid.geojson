@@ -3,18 +3,18 @@
 "name": "bacheo_2025_Lamadrid",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4738158, -34.7274815, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4732274, -34.7269981, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4742123, -34.7190877, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4730636, -34.7318859, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4743658, -34.7253362, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4748594, -34.7256338, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4646897, -34.7292537, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4641038, -34.7300544, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4676752, -34.7275019, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4688783, -34.7349432, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4672521, -34.7341139, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4654893, -34.7332851, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4677426, -34.7343982, 0.0 ] } }
+{ "type": "Feature", "properties": { "nombre": "Metán 608, B1827HHN Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4738158, -34.7274815, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Metán 533, B1827HHK Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4732274, -34.7269981, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Bruno Tavano 5096, B1827EKE Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4742123, -34.7190877, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Isaac Newton 4042, B1827FJF Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4730636, -34.7318859, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Orán 552-534, B1827DBL Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4743658, -34.7253362, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Orán 572, B1827DBL Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4748594, -34.7256338, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Bruno Tavano 3922, B1827CDH Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4646897, -34.7292537, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Bruno Tavano 3807, B1827CDE Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4641038, -34.7300544, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Gualeguay 190, B1827HDD Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4676752, -34.7275019, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Escobar 686, B1827GVN Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4688783, -34.7349432, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Escobar, Bustos &, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4672521, -34.7341139, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Escobar 380, B1827GVH Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4654893, -34.7332851, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Escobar 526, B1827GVL Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Lamadrid" }, "geometry": { "type": "Point", "coordinates": [ -58.4677426, -34.7343982, 0.0 ] } }
 ]
 }

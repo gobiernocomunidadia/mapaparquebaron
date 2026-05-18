@@ -3,9 +3,9 @@
 "name": "bacheo_2026_Albertina",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4593319, -34.7389345, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4608511, -34.7369109, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4564531, -34.7427548, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4606652, -34.7429143, 0.0 ] } }
+{ "type": "Feature", "properties": { "nombre": "Zuberoa 33, B1827 Lomas de Zamora, Provincia de Buenos Aires, Argentina", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4593319, -34.7389345, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Homero 3056, B1827CET Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4608511, -34.7369109, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Homero 2101-2299, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4564531, -34.7427548, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Ondarribia 495, B1827HJE Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Albertina" }, "geometry": { "type": "Point", "coordinates": [ -58.4606652, -34.7429143, 0.0 ] } }
 ]
 }

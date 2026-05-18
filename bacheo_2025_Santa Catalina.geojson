@@ -3,14 +3,14 @@
 "name": "bacheo_2025_Santa Catalina",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4731297, -34.7464247, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4730272, -34.7465697, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4749543, -34.7401297, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4634592, -34.7487085, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4777492, -34.7518029, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4777136, -34.7517843, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4659104, -34.7443864, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4768085, -34.7531265, 0.0 ] } },
-{ "type": "Feature", "properties": { "nombre": "", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.476759, -34.7531372, 0.0 ] } }
+{ "type": "Feature", "properties": { "nombre": "Avenida Capitán Giachino, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4731297, -34.7464247, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Giachino Pedro E. Cap. de Fragata 2790, B1832 Llavallol, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4730272, -34.7465697, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Cabo Principal Héctor Basilio Correa 1452, B1827 Lomas de Zamora, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4749543, -34.7401297, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "C. 108 1090, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4634592, -34.7487085, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Cap. Ruben Martell, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4777492, -34.7518029, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Cap. Ruben Martell, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4777136, -34.7517843, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Gral. Juan Facundo Quiroga 897, B1827 Lomas de Zamora, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4659104, -34.7443864, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Cap. Ruben Martell 2315, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.4768085, -34.7531265, 0.0 ] } },
+{ "type": "Feature", "properties": { "nombre": "Cap. Ruben Martell, B1832 Ingeniero Budge, Provincia de Buenos Aires, Argentina", "CGM": "Santa Catalina" }, "geometry": { "type": "Point", "coordinates": [ -58.476759, -34.7531372, 0.0 ] } }
 ]
 }
