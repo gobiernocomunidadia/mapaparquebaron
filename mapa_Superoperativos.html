@@ -436,9 +436,9 @@
             // CARGA DE DATOS Y EVENTOS
             // -----------------------------------------------------
             Promise.all([
-                fetch('./poligonos_operativos.geojson').then(r => r.json()).catch(e => { console.log('Error poligonos:', e); return null; }),
-                fetch('./reportes_filtrados.geojson').then(r => r.json()).catch(e => { console.log('Error reportes:', e); return null; }),
-                fetch('./vecinos.geojson').then(r => r.json()).catch(e => { console.log('Error vecinos:', e); return null; })
+                fetch('./1_poligonos_historico_total.geojson').then(r => r.json()).catch(e => { console.log('Error poligonos:', e); return null; }),
+                fetch('./2_reportes_filtrados_total.geojson').then(r => r.json()).catch(e => { console.log('Error reportes:', e); return null; }),
+                fetch('./3_vecinos_filtrados_total.geojson').then(r => r.json()).catch(e => { console.log('Error vecinos:', e); return null; })
             ]).then(([poligonos, reportes, vecinos]) => {
                 if (poligonos) poligonosData = poligonos;
                 if (reportes) reclamosPendientesData = reportes;
